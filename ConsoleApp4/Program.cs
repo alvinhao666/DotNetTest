@@ -14,7 +14,8 @@ namespace ConsoleApp4
     {
         static async Task Main(string[] args)
         {
-            string identity = "342626199204203318";
+            string identity = "41232719750212051X";
+            Console.WriteLine(Convert.ToInt32(null));
             try
             {
                 HttpClient httpClient = new HttpClient();
@@ -23,9 +24,9 @@ namespace ConsoleApp4
                 url = url.Replace("identity", identity);
                 var t = httpClient.GetByteArrayAsync(url).Result;
 
-                var ret = System.Text.Encoding.GetEncoding("UTF-8").GetString(t);
-                var firstStr = "地</sdf></td><td><p>";
-              var firstIndex = ret.IndexOf(firstStr);
+                var ret = Encoding.GetEncoding("UTF-8").GetString(t);
+                var firstStr = "地</p></td><td><p>";
+               var firstIndex = ret.IndexOf(firstStr);
                 if (firstIndex < 0)
                 {
                     await FindByJuHeApi(identity);
@@ -65,6 +66,8 @@ namespace ConsoleApp4
                 //_logger.Error(new LogInfo() { Method = "FindAreaOnInternet", Argument = ex, Description = "发证地网络获取异常" });
                await FindByJuHeApi(identity);
             }
+
+            Console.ReadKey();
 
         }
 

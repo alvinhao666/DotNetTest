@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{3D53D443-1534-4D01-93AD-D8CEA56C08BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA加密", "ConsoleApp1\RSA加密.csproj", "{3D53D443-1534-4D01-93AD-D8CEA56C08BC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary2", "ClassLibrary2\ClassLibrary2.csproj", "{7FC05874-1AA0-4058-958B-8C33417E2D4D}"
 EndProject
@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhongqian", "Zhongqian\Zhon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高并发限流", "高并发限流\高并发限流.csproj", "{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp4", "ConsoleApp4\ConsoleApp4.csproj", "{3947DA0F-FEDC-47BD-AB58-17518A544D60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "地址拆分", "ConsoleApp4\地址拆分.csproj", "{3947DA0F-FEDC-47BD-AB58-17518A544D60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "爬取电影", "爬取电影\爬取电影.csproj", "{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
