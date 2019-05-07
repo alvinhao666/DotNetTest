@@ -83,22 +83,21 @@ namespace 爬取电影天堂
                     //拼接成完整链接
                     var onlineURL = "http://www.dy2018.com" + href.GetAttribute("href");
 
-                    MovieInfo movieInfo = await FillMovieInfoFormWeb(href, onlineURL);
+                    MovieInfo movieInfo = await FillMovieInfoFormWeb(
+                        onlineURL);
+                    if (movieInfo == null) continue;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{num++}电影名称：" + movieInfo.MovieName);
-                    if (movieInfo.XunLeiDownLoadURLList == null || movieInfo.XunLeiDownLoadURLList.Count == 0) 
-                    {
-                        Console.ReadKey();
-                    }
                     Console.WriteLine("下载地址：" + movieInfo.XunLeiDownLoadURLList.FirstOrDefault());
                 }
             }
         }
 
 
-        private static async Task<MovieInfo> FillMovieInfoFormWeb(AngleSharp.Dom.IElement a,string onlineURL)
+        private static async Task<MovieInfo> FillMovieInfoFormWeb(string onlineURL)
         {
             var movieHTML = await HttpHelper.GetHTMLByURL(onlineURL);
+            if (string.IsNullOrWhiteSpace(movieHTML)) return null;
             var movieDoc = htmlParser.ParseDocument(movieHTML);
             //http://www.dy2018.com/i/97462.html 分析过程见上，不再赘述
             //电影的详细介绍 在id为Zoom的标签中
@@ -120,9 +119,7 @@ namespace 爬取电影天堂
             var movieInfo = new MovieInfo()
             {
                 //InnerHtml中可能还包含font标签，做多一个Replace
-                MovieName = a.InnerHtml.Replace("<font color=\"#0c9000\">", "")
-             .Replace("<font color=\" #0c9000\">", "")
-             .Replace("</font>", ""),
+                MovieName = movieDoc.QuerySelectorAll("div.title_all > h1").FirstOrDefault().InnerHtml,
                 Dy2018OnlineUrl = onlineURL,
                 MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
                 //可能没有简介，虽然好像不怎么可能
