@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "地址拆分", "ConsoleApp4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "爬取电影", "爬取电影\爬取电影.csproj", "{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "爬取电影天堂", "爬取电影天堂\爬取电影天堂.csproj", "{A2D8F41C-C87D-4AB6-A983-F8C836718650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
