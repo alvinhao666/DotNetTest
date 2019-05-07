@@ -103,7 +103,7 @@ namespace 爬取电影天堂
             //电影的详细介绍 在id为Zoom的标签中
             var zoom = movieDoc.GetElementById("Zoom");
             //下载链接在 bgcolor='#fdfddf'的td中，有可能有多个链接
-            var lstDownLoadURL = movieDoc.QuerySelectorAll("[bgcolor='#fdfddf']");
+            var lstDownLoadURL = movieDoc.QuerySelectorAll("[bgcolor='#fdfddf'] > a").Select(a=>a.InnerHtml);
             //发布时间 在class='updatetime'的span标签中
             var updatetime = movieDoc.QuerySelector("span.updatetime");
             var pubDate = DateTime.Now;
@@ -123,8 +123,7 @@ namespace 爬取电影天堂
                 Dy2018OnlineUrl = onlineURL,
                 MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
                 //可能没有简介，虽然好像不怎么可能
-                XunLeiDownLoadURLList = lstDownLoadURL != null ?
-             lstDownLoadURL.Select(d => d.FirstElementChild.InnerHtml).ToList() : null,
+                 XunLeiDownLoadURLList = lstDownLoadURL?.ToList(),
                 //可能没有下载链接
                 PubDate = pubDate,
             };
