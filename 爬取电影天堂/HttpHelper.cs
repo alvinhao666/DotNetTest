@@ -18,11 +18,10 @@ namespace 爬取电影天堂
 
         public async Task<string> GetHTMLByURL(string url)
         {
-            HttpResponseMessage response = new HttpResponseMessage();
             try
             {
                 var client = Http.CreateClient("dy");
-                response = await client.GetAsync(url);
+                var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var t = response.Content.ReadAsByteArrayAsync().Result;
@@ -34,7 +33,7 @@ namespace 爬取电影天堂
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"http异常:{response.StatusCode}"+ ex.ToString());
+                Console.WriteLine("http异常:"+ ex.ToString());
                 return string.Empty;
             }
         }
