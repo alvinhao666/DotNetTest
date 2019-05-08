@@ -9,13 +9,13 @@ namespace 爬取电影天堂
 {
     public class HttpHelper
     {
-        public static HttpClient Client { get; } = new HttpClient();
 
-        public static async Task<string> GetHTMLByURL(string url)
+
+        public static  async Task<string> GetHTMLByURL(HttpClient http,string url)
         {
             try
             {
-                var response = await Client.GetAsync(url);
+                var response = await http.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var t = response.Content.ReadAsByteArrayAsync().Result;
@@ -28,6 +28,7 @@ namespace 爬取电影天堂
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                Console.ReadKey();
                 return string.Empty;
             }
         }

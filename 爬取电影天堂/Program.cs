@@ -1,8 +1,10 @@
 ﻿using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace 爬取电影天堂
@@ -13,17 +15,23 @@ namespace 爬取电影天堂
 
         private static int num = 1;
 
+
         static async Task Main(string[] args)
         {
             try
             {
+                var serviceProvider = new ServiceCollection().AddHttpClient().BuildServiceProvider();
+                var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
+
+                var client = httpClientFactory.CreateClient();
+
                 for (int i = 0; i < 21; i++)
                 {
                     //拼接成完整链接
                     var url = "https://www.dy2018.com/"+i+"/";
 
 
-                    var htmlDoc = await HttpHelper.GetHTMLByURL(url);
+                    var htmlDoc = await HttpHelper.GetHTMLByURL(client,url);
                     if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
                     var dom = htmlParser.ParseDocument(htmlDoc);
 
@@ -36,7 +44,7 @@ namespace 爬取电影天堂
                     }
 
                     //获取电影
-                    await GetMovie(url,dom);
+                    await GetMovie(client,url,dom);
 
                     if (pageNum > 0) 
                     {
@@ -45,7 +53,7 @@ namespace 爬取电影天堂
                             var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
 
                             //获取电影
-                            await GetMovie(url2, null);
+                            await GetMovie(client,url2, null);
                         }
                     }
                 }
@@ -66,11 +74,11 @@ namespace 爬取电影天堂
         }
 
 
-        private static async Task GetMovie(string url, IHtmlDocument dom)
+        private static async Task GetMovie(HttpClient client,string url, IHtmlDocument dom)
         {
             if (dom == null) 
             {
-                var htmlDoc = await HttpHelper.GetHTMLByURL(url);
+                var htmlDoc = await HttpHelper.GetHTMLByURL(client,url);
                 if (string.IsNullOrWhiteSpace(htmlDoc)) return;
                 dom = htmlParser.ParseDocument(htmlDoc);
             } 
@@ -83,8 +91,7 @@ namespace 爬取电影天堂
                     //拼接成完整链接
                     var onlineURL = "http://www.dy2018.com" + href.GetAttribute("href");
 
-                    MovieInfo movieInfo = await FillMovieInfoFormWeb(
-                        onlineURL);
+                    MovieInfo movieInfo = await FillMovieInfoFormWeb(client, onlineURL);
                     if (movieInfo == null) continue;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{num++}电影名称：" + movieInfo.MovieName);
@@ -94,12 +101,11 @@ namespace 爬取电影天堂
         }
 
 
-        private static async Task<MovieInfo> FillMovieInfoFormWeb(string onlineURL)
+        private static async Task<MovieInfo> FillMovieInfoFormWeb(HttpClient client,string onlineURL)
         {
-            var movieHTML = await HttpHelper.GetHTMLByURL(onlineURL);
+            var movieHTML = await  HttpHelper.GetHTMLByURL(client,onlineURL);
             if (string.IsNullOrWhiteSpace(movieHTML)) return null;
             var movieDoc = htmlParser.ParseDocument(movieHTML);
-            //http://www.dy2018.com/i/97462.html 分析过程见上，不再赘述
             //电影的详细介绍 在id为Zoom的标签中
             var zoom = movieDoc.GetElementById("Zoom");
             //下载链接在 bgcolor='#fdfddf'的td中，有可能有多个链接
@@ -109,13 +115,9 @@ namespace 爬取电影天堂
             var pubDate = DateTime.Now;
             if (updatetime != null && !string.IsNullOrEmpty(updatetime.InnerHtml))
             {
-                //内容带有“发布时间：”字样，
                 //replace成""之后再去转换，转换失败不影响流程
-                DateTime.TryParse(updatetime.InnerHtml.Replace("发布时间：",
-                ""), out pubDate);
+                DateTime.TryParse(updatetime.InnerHtml.Replace("发布时间：",""), out pubDate);
             }
-
-
             var movieInfo = new MovieInfo()
             {
                 //InnerHtml中可能还包含font标签，做多一个Replace
