@@ -17,9 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高并发限流", "高并�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "地址拆分", "ConsoleApp4\地址拆分.csproj", "{3947DA0F-FEDC-47BD-AB58-17518A544D60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "爬取电影", "爬取电影\爬取电影.csproj", "{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影", "爬取电影\爬取电影.csproj", "{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "爬取电影天堂", "爬取电影天堂\爬取电影天堂.csproj", "{A2D8F41C-C87D-4AB6-A983-F8C836718650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影天堂", "爬取电影天堂\爬取电影天堂.csproj", "{A2D8F41C-C87D-4AB6-A983-F8C836718650}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpCode.Core", "HttpCode.Core\HttpCode.Core.csproj", "{702384CF-CB99-4427-BECE-0C316DB3AA94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpCode.Core.Test", "HttpCode.Core.Test\HttpCode.Core.Test.csproj", "{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

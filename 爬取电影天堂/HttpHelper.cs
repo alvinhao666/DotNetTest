@@ -7,15 +7,21 @@ using System.Threading.Tasks;
 
 namespace 爬取电影天堂
 {
-    public class HttpHelper
+    public class HttpHelper:IHttpHelper
     {
+        public IHttpClientFactory Http;
 
+        public HttpHelper(IHttpClientFactory http)
+        {
+            Http = http;
+        }
 
-        public static  async Task<string> GetHTMLByURL(HttpClient http,string url)
+        public async Task<string> GetHTMLByURL(string url)
         {
             try
             {
-                var response = await http.GetAsync(url);
+                var client = Http.CreateClient();
+                var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     var t = response.Content.ReadAsByteArrayAsync().Result;
@@ -28,7 +34,6 @@ namespace 爬取电影天堂
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                Console.ReadKey();
                 return string.Empty;
             }
         }

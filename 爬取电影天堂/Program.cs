@@ -20,10 +20,29 @@ namespace 爬取电影天堂
         {
             try
             {
-                var serviceProvider = new ServiceCollection().AddHttpClient().BuildServiceProvider();
-                var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
 
-                var client = httpClientFactory.CreateClient();
+                IServiceCollection services = new ServiceCollection();
+
+                services.AddHttpClient();
+
+                //注入
+                services.AddTransient<IHttpHelper, HttpHelper>();
+
+                AutofacContainer.Build(services);
+
+                //IServiceProvider serviceProvider = services.BuildServiceProvider();
+
+                var httpHelper = AutofacContainer.Resolve<IHttpHelper>();
+
+                //var serviceProvider = new ServiceCollection().AddHttpClient().AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
+                //{
+                //    TimeSpan.FromSeconds(1),
+                //    TimeSpan.FromSeconds(5),
+                //    TimeSpan.FromSeconds(10)
+                //});
+                //var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
+
+                //var client = httpClientFactory.CreateClient();
 
                 for (int i = 0; i < 21; i++)
                 {
@@ -31,7 +50,7 @@ namespace 爬取电影天堂
                     var url = "https://www.dy2018.com/"+i+"/";
 
 
-                    var htmlDoc = await HttpHelper.GetHTMLByURL(client,url);
+                    var htmlDoc = await httpHelper.GetHTMLByURL(url);
                     if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
                     var dom = htmlParser.ParseDocument(htmlDoc);
 
@@ -44,7 +63,7 @@ namespace 爬取电影天堂
                     }
 
                     //获取电影
-                    await GetMovie(client,url,dom);
+                    await GetMovie(httpHelper,url, dom);
 
                     if (pageNum > 0) 
                     {
@@ -53,7 +72,7 @@ namespace 爬取电影天堂
                             var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
 
                             //获取电影
-                            await GetMovie(client,url2, null);
+                            await GetMovie(httpHelper,url2, null);
                         }
                     }
                 }
@@ -74,11 +93,11 @@ namespace 爬取电影天堂
         }
 
 
-        private static async Task GetMovie(HttpClient client,string url, IHtmlDocument dom)
+        private static async Task GetMovie(IHttpHelper http,string url, IHtmlDocument dom)
         {
             if (dom == null) 
             {
-                var htmlDoc = await HttpHelper.GetHTMLByURL(client,url);
+                var htmlDoc = await http.GetHTMLByURL(url);
                 if (string.IsNullOrWhiteSpace(htmlDoc)) return;
                 dom = htmlParser.ParseDocument(htmlDoc);
             } 
@@ -91,7 +110,7 @@ namespace 爬取电影天堂
                     //拼接成完整链接
                     var onlineURL = "http://www.dy2018.com" + href.GetAttribute("href");
 
-                    MovieInfo movieInfo = await FillMovieInfoFormWeb(client, onlineURL);
+                    MovieInfo movieInfo = await FillMovieInfoFormWeb(http,onlineURL);
                     if (movieInfo == null) continue;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{num++}电影名称：" + movieInfo.MovieName);
@@ -101,9 +120,9 @@ namespace 爬取电影天堂
         }
 
 
-        private static async Task<MovieInfo> FillMovieInfoFormWeb(HttpClient client,string onlineURL)
+        private static async Task<MovieInfo> FillMovieInfoFormWeb(IHttpHelper http, string onlineURL)
         {
-            var movieHTML = await  HttpHelper.GetHTMLByURL(client,onlineURL);
+            var movieHTML = await http.GetHTMLByURL(onlineURL);
             if (string.IsNullOrWhiteSpace(movieHTML)) return null;
             var movieDoc = htmlParser.ParseDocument(movieHTML);
             //电影的详细介绍 在id为Zoom的标签中
