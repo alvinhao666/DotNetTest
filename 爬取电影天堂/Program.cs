@@ -24,10 +24,12 @@ namespace 爬取电影天堂
 
                 IServiceCollection services = new ServiceCollection();
 
-                services.AddHttpClient("dy").AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[] {
-                            TimeSpan.FromSeconds(1),
-                            TimeSpan.FromSeconds(5),
-                            TimeSpan.FromSeconds(10)
+                services.AddHttpClient("dy").AddPolicyHandler(Policy<HttpResponseMessage>.Handle<System.Net.Sockets.SocketException>()
+                                                                                        .Or<System.IO.IOException>()
+                                                                                        .Or<System.Net.Http.HttpRequestException>().WaitAndRetryAsync(3, t=>TimeSpan.FromSeconds(60), (ex, ts) =>
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("重试" + ts);
                         }));
 
                 //注入
