@@ -26,7 +26,7 @@ namespace 爬取电影天堂
 
                 services.AddHttpClient("dy").AddPolicyHandler(Policy<HttpResponseMessage>.Handle<System.Net.Sockets.SocketException>()
                                                                                         .Or<System.IO.IOException>()
-                                                                                        .Or<System.Net.Http.HttpRequestException>().WaitAndRetryAsync(3, t=>TimeSpan.FromSeconds(60), (ex, ts) =>
+                                                                                        .Or<System.Net.Http.HttpRequestException>().WaitAndRetryForeverAsync(t=>TimeSpan.FromSeconds(30), (ex, ts) =>
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("重试" + ts);
