@@ -1,6 +1,7 @@
 ﻿using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using Microsoft.Extensions.DependencyInjection;
+using Polly;
 using System;
 using System.Linq;
 using System.Net;
@@ -23,32 +24,35 @@ namespace 爬取电影天堂
 
                 IServiceCollection services = new ServiceCollection();
 
-                services.AddHttpClient();
+                services.AddHttpClient("dy").AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[] {
+                            TimeSpan.FromSeconds(1),
+                            TimeSpan.FromSeconds(5),
+                            TimeSpan.FromSeconds(10)
+                        }));
 
                 //注入
                 services.AddTransient<IHttpHelper, HttpHelper>();
 
+                #region Autofac
+
                 AutofacContainer.Build(services);
-
-                //IServiceProvider serviceProvider = services.BuildServiceProvider();
-
                 var httpHelper = AutofacContainer.Resolve<IHttpHelper>();
 
-                //var serviceProvider = new ServiceCollection().AddHttpClient().AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
-                //{
-                //    TimeSpan.FromSeconds(1),
-                //    TimeSpan.FromSeconds(5),
-                //    TimeSpan.FromSeconds(10)
-                //});
-                //var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
+                #endregion
 
-                //var client = httpClientFactory.CreateClient();
+                #region .net core 自带
+                ////构建容器
+                //IServiceProvider serviceProvider = services.BuildServiceProvider();
+                ////解析
+                //var memcachedClient = serviceProvider.GetService<IMemcachedClient>();
+                #endregion
+
+
 
                 for (int i = 0; i < 21; i++)
                 {
                     //拼接成完整链接
                     var url = "https://www.dy2018.com/"+i+"/";
-
 
                     var htmlDoc = await httpHelper.GetHTMLByURL(url);
                     if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
@@ -82,7 +86,6 @@ namespace 爬取电影天堂
             catch (Exception ex)
             {
                 Console.WriteLine("异常："+ex.ToString());
-                Console.ReadKey();
             }
             finally
             {
@@ -128,7 +131,7 @@ namespace 爬取电影天堂
             //电影的详细介绍 在id为Zoom的标签中
             var zoom = movieDoc.GetElementById("Zoom");
             //下载链接在 bgcolor='#fdfddf'的td中，有可能有多个链接
-            var lstDownLoadURL = movieDoc.QuerySelectorAll("[bgcolor='#fdfddf'] > a").Select(a=>a.InnerHtml);
+            var lstDownLoadURL = movieDoc.QuerySelectorAll("td > a").Select(a=>a.InnerHtml);
             //发布时间 在class='updatetime'的span标签中
             var updatetime = movieDoc.QuerySelector("span.updatetime");
             var pubDate = DateTime.Now;
