@@ -3,9 +3,11 @@ using AngleSharp.Html.Parser;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
 using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 
 namespace 爬取电影天堂
@@ -24,19 +26,23 @@ namespace 爬取电影天堂
 
                 IServiceCollection services = new ServiceCollection();
 
-                services.AddHttpClient("dy").AddPolicyHandler(Policy<HttpResponseMessage>.Handle<System.Net.Sockets.SocketException>()
-                                                                                        .Or<System.IO.IOException>()
-                                                                                        .Or<System.Net.Http.HttpRequestException>().WaitAndRetryForeverAsync(t => TimeSpan.FromSeconds(5), (ex, ts) =>
-                          {
-                              Console.ForegroundColor = ConsoleColor.Red;
-                              Console.WriteLine("重试" + ts);
-                          }));
+                services.AddHttpClient("dy", a => { a.Timeout = TimeSpan.FromMinutes(3); })
+                        .AddPolicyHandler(Policy<HttpResponseMessage>
+                        .Handle<SocketException>()
+                        .Or<IOException>()
+                        .Or<HttpRequestException>()
+                        .WaitAndRetryForeverAsync(t => TimeSpan.FromSeconds(5), (ex, ts) =>
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("重试" + ts);
+                        }))
+                        .ConfigureHttpMessageHandlerBuilder((c) =>
+                        new HttpClientHandler()
+                        {
+                            AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                        });
                 //.AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromMinutes(3)))
-                //.ConfigureHttpMessageHandlerBuilder((c) =>
-                //                   new HttpClientHandler()
-                //                   {
-                //                       AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
-                //                   })
+
 
                 //注入
                 services.AddTransient<IHttpHelper, HttpHelper>();
@@ -80,7 +86,7 @@ namespace 爬取电影天堂
 
                     if (pageNum > 0) 
                     {
-                        for (int page = 18; page < pageNum; page++) 
+                        for (int page = 2; page < pageNum; page++) 
                         {
                             var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
 
