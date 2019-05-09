@@ -6,12 +6,14 @@ using MySql.Data.MySqlClient;
 using Polly;
 using Snowflake.Core;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace 爬取电影天堂
@@ -186,7 +188,15 @@ namespace 爬取电影天堂
         private static async Task<bool> InsertDB(Movie info)
         {
             info.ID = _worker.NextId();
-
+            List<string> matchValue = new List<string>();
+            foreach (Match m in Regex.Matches(info.Name, "(?<=《)[^》]+(?=》)"))
+            {
+                matchValue.Add(m.Value);
+            }
+            if (matchValue.Count > 0) 
+            {
+                info.Name = matchValue.FirstOrDefault();
+            }
             using (IDbConnection dbConnection = new MySqlConnection(_connectionString))
             {
                 dbConnection.Open();
