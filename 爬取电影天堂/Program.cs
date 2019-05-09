@@ -107,10 +107,12 @@ namespace 爬取电影天堂
             }
             catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("异常："+ex.ToString());
             }
             finally
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("结束！！！！");
                 Console.ReadKey();
             }
@@ -140,9 +142,9 @@ namespace 爬取电影天堂
                     if (movieInfo == null) continue;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{num++}电影名称：" + movieInfo.Name);
-                    Console.WriteLine("下载地址：" + movieInfo.XunLeiDownLoadURLList.FirstOrDefault());
+                    Console.WriteLine("下载地址：" + movieInfo.DownloadUrlFirst);
                     var success = await InsertDB(movieInfo);
-                    Console.ForegroundColor = success ? ConsoleColor.Blue : ConsoleColor.Magenta;
+                    Console.ForegroundColor = success ? ConsoleColor.Yellow : ConsoleColor.Blue;
                     Console.WriteLine(success ? "成功" : "失败");
                 }
             }
@@ -170,12 +172,13 @@ namespace 爬取电影天堂
             {
                 //InnerHtml中可能还包含font标签，做多一个Replace
                 Name = movieDoc.QuerySelectorAll("div.title_all > h1").FirstOrDefault().InnerHtml,
-                Dy2018OnlineUrl = onlineURL,
-                MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
-                //可能没有简介，虽然好像不怎么可能
-                 XunLeiDownLoadURLList = lstDownLoadURL?.ToList(),
-                //可能没有下载链接
-                PubDate = pubDate,
+                //Dy2018OnlineUrl = onlineURL,
+                //MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
+                ////可能没有简介，虽然好像不怎么可能
+                // XunLeiDownLoadURLList = lstDownLoadURL?.ToList(),
+                DownloadUrlFirst = lstDownLoadURL?.FirstOrDefault(),
+                ////可能没有下载链接
+                ReleaseDate = pubDate,
             };
             return movieInfo;
         }
