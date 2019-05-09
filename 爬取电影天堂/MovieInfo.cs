@@ -4,9 +4,11 @@ using System.Text;
 
 namespace 爬取电影天堂
 {
-    public class MovieInfo
+    public class Movie
     {
-        public string MovieName { get; set; }
+        public long ID { get; set; }
+
+        public string Name { get; set; }
 
         public string Dy2018OnlineUrl { get; set; }
 

@@ -1,8 +1,12 @@
 ﻿using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
+using Dapper;
 using Microsoft.Extensions.DependencyInjection;
+using MySql.Data.MySqlClient;
 using Polly;
+using Snowflake.Core;
 using System;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,6 +22,9 @@ namespace 爬取电影天堂
 
         private static int num = 1;
 
+        const string _connectionString = "Data Source=119.27.173.241;Database=haohaoPlay;User ID=root;Password=Mimashi@7758258;CharSet=utf8;port=3306;sslmode=none";
+
+        private static IdWorker _worker = new IdWorker(1,1);
 
         static async Task Main(string[] args)
         {
@@ -68,7 +75,6 @@ namespace 爬取电影天堂
                     //拼接成完整链接
                     var url = "https://www.dy2018.com/"+i+"/";
 
-
                     var htmlDoc = await httpHelper.GetHTMLByURL(url);
                     if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
                     var dom = htmlParser.ParseDocument(htmlDoc);
@@ -91,13 +97,11 @@ namespace 爬取电影天堂
                             var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
 
                             //获取电影
-                            await GetMovie(httpHelper, url2, null);
+                            await GetMovie(httpHelper, url2);
 
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -108,11 +112,10 @@ namespace 爬取电影天堂
                 Console.WriteLine("结束！！！！");
                 Console.ReadKey();
             }
-   
         }
 
 
-        private static async Task GetMovie(IHttpHelper http,string url, IHtmlDocument dom)
+        private static async Task GetMovie(IHttpHelper http, string url, IHtmlDocument dom = null)
         {
             if (dom == null) 
             {
@@ -121,6 +124,7 @@ namespace 爬取电影天堂
                 dom = htmlParser.ParseDocument(htmlDoc);
             } 
             var tables = dom.QuerySelectorAll("table.tbspan");
+
             if (tables != null && tables.Count() > 0)
             {
                 foreach (var tb in tables)
@@ -130,17 +134,20 @@ namespace 爬取电影天堂
                     var onlineURL = "http://www.dy2018.com" + href.GetAttribute("href");
 
                    
-                    MovieInfo movieInfo = await FillMovieInfoFormWeb(http, onlineURL);
+                    Movie movieInfo = await FillMovieInfoFormWeb(http, onlineURL);
                     if (movieInfo == null) continue;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"{num++}电影名称：" + movieInfo.MovieName);
+                    Console.WriteLine($"{num++}电影名称：" + movieInfo.Name);
                     Console.WriteLine("下载地址：" + movieInfo.XunLeiDownLoadURLList.FirstOrDefault());
+                    var success = await InsertDB(movieInfo);
+                    Console.ForegroundColor = success ? ConsoleColor.Blue : ConsoleColor.Magenta;
+                    Console.WriteLine(success ? "成功" : "失败");
                 }
             }
         }
 
 
-        private static async Task<MovieInfo> FillMovieInfoFormWeb(IHttpHelper http, string onlineURL)
+        private static async Task<Movie> FillMovieInfoFormWeb(IHttpHelper http, string onlineURL)
         {
             var movieHTML = await http.GetHTMLByURL(onlineURL);
             if (string.IsNullOrWhiteSpace(movieHTML)) return null;
@@ -157,10 +164,10 @@ namespace 爬取电影天堂
                 //replace成""之后再去转换，转换失败不影响流程
                 DateTime.TryParse(updatetime.InnerHtml.Replace("发布时间：",""), out pubDate);
             }
-            var movieInfo = new MovieInfo()
+            var movieInfo = new Movie()
             {
                 //InnerHtml中可能还包含font标签，做多一个Replace
-                MovieName = movieDoc.QuerySelectorAll("div.title_all > h1").FirstOrDefault().InnerHtml,
+                Name = movieDoc.QuerySelectorAll("div.title_all > h1").FirstOrDefault().InnerHtml,
                 Dy2018OnlineUrl = onlineURL,
                 MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
                 //可能没有简介，虽然好像不怎么可能
@@ -169,6 +176,28 @@ namespace 爬取电影天堂
                 PubDate = pubDate,
             };
             return movieInfo;
+        }
+
+        /// <summary>
+        /// 插入电影数据
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        private static async Task<bool> InsertDB(Movie info)
+        {
+            info.ID = _worker.NextId();
+
+            using (IDbConnection dbConnection = new MySqlConnection(_connectionString))
+            {
+                dbConnection.Open();
+
+                var sql = @" INSERT INTO Movie (ID,Name)  
+                                        VALUES (@ID,@Name)"; 
+
+                var res = await dbConnection.ExecuteAsync(sql, info);
+
+                return res > 0;
+            }
         }
     }
 }
