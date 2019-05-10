@@ -200,6 +200,8 @@ namespace 爬取电影天堂
             {
                 info.Name = matchValue.FirstOrDefault();
             }
+            info.CreatorID = -1;
+            info.CreateTime = DateTime.Now;
             using (IDbConnection dbConnection = new MySqlConnection(_connectionString))
             {
                 dbConnection.Open();

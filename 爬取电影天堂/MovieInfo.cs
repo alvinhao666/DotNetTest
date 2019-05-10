@@ -112,9 +112,9 @@ namespace 爬取电影天堂
         public string ViewingUrl { get; set; }
 
         /// <summary>
-        /// CreaterID
+        /// CreatorID
         /// </summary>
-        public long CreaterID { get; set; }
+        public long CreatorID { get; set; }
 
         /// <summary>
         /// CreateTime

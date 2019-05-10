@@ -30,6 +30,10 @@ namespace ConsoleApp3
             var user1 = new Users();
             var user2 = new Users();
             var users = new List<User>() { new User() { type = Type.typeX } };
+
+            Array arrays = Enum.GetValues(typeof(Type));
+            Console.WriteLine(arrays.GetValue(0).ToString());
+
             Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
             Console.ReadKey();
         }
