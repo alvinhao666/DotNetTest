@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -17,6 +17,10 @@
     <PackageReference Include="MySql.Data" Version="8.0.16" />
     <PackageReference Include="Polly" Version="7.1.0" />
     <PackageReference Include="Snowflake.Core" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hao.Utility\Hao.Utility.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using Dapper;
+using Hao.Utility;
 using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
 using Polly;
@@ -158,27 +159,46 @@ namespace 爬取电影天堂
             var movieDoc = htmlParser.ParseDocument(movieHTML);
             //电影的详细介绍 在id为Zoom的标签中
             var zoom = movieDoc.GetElementById("Zoom");
+
+            var ps = zoom.QuerySelectorAll("p").ToList();
+
+            var divs = zoom.QuerySelectorAll("div").ToList();
+            if (divs.Count > 5)
+            {
+                ps = ps.Take(2).ToList();
+                ps.AddRange(divs);
+            }
+
+            
+
             //下载链接在 bgcolor='#fdfddf'的td中，有可能有多个链接
             var lstDownLoadURL = movieDoc.QuerySelectorAll("td > a").Select(a=>a.InnerHtml);
-            //发布时间 在class='updatetime'的span标签中
-            var updatetime = movieDoc.QuerySelector("span.updatetime");
-            var pubDate = DateTime.Now;
-            if (updatetime != null && !string.IsNullOrEmpty(updatetime.InnerHtml))
-            {
-                //replace成""之后再去转换，转换失败不影响流程
-                DateTime.TryParse(updatetime.InnerHtml.Replace("发布时间：",""), out pubDate);
-            }
+            ////发布时间 在class='updatetime'的span标签中
+            //var updatetime = movieDoc.QuerySelector("span.updatetime");
+            //var pubDate = DateTime.Now;
+            //if (updatetime != null && !string.IsNullOrEmpty(updatetime.InnerHtml))
+            //{
+            //    //replace成""之后再去转换，转换失败不影响流程
+            //    DateTime.TryParse(updatetime.InnerHtml.Replace("发布时间：",""), out pubDate);
+            //}
+
             var movieInfo = new Movie()
             {
-                //InnerHtml中可能还包含font标签，做多一个Replace
+
                 Name = movieDoc.QuerySelectorAll("div.title_all > h1").FirstOrDefault().InnerHtml,
+                NameAnother = ps[1].InnerHtml.Substring(6),
+                Year = HConvert.ToInt(ps[3].InnerHtml.Substring(6)),
+                Area = ps[4].InnerHtml.Substring(6),
+                Types = ConvertTypes(ps[5].InnerHtml.Substring(6).Split('/')),
+                ReleaseDate = HConvert.ToDateTime(ps[8].InnerHtml.Substring(6, 10)),
+                Score= HConvert.ToDouble(ps[9].InnerHtml.Substring(6, 3)),
                 //Dy2018OnlineUrl = onlineURL,
                 //MovieIntro = zoom != null ? WebUtility.HtmlEncode(zoom.InnerHtml) : "暂无介绍...",
                 ////可能没有简介，虽然好像不怎么可能
                 // XunLeiDownLoadURLList = lstDownLoadURL?.ToList(),
                 DownloadUrlFirst = lstDownLoadURL?.FirstOrDefault(),
                 ////可能没有下载链接
-                ReleaseDate = pubDate,
+                //ReleaseDate = pubDate,
             };
             return movieInfo;
         }
@@ -204,13 +224,42 @@ namespace 爬取电影天堂
             {
                 dbConnection.Open();
 
-                var sql = @" INSERT INTO Movie (ID,Name)  
-                                        VALUES (@ID,@Name)"; 
+                var sql = @" INSERT INTO Movie (ID,Name,NameAnother,Year,Area,Types,ReleaseDate,Score)  
+                                        VALUES (@ID,@Name,@NameAnother,@Year,@Area,@Types,@ReleaseDate,@Score)";
 
                 var res = await dbConnection.ExecuteAsync(sql, info);
 
                 return res > 0;
             }
+        }
+
+
+        private static string ConvertTypes(string[] typeNames)
+        {
+            string types = "";
+            int index = 0;
+            foreach(var item in typeNames)
+            {
+                var a = HDescription.GetValue(typeof(MovieType), item);
+                if (a == null) continue;
+                int b = (int)a;
+                if (index == 0) 
+                {
+                    if (b > 0) 
+                    {
+                        types += $",{b},";
+                    }
+                }
+                else
+                {
+                    if (b > 0)
+                    {
+                        types += $"{b},";
+                    }
+                }
+                index++;
+            }
+            return types;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// ID
         /// </summary>
-        public long ID { get; set; }
+        public long? ID { get; set; }
 
         /// <summary>
         /// 电影名称
@@ -19,7 +19,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// 原名
         /// </summary>
-        public string OriginalName { get; set; }
+        public string NameAnother { get; set; }
 
         /// <summary>
         /// 电影类型
@@ -29,17 +29,17 @@ namespace 爬取电影天堂
         /// <summary>
         /// 电影地区
         /// </summary>
-        public int Area { get; set; }
+        public string Area { get; set; }
 
         /// <summary>
         /// 年代
         /// </summary>
-        public int Year { get; set; }
+        public int? Year { get; set; }
 
         /// <summary>
         /// 上映日期
         /// </summary>
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         /// <summary>
         /// 导演
@@ -54,7 +54,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// 评分
         /// </summary>
-        public double Score { get; set; }
+        public double? Score { get; set; }
 
         /// <summary>
         /// 简介描述
@@ -114,22 +114,22 @@ namespace 爬取电影天堂
         /// <summary>
         /// CreaterID
         /// </summary>
-        public long CreaterID { get; set; }
+        public long? CreaterID { get; set; }
 
         /// <summary>
         /// CreateTime
         /// </summary>
-        public DateTime CreateTime { get; set; }
+        public DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// LastModifyUserID
         /// </summary>
-        public long LastModifyUserID { get; set; }
+        public long? LastModifyUserID { get; set; }
 
         /// <summary>
         /// LastModifyTime
         /// </summary>
-        public DateTime LastModifyTime { get; set; }
+        public DateTime? LastModifyTime { get; set; }
 
     }
 }
