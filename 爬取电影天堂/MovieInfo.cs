@@ -54,7 +54,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// 评分
         /// </summary>
-        public double? Score { get; set; }
+        public float? Score { get; set; }
 
         /// <summary>
         /// 简介描述
@@ -114,7 +114,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// CreaterID
         /// </summary>
-        public long? CreaterID { get; set; }
+        public long? CreatorID { get; set; }
 
         /// <summary>
         /// CreateTime
@@ -130,6 +130,11 @@ namespace 爬取电影天堂
         /// LastModifyTime
         /// </summary>
         public DateTime? LastModifyTime { get; set; }
+
+
+        public bool? IsDeleted { get; set; }
+
+        public string Creator { get; set; }
 
     }
 }
