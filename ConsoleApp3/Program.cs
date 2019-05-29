@@ -31,8 +31,14 @@ namespace ConsoleApp3
             var user2 = new Users();
             var users = new List<User>() { new User() { type = Type.typeX } };
 
+            int d = (int)Type.typeY;
+
             Array arrays = Enum.GetValues(typeof(Type));
             Console.WriteLine(arrays.GetValue(0).ToString());
+
+            Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split(new String[1] { "&nbsp;" }, 8, StringSplitOptions.None)[0]);
+
+            Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split("1").FirstOrDefault()); //以开头字母分割 会有空格
 
             Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
             Console.ReadKey();
