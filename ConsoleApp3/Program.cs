@@ -31,6 +31,8 @@ namespace ConsoleApp3
             var user2 = new Users();
             var users = new List<User>() { new User() { type = Type.typeX } };
 
+            int d = (int)Type.typeY;
+
             Array arrays = Enum.GetValues(typeof(Type));
             Console.WriteLine(arrays.GetValue(0).ToString());
 

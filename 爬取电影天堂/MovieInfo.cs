@@ -114,7 +114,7 @@ namespace 爬取电影天堂
         /// <summary>
         /// CreaterID
         /// </summary>
-        public long? CreaterID { get; set; }
+        public long? CreatorID { get; set; }
 
         /// <summary>
         /// CreateTime
