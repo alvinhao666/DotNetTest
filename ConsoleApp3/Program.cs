@@ -36,6 +36,10 @@ namespace ConsoleApp3
             Array arrays = Enum.GetValues(typeof(Type));
             Console.WriteLine(arrays.GetValue(0).ToString());
 
+            Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split(new String[1] { "&nbsp;" }, 8, StringSplitOptions.None)[0]);
+
+            Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split("1").FirstOrDefault()); //以开头字母分割 会有空格
+
             Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
             Console.ReadKey();
         }
