@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ConsoleApp3
@@ -40,8 +41,34 @@ namespace ConsoleApp3
 
             Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split("1").FirstOrDefault()); //以开头字母分割 会有空格
 
-            var user = JsonConvert.DeserializeObject<Users>("{\"id\":1,\"secauthorizationtypetag\":\"uuuddc\"}");
-            Console.WriteLine(user.SecAuthorizationTypeTag);
+            var user = JsonConvert.DeserializeObject<User>("{\"sdfds\":0}");
+            Console.WriteLine(user.type);
+
+            string s = "我";
+            var dic = JsonConvert.DeserializeObject<SortedDictionary<string, object>>("{\"a\":\"1\",\"c\":\"我\"}");
+            SortedDictionary<string, object> keyValues = new SortedDictionary<string, object>(dic);
+            keyValues.OrderBy(m => m.Key);//按照键排序
+
+            var data = new StringBuilder();
+            data.Append("[");
+            foreach (var item in keyValues)
+            {
+                Console.WriteLine(item.Value.GetType());
+                data.Append("{\"" + item.Key + "\":" + item.Value + "}");
+            }
+            data.Append("]");
+
+            string ss= data.ToString();
+            List<object> sss = new List<object>();
+            sss.Add("1");
+            sss.Add(2);
+            //var jObject =JsonConvert.DeserializeObject(SortedDictionary<string, object>);
+            //Console.WriteLine(jObject);
+
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            Console.WriteLine(Convert.ToInt64(ts.TotalSeconds).GetType()==typeof(long));
+
+            //Console.WriteLine(string.Format("{\"\{0}\":{1}}", 1, 2));
 
             Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
             Console.ReadKey();
@@ -79,7 +106,34 @@ namespace ConsoleApp3
 
     public class User
     {
+        [JsonProperty(PropertyName = "sdfds")]
         public Type type { get; set; }
+    }
+
+    public class Car
+    {
+        public int  a { get; set; }
+
+        public int b { get; set; }
+
+        public string c { get; set; }
+    }
+
+    public class A
+    {
+        public int a { get; set; }
+    }
+
+    public class C
+    {
+        public string c { get; set; }
+    }
+
+    public class CCar
+    {
+        public int a { get; set; }
+
+        public string c { get; set; }
     }
 
     public enum Type
