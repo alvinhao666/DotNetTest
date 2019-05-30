@@ -40,6 +40,9 @@ namespace ConsoleApp3
 
             Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split("1").FirstOrDefault()); //以开头字母分割 会有空格
 
+            var user = JsonConvert.DeserializeObject<Users>("{\"id\":1,\"secauthorizationtypetag\":\"uuuddc\"}");
+            Console.WriteLine(user.SecAuthorizationTypeTag);
+
             Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
             Console.ReadKey();
         }
