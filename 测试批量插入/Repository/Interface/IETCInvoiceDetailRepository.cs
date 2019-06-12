@@ -11,5 +11,8 @@ namespace Sino.Hf.EtcService
         Task<List<ETCInvoiceDetail>> GetInvoiceDetailList(Guid carrierOrderId);
 
         Task<bool> InsertList(List<ETCInvoiceDetail> list);
+
+        Task<CarrierOrder> GetCarrierOrderDetail(Guid id);
+
     }
 }

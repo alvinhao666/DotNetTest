@@ -16,7 +16,7 @@ namespace 测试批量插入
             IServiceCollection services = new ServiceCollection();
 
 
-            services.AddDapper("Data Source=119.27.173.241;Database=haohaoPlay;User ID=root;Password=Mimashi@7758258;CharSet=utf8;port=3306;sslmode=none", "Data Source=119.27.173.241;Database=haohaoPlay;User ID=root;Password=Mimashi@7758258;CharSet=utf8;port=3306;sslmode=none");
+            services.AddDapper("Data Source=47.96.143.165;port=3306;user id=root;password=5802486;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;", "Data Source=47.96.143.165;port=3306;user id=root;password=5802486;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;");
 
             //注入
             //services.AddTransient<IIdentifyProvider, IdentifyProvider>();
@@ -99,7 +99,9 @@ namespace 测试批量插入
                 CreationTime = DateTime.Now
             });
 
-            await rep.InsertList(list);
+            //await rep.InsertList(list);
+
+            var item = await rep.GetCarrierOrderDetail(Guid.NewGuid());
 
             Console.WriteLine("成功");
             Console.ReadKey();
