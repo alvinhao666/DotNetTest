@@ -38,7 +38,7 @@ namespace Sino.Hf.EtcService
         /// <returns></returns>
         public async Task<bool> InsertList(List<ETCInvoiceDetail> list)
         {
-            string sql = CreateInertSql<ETCInvoiceDetail>("etcinovicedetails");
+            string sql = CreateInertSql<ETCInvoiceDetail>("etcinvoicedetails");
             var paramList = new List<DynamicParameters>();
             foreach (var item in list)
             {

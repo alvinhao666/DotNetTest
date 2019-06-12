@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sino.Hf.EtcService
 {
-    public class ETCInvoiceDetail : FullAuditedEntity<Guid>
+    public class ETCInvoiceDetail : CreationAuditedEntity<Guid>
     {
 
         /// <summary>
@@ -13,6 +13,7 @@ namespace Sino.Hf.EtcService
         /// </summary>
         public Guid CarrierOrderId { get; set; }
 
+        public Guid BriefId { get; set; }
         /// <summary>
         /// 发票号码
         /// </summary>
