@@ -70,7 +70,46 @@ namespace ConsoleApp3
 
             //Console.WriteLine(string.Format("{\"\{0}\":{1}}", 1, 2));
 
-            Console.WriteLine(users.FindAll(a=>a.type==Type.typeY).Count);
+            string date = "◎上映日期　2018-10-05(苏黎世电影节)/2019-05-17(美国)";
+
+            string releaseDate = "";
+            if(date.Contains("/"))
+            {
+                date = date.Split("/")[0];
+            }
+            foreach (Match match in Regex.Matches(date, @"\d{4}-\d{1,2}-\d{1,2}"))
+            {
+                releaseDate = match.Groups[0].Value;
+            }
+            User use = null;
+            Console.WriteLine(JsonConvert.SerializeObject(null));
+
+            for (var i = 0.1; i <= 1.0001; i = i + 0.05)
+            {
+                
+                Console.WriteLine(i);
+            }
+
+            List<string> lst = new List<string>() { "1", "2", "3", "4", "5","6" };
+
+            List<List<string>> listGroup = new List<List<string>>();
+            int j = 3;
+            for (int i = 0; i < lst.Count; i += 3)
+            {
+                Console.WriteLine(i);
+                List<string> cList = new List<string>();
+                cList = lst.Take(j).Skip(i).ToList();
+                j += 3;
+                listGroup.Add(cList);
+            }
+
+            string sdd = JsonConvert.SerializeObject(new { date = DateTime.Now });
+
+            var dd = JsonConvert.DeserializeObject<Temp>(sdd);
+            var ds=Convert.ToDateTime(dd.date);
+
+
+            Console.WriteLine(releaseDate);
             Console.ReadKey();
         }
 
@@ -102,6 +141,10 @@ namespace ConsoleApp3
         public string SecAuthorizationTypeTag { get; set; }
     }
 
+    public class Temp
+    {
+        public string date { get; set; }
+    }
 
 
     public class User
