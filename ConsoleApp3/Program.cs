@@ -109,7 +109,9 @@ namespace ConsoleApp3
             var ds=Convert.ToDateTime(dd.date);
 
 
-            Console.WriteLine(releaseDate);
+            DateTime vv = Convert.ToDateTime("2019-01-01T23:33:23");
+
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
             Console.ReadKey();
         }
 
