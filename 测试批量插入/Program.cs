@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Sino.Hf.EtcService;
 using 爬取电影天堂;
 using System.Linq;
+using Sino.TMSystem.AppService.Order;
 
 namespace 测试批量插入
 {
@@ -17,18 +18,41 @@ namespace 测试批量插入
             IServiceCollection services = new ServiceCollection();
 
 
-            services.AddDapper("Data Source=rm-bp1sxihspw88jl9fp2o.mysql.rds.aliyuncs.com;port=3306;user id=sino;password=sino5802486A;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;", "Data Source=rm-bp1sxihspw88jl9fp2o.mysql.rds.aliyuncs.com;port=3306;user id=sino;password=sino5802486A;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;");
+            //services.AddDapper("Data Source=rm-bp1sxihspw88jl9fp2o.mysql.rds.aliyuncs.com;port=3306;user id=sino;password=sino5802486A;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;", "Data Source=rm-bp1sxihspw88jl9fp2o.mysql.rds.aliyuncs.com;port=3306;user id=sino;password=sino5802486A;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;");
+            services.AddDapper("Data Source=47.96.143.165;port=3306;user id=root;password=5802486;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;", "Data Source=47.96.143.165;port=3306;user id=root;password=5802486;Initial Catalog=tmsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;");
 
             //注入
             //services.AddTransient<IIdentifyProvider, IdentifyProvider>();
 
             //services.AddTransient<IETCInvoiceDetailRepository, ETCInvoiceDetailRepository>();
 
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.CreateMap<IList<ETCInvoice>, GetETCInoviceListOutput>()
+                   .ForMember(x => x.Items, a => a.MapFrom(i => i))
+                   .ForMember(x => x.TotalCount, a => a.Ignore());
+
+                cfg.CreateMap<ETCInvoice, ETCInoviceDto>();
+
+                cfg.CreateMap<IList<ETCInvoiceDetail>, GetETCInvoiceDetailListOutput>()
+                   .ForMember(x => x.Items, a => a.MapFrom(i => i))
+                   .ForMember(x => x.TotalCount, a => a.Ignore());
+
+                cfg.CreateMap<ETCInvoiceDetail, ETCInvoiceDetailDto>();
+            });
+
             services.AutoDependency(typeof(IIdentifyProvider));
             services.AutoDependency(typeof(IETCInvoiceDetailRepository));
+            services.AutoDependency(typeof(IETCRepository));
+            services.AutoDependency(typeof(IETCAppService));
+            services.AddTransient<IETCAppService, ETCAppService>();
+
 
             AutofacContainer.Build(services);
             var rep = AutofacContainer.Resolve<IETCInvoiceDetailRepository>();
+            var ETCRep = AutofacContainer.Resolve<IETCRepository>();
+            var ser = AutofacContainer.Resolve<IETCAppService>();
+
 
             var list = new List<ETCInvoiceDetail>();
 
@@ -102,22 +126,66 @@ namespace 测试批量插入
 
             //await rep.InsertList(list);
 
-            var item = await rep.GetCarrierOrderDetail(Guid.Parse("7dd9599f-b309-43e4-8952-1c825c94426c"));
+            //var item = await rep.GetCarrierOrderDetail(Guid.Parse("7dd9599f-b309-43e4-8952-1c825c94426c"));
 
-            var order = item.OrderList.OrderBy(a => a.OrderId).FirstOrDefault();
-            var num = item.CarrierOrderCode;//运单编号
-                var plateNum = item.CarCode;
-                var plateColor = (int)CarPlateColor.Yellow;
-                var startTime = order.RealDeliveryTime.Value.ToString();//运单开始时间
-                var sourceAddr = order.OriginAddress;//运单开始地址
-                var destAddr = order.DestinationAddress;//运单目的地址
-                var predictEndTime = order.ArrivalTime.ToString();//运单预计完成时间
-                var fee = Convert.ToInt64(item.Contract.TotalPrice * 100);//大于0的整数，单位：分
-                var titleType = 1;
 
+            var ids = await ETCRep.GetETCInvoiceList(new ETCInvoiceQueryInput()
+            {
+
+                OrderCode = "01812310193",
+                CarCode = null,
+                RealDeliveryStartTime = null,
+                RealDeliveryEndTime = null,
+                RealArrivalStartTime = null,
+                RealArrivalEndTime = null,
+                OrderCarDataIsUpload = true,
+                OrderStartDataIsUpload = true,
+                OrderEndDataIsUpload = true,
+                Count = -1,
+                Skip = 0,
+                LogisticsId = Guid.Parse("7f062263-c0e0-47c8-9886-67eca77aaf3e")
+            });
+
+            //var order = item.OrderList.OrderBy(a => a.OrderId).FirstOrDefault();
+            //var num = item.CarrierOrderCode;//运单编号
+            //    var plateNum = item.CarCode;
+            //    var plateColor = (int)CarPlateColor.Yellow;
+            //    var startTime = order.RealDeliveryTime.Value.ToString();//运单开始时间
+            //    var sourceAddr = order.OriginAddress;//运单开始地址
+            //    var destAddr = order.DestinationAddress;//运单目的地址
+            //    var predictEndTime = order.ArrivalTime.ToString();//运单预计完成时间
+            //    var fee = Convert.ToInt64(item.Contract.TotalPrice * 100);//大于0的整数，单位：分
+            //    var titleType = 1;
+
+            if (ids != null && ids.Count > 0)
+            {
+                var listGroup = await HandleList(ids);
+
+                foreach (var item in listGroup)
+                {
+                    //BackgroundJob.Enqueue<IETCService>(x => x.SearchInvoice(item, userId));
+                }
+            }
+
+            var sss = await ser.ViewDetail(Guid.Parse("6970f114-5fd9-4f92-b7fb-9c9a286abcba"));
 
             Console.WriteLine("成功");
             Console.ReadKey();
+        }
+
+
+        private static async Task<List<List<Guid>>> HandleList(List<Guid> ids)
+        {
+            List<List<Guid>> listGroup = new List<List<Guid>>();
+            int j = 100;
+            for (int i = 0; i < ids.Count; i += 100)
+            {
+                List<Guid> cList = new List<Guid>();
+                cList = ids.Take(j).Skip(i).ToList();
+                j += 100;
+                listGroup.Add(cList);
+            }
+            return listGroup;
         }
     }
 }

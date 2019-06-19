@@ -358,16 +358,19 @@ namespace Sino.Hf.EtcService
         /// <summary>
         /// 订单车辆数据是否上传
         /// </summary>
-        public bool? OrderCarDataIsUpload { get; set; }
+        public bool OrderCarDataIsUpload { get; set; }
 
         /// <summary>
         /// 订单开始数据是否上传
         /// </summary>
-        public bool? OrderStartDataIsUpload { get; set; }
+        public bool OrderStartDataIsUpload { get; set; }
 
         /// <summary>
         /// 订单结束数据是否上传
         /// </summary>
-        public bool? OrderEndDataIsUpload { get; set; }
+        public bool OrderEndDataIsUpload { get; set; }
+
+
+        public bool IsUploadError { get; set; }
     }
 }

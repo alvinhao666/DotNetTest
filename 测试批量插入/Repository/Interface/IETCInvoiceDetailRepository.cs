@@ -8,11 +8,8 @@ namespace Sino.Hf.EtcService
 {
     public interface IETCInvoiceDetailRepository : ITMSystemRepository<ETCInvoiceDetail, Guid>, ITransientDependency
     {
-        Task<List<ETCInvoiceDetail>> GetInvoiceDetailList(Guid carrierOrderId);
+        Task<List<ETCInvoiceDetail>> GetInvoiceDetailList(Guid carrierOrderId, Guid mainId);
 
         Task<bool> InsertList(List<ETCInvoiceDetail> list);
-
-        Task<CarrierOrder> GetCarrierOrderDetail(Guid id);
-
     }
 }

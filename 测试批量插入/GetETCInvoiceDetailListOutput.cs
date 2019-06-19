@@ -1,20 +1,86 @@
-﻿using Sino.Domain.Entities.Auditing;
+﻿using Sino.Application.Services.Dto;
+using Sino.Hf.EtcService;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sino.Hf.EtcService
+namespace Sino.TMSystem.AppService.Order
 {
-    public class ETCInvoiceDetail : CreationAuditedEntity<Guid>
+    public class GetETCInvoiceDetailListOutput : IOutputDto, IPagedResult<ETCInvoiceDetailDto>
     {
+        public IReadOnlyList<ETCInvoiceDetailDto> Items { get; set; }
+
+        public int TotalCount { get; set; }
+
+        #region 运单信息
+        public string OrderCode { get; set; }
+
+        public string CarCode { get; set; }
+
+        public CarPlateColor? CarPlateColor { get; set; }
+
+        public DateTime? RealDeliveryTime { get; set; }
+
+        public string OrginAddress { get; set; }
+
+        public string DestinationAddress { get; set; }
+
+        public DateTime ArrivalTime { get; set; }
+
+        public decimal TotalPrice { get; set; }
+
+        public string RealDestinationAddress { get; set; }
+
+        public DateTime? RealArriavlTime { get; set; }
+        #endregion
+
+
+        #region 发票信息
+        /// <summary>
+        /// 车牌号
+        /// </summary>
+        public string PlateNum { get; set; }
 
         /// <summary>
-        /// CarrierOrderId
+        /// 车型
         /// </summary>
-        public Guid CarrierOrderId { get; set; }
+        public ETCVehicleType? VehicleType { get; set; }
 
-        public Guid BriefId { get; set; }
+        /// <summary>
+        /// 运单编号
+        /// </summary>
+        public string WaybillNum { get; set; }
 
+        /// <summary>
+        /// 运单状态
+        /// </summary>
+        public ETCWayBillStatus? WaybillStatus { get; set; }
+
+        /// <summary>
+        /// 运单开始时间
+        /// </summary>
+        public DateTime? WaybillStartTime { get; set; }
+
+        /// <summary>
+        /// 运单结束时间
+        /// </summary>
+        public DateTime? WaybillEndTime { get; set; }
+
+        /// <summary>
+        /// 接收时间
+        /// </summary>
+        public DateTime? ReceiveTime { get; set; }
+
+        /// <summary>
+        /// 接收
+        /// </summary>
+        public string ReceiveInfo { get; set; }
+        #endregion
+
+    }
+
+    public class ETCInvoiceDetailDto : EntityDto<Guid>
+    {
         /// <summary>
         /// 发票号码
         /// </summary>
@@ -28,7 +94,7 @@ namespace Sino.Hf.EtcService
         /// <summary>
         /// 开票时间
         /// </summary>
-        public string InvoiceMakeTime { get; set; }
+        public DateTime InvoiceMakeTime { get; set; }
 
         /// <summary>
         /// 发票url
@@ -53,7 +119,7 @@ namespace Sino.Hf.EtcService
         /// <summary>
         /// 交易时间
         /// </summary>
-        public string ExTime { get; set; }
+        public DateTime ExTime { get; set; }
 
         /// <summary>
         /// 交易金额
@@ -73,7 +139,7 @@ namespace Sino.Hf.EtcService
         /// <summary>
         /// 车型
         /// </summary>
-        public ETCVehicleType VehicleType { get; set; }
+        public ETCVehicleType? VehicleType { get; set; }
 
         /// <summary>
         /// 销方名称
@@ -98,12 +164,12 @@ namespace Sino.Hf.EtcService
         /// <summary>
         /// 运单开始时间
         /// </summary>
-        public string WaybillStartTime { get; set; }
+        public DateTime WaybillStartTime { get; set; }
 
         /// <summary>
         /// 运单结束时间
         /// </summary>
-        public string WaybillEndTime { get; set; }
+        public DateTime WaybillEndTime { get; set; }
 
         /// <summary>
         /// 价税合计
@@ -125,20 +191,5 @@ namespace Sino.Hf.EtcService
         /// </summary>
         public int Amount { get; set; }
 
-        /// <summary>
-        /// 交易id
-        /// </summary>
-        public string TransactionId { get; set; }
-
-        /// <summary>
-        /// 接收时间
-        /// </summary>
-        public string ReceiveTime { get; set; }
-
-        /// <summary>
-        /// 接收
-        /// </summary>
-        public string ReceiveInfo { get; set; }
     }
 }
-

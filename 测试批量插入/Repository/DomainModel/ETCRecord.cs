@@ -1,11 +1,12 @@
-﻿using Sino.Domain.Entities.Auditing;
+﻿using Sino.Domain.Entities;
+using Sino.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Sino.Hf.EtcService
 {
-    public class ETCRecord : FullAuditedEntity<Guid>
+    public class ETCRecord : CreationAuditedEntity<Guid>
     {
         /// <summary>
         /// 输入参数
@@ -43,5 +44,9 @@ namespace Sino.Hf.EtcService
         public string Info { get; set; }
 
         public Guid CarrierOrderId { get; set; }
+
+
+        public string OrderCode { get; set; }
+
     }
 }

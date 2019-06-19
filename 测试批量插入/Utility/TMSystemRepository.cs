@@ -23,7 +23,5 @@ namespace Sino.Hf.EtcService
 		{
 			IdentifyProvider = identifyProvider;
 		}
-
-		
 	}
 }
