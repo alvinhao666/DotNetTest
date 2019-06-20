@@ -73,36 +73,62 @@ namespace 爬取电影天堂
 
 
 
-                for (int i = 0; i < 21; i++)
+                //for (int i = 0; i < 21; i++)
+                //{
+                //    //拼接成完整链接
+                //    var url = "https://www.dy2018.com/"+i+"/";
+
+                //    var htmlDoc = await httpHelper.GetHTMLByURL(url);
+                //    if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
+                //    var dom = htmlParser.ParseDocument(htmlDoc);
+
+                //    var pContent = dom.QuerySelectorAll("div.x > p");
+                //    int pageNum = 0;
+                //    if (pContent != null && pContent.Length > 0)
+                //    {
+                //        var content = pContent.FirstOrDefault().InnerHtml.Split("&nbsp;").FirstOrDefault().Split("/")[1];
+                //        pageNum = Convert.ToInt32(content);
+                //    }
+
+                //    //获取电影
+                //    await GetMovie(httpHelper,url, dom);
+
+                //    if (pageNum > 0) 
+                //    {
+                //        for (int page = 2; page < pageNum; page++) 
+                //        {
+                //            var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
+
+                //            //获取电影
+                //            await GetMovie(httpHelper, url2);
+
+                //        }
+                //    }
+                //}
+
+                //通过URL获取HTML
+                var htmlDoc = await httpHelper.GetHTMLByURL("http://www.dy2018.com/");
+                //HTML 解析成 IDocument
+                var dom = htmlParser.ParseDocument(htmlDoc);
+                var divInfo = dom.QuerySelectorAll("div.co_area2")[1].QuerySelector("div.co_content222");
+
+                if (divInfo != null)
                 {
-                    //拼接成完整链接
-                    var url = "https://www.dy2018.com/"+i+"/";
+                    var hrefs = divInfo.QuerySelectorAll("a").Where(a => a.GetAttribute("href").Contains("/i/")).ToList();
 
-                    var htmlDoc = await httpHelper.GetHTMLByURL(url);
-                    if (string.IsNullOrWhiteSpace(htmlDoc)) continue;
-                    var dom = htmlParser.ParseDocument(htmlDoc);
-
-                    var pContent = dom.QuerySelectorAll("div.x > p");
-                    int pageNum = 0;
-                    if (pContent != null && pContent.Length > 0)
+                    foreach (var a in hrefs)
                     {
-                        var content = pContent.FirstOrDefault().InnerHtml.Split("&nbsp;").FirstOrDefault().Split("/")[1];
-                        pageNum = Convert.ToInt32(content);
-                    }
+                        //拼接成完整链接
+                        var onlineURL = "http://www.dy2018.com" + a.GetAttribute("href");
 
-                    //获取电影
-                    await GetMovie(httpHelper,url, dom);
-
-                    if (pageNum > 0) 
-                    {
-                        for (int page = 2; page < pageNum; page++) 
-                        {
-                            var url2 = "https://www.dy2018.com/" + i + $"/index_{page}.html";
-
-                            //获取电影
-                            await GetMovie(httpHelper, url2);
-
-                        }
+                        Movie movieInfo = await FillMovieInfoFormWeb(httpHelper,onlineURL);
+                        if (movieInfo == null) continue;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"{num++}电影名称：" + movieInfo.Name);
+                        Console.WriteLine("下载地址：" + movieInfo.DownloadUrlFirst);
+                        var success = await InsertDB(movieInfo);
+                        Console.ForegroundColor = success ? ConsoleColor.Yellow : ConsoleColor.Blue;
+                        Console.WriteLine(success ? "成功" : "失败");
                     }
                 }
             }
@@ -293,5 +319,7 @@ namespace 爬取电影天堂
             }
             return types;
         }
+
+
     }
 }
