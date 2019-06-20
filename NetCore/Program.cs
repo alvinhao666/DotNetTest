@@ -12,10 +12,13 @@ namespace NetCore
     //第七个对象：WebHostBuilder,就是创建作为应用宿主的WebHost。由于在创建WebHost的时候需要提供注册的服务器和由所有注册中间件构建而成的RequestDelegate，所以在对应接口IWebHostBuilder中，我们为它定义了三个核心方法。
     class Program
     {
+        //在创建出WebHostBuilder之后，我们调用了它的扩展方法UseHttpListener注册了一个自定义的基于HttpListener的服务器，我们会在后续内容中介绍该服务器的实现。
+        //在随后针对Configure方法的调用中，我们注册了三个中间件。
+        //由于中间件最终是通过Delegate对象来体现的，所以我们可以将中间件定义成与Delegate类型具有相同签名的方法
         public static async Task Main()
         {
             await new WebHostBuilder()
-                .UseHttpListener()
+                .UseMyServer()
                 .Configure(app => app
                     .Use(FooMiddleware)
                     .Use(BarMiddleware)
