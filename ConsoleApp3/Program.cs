@@ -112,6 +112,11 @@ namespace ConsoleApp3
             DateTime vv = Convert.ToDateTime("2019-01-01T23:33:23");
 
             Console.WriteLine(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
+
+            foreach (Match match in Regex.Matches("2018sdfsdf", @"\d{4}"))
+            {
+                releaseDate = match.Groups[0].Value;
+            }
             Console.ReadKey();
         }
 
