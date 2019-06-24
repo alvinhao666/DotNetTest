@@ -113,7 +113,12 @@ namespace ConsoleApp3
 
             Console.WriteLine(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
 
-            foreach (Match match in Regex.Matches("2018sdfsdf", @"\d{4}"))
+            foreach (Match match in Regex.Matches("2018-4-20", @"\d{4}-\d{1,2}-\d{1,2}"))
+            {
+                releaseDate = match.Groups[0].Value;
+            }
+
+            foreach (Match match in Regex.Matches("2323ddsdf2018-4-20xxx", @"((?<!\d)((\d{2,4}(\.|年|\/|\-))((((0?[13578]|1[02])(\.|月|\/|\-))((3[01])|([12][0-9])|(0?[1-9])))|(0?2(\.|月|\/|\-)((2[0-8])|(1[0-9])|(0?[1-9])))|(((0?[469]|11)(\.|月|\/|\-))((30)|([12][0-9])|(0?[1-9]))))|((([0-9]{2})((0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))(\.|年|\/|\-))0?2(\.|月|\/|\-)29))日?(?!\d))"))
             {
                 releaseDate = match.Groups[0].Value;
             }
