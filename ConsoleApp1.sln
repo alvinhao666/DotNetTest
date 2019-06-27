@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA加密", "ConsoleApp1\RSA加密.csproj", "{3D53D443-1534-4D01-93AD-D8CEA56C08BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp3\ConsoleApp.csproj", "{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}"
 EndProject
