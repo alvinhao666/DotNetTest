@@ -28,26 +28,7 @@ namespace Redis
                 //}
                 list.Add(JsonConvert.DeserializeObject<EmployeeRedisListOutput>(result.ToString()));
             }
-            var str = result.ToString();
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.WriteLine(str);
-            Console.WriteLine((long)3234.234);
-            string tel = "18168586750";
 
-            DateTime dt = DateTime.Parse("2018-04");
-            //本月第一天时间      
-            int year = dt.Date.Year;
-            int month = dt.Date.Month;
-            int dayCount = DateTime.DaysInMonth(year, month);
-            var a = new DateTime(year, month, 1);
-            var b = new DateTime(year, month, dayCount);
-            //query.StartTime = a.ToString("yyyy-MM-dd 00:00:00");
-            //query.EndTime = b.ToString("yyyy-MM-dd 23:59:59");
-
-
-            //Console.WriteLine(/*dt_Last*/);
-
-            Console.WriteLine(tel[3]);
             Console.ReadKey();
         }
 

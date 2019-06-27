@@ -125,6 +125,13 @@ namespace ConsoleApp3
 
             string strhtml = NoHTML("</font>,&nbsp;<font face=\"Arial\"><span style=\"font - size: 14px; line - height: 21.59375px; \">,  满清康熙鼎盛之际，自十三岁入宫当宫女的兆佳沉香（");
 
+            //本月第一天时间      
+            int year = dt.Date.Year;
+            int month = dt.Date.Month;
+            int dayCount = DateTime.DaysInMonth(year, month);
+            var a = new DateTime(year, month, 1);
+            var b = new DateTime(year, month, dayCount);
+
             Console.ReadKey();
         }
 
