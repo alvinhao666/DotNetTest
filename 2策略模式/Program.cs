@@ -11,7 +11,19 @@ namespace _2策略模式
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Message m = new Message(new XmlMessage());
+
+            Console.WriteLine(m.Insert(new MessageModel() {Message="插入",PublishTime=DateTime.Now }));
+
+            Console.WriteLine(m.Get()[0].Message + " " + m.Get()[0].PublishTime.ToString());
+
+            m = new Message(new SqlMessage());
+
+            Console.WriteLine(m.Insert(new MessageModel() { Message = "插入", PublishTime = DateTime.Now }));
+
+            Console.WriteLine(m.Get()[0].Message + " " + m.Get()[0].PublishTime.ToString());
+
+            Console.ReadKey();
         }
     }
 }
