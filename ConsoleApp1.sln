@@ -53,17 +53,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2选择排序", "选择排�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4直接插入排序", "直接插入排序\4直接插入排序.csproj", "{D9762791-CA73-4122-88FD-C209022A1568}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "算法", "算法", "{E498B03A-F56B-4F61-AA74-D7FD1E1F59FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3算法", "3算法", "{E498B03A-F56B-4F61-AA74-D7FD1E1F59FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "设计模式", "设计模式", "{3769D663-275E-4290-A1B7-604A4F4620F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4设计模式", "4设计模式", "{3769D663-275E-4290-A1B7-604A4F4620F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1备忘录模式", "1备忘录模式\1备忘录模式.csproj", "{3D2F25BD-C931-4B4F-8C8D-DEF65D671ECA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2策略模式", "2策略模式\2策略模式.csproj", "{88E47CD5-029F-4727-9D5D-D1121142E554}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetCore7个对象", "NetCore7个对象", "{DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2NetCore7个对象", "2NetCore7个对象", "{DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "模拟接口测试", "模拟接口测试", "{C59929F8-8881-4503-AD8E-E3E511996EEE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1模拟接口测试", "1模拟接口测试", "{C59929F8-8881-4503-AD8E-E3E511996EEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
