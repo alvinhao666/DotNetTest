@@ -3,17 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA加密", "ConsoleApp1\RSA加密.csproj", "{3D53D443-1534-4D01-93AD-D8CEA56C08BC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp3\ConsoleApp.csproj", "{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "Zhongqian\TaskTest.csproj", "{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高并发限流", "高并发限流\高并发限流.csproj", "{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "地址拆分", "ConsoleApp4\地址拆分.csproj", "{3947DA0F-FEDC-47BD-AB58-17518A544D60}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影", "爬取电影\爬取电影.csproj", "{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}"
 EndProject
@@ -57,13 +51,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3算法", "3算法", "{E498
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4设计模式", "4设计模式", "{3769D663-275E-4290-A1B7-604A4F4620F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1备忘录模式", "1备忘录模式\1备忘录模式.csproj", "{3D2F25BD-C931-4B4F-8C8D-DEF65D671ECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1备忘录模式", "1备忘录模式\1备忘录模式.csproj", "{3D2F25BD-C931-4B4F-8C8D-DEF65D671ECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2策略模式", "2策略模式\2策略模式.csproj", "{88E47CD5-029F-4727-9D5D-D1121142E554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2策略模式", "2策略模式\2策略模式.csproj", "{88E47CD5-029F-4727-9D5D-D1121142E554}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2NetCore7个对象", "2NetCore7个对象", "{DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1模拟接口测试", "1模拟接口测试", "{C59929F8-8881-4503-AD8E-E3E511996EEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "地址拆分", "地址拆分\地址拆分.csproj", "{B9902E24-866C-47C5-B37C-2A02603B211B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{6A3C92BD-1148-4031-B7D7-A6E992071828}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA加密", "RSA加密\RSA加密.csproj", "{7B3CBB4A-24CE-49C3-94F6-372DC138780F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,14 +71,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D53D443-1534-4D01-93AD-D8CEA56C08BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D53D443-1534-4D01-93AD-D8CEA56C08BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D53D443-1534-4D01-93AD-D8CEA56C08BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D53D443-1534-4D01-93AD-D8CEA56C08BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D79B2AEC-A584-484C-A8B4-72A2DFDA4C85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -91,10 +83,6 @@ Global
 		{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3947DA0F-FEDC-47BD-AB58-17518A544D60}.Release|Any CPU.Build.0 = Release|Any CPU
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858100A1-6C6A-49B3-95FB-E4174B8C2DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -179,6 +167,18 @@ Global
 		{88E47CD5-029F-4727-9D5D-D1121142E554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E47CD5-029F-4727-9D5D-D1121142E554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E47CD5-029F-4727-9D5D-D1121142E554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9902E24-866C-47C5-B37C-2A02603B211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9902E24-866C-47C5-B37C-2A02603B211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9902E24-866C-47C5-B37C-2A02603B211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9902E24-866C-47C5-B37C-2A02603B211B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3C92BD-1148-4031-B7D7-A6E992071828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3C92BD-1148-4031-B7D7-A6E992071828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3C92BD-1148-4031-B7D7-A6E992071828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3C92BD-1148-4031-B7D7-A6E992071828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3CBB4A-24CE-49C3-94F6-372DC138780F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3CBB4A-24CE-49C3-94F6-372DC138780F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3CBB4A-24CE-49C3-94F6-372DC138780F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3CBB4A-24CE-49C3-94F6-372DC138780F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

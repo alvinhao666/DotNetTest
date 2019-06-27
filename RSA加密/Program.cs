@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
-namespace ConsoleApp1
+namespace RSA加密
 {
     class Program
     {

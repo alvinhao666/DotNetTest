@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ConsoleApp1
+namespace RSA加密
 {
     class RSAHelper
     {
