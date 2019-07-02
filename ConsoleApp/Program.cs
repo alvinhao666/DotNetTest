@@ -130,9 +130,9 @@ namespace ConsoleApp3
             int year = dt.Date.Year;
             int month = dt.Date.Month;
             int dayCount = DateTime.DaysInMonth(year, month);
-            var a = new DateTime(year, month, 1);
-            var b = new DateTime(year, month, dayCount);
-
+            var a = new DateTime(2019, 6, 23,10,20,20);
+            var b = DateTime.Now.Date;
+            var c = (a - b).Days;
             Console.ReadKey();
         }
 
