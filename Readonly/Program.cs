@@ -7,10 +7,10 @@ namespace Readonly
     {
         static void Main(string[] args)
         {
-            //TestReadonly item = new TestReadonly();
-            //int x=item.GetX();
+            TestReadonly item = new TestReadonly();
+            int x = item.GetX();
 
- 
+
             //修改Example02中Class1的strConst初始值后，只编译Example02Lib项目            
             //然后到资源管理器里把新编译的Example02Lib.dll拷贝Example02.exe所在的目录，执行Example02.exe            
             //切不可在IDE里直接调试运行因为这会重新编译整个解决方案！！             
@@ -29,10 +29,10 @@ namespace Readonly
 
     public class TestReadonly
     {
-        private  readonly int x; //X是只读字段
+        private  readonly int x=1; //X是只读字段
         public TestReadonly()
         {
-            // 只能在初始化时，构造函数里面，对只读字段赋值
+            // 只能在初始化时，构造函数里面，对只读字段赋值或者声明时赋值
             x = 100;
         }
 
@@ -40,7 +40,7 @@ namespace Readonly
         {
             //这个语句是错误的，因为x不能被再次赋值，x是只读的(readonly)，而
             //下面的语句试图改变x的值。
-            //x = x +100;
+            //x = x + 100;
 
 
             //这个语句是正确的，因为语句执行后，x的值没有变
