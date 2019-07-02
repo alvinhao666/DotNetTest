@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace 选择排序
 {
-    //选择排序是不稳定的。算法复杂度O(n2)--[n的平方]
+    //选择排序是不稳定的。算法复杂度O(N²)
 
     //选择排序是我觉得最简单暴力的排序方式了。
 

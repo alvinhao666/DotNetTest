@@ -2,6 +2,7 @@
 
 namespace 冒泡排序
 {
+    //算法复杂度O(N²)
     class Program
     {
         static void Main(string[] args)
