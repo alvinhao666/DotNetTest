@@ -8,6 +8,9 @@ using Sino.Hf.EtcService;
 using 爬取电影天堂;
 using System.Linq;
 using Sino.TMSystem.AppService.Order;
+using CSRedis;
+using Microsoft.Extensions.Caching.Redis;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace 测试批量插入
 {
@@ -46,12 +49,25 @@ namespace 测试批量插入
             services.AutoDependency(typeof(IETCRepository));
             services.AutoDependency(typeof(IETCAppService));
             services.AddTransient<IETCAppService, ETCAppService>();
+            
 
+            var csredis = new CSRedisClient("127.0.0.1:6379,abortConnect=false,connectRetry=3,connectTimeout=3000,defaultDatabase=0,syncTimeout=3000,version=3.2.1,responseTimeout=3000");
+
+            //初始化 RedisHelper
+
+            RedisHelper.Initialization(csredis);
+
+            services.AddSingleton<IDistributedCache>(new CSRedisCache(RedisHelper.Instance));
 
             AutofacContainer.Build(services);
             var rep = AutofacContainer.Resolve<IETCInvoiceDetailRepository>();
             var ETCRep = AutofacContainer.Resolve<IETCRepository>();
             var ser = AutofacContainer.Resolve<IETCAppService>();
+
+            var cache = AutofacContainer.Resolve<IDistributedCache>();
+
+            var value = await RedisHelper.GetAsync("rongguohao");
+
 
 
             var list = new List<ETCInvoiceDetail>();
@@ -157,17 +173,17 @@ namespace 测试批量插入
             //    var fee = Convert.ToInt64(item.Contract.TotalPrice * 100);//大于0的整数，单位：分
             //    var titleType = 1;
 
-            if (ids != null && ids.Count > 0)
-            {
-                var listGroup = await HandleList(ids);
+            //if (ids != null && ids.Count > 0)
+            //{
+            //    var listGroup = await HandleList(ids);
 
-                foreach (var item in listGroup)
-                {
-                    //BackgroundJob.Enqueue<IETCService>(x => x.SearchInvoice(item, userId));
-                }
-            }
+            //    foreach (var item in listGroup)
+            //    {
+            //        //BackgroundJob.Enqueue<IETCService>(x => x.SearchInvoice(item, userId));
+            //    }
+            //}
 
-            var sss = await ser.ViewDetail(Guid.Parse("6970f114-5fd9-4f92-b7fb-9c9a286abcba"));
+            //var sss = await ser.ViewDetail(Guid.Parse("6970f114-5fd9-4f92-b7fb-9c9a286abcba"));
 
             Console.WriteLine("成功");
             Console.ReadKey();
