@@ -66,9 +66,14 @@ namespace 测试批量插入
 
             var cache = AutofacContainer.Resolve<IDistributedCache>();
 
+            RedisHelper.Set("rongguohao", 5555);
+            RedisHelper.Set("rongguohao2", new ETCCar() { Id=Guid.NewGuid()});
+            RedisHelper.Set("rongguohao3", 11111);
             var value = await RedisHelper.GetAsync("rongguohao");
-
-
+            RedisHelper.Expire("rongguohao", 0);
+            value = await RedisHelper.GetAsync("rongguohao");
+            var aaa = RedisHelper.Get<ETCCar>("rongguohao2");
+            var bbb = RedisHelper.Keys("rongguohao*");
 
             var list = new List<ETCInvoiceDetail>();
 
