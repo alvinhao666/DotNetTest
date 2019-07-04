@@ -135,8 +135,8 @@ namespace ConsoleApp3
             var c = (a - b).Days;
 
             CCar car = new CCar() { a = 1 };
-            car.b = 2;  //属性get方法会随时变化。
-
+            car.b = 2;  //属性get方法会重新执行。
+            car.a = 5;
 
             Console.ReadKey();
         }
@@ -233,10 +233,13 @@ namespace ConsoleApp3
 
         public int b { get; set; }
 
-        public int c
+        public string c
         { get
             {
-                return a + b;
+                string d = "";
+                if (a > 0) d += a ;
+                if (b > 0) d += b;
+                return d;
             }
         }
     }
