@@ -125,7 +125,7 @@ namespace ConsoleApp3
 
             string strhtml = NoHTML("</font>,&nbsp;<font face=\"Arial\"><span style=\"font - size: 14px; line - height: 21.59375px; \">,  满清康熙鼎盛之际，自十三岁入宫当宫女的兆佳沉香（");
 
-            DateTime dt = DateTime.Now;
+            DateTime dt = DateTime.Parse("2019.1.1 10:10:11");
             //本月第一天时间      
             int year = dt.Date.Year;
             int month = dt.Date.Month;
@@ -133,6 +133,11 @@ namespace ConsoleApp3
             var a = new DateTime(2019, 6, 23,10,20,20);
             var b = DateTime.Now.Date;
             var c = (a - b).Days;
+
+            CCar car = new CCar() { a = 1 };
+            car.b = 2;  //属性get方法会随时变化。
+
+
             Console.ReadKey();
         }
 
@@ -226,7 +231,14 @@ namespace ConsoleApp3
     {
         public int a { get; set; }
 
-        public string c { get; set; }
+        public int b { get; set; }
+
+        public int c
+        { get
+            {
+                return a + b;
+            }
+        }
     }
 
     public enum Type

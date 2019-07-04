@@ -67,9 +67,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA加密", "RSA加密\RSA�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5消息队列", "5消息队列", "{EAD8FA95-D007-4957-A6E2-08C60B70E7BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "简易消息队列", "简易消息队列\简易消息队列.csproj", "{4E60968A-BC2F-4D83-A723-29C4BB172AE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简易消息队列", "简易消息队列\简易消息队列.csproj", "{4E60968A-BC2F-4D83-A723-29C4BB172AE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "生产消费队列实现写文本", "生产消费队列实现写文本\生产消费队列实现写文本.csproj", "{28E4993A-DA94-4C12-9198-AE140D882C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "生产消费队列实现写文本", "生产消费队列实现写文本\生产消费队列实现写文本.csproj", "{28E4993A-DA94-4C12-9198-AE140D882C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{B988B335-56CE-4195-92EB-65D1A3C070A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -193,6 +195,10 @@ Global
 		{28E4993A-DA94-4C12-9198-AE140D882C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28E4993A-DA94-4C12-9198-AE140D882C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28E4993A-DA94-4C12-9198-AE140D882C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B988B335-56CE-4195-92EB-65D1A3C070A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B988B335-56CE-4195-92EB-65D1A3C070A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B988B335-56CE-4195-92EB-65D1A3C070A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B988B335-56CE-4195-92EB-65D1A3C070A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
