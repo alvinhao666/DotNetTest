@@ -45,7 +45,7 @@ namespace Redis
 
             //services.AddSingleton(new Microsoft.Extensions.Caching.Redis.CSRedisCache(RedisHelper.Instance));
 
-            //Test();
+            Test();
 
             Console.ReadKey();
         }
@@ -56,7 +56,10 @@ namespace Redis
         static void Test()
 
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            RedisHelper.Subscribe(("rgh", msg => Console.WriteLine("订阅者"+msg.Body)));
 
+            Console.ForegroundColor = ConsoleColor.White;
             RedisHelper.Set("name", "祝雷");//设置值。默认永不过期
 
             //RedisHelper.SetAsync("name", "祝雷");//异步操作
@@ -113,6 +116,15 @@ namespace Redis
 
             Console.WriteLine($"students这个集合是否包含wagnwu:{RedisHelper.SIsMember("students", "wangwu")}");
 
+            RedisHelper.Set("rongguohao", 5555);
+            RedisHelper.Set("rongguohao2", new EmployeeReidsListDto() { Id = "123" });
+            RedisHelper.Set("rongguohao3", 11111);
+            var value = RedisHelper.Get("rongguohao");
+            RedisHelper.Expire("rongguohao", 0);
+            value = RedisHelper.Get("rongguohao");
+            var aaa = RedisHelper.Get<EmployeeReidsListDto>("rongguohao2");
+            var bbb = RedisHelper.Keys("rongguohao*");
+            RedisHelper.Publish("rgh", "我是发布者");
         }
 
     }
