@@ -16,24 +16,53 @@ namespace TaskTest
             List<Task> tasks = new List<Task>();
             for (int i = 0; i < 10; i++) //for循环太快，启动线程太慢
             {
-                var m = i;
+                //var m = i;  
                 //Console.WriteLine(i.ToString());
-                //tasks.Add(Task.Factory.StartNew(async () => { await Test(m); }));
+                tasks.Add(Task.Factory.StartNew(async () => { await Test(i); }));
 
 
-                tasks.Add(Test(m));
+                //tasks.Add(Test(i));
             }
-            Task.WaitAll(tasks.ToArray());
-       
+            await Task.WhenAll(tasks.ToArray());
+            Console.WriteLine("结束");
+
+            //await MoreTaskTestAsync();
+
+
             Console.ReadKey();
         }
 
 
-        public static async Task Test(int num)
+        public static async Task Test(int num) //没有await
         {
             Console.WriteLine(num.ToString());
 
-            await Task.Factory.StartNew(() => { Console.WriteLine($"{num * 20}"); });
+            //await Task.Factory.StartNew(() => { Console.WriteLine($"{num * 20}"); });
+        }
+
+        private static List<int> data = Enumerable.Range(1, 1000).ToList();
+
+        public static async Task MoreTaskTestAsync()
+        {
+            List<Task> tasks = new List<Task>();
+            for (int i = 0; i < 10; i++)
+            {
+                var tempi = i;  //线程变量：tempData，每个线程只访问自己的，互不影响，运行结果
+                //写多线程的时候需要注意，变量的作用域，否则程序运行出来的结果将不会是想要的结果，注意，注意变量作用域。
+                var t = Task.Run(() =>
+                {
+                    List<int> tempData = new List<int>();
+                    foreach (var d in data)
+                    {
+                        tempData.Add(d);
+                    }
+                    Console.WriteLine($"i:{tempi},合计:{data.Sum()},是否相等：{data.Sum() == tempData.Sum()}");
+                });
+                tasks.Add(t);
+            }
+
+            await Task.WhenAll(tasks); //或者Task.WaitAll(tasks.ToArray());
+            Console.WriteLine("多线程运行结束");
         }
 
     }
