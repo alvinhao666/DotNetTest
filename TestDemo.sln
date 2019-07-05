@@ -13,10 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影", "爬取电�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影天堂", "爬取电影天堂\爬取电影天堂.csproj", "{A2D8F41C-C87D-4AB6-A983-F8C836718650}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpCode.Core", "HttpCode.Core\HttpCode.Core.csproj", "{702384CF-CB99-4427-BECE-0C316DB3AA94}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpCode.Core.Test", "HttpCode.Core.Test\HttpCode.Core.Test.csproj", "{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Utility", "Hao.Utility\Hao.Utility.csproj", "{061E1A78-3441-4CC8-9DFE-F98CFD902463}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "测试批量插入", "测试批量插入\测试批量插入.csproj", "{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}"
@@ -71,7 +67,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简易消息队列", "简�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "生产消费队列实现写文本", "生产消费队列实现写文本\生产消费队列实现写文本.csproj", "{28E4993A-DA94-4C12-9198-AE140D882C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{B988B335-56CE-4195-92EB-65D1A3C070A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{B988B335-56CE-4195-92EB-65D1A3C070A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,14 +95,6 @@ Global
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D8F41C-C87D-4AB6-A983-F8C836718650}.Release|Any CPU.Build.0 = Release|Any CPU
-		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{702384CF-CB99-4427-BECE-0C316DB3AA94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DADB8A56-7718-46EC-B7E1-433F9FAFD45C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Release|Any CPU.ActiveCfg = Release|Any CPU
