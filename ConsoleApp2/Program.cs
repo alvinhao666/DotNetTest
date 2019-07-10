@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp2
 {    ////////////////////////////////////////////////////////////////////
@@ -31,9 +32,48 @@ namespace ConsoleApp2
 
             var a = 3.24; //小数默认double类型
             Console.WriteLine(a.GetType());
+            #endregion
+
+            #region Foreach
+            List<Person> lstInt = new List<Person>() { new Person() { Age = 1 }, new Person() { Age = 2 } };
+            lstInt.ForEach(b =>
+            {
+                b.Age = b.Age + 1;
+            });//有变化
+
+
+            foreach (var b in lstInt)
+            {
+                b.Age = b.Age + 1;
+            }//有变化
+
+            lstInt.ForEach(b =>
+            {
+                b = new Person();
+            });//没变化
+
+            var s = lstInt;
+
+
+            List<int> ints = new List<int>() { 1, 2, 3 };
+            ints.ForEach(x=> {
+               x= x + 1;
+            }); //没变化
+
+            List<String> intss = new List<String>() { "1", "1", "1" };
+            intss.ForEach(x => {
+                x = x + 1;
+            });//没变化
 
             #endregion
+
+
             Console.ReadKey();
         }
+    }
+
+    class Person
+    {
+       public int Age { get; set; }
     }
 }
