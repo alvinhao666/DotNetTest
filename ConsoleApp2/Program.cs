@@ -27,7 +27,13 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            #region 小数点默认类型double
+
+            var a = 3.24; //小数默认double类型
+            Console.WriteLine(a.GetType());
+
+            #endregion
+            Console.ReadKey();
         }
     }
 }
