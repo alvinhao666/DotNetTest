@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,6 +22,12 @@ namespace ListTest
                 j += 3;
                 listGroup.Add(cList);
             }
+            #endregion
+
+            #region SortDictionary
+            var dic = JsonConvert.DeserializeObject<SortedDictionary<string, object>>("{\"a\":\"1\",\"c\":\"我\"}");
+            SortedDictionary<string, object> keyValues = new SortedDictionary<string, object>(dic);
+            keyValues.OrderBy(m => m.Key);//按照键排序
             #endregion
 
             Console.ReadKey();

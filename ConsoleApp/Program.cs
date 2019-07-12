@@ -10,65 +10,33 @@ using System.Text.RegularExpressions;
 
 namespace ConsoleApp3
 {
+    ////////////////////////////////////////////////////////////////////
+    //                          _ooOoo_                               //
+    //                         o8888888o                              //
+    //                         88" . "88                              //
+    //                         (| ^_^ |)                              //
+    //                         O\  =  /O                              //
+    //                      ____/`---'\____                           //
+    //                    .'  \\|     |//  `.                         //
+    //                   /  \\|||  :  |||//  \                        //
+    //                  /  _||||| -:- |||||-  \                       //
+    //                  |   | \\\  -  /// |   |                       //
+    //                  | \_|  ''\---/''  |   |                       //
+    //                  \  .-\__  `-`  ___/-. /                       //
+    //                ___`. .'  /--.--\  `. . ___                     //
+    //              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+    //            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+    //            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+    //      ========`-.____`-.___\_____/___.-`____.-'========         //
+    //                           `=---='                              //
+    //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+    //                   佛祖保佑       永不宕机     永无BUG            //
+    ////////////////////////////////////////////////////////////////////
     class Program
     {
         delegate int MyDelegate(int x, int y);
         static void Main(string[] args)
         {
-            var user1 = new Users();
-            var user2 = new Users();
-            var users = new List<User>() { new User() { type = Type.typeX } };
-
-            int d = (int)Type.typeY;
-
-            Array arrays = Enum.GetValues(typeof(Type));
-            Console.WriteLine(arrays.GetValue(0).ToString());
-
-
-            var user = JsonConvert.DeserializeObject<User>("{\"sdfds\":0}");
-            Console.WriteLine(user.type);
-
-            #region SortDictionary
-            var dic = JsonConvert.DeserializeObject<SortedDictionary<string, object>>("{\"a\":\"1\",\"c\":\"我\"}");
-            SortedDictionary<string, object> keyValues = new SortedDictionary<string, object>(dic);
-            keyValues.OrderBy(m => m.Key);//按照键排序
-            #endregion
-
-
-            var data = new StringBuilder();
-            data.Append("[");
-            foreach (var item in keyValues)
-            {
-                Console.WriteLine(item.Value.GetType());
-                data.Append("{\"" + item.Key + "\":" + item.Value + "}");
-            }
-            data.Append("]");
-
-            string ss= data.ToString();
-            List<object> sss = new List<object>();
-            sss.Add("1");
-            sss.Add(2);
-            //var jObject =JsonConvert.DeserializeObject(SortedDictionary<string, object>);
-            //Console.WriteLine(jObject);
-
-            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            Console.WriteLine(Convert.ToInt64(ts.TotalSeconds).GetType()==typeof(long));
-
-            //Console.WriteLine(string.Format("{\"\{0}\":{1}}", 1, 2));
-
-            string date = "◎上映日期　2018-10-05(苏黎世电影节)/2019-05-17(美国)";
-
-            string releaseDate = "";
-            if(date.Contains("/"))
-            {
-                date = date.Split("/")[0];
-            }
-            foreach (Match match in Regex.Matches(date, @"\d{4}-\d{1,2}-\d{1,2}"))
-            {
-                releaseDate = match.Groups[0].Value;
-            }
-            User use = null;
-            Console.WriteLine(JsonConvert.SerializeObject(null));
 
             for (var i = 0.1; i <= 1.0001; i = i + 0.05)
             {
@@ -81,6 +49,47 @@ namespace ConsoleApp3
             car.b = 2;  
             car.a = 5;
             #endregion
+
+
+            #region 小数点默认类型double
+
+            var a = 3.24; //小数默认double类型
+            Console.WriteLine(a.GetType());
+            #endregion
+
+            #region Foreach
+            List<Person> lstInt = new List<Person>() { new Person() { Age = 1 }, new Person() { Age = 2 } };
+            lstInt.ForEach(b =>
+            {
+                b.Age = b.Age + 1;
+            });//有变化
+
+
+            foreach (var b in lstInt)
+            {
+                b.Age = b.Age + 1;
+            }//有变化
+
+            lstInt.ForEach(b =>
+            {
+                b = new Person();
+            });//没变化
+
+            var s = lstInt;
+
+
+            List<int> ints = new List<int>() { 1, 2, 3 };
+            ints.ForEach(x => {
+                x = x + 1;
+            }); //没变化
+
+            List<String> intss = new List<String>() { "1", "1", "1" };
+            intss.ForEach(x => {
+                x = x + 1;
+            });//没变化
+
+            #endregion
+
 
             Console.ReadKey();
         }
@@ -102,45 +111,11 @@ namespace ConsoleApp3
             }
             return matchVale;
         }
-
     
     }
-
-    public class Users
+    class Person
     {
-        public long? Id { get; set; }
-
-
-
-        public string SecAuthorizationTypeTag { get; set; }
-    }
-
-
-
-
-    public class User
-    {
-        [JsonProperty(PropertyName = "sdfds")]
-        public Type type { get; set; }
-    }
-
-    public class Car
-    {
-        public int  a { get; set; }
-
-        public int b { get; set; }
-
-        public string c { get; set; }
-    }
-
-    public class A
-    {
-        public int a { get; set; }
-    }
-
-    public class C
-    {
-        public string c { get; set; }
+        public int Age { get; set; }
     }
 
     public class CCar
@@ -160,9 +135,4 @@ namespace ConsoleApp3
         }
     }
 
-    public enum Type
-    {
-        typeX,
-        typeY
-    }
 }

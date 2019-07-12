@@ -40,6 +40,12 @@ namespace DateTimeTest
             }
             #endregion
 
+            #region 时间戳
+
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            Console.WriteLine(Convert.ToInt64(ts.TotalSeconds).GetType() == typeof(long));
+            #endregion
+
             Console.ReadKey();
         }
     }
