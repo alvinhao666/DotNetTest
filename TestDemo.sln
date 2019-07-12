@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "Zhongqian\TaskTest.csproj", "{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7.TaskTest", "Zhongqian\7.TaskTest.csproj", "{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高并发限流", "高并发限流\高并发限流.csproj", "{53C5382B-6E7D-4FF4-9CEF-B0AC463B3564}"
 EndProject
@@ -28,8 +28,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.InterfaceTest", "InterfaceTest\4.InterfaceTest.csproj", "{B17541CF-6AEF-4670-9520-C852C34EB307}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3FAD76CA-14D4-4684-A7EE-B3A7A6C79865}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectAndSelectMany", "SelectAndSelectMany\SelectAndSelectMany.csproj", "{7E28AAC7-24C8-492F-BD3F-B41D6991E831}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3插入排序", "插入排序\3插入排序.csproj", "{26F5517F-7C45-43B5-841E-62C34EFBE35E}"
 EndProject
@@ -135,10 +133,6 @@ Global
 		{3FAD76CA-14D4-4684-A7EE-B3A7A6C79865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FAD76CA-14D4-4684-A7EE-B3A7A6C79865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FAD76CA-14D4-4684-A7EE-B3A7A6C79865}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E28AAC7-24C8-492F-BD3F-B41D6991E831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E28AAC7-24C8-492F-BD3F-B41D6991E831}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E28AAC7-24C8-492F-BD3F-B41D6991E831}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E28AAC7-24C8-492F-BD3F-B41D6991E831}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26F5517F-7C45-43B5-841E-62C34EFBE35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26F5517F-7C45-43B5-841E-62C34EFBE35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26F5517F-7C45-43B5-841E-62C34EFBE35E}.Release|Any CPU.ActiveCfg = Release|Any CPU

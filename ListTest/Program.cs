@@ -30,6 +30,29 @@ namespace ListTest
             keyValues.OrderBy(m => m.Key);//按照键排序
             #endregion
 
+
+            #region Select&SelectMany
+            string[] text = { "Albert was here", "Burke slept late", "Connor is happy" };
+            var tokens = text.Select(s => s.Split(" "));
+            Console.ForegroundColor = ConsoleColor.Green;
+            foreach (string[] line in tokens)
+            {
+                foreach (string token in line)
+                {
+                    Console.WriteLine("{0}", token);
+                }
+            }
+
+
+            string[] text2 = { "Albert was here", "Burke slept late", "Connor is happy" };
+            Console.ForegroundColor = ConsoleColor.Red;
+            var tokens2 = text2.SelectMany(s => s.Split(' '));
+            foreach (string token in tokens2)
+            {
+                Console.WriteLine("{0}", token);
+            }
+            #endregion
+
             Console.ReadKey();
         }
     }
