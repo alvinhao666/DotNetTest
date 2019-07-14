@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}"
 EndProject
@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高性能对象映射", "�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaAndExpression", "LambdaAndExpression\LambdaAndExpression.csproj", "{05818ADB-926B-49AA-AB68-5D431D953CB7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore", "NetCore\NetCore.csproj", "{B50C614B-AE83-4C72-AEC9-C47E9741C6E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore7个对象", "NetCore\NetCore7个对象.csproj", "{B50C614B-AE83-4C72-AEC9-C47E9741C6E6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Readonly", "Readonly\Readonly.csproj", "{EDE1EE42-E97C-40F0-BFEC-3572E19E2B97}"
 EndProject
@@ -47,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1备忘录模式", "1备忘
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2策略模式", "2策略模式\2策略模式.csproj", "{88E47CD5-029F-4727-9D5D-D1121142E554}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2NetCore7个对象", "2NetCore7个对象", "{DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2NetCore", "2NetCore", "{DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1模拟接口测试", "1模拟接口测试", "{C59929F8-8881-4503-AD8E-E3E511996EEE}"
 EndProject
@@ -61,15 +61,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简易消息队列", "简�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "生产消费队列实现写文本", "生产消费队列实现写文本\生产消费队列实现写文本.csproj", "{28E4993A-DA94-4C12-9198-AE140D882C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.DateTimeTest", "DateTimeTest\2.DateTimeTest.csproj", "{D1782A40-905A-4D84-820D-7BB74C0702F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.DateTimeTest", "DateTimeTest\2.DateTimeTest.csproj", "{D1782A40-905A-4D84-820D-7BB74C0702F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.StringTest", "StringTest\1.StringTest.csproj", "{D3EB2BC1-57EC-4440-844A-709BFA55BF0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.StringTest", "StringTest\1.StringTest.csproj", "{D3EB2BC1-57EC-4440-844A-709BFA55BF0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.JosnTest", "JosnTest\3.JosnTest.csproj", "{C2EDF100-11B0-49A8-89BC-212FF2F4C522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.JosnTest", "JosnTest\3.JosnTest.csproj", "{C2EDF100-11B0-49A8-89BC-212FF2F4C522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.ListTest", "ListTest\5.ListTest.csproj", "{DFD4B897-2408-4C1C-BC81-C613E5BE14CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.ListTest", "ListTest\5.ListTest.csproj", "{DFD4B897-2408-4C1C-BC81-C613E5BE14CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.EnumTest", "EnumTest\6.EnumTest.csproj", "{2999D369-7C7B-4A5A-A895-07CF14F09CF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6.EnumTest", "EnumTest\6.EnumTest.csproj", "{2999D369-7C7B-4A5A-A895-07CF14F09CF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6加密", "6加密", "{8D02777E-F261-4B30-BA0A-FFC7159BBB6D}"
 EndProject
@@ -78,6 +78,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8并发限流", "8并发限流", "{F831252F-E149-4DA6-9A62-ED8135154B33}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9对象映射", "9对象映射", "{96046A1E-934A-4BDD-82CB-9827747D78A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration读取", "Configuaration读取\Configuration读取.csproj", "{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -201,6 +203,10 @@ Global
 		{2999D369-7C7B-4A5A-A895-07CF14F09CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2999D369-7C7B-4A5A-A895-07CF14F09CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2999D369-7C7B-4A5A-A895-07CF14F09CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -222,6 +228,7 @@ Global
 		{7B3CBB4A-24CE-49C3-94F6-372DC138780F} = {8D02777E-F261-4B30-BA0A-FFC7159BBB6D}
 		{4E60968A-BC2F-4D83-A723-29C4BB172AE4} = {EAD8FA95-D007-4957-A6E2-08C60B70E7BF}
 		{28E4993A-DA94-4C12-9198-AE140D882C73} = {EAD8FA95-D007-4957-A6E2-08C60B70E7BF}
+		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3} = {DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
