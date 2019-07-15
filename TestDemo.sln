@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29102.190
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{840621DA-B4FB-4C14-BC60-5D512F8C1DE7}"
 EndProject
@@ -79,7 +79,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8并发限流", "8并发限
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9对象映射", "9对象映射", "{96046A1E-934A-4BDD-82CB-9827747D78A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration读取", "Configuaration读取\Configuration读取.csproj", "{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration读取", "Configuaration读取\Configuration读取.csproj", "{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{9CA1A798-E443-46CD-95AD-8BB021E795AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,10 @@ Global
 		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA1A798-E443-46CD-95AD-8BB021E795AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA1A798-E443-46CD-95AD-8BB021E795AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA1A798-E443-46CD-95AD-8BB021E795AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA1A798-E443-46CD-95AD-8BB021E795AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -229,6 +235,7 @@ Global
 		{4E60968A-BC2F-4D83-A723-29C4BB172AE4} = {EAD8FA95-D007-4957-A6E2-08C60B70E7BF}
 		{28E4993A-DA94-4C12-9198-AE140D882C73} = {EAD8FA95-D007-4957-A6E2-08C60B70E7BF}
 		{360A5594-ED2C-43F3-AFB4-1FEFC00CB8B3} = {DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}
+		{9CA1A798-E443-46CD-95AD-8BB021E795AF} = {DDDCAE9D-1AD6-4BEF-B8B7-1C0DC4DCD608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
