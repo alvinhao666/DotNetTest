@@ -46,6 +46,11 @@ namespace DateTimeTest
             Console.WriteLine(Convert.ToInt64(ts.TotalSeconds).GetType() == typeof(long));
             #endregion
 
+            #region string转datetime
+            var date = DateTime.Parse("2019.07.13 15:56");
+            #endregion
+
+
             Console.ReadKey();
         }
     }
