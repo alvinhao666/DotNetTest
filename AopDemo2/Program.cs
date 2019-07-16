@@ -21,17 +21,6 @@ namespace AopDemo2
             var builder = new ContainerBuilder();
             builder.Populate(services);//Autofac.Extensions.DependencyInjection
 
-            //builder.RegisterInstance(new LoggerFactory())
-            //      .As<ILoggerFactory>();
-
-            //builder.RegisterGeneric(typeof(Logger<>))
-            //   .As(typeof(ILogger<>))
-            //   .SingleInstance();
-
-            //services.AddLogging(a => a
-            //     .AddConfiguration(conf.GetSection("Logging"))
-            //     .AddConsole());
-
 
             //注册服务
             builder.Register(c => new AOPTest());
@@ -43,7 +32,6 @@ namespace AopDemo2
 
 
 
-
             //一定要在你注入的服务后面加上EnableInterfaceInterceptors来开启你的拦截
             var container = builder.Build();
             var service1 = container.Resolve<ITestService1>();
@@ -51,22 +39,9 @@ namespace AopDemo2
             var service3 = container.Resolve<ITestService3>();
 
 
-            //var controllersTypesInAssembly = typeof(Startup).Assembly.GetExportedTypes()
-            //    .Where(type => typeof(ControllerBase).IsAssignableFrom(type)).ToArray();
-            //builder.RegisterTypes(controllersTypesInAssembly).PropertiesAutowired();
-
-            //builder.RegisterType<AOPTest>().PropertiesAutowired(); // aoptest允许属性注入
-
-
-            //var loggerFactory = container.Resolve<ILoggerFactory>();
-
-            //loggerFactory.AddProvider();
-
-
             service1.GetString();
             service2.GetString();
             service3.GetString();
-
 
 
             Console.Read();
