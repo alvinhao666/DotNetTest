@@ -51,6 +51,11 @@ namespace DateTimeTest
             #endregion
 
 
+            var d = Convert.ToDateTime(null); //不报错
+
+            //d =  Convert.ToDateTime("12312"); //报错
+
+
             Console.ReadKey();
         }
     }
