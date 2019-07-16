@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 
 namespace 属性注入
 {
+    //ASP.NET Core 的标准依赖注入容器不支持属性注入。但是你可以使用其他容器支持属性注入
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -21,13 +22,12 @@ namespace 属性注入
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
