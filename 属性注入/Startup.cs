@@ -43,7 +43,7 @@ namespace 属性注入
             //Replace代码的意思：使用ServiceBasedControllerActivator替换DefaultControllerActivator（意味着框架现在会尝试从IServiceProvider中解析控制器实例，也就是return new AutofacServiceProvider(Container);
             
             services.AddMvc();
-            //替换控制器所有者
+            //替换控制器所有者,详见有道笔记
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
 

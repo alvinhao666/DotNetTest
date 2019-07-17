@@ -18,6 +18,13 @@ namespace AopDemo2
         {
             IServiceCollection services = new ServiceCollection();
 
+            IConfiguration conf = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory)
+                                                        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) //热加载，\bin\Debug\netcoreapp2.2\appsettings.json
+                                                        .Build();
+
+            services.AddLogging(a => a.AddConfiguration(conf.GetSection("Logging")).AddConsole());
+
+
             var builder = new ContainerBuilder();
             builder.Populate(services);//Autofac.Extensions.DependencyInjection
 
@@ -30,7 +37,7 @@ namespace AopDemo2
             builder.RegisterType<TestService2>().As<ITestService2>().PropertiesAutowired().EnableInterfaceInterceptors().InterceptedBy(typeof(AOPTest)); //可现实aop
             builder.RegisterType<TestService3>().As<ITestService3>().PropertiesAutowired();
 
-
+            builder.RegisterType<AOPTest>().PropertiesAutowired();
 
             //一定要在你注入的服务后面加上EnableInterfaceInterceptors来开启你的拦截
             var container = builder.Build();

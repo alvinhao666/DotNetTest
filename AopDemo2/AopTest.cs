@@ -10,7 +10,7 @@ namespace AopDemo2
 {
     public class AOPTest : IInterceptor
     {
-        //public ILogger<AOPTest> _logger { get; set; } //属性注入
+        public ILogger<AOPTest> _logger { get; set; } //属性注入
 
         //public ILogger<AOPTest> _logger = new LoggerFactory().CreateLogger<AOPTest>();
 
@@ -23,11 +23,11 @@ namespace AopDemo2
 
         public void Intercept(IInvocation invocation)
         {
-            Console.WriteLine("你正在调用方法{0} ", invocation.Method.Name, string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()));
+            _logger.LogInformation("你正在调用方法{0} ", invocation.Method.Name, string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()));
             //在被拦截的方法执行完毕后 继续执行           
             invocation.Proceed();
 
-            Console.WriteLine("方法执行完毕，返回结果：{0}", invocation.ReturnValue);
+            _logger.LogInformation("方法执行完毕，返回结果：{0}", invocation.ReturnValue);
         }
     }
 }
