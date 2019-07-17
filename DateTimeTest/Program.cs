@@ -55,6 +55,8 @@ namespace DateTimeTest
 
             //d =  Convert.ToDateTime("12312"); //报错
 
+            d = DateTime.Now;
+            d = DateTime.Today;
 
             Console.ReadKey();
         }
