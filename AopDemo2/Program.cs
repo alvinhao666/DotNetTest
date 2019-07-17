@@ -33,6 +33,10 @@ namespace AopDemo2
             builder.Register(c => new AOPTest());
 
             //一定要在你注入的服务后面加上EnableInterfaceInterceptors来开启你的拦截
+
+            //TestService1：通过特性拦截
+            //TestService2：通过配置拦截
+
             builder.RegisterType<TestService1>().As<ITestService1>().PropertiesAutowired().EnableInterfaceInterceptors(); //可现实aop
             builder.RegisterType<TestService2>().As<ITestService2>().PropertiesAutowired().EnableInterfaceInterceptors().InterceptedBy(typeof(AOPTest)); //可现实aop
             builder.RegisterType<TestService3>().As<ITestService3>().PropertiesAutowired();
