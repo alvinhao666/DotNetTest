@@ -20,7 +20,7 @@ namespace AopDemo2
         private string str { get; set; }
         public TestService1()
         {
-            str = Guid.NewGuid().ToString();
+            str = "方法1";
         }
         public string GetString()
         {
@@ -33,7 +33,7 @@ namespace AopDemo2
         private string str { get; set; }
         public TestService2()
         {
-            str = Guid.NewGuid().ToString();
+            str = "方法2";
         }
         public string GetString()
         {
@@ -46,7 +46,7 @@ namespace AopDemo2
         private string str { get; set; }
         public TestService3()
         {
-            str = Guid.NewGuid().ToString();
+            str = "方法3";
         }
         public string GetString()
         {
