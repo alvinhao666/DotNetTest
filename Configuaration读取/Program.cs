@@ -13,7 +13,11 @@ namespace Configuration读取
                                                                     .Build();
 
 
-            while(true)
+
+            //T data = new T();  //绑定到实体
+            //configuration.Bind(data);
+
+            while (true)
             {
                 var info = configuration["username"];
 
