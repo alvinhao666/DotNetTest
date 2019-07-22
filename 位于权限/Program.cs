@@ -6,7 +6,7 @@ namespace 位于权限
     {
         static void Main(string[] args)
         {
-            //定于权限 2的n次方
+            //定于权限 2的n次方  最多2的64次方   long类型   
             var ADD = 1; // 增加权限
             var UPD = 2; // 修改权限
             var SEL = 4; // 查找权限
