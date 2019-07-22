@@ -18,7 +18,7 @@ namespace 位于权限
             var GROUP_C = ADD | UPD; // C 拥有增改权限
 
             // 禁止某种权限用"位与"和"位非"运算符
-            var GROUP_D = GROUP_C & ~UPD; // D 只拥有了增权限
+            var GROUP_D = GROUP_A & ~UPD & ~SEL; // D 只拥有了增权限
 
 
             //检测某个用户是否有这个权限
