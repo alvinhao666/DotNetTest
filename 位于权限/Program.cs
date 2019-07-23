@@ -6,16 +6,16 @@ namespace 位于权限
     {
         static void Main(string[] args)
         {
-            //定于权限 2的n次方  最多2的64次方   long类型   
-            var ADD = 1; // 增加权限
-            var UPD = 2; // 修改权限
-            var SEL = 4; // 查找权限
-            var DEL = 8; // 删除权限
+            //定于权限 2的n次方  最多2的64次方   ulong类型  20位
+            var ADD = Convert.ToUInt64(Math.Pow(2, 0)); // 增加权限
+            var UPD = Convert.ToUInt64(Math.Pow(2, 1)); // 修改权限
+            var SEL = Convert.ToUInt64(Math.Pow(2, 2)); // 查找权限
+            var DEL = Convert.ToUInt64(Math.Pow(2, 3)); // 删除权限
 
             // 给予某种权限用到"位或"运算符
             var GROUP_A = ADD | UPD | SEL | DEL; // A 拥有增删改查权限
             var GROUP_B = ADD | UPD | SEL; // B 拥有增改查权限
-            var GROUP_C = ADD | UPD; // C 拥有增改权限
+            var GROUP_C = ADD | DEL; // C 拥有增改权限
 
             // 禁止某种权限用"位与"和"位非"运算符
             var GROUP_D = GROUP_A & ~UPD & ~SEL; // D 只拥有了增权限

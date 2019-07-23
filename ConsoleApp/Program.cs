@@ -55,6 +55,24 @@ namespace ConsoleApp3
 
             var a = 3.24; //小数默认double类型
             Console.WriteLine(a.GetType());
+
+
+            Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
+
+            Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
+
+
+            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))); //9223372036854775808 19位
+
+            Console.WriteLine(Math.Pow(2, 64));//18446744073709551616 20位
+
+            ulong sum = Convert.ToUInt64(Math.Pow(2, 0));
+            for (int i = 1; i <= 63; i++) 
+            {
+                sum= sum | Convert.ToUInt64(Math.Pow(2, i));
+            }
+            Console.WriteLine(sum); //18446744073709551615 一共64个
+
             #endregion
 
             #region Foreach
