@@ -76,7 +76,7 @@ namespace ConsoleApp3
                 sum= sum | Convert.ToUInt64(Math.Pow(2, i));
             }
             Console.WriteLine(sum); //18446744073709551615 一共64个
-
+            Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
             #endregion
 
             #region Foreach
