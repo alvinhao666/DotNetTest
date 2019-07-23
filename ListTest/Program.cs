@@ -53,6 +53,11 @@ namespace ListTest
             }
             #endregion
 
+            #region 去重
+            var apps = new List<int>(){ 1,2,3,1,2,4,1};
+            var levels = apps.Distinct().ToList();
+            #endregion
+
             Console.ReadKey();
         }
     }
