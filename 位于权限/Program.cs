@@ -21,6 +21,16 @@ namespace 位于权限
             var GROUP_D = GROUP_A & ~UPD & ~SEL; // D 只拥有了增权限
 
 
+            Console.WriteLine(0 | 1);
+
+            Console.WriteLine(0 | 2);
+
+
+
+            Console.WriteLine(0 | 3);
+            Console.WriteLine(0 | 11);
+            Console.WriteLine(0 | 100);
+
             //检测某个用户是否有这个权限
             Console.WriteLine("A用户组成员是否有增加权限" + ((GROUP_A & ADD) > 0));
             Console.WriteLine("A用户组成员是否有删除权限" + ((GROUP_A & DEL) > 0));
