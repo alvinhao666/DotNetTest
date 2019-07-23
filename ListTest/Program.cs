@@ -62,6 +62,7 @@ namespace ListTest
             List<ulong> ls = new List<ulong>() { 1,2,3};
             string lsStr = JsonConvert.SerializeObject(ls);
 
+            lsStr = "[]";
             ls = JsonConvert.DeserializeObject<List<ulong>>(lsStr);
             #endregion
 
