@@ -58,6 +58,11 @@ namespace ListTest
             var levels = apps.Distinct().ToList();
             #endregion
 
+            #region 序列化
+            List<ulong> ls = new List<ulong>() { 1,2,3};
+            string lsStr = JsonConvert.SerializeObject(ls);
+            #endregion
+
             Console.ReadKey();
         }
     }
