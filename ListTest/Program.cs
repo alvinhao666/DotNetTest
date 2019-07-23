@@ -61,6 +61,8 @@ namespace ListTest
             #region 序列化
             List<ulong> ls = new List<ulong>() { 1,2,3};
             string lsStr = JsonConvert.SerializeObject(ls);
+
+            ls = JsonConvert.DeserializeObject<List<ulong>>(lsStr);
             #endregion
 
             Console.ReadKey();
