@@ -62,7 +62,11 @@ namespace ConsoleApp3
             Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
 
 
+            //Console.WriteLine(Convert.ToInt64(Math.Pow(2, 64))); //报错
+
             Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))); //9223372036854775808 19位
+
+            //Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 64))); //报错
 
             Console.WriteLine(Math.Pow(2, 64));//18446744073709551616 20位
 
