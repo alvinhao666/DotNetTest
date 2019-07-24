@@ -70,22 +70,17 @@ namespace ListTest
 
             var applist = new List<App> { new App() { Level = 1, Number = 1 }, new App { Level = 2, Number = 4 }, new App { Level = 1, Number = 8 } };
 
-            List<ulong> auths = new List<ulong>();
+            ulong[] auths = new ulong[levelList.Count-1];
 
-            foreach (var level in levelList)
+            foreach (var item in applist)
             {
-                ulong sum = 0;
-                foreach (var item in applist)
+                int index = levelList.IndexOf(item.Level);
+                if (index>-1)
                 {
-                    if (item.Level == level)
-                    {
-                        sum = sum | item.Number;
-                    }
+                    auths[index] = auths[index] | item.Number;
                 }
-                auths.Add(sum);
             }
 
-            auths = levelList.Select(a => applist.Where(x => x.Level == a).Sum(x => x.Number));
 
             Console.ReadKey();
         }
