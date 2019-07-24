@@ -46,6 +46,30 @@ namespace 位于权限
             Console.WriteLine("D用户组成员是否有查找权限" + ((GROUP_D & SEL) > 0));
             Console.WriteLine("D用户组成员是否有删除权限" + ((GROUP_D & DEL) > 0));
 
+
+
+
+            Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
+
+            Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
+
+
+            //Console.WriteLine(Convert.ToInt64(Math.Pow(2, 64))); //报错
+
+            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))); //9223372036854775808 19位
+
+            //Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 64))); //报错
+
+            Console.WriteLine(Math.Pow(2, 64));//18446744073709551616 20位
+
+            ulong sum = Convert.ToUInt64(Math.Pow(2, 0));
+            for (int i = 1; i <= 63; i++)
+            {
+                sum = sum | Convert.ToUInt64(Math.Pow(2, i));
+            }
+            Console.WriteLine(sum); //18446744073709551615 一共64个
+            Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
+
             Console.ReadKey();
         }
     }

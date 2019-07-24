@@ -66,7 +66,36 @@ namespace ListTest
             ls = JsonConvert.DeserializeObject<List<ulong>>(lsStr);
             #endregion
 
+            var levelList = new List<int> { 1,2,3,4};
+
+            var applist = new List<App> { new App() { Level = 1, Number = 1 }, new App { Level = 2, Number = 4 }, new App { Level = 1, Number = 8 } };
+
+            List<ulong> auths = new List<ulong>();
+
+            foreach (var level in levelList)
+            {
+                ulong sum = 0;
+                foreach (var item in applist)
+                {
+                    if (item.Level == level)
+                    {
+                        sum = sum | item.Number;
+                    }
+                }
+                auths.Add(sum);
+            }
+
+            auths = levelList.Select(a => applist.Where(x => x.Level == a).Sum(x => x.Number));
+
             Console.ReadKey();
         }
+    }
+
+
+    public class App
+    {
+        public int Level { get; set; }
+
+        public ulong Number { get; set; }
     }
 }
