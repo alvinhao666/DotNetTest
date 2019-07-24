@@ -70,7 +70,7 @@ namespace ListTest
 
             var applist = new List<App> { new App() { Level = 1, Number = 1 }, new App { Level = 2, Number = 4 }, new App { Level = 1, Number = 8 } };
 
-            ulong[] auths = new ulong[levelList.Count-1];
+            ulong[] auths = new ulong[levelList.Count];
 
             foreach (var item in applist)
             {
