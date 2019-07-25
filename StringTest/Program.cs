@@ -13,6 +13,8 @@ namespace StringTest
             Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split(new String[1] { "&nbsp;" }, 8, StringSplitOptions.None)[0]);
 
             Console.WriteLine("12312&nbsp;vfdf&nbsp;sdf&nbsp;sdfdcc".Split("1").FirstOrDefault()); //以开头字母分割 会有空格
+
+            var strs = "192.168.1.1".Split(',');
             #endregion
 
             #region 过滤html标签
