@@ -42,6 +42,9 @@ namespace StringTest
             }
             #endregion
 
+
+            Console.WriteLine("1212" ?? "");
+
             Console.ReadKey();
         }
 
