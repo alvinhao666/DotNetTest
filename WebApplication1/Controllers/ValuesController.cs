@@ -10,8 +10,8 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<Person> Get()
+        [HttpGet("{id}")]
+        public IEnumerable<Person> Get(Guid id)
         {
             List<Person> list = new List<Person>();
             for(int i=0;i<2;i++)
@@ -20,6 +20,7 @@ namespace WebApplication1.Controllers
             }
             return list;
         }
+
     }
 
     public class Person
