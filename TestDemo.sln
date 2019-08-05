@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "爬取电影天堂", "爬�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Utility", "Hao.Utility\Hao.Utility.csproj", "{061E1A78-3441-4CC8-9DFE-F98CFD902463}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "测试批量插入", "测试批量插入\测试批量插入.csproj", "{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "高性能对象映射", "高性能对象映射\高性能对象映射.csproj", "{2D054315-25B3-45E4-89C4-0704C48ACA51}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaAndExpression", "LambdaAndExpression\LambdaAndExpression.csproj", "{05818ADB-926B-49AA-AB68-5D431D953CB7}"
@@ -121,10 +119,6 @@ Global
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061E1A78-3441-4CC8-9DFE-F98CFD902463}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FC3E56A-3935-47F2-8DDA-DF7CF3120E16}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D054315-25B3-45E4-89C4-0704C48ACA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D054315-25B3-45E4-89C4-0704C48ACA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D054315-25B3-45E4-89C4-0704C48ACA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
