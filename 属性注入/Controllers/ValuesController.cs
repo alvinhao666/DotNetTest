@@ -11,7 +11,7 @@ namespace 属性注入
     public class ValuesController : ControllerBase
     {
 
-        public IUserService UserService {  get; set; }
+        public IUserService UserService {  get; set; } // 不能是private
 
         [HttpGet]
         public IList<User> GetUsers()
