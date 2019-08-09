@@ -93,7 +93,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "属性注入", "属性注�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "位运算权限", "位于权限\位运算权限.csproj", "{D234BA09-ED75-4BB3-973E-CCA8A47BA1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz", "Quartz\Quartz.csproj", "{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzTest", "Quartz\QuartzTest.csproj", "{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
