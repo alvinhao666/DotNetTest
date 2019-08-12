@@ -49,8 +49,18 @@ namespace Configuration.Controllers
 
             var m2 = Configuration["MySettings:Message"]; //会变 且跟reloadonchange无关****
 
+            var id = Configuration["NanRuiClientId"];
+
+            List<string> ids = new List<string>();
+            Configuration.GetSection("NanRuiClientIds").Bind(ids);
+
             return Content($" m1:{m1}\r\n m12:{m12}\r\n m2:{m2}");
 
+        }
+
+        public class ClientId
+        {
+            public List<string> ids { get; set; }
         }
     }
 }
