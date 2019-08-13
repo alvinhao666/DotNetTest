@@ -119,7 +119,7 @@ namespace ConsoleApp3
 
             Console.WriteLine(decimal.MinValue);
 
-
+            Console.WriteLine(default(List<string>)==null);
 
             Console.ReadKey();
         }

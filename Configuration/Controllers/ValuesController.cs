@@ -51,8 +51,10 @@ namespace Configuration.Controllers
 
             var id = Configuration["NanRuiClientId"];
 
-            List<string> ids = new List<string>();
+            List<Guid> ids = new List<Guid>();
             Configuration.GetSection("NanRuiClientIds").Bind(ids);
+
+            var clientids = Configuration.GetValue<List<Guid>>("NanRuiClientIds");
 
             return Content($" m1:{m1}\r\n m12:{m12}\r\n m2:{m2}");
 
