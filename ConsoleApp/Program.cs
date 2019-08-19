@@ -44,19 +44,15 @@ namespace ConsoleApp3
                 Console.WriteLine(i);
             }
 
-            #region 属性get方法会重新执行
-            CCar car = new CCar() { a = 1 };
-            car.b = 2;  
-            car.a = 5;
-            #endregion
-
-
+            
             #region 小数点默认类型double
 
             var a = 3.24; //小数默认double类型
             Console.WriteLine(a.GetType());
+            #endregion
 
-
+            #region long类型
+            
             Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
 
             Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
@@ -148,22 +144,7 @@ namespace ConsoleApp3
         public int Age { get; set; }
     }
 
-    public class CCar
-    {
-        public int a { get; set; }
 
-        public int b { get; set; }
-
-        public string c
-        { get
-            {
-                string d = "";
-                if (a > 0) d += a ;
-                if (b > 0) d += b;
-                return d;
-            }
-        }
-    }
 
     struct Test
     {
