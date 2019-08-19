@@ -95,6 +95,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "位运算权限", "位于�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzTest", "Quartz\QuartzTest.csproj", "{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#基础", "C#基础", "{79CDE149-A6AA-46C1-ABAF-C11A626973B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic", "Dynamic\Dynamic.csproj", "{C1105B0D-A4E7-425C-A5CD-6CC45383970F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -241,6 +245,10 @@ Global
 		{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF89BAFF-3A0F-4EAE-8F77-56A7FBC7FEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1105B0D-A4E7-425C-A5CD-6CC45383970F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1105B0D-A4E7-425C-A5CD-6CC45383970F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1105B0D-A4E7-425C-A5CD-6CC45383970F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1105B0D-A4E7-425C-A5CD-6CC45383970F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -269,6 +277,7 @@ Global
 		{C75574A1-84EC-47E4-876B-CDD5D1692770} = {C32B5DBE-B4C3-41D6-81CD-1707A6C72F4D}
 		{A59CEEFE-D9A4-4478-A768-0925A74746E4} = {C32B5DBE-B4C3-41D6-81CD-1707A6C72F4D}
 		{9362A6EE-BFCA-4594-A99A-7EB7494CEF43} = {54EABF72-A3D6-4154-8B5C-49C1453CECCA}
+		{C1105B0D-A4E7-425C-A5CD-6CC45383970F} = {79CDE149-A6AA-46C1-ABAF-C11A626973B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
