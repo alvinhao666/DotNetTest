@@ -18,7 +18,7 @@ namespace Dynamic
             
             //var和dynamic关键字之间的主要区别在于绑定时间不一样：var是早期绑定，dynamic绑定则会在运行时进行
             //var实际上是编译器抛给我们的语法糖，一旦被编译，编译器就会自动匹配var变量的实际类型
-            //dynamic被编译后是一个Object类型，编译器编译时不会对dynamic进行类型检查。
+            //dynamic被编译后是一个Object类型，编译器编译时不会对dynamic进行类型检查,没有IntelliSense智能感知提示
             
             
             
