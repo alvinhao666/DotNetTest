@@ -14,16 +14,13 @@ namespace Configuration
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args)
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://*:1000")
-                .UseIISIntegration()
-                .UseStartup<Startup>().Build().Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseUrls("http://*:1000")
                 .UseStartup<Startup>();
     }
 }
