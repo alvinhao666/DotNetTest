@@ -89,7 +89,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "属性注入", "属性注�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "位运算权限", "位于权限\位运算权限.csproj", "{D234BA09-ED75-4BB3-973E-CCA8A47BA1D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#基础", "C#基础", "{79CDE149-A6AA-46C1-ABAF-C11A626973B8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp基础", "CSharp基础", "{79CDE149-A6AA-46C1-ABAF-C11A626973B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic", "Dynamic\Dynamic.csproj", "{C1105B0D-A4E7-425C-A5CD-6CC45383970F}"
 EndProject
