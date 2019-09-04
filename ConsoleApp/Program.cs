@@ -38,9 +38,9 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
 
+            //浮点型， 由于计算机表达十进制小数时有误差，控制循环次数可能会有误差，但也不一定。为保险起见，能用整型，则用整型。
             for (var i = 0.1; i <= 1.0001; i = i + 0.05)
             {
-                
                 Console.WriteLine(i);
             }
 
@@ -75,38 +75,7 @@ namespace ConsoleApp3
             Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
             #endregion
 
-            #region Foreach
-            List<Person> lstInt = new List<Person>() { new Person() { Age = 1 }, new Person() { Age = 2 } };
-            lstInt.ForEach(b =>
-            {
-                b.Age = b.Age + 1;
-            });//有变化
 
-
-            foreach (var b in lstInt)
-            {
-                b.Age = b.Age + 1;
-            }//有变化
-
-            lstInt.ForEach(b =>
-            {
-                b = new Person();
-            });//没变化
-
-            var s = lstInt;
-
-
-            List<int> ints = new List<int>() { 1, 2, 3 };
-            ints.ForEach(x => {
-                x = x + 1;
-            }); //没变化
-
-            List<String> intss = new List<String>() { "1", "1", "1" };
-            intss.ForEach(x => {
-                x = x + 1;
-            });//没变化
-
-            #endregion
 
             Test t = new Test();
             t.x = 100;
@@ -139,11 +108,6 @@ namespace ConsoleApp3
         }
     
     }
-    class Person
-    {
-        public int Age { get; set; }
-    }
-
 
 
     struct Test

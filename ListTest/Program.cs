@@ -80,6 +80,39 @@ namespace ListTest
                     auths[index] = auths[index] | item.Number;
                 }
             }
+            
+            #region Foreach
+            List<Person> lstInt = new List<Person>() { new Person() { Age = 1 }, new Person() { Age = 2 } };
+            lstInt.ForEach(b =>
+            {
+                b.Age = b.Age + 1;
+            });//有变化
+
+
+            foreach (var b in lstInt)
+            {
+                b.Age = b.Age + 1;
+            }//有变化
+
+            lstInt.ForEach(b =>
+            {
+                b = new Person();
+            });//没变化
+
+            var n = lstInt;
+
+
+            List<int> ints = new List<int>() { 1, 2, 3 };
+            ints.ForEach(x => {
+                x = x + 1;
+            }); //没变化
+
+            List<String> intss = new List<String>() { "1", "1", "1" };
+            intss.ForEach(x => {
+                x = x + 1;
+            });//没变化
+
+            #endregion
 
 
             Console.ReadKey();
@@ -93,4 +126,11 @@ namespace ListTest
 
         public ulong Number { get; set; }
     }
+    
+    public class Person
+    {
+        public int Age { get; set; }
+    }
+
+
 }
