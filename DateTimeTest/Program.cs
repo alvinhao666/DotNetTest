@@ -61,6 +61,17 @@ namespace DateTimeTest
             d = DateTime.Now;
             d = DateTime.Today;
 
+            //当月第一天0时0分0秒：
+
+            Console.WriteLine(DateTime.Now.AddDays(1 - DateTime.Now.Day).Date);
+
+            //当月最后一天23时59分59秒：
+
+            Console.WriteLine(DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1).AddSeconds(-1));
+
+
+            Console.WriteLine(DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1));
+
             Console.ReadKey();
         }
     }

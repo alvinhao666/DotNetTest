@@ -42,6 +42,7 @@ namespace StringTest
             }
             #endregion
 
+            //D4就是转化含有4位整数位的字符串。比如 1.ToString("D4") = "0001"
 
             Console.WriteLine("1212" ?? "");
 

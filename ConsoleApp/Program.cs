@@ -86,6 +86,8 @@ namespace ConsoleApp3
 
             Console.WriteLine(default(List<string>)==null);
 
+            Console.WriteLine(new Student().Sta);
+
             Console.ReadKey();
         }
 
@@ -117,6 +119,18 @@ namespace ConsoleApp3
         {
             this.x = x;
         }
+    }
+
+
+    public class Student
+    {
+        public Status? Sta { get; set; } = Status.X;
+    }
+
+    public enum Status
+    {
+        X,
+        Y
     }
 
 }

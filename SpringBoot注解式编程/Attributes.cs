@@ -13,6 +13,18 @@ namespace SpringBoot注解式编程
     [AttributeUsage(AttributeTargets.Property)]
     public class ValueAttribute : Attribute
     {
+        public ValueAttribute(string value = "")
+        {
+            this.Value = value;
+        }
+
+        public string Value { get; }
+    }
+
+    //声明式事务注解
+    [AttributeUsage(AttributeTargets.Method)]
+    public class TransactionalAttribute : Attribute
+    {
         
     }
 }
