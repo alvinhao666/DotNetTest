@@ -115,6 +115,10 @@ namespace ListTest
             #endregion
 
 
+            lst = new List<string>() { "1","23"};
+
+            Console.WriteLine(string.Join(",", lst));
+
             Console.ReadKey();
         }
     }
