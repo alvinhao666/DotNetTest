@@ -125,6 +125,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议11_区别对待==和E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议12_重写Equals时也要重写GetHashCode", "建议12_重写Equals时也要重写GetHashCode\建议12_重写Equals时也要重写GetHashCode.csproj", "{E4E771CD-EAA0-4619-974D-319A569C6FED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议14_正确实现浅拷贝和深拷贝", "建议14_正确实现浅拷贝和深拷贝\建议14_正确实现浅拷贝和深拷贝.csproj", "{46887C77-C0D0-412D-95AA-E8ABF5679D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议15_使用dynamic来简化反射实现", "建议15_使用dynamic来简化反射实现\建议15_使用dynamic来简化反射实现.csproj", "{99F02DAF-AE16-4F0F-80A7-72528521CF79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +319,14 @@ Global
 		{E4E771CD-EAA0-4619-974D-319A569C6FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4E771CD-EAA0-4619-974D-319A569C6FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4E771CD-EAA0-4619-974D-319A569C6FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46887C77-C0D0-412D-95AA-E8ABF5679D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46887C77-C0D0-412D-95AA-E8ABF5679D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46887C77-C0D0-412D-95AA-E8ABF5679D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46887C77-C0D0-412D-95AA-E8ABF5679D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -362,6 +374,8 @@ Global
 		{583B9B16-3D88-407C-8D00-C6DEAD125F6F} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
 		{E10DDE44-3902-4BB7-8FFB-D399110D79FD} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 		{E4E771CD-EAA0-4619-974D-319A569C6FED} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
+		{46887C77-C0D0-412D-95AA-E8ABF5679D67} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
+		{99F02DAF-AE16-4F0F-80A7-72528521CF79} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
