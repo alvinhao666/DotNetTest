@@ -129,6 +129,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议14_正确实现浅拷
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议15_使用dynamic来简化反射实现", "建议15_使用dynamic来简化反射实现\建议15_使用dynamic来简化反射实现.csproj", "{99F02DAF-AE16-4F0F-80A7-72528521CF79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议17_多数情况下使用foreach进行循环遍历", "建议17_多数情况下使用foreach进行循环遍历\建议17_多数情况下使用foreach进行循环遍历.csproj", "{9164A550-2D17-4D00-876C-481266F74CA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +329,10 @@ Global
 		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F02DAF-AE16-4F0F-80A7-72528521CF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9164A550-2D17-4D00-876C-481266F74CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9164A550-2D17-4D00-876C-481266F74CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9164A550-2D17-4D00-876C-481266F74CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9164A550-2D17-4D00-876C-481266F74CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -376,6 +382,7 @@ Global
 		{E4E771CD-EAA0-4619-974D-319A569C6FED} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 		{46887C77-C0D0-412D-95AA-E8ABF5679D67} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 		{99F02DAF-AE16-4F0F-80A7-72528521CF79} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
+		{9164A550-2D17-4D00-876C-481266F74CA0} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
