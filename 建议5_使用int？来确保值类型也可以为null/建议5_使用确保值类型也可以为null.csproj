@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>建议5_使用int_来确保值类型也可以为null</RootNamespace>
+  </PropertyGroup>
+
+</Project>
