@@ -103,33 +103,49 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "委托", "委托\委托.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "改善CSharp程序157个建议", "改善CSharp程序157个建议", "{FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议3_区别对待强制转型与as和is", "建议3_区别对待强制转型与as和is\建议3_区别对待强制转型与as和is.csproj", "{0E58F691-C6FB-469B-8285-5C7536C93C0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议3_区别对待强制转型与as和is", "建议3_区别对待强制转型与as和is\建议3_区别对待强制转型与as和is.csproj", "{0E58F691-C6FB-469B-8285-5C7536C93C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议5_使用确保值类型也可以为null", "建议5_使用int？来确保值类型也可以为null\建议5_使用确保值类型也可以为null.csproj", "{7BD7819B-DDE3-4118-A757-8E821CB180BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议5_使用确保值类型也可以为null", "建议5_使用int？来确保值类型也可以为null\建议5_使用确保值类型也可以为null.csproj", "{7BD7819B-DDE3-4118-A757-8E821CB180BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议6_区别readonly和const的使用方法", "建议6_区别readonly和const的使用方法\建议6_区别readonly和const的使用方法.csproj", "{30B3DA09-186A-4663-9B87-EB33FA59AA46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议6_区别readonly和const的使用方法", "建议6_区别readonly和const的使用方法\建议6_区别readonly和const的使用方法.csproj", "{30B3DA09-186A-4663-9B87-EB33FA59AA46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议7_将0值作为枚举默认值", "建议7_将0值作为枚举默认值\建议7_将0值作为枚举默认值.csproj", "{EA8097EE-A52E-458D-B08C-1BCB5B6AA8CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议7_将0值作为枚举默认值", "建议7_将0值作为枚举默认值\建议7_将0值作为枚举默认值.csproj", "{EA8097EE-A52E-458D-B08C-1BCB5B6AA8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议8_避免给枚举类型的元素提供显式的值", "建议8_避免给枚举类型的元素提供显式的值\建议8_避免给枚举类型的元素提供显式的值.csproj", "{588AE4AB-528D-4704-AD40-8176E6325BC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议8_避免给枚举类型的元素提供显式的值", "建议8_避免给枚举类型的元素提供显式的值\建议8_避免给枚举类型的元素提供显式的值.csproj", "{588AE4AB-528D-4704-AD40-8176E6325BC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议9_习惯重载运算符", "建议9_习惯重载运算符\建议9_习惯重载运算符.csproj", "{67D1E951-ED5A-496F-87D6-1BAD378CDAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议9_习惯重载运算符", "建议9_习惯重载运算符\建议9_习惯重载运算符.csproj", "{67D1E951-ED5A-496F-87D6-1BAD378CDAC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10~19", "10~19", "{32015DF3-7A5A-46E5-A16C-AADBECB0A523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议10_创建对象时需要考虑是否实现比较器", "建议10_创建对象时需要考虑是否实现比较器\建议10_创建对象时需要考虑是否实现比较器.csproj", "{7EE91DD1-BA19-409B-9050-F7537C97773A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议10_创建对象时需要考虑是否实现比较器", "建议10_创建对象时需要考虑是否实现比较器\建议10_创建对象时需要考虑是否实现比较器.csproj", "{7EE91DD1-BA19-409B-9050-F7537C97773A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1~9", "1~9", "{583B9B16-3D88-407C-8D00-C6DEAD125F6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议11_区别对待==和Equals", "建议11_区别对待==和Equals\建议11_区别对待==和Equals.csproj", "{E10DDE44-3902-4BB7-8FFB-D399110D79FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议11_区别对待==和Equals", "建议11_区别对待==和Equals\建议11_区别对待==和Equals.csproj", "{E10DDE44-3902-4BB7-8FFB-D399110D79FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议12_重写Equals时也要重写GetHashCode", "建议12_重写Equals时也要重写GetHashCode\建议12_重写Equals时也要重写GetHashCode.csproj", "{E4E771CD-EAA0-4619-974D-319A569C6FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议12_重写Equals时也要重写GetHashCode", "建议12_重写Equals时也要重写GetHashCode\建议12_重写Equals时也要重写GetHashCode.csproj", "{E4E771CD-EAA0-4619-974D-319A569C6FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议14_正确实现浅拷贝和深拷贝", "建议14_正确实现浅拷贝和深拷贝\建议14_正确实现浅拷贝和深拷贝.csproj", "{46887C77-C0D0-412D-95AA-E8ABF5679D67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议14_正确实现浅拷贝和深拷贝", "建议14_正确实现浅拷贝和深拷贝\建议14_正确实现浅拷贝和深拷贝.csproj", "{46887C77-C0D0-412D-95AA-E8ABF5679D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议15_使用dynamic来简化反射实现", "建议15_使用dynamic来简化反射实现\建议15_使用dynamic来简化反射实现.csproj", "{99F02DAF-AE16-4F0F-80A7-72528521CF79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议15_使用dynamic来简化反射实现", "建议15_使用dynamic来简化反射实现\建议15_使用dynamic来简化反射实现.csproj", "{99F02DAF-AE16-4F0F-80A7-72528521CF79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议17_多数情况下使用foreach进行循环遍历", "建议17_多数情况下使用foreach进行循环遍历\建议17_多数情况下使用foreach进行循环遍历.csproj", "{9164A550-2D17-4D00-876C-481266F74CA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议17_多数情况下使用foreach进行循环遍历", "建议17_多数情况下使用foreach进行循环遍历\建议17_多数情况下使用foreach进行循环遍历.csproj", "{9164A550-2D17-4D00-876C-481266F74CA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30~39", "30~39", "{428FA428-3CA4-4185-BBC8-7FAD5D2C8A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议33_避免在泛型类型中声明静态成员", "建议33_避免在泛型类型中声明静态成员\建议33_避免在泛型类型中声明静态成员.csproj", "{43789B9B-AF90-408D-8B25-67887E914E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议38_小心闭包中的陷阱", "建议38_小心闭包中的陷阱\建议38_小心闭包中的陷阱.csproj", "{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议39_了解委托的实质", "建议39_了解委托的实质\建议39_了解委托的实质.csproj", "{55C0085A-9769-486E-91FA-673619A21189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "协变和逆变", "协变和逆变\协变和逆变.csproj", "{6F9C27BD-9454-4EAF-B874-C170C1AA0587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议44_理解委托中的协变", "建议44_理解委托中的协变\建议44_理解委托中的协变.csproj", "{D56B958E-D667-4259-A0B3-19C5799AF641}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40~49", "40~49", "{D30384A1-A3B3-4AC4-A0FC-8506E52C334D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议45_为泛型类型参数指定逆变", "建议45_为泛型类型参数指定逆变\建议45_为泛型类型参数指定逆变.csproj", "{E81639C7-41B2-4378-8C62-04BBC5E5C94C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -333,6 +349,30 @@ Global
 		{9164A550-2D17-4D00-876C-481266F74CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9164A550-2D17-4D00-876C-481266F74CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9164A550-2D17-4D00-876C-481266F74CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43789B9B-AF90-408D-8B25-67887E914E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43789B9B-AF90-408D-8B25-67887E914E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43789B9B-AF90-408D-8B25-67887E914E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43789B9B-AF90-408D-8B25-67887E914E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C0085A-9769-486E-91FA-673619A21189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C0085A-9769-486E-91FA-673619A21189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C0085A-9769-486E-91FA-673619A21189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C0085A-9769-486E-91FA-673619A21189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9C27BD-9454-4EAF-B874-C170C1AA0587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9C27BD-9454-4EAF-B874-C170C1AA0587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9C27BD-9454-4EAF-B874-C170C1AA0587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9C27BD-9454-4EAF-B874-C170C1AA0587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56B958E-D667-4259-A0B3-19C5799AF641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56B958E-D667-4259-A0B3-19C5799AF641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56B958E-D667-4259-A0B3-19C5799AF641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56B958E-D667-4259-A0B3-19C5799AF641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81639C7-41B2-4378-8C62-04BBC5E5C94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81639C7-41B2-4378-8C62-04BBC5E5C94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81639C7-41B2-4378-8C62-04BBC5E5C94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81639C7-41B2-4378-8C62-04BBC5E5C94C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -383,6 +423,14 @@ Global
 		{46887C77-C0D0-412D-95AA-E8ABF5679D67} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 		{99F02DAF-AE16-4F0F-80A7-72528521CF79} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
 		{9164A550-2D17-4D00-876C-481266F74CA0} = {32015DF3-7A5A-46E5-A16C-AADBECB0A523}
+		{428FA428-3CA4-4185-BBC8-7FAD5D2C8A02} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
+		{43789B9B-AF90-408D-8B25-67887E914E13} = {428FA428-3CA4-4185-BBC8-7FAD5D2C8A02}
+		{DAD15BD6-DB11-4A17-AD22-82D07DE622F9} = {428FA428-3CA4-4185-BBC8-7FAD5D2C8A02}
+		{55C0085A-9769-486E-91FA-673619A21189} = {428FA428-3CA4-4185-BBC8-7FAD5D2C8A02}
+		{6F9C27BD-9454-4EAF-B874-C170C1AA0587} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
+		{D56B958E-D667-4259-A0B3-19C5799AF641} = {D30384A1-A3B3-4AC4-A0FC-8506E52C334D}
+		{D30384A1-A3B3-4AC4-A0FC-8506E52C334D} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
+		{E81639C7-41B2-4378-8C62-04BBC5E5C94C} = {D30384A1-A3B3-4AC4-A0FC-8506E52C334D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
