@@ -87,6 +87,9 @@ namespace ConsoleApp3
             Console.WriteLine(default(List<string>)==null);
 
             Console.WriteLine(new Student().Sta);
+            
+            DervEmployee objDervEmployee = new DervEmployee();
+            objDervEmployee.EmpInfo();
 
             Console.ReadKey();
         }
@@ -131,6 +134,22 @@ namespace ConsoleApp3
     {
         X,
         Y
+    }
+    
+    class Employee
+    {
+        public virtual void EmpInfo()
+        {
+            Console.WriteLine("用virtual关键字修饰的方法是虚拟方法");
+        }
+    }
+    class DervEmployee : Employee
+    {
+        public override void EmpInfo()
+        {
+            base.EmpInfo();//base关键字将在下面拓展中提到
+            Console.WriteLine("该方法重写base方法");
+        }
     }
 
 }
