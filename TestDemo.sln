@@ -161,6 +161,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议50_在Dispose模式�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "90~100", "90~100", "{D0B381F0-8F4F-48DB-92CA-4CC4C893E270}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议94_区别对待override和new", "建议94_区别对待override和new\建议94_区别对待override和new.csproj", "{DCFB057D-D3C1-44D8-9599-B14914601E92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -407,6 +409,10 @@ Global
 		{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFB057D-D3C1-44D8-9599-B14914601E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFB057D-D3C1-44D8-9599-B14914601E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFB057D-D3C1-44D8-9599-B14914601E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFB057D-D3C1-44D8-9599-B14914601E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -472,6 +478,7 @@ Global
 		{6AA83D84-8A3F-4D03-B037-40E9DCF94F8E} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
 		{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841} = {6AA83D84-8A3F-4D03-B037-40E9DCF94F8E}
 		{D0B381F0-8F4F-48DB-92CA-4CC4C893E270} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
+		{DCFB057D-D3C1-44D8-9599-B14914601E92} = {D0B381F0-8F4F-48DB-92CA-4CC4C893E270}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
