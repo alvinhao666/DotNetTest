@@ -28,6 +28,9 @@ namespace 判断泛型的值是否为default_T_
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            PersonType? type = PersonType.x;
+            Console.WriteLine(default(PersonType?)==null);
+            Console.ReadKey();
         }
 
 
@@ -39,5 +42,11 @@ namespace 判断泛型的值是否为default_T_
         {
             return EqualityComparer<T>.Default.Equals(value, default(T));
         }
+    }
+
+    public enum PersonType
+    {
+        x,
+        y
     }
 }
