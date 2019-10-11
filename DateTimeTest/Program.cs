@@ -70,7 +70,7 @@ namespace DateTimeTest
             Console.WriteLine(DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1).AddSeconds(-1));
 
 
-            Console.WriteLine(DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1));
+            Console.WriteLine(DateTime.Now.Date);
 
             Console.ReadKey();
         }

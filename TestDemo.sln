@@ -133,43 +133,45 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议17_多数情况下使
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30~39", "30~39", "{428FA428-3CA4-4185-BBC8-7FAD5D2C8A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议33_避免在泛型类型中声明静态成员", "建议33_避免在泛型类型中声明静态成员\建议33_避免在泛型类型中声明静态成员.csproj", "{43789B9B-AF90-408D-8B25-67887E914E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议33_避免在泛型类型中声明静态成员", "建议33_避免在泛型类型中声明静态成员\建议33_避免在泛型类型中声明静态成员.csproj", "{43789B9B-AF90-408D-8B25-67887E914E13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议38_小心闭包中的陷阱", "建议38_小心闭包中的陷阱\建议38_小心闭包中的陷阱.csproj", "{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议38_小心闭包中的陷阱", "建议38_小心闭包中的陷阱\建议38_小心闭包中的陷阱.csproj", "{DAD15BD6-DB11-4A17-AD22-82D07DE622F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议39_了解委托的实质", "建议39_了解委托的实质\建议39_了解委托的实质.csproj", "{55C0085A-9769-486E-91FA-673619A21189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议39_了解委托的实质", "建议39_了解委托的实质\建议39_了解委托的实质.csproj", "{55C0085A-9769-486E-91FA-673619A21189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "协变和逆变", "协变和逆变\协变和逆变.csproj", "{6F9C27BD-9454-4EAF-B874-C170C1AA0587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "协变和逆变", "协变和逆变\协变和逆变.csproj", "{6F9C27BD-9454-4EAF-B874-C170C1AA0587}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议44_理解委托中的协变", "建议44_理解委托中的协变\建议44_理解委托中的协变.csproj", "{D56B958E-D667-4259-A0B3-19C5799AF641}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议44_理解委托中的协变", "建议44_理解委托中的协变\建议44_理解委托中的协变.csproj", "{D56B958E-D667-4259-A0B3-19C5799AF641}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40~49", "40~49", "{D30384A1-A3B3-4AC4-A0FC-8506E52C334D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议45_为泛型类型参数指定逆变", "建议45_为泛型类型参数指定逆变\建议45_为泛型类型参数指定逆变.csproj", "{E81639C7-41B2-4378-8C62-04BBC5E5C94C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议45_为泛型类型参数指定逆变", "建议45_为泛型类型参数指定逆变\建议45_为泛型类型参数指定逆变.csproj", "{E81639C7-41B2-4378-8C62-04BBC5E5C94C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议46_显式释放资源需继承接口IDisposable", "建议46_显式释放资源需继承接口IDisposable\建议46_显式释放资源需继承接口IDisposable.csproj", "{2F0527F6-5A50-4E8D-8EEF-AE66D6E7387B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议46_显式释放资源需继承接口IDisposable", "建议46_显式释放资源需继承接口IDisposable\建议46_显式释放资源需继承接口IDisposable.csproj", "{2F0527F6-5A50-4E8D-8EEF-AE66D6E7387B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理", "建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理\建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理.csproj", "{C0EB8B31-ECAB-4AA5-B8DF-D59F7203E154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理", "建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理\建议47_即使提供了显式释放方法也应该在终结器中提供隐式清理.csproj", "{C0EB8B31-ECAB-4AA5-B8DF-D59F7203E154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议48_Dispose方法应允许被多次调用", "建议48_Dispose方法应允许被多次调用\建议48_Dispose方法应允许被多次调用.csproj", "{49B4602F-8F0F-45D0-A17C-5103C8ADA4B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议48_Dispose方法应允许被多次调用", "建议48_Dispose方法应允许被多次调用\建议48_Dispose方法应允许被多次调用.csproj", "{49B4602F-8F0F-45D0-A17C-5103C8ADA4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议49_在Dispose模式中应提取一个受保护的虚方法", "建议49_在Dispose模式中应提取一个受保护的虚方法\建议49_在Dispose模式中应提取一个受保护的虚方法.csproj", "{1FB6656F-BF27-4C43-AC91-380E418D7D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议49_在Dispose模式中应提取一个受保护的虚方法", "建议49_在Dispose模式中应提取一个受保护的虚方法\建议49_在Dispose模式中应提取一个受保护的虚方法.csproj", "{1FB6656F-BF27-4C43-AC91-380E418D7D8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50~59", "50~59", "{6AA83D84-8A3F-4D03-B037-40E9DCF94F8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议50_在Dispose模式中应区别对待托管资源和非托管资源", "建议50_在Dispose模式中应区别对待托管资源和非托管资源\建议50_在Dispose模式中应区别对待托管资源和非托管资源.csproj", "{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议50_在Dispose模式中应区别对待托管资源和非托管资源", "建议50_在Dispose模式中应区别对待托管资源和非托管资源\建议50_在Dispose模式中应区别对待托管资源和非托管资源.csproj", "{55A3D2CB-2EDA-4F43-B9E0-D0F29A09F841}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "90~100", "90~100", "{D0B381F0-8F4F-48DB-92CA-4CC4C893E270}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议94_区别对待override和new", "建议94_区别对待override和new\建议94_区别对待override和new.csproj", "{DCFB057D-D3C1-44D8-9599-B14914601E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议94_区别对待override和new", "建议94_区别对待override和new\建议94_区别对待override和new.csproj", "{DCFB057D-D3C1-44D8-9599-B14914601E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议95_避免在构造方法中调用虚成员", "建议95_避免在构造方法中调用虚成员\建议95_避免在构造方法中调用虚成员.csproj", "{3133393B-ABB0-438D-A3A1-8FA7F4B9C5CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议95_避免在构造方法中调用虚成员", "建议95_避免在构造方法中调用虚成员\建议95_避免在构造方法中调用虚成员.csproj", "{3133393B-ABB0-438D-A3A1-8FA7F4B9C5CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100~109", "100~109", "{AA80BBE7-9B23-4037-9488-C717FAFAC59C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议102_区分接口和抽象类的应用场合", "建议102_区分接口和抽象类的应用场合\建议102_区分接口和抽象类的应用场合.csproj", "{2A00F641-7DC5-4AC2-8258-AC1B43054988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议102_区分接口和抽象类的应用场合", "建议102_区分接口和抽象类的应用场合\建议102_区分接口和抽象类的应用场合.csproj", "{2A00F641-7DC5-4AC2-8258-AC1B43054988}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "建议106_为静态类添加静态构造函数", "建议106_为静态类添加静态构造函数\建议106_为静态类添加静态构造函数.csproj", "{5C49548B-5120-4702-AABF-D986799B5074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议106_为静态类添加静态构造函数", "建议106_为静态类添加静态构造函数\建议106_为静态类添加静态构造函数.csproj", "{5C49548B-5120-4702-AABF-D986799B5074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "判断泛型的值是否为default(T)", "判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{61FD9340-0987-49BD-9779-484B2351FE54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -433,6 +435,10 @@ Global
 		{5C49548B-5120-4702-AABF-D986799B5074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C49548B-5120-4702-AABF-D986799B5074}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C49548B-5120-4702-AABF-D986799B5074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FD9340-0987-49BD-9779-484B2351FE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FD9340-0987-49BD-9779-484B2351FE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FD9340-0987-49BD-9779-484B2351FE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FD9340-0987-49BD-9779-484B2351FE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -503,6 +509,7 @@ Global
 		{AA80BBE7-9B23-4037-9488-C717FAFAC59C} = {FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}
 		{2A00F641-7DC5-4AC2-8258-AC1B43054988} = {AA80BBE7-9B23-4037-9488-C717FAFAC59C}
 		{5C49548B-5120-4702-AABF-D986799B5074} = {AA80BBE7-9B23-4037-9488-C717FAFAC59C}
+		{61FD9340-0987-49BD-9779-484B2351FE54} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
