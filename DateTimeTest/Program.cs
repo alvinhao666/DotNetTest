@@ -72,6 +72,17 @@ namespace DateTimeTest
 
             Console.WriteLine(DateTime.Now.Date);
 
+
+            var firstDay = DateTimeOffset.Now.AddDays(1 - DateTimeOffset.Now.Day).Date;
+            var lastDay = firstDay.AddMonths(1);
+
+            Console.WriteLine((lastDay - DateTimeOffset.Now).TotalSeconds);
+
+            Console.WriteLine((int)(lastDay - DateTimeOffset.Now).TotalSeconds);
+
+            Console.WriteLine((int)(lastDay - DateTimeOffset.Now).Seconds);
+
+
             Console.ReadKey();
         }
     }
