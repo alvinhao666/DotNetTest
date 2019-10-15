@@ -48,10 +48,15 @@ namespace 属性注入
 
 
             var builder = new ContainerBuilder();
+
+
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+
+            var controllersTypesInAssembly = typeof(Startup).Assembly.GetExportedTypes().Where(type => typeof(Controller).IsAssignableFrom(type)).ToArray();
+
+            builder.RegisterTypes(controllersTypesInAssembly).PropertiesAutowired(); //允许属性注入
+
             builder.Populate(services);
-
-
-            builder.RegisterModule<DefaultModule>();
 
 
             var Container = builder.Build();

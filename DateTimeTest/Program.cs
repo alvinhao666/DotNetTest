@@ -24,9 +24,9 @@ namespace DateTimeTest
             var ds = Convert.ToDateTime(dd.date);
 
 
-            DateTime vv = Convert.ToDateTime("2019-01-01T23:33:23");
+            DateTime vv = Convert.ToDateTime("2019-10-29T16:00:00.000Z");
 
-            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
+            Console.WriteLine(vv);
             string releaseDate;
 
             foreach (Match match in Regex.Matches("2018-4-20", @"\d{4}-\d{1,2}-\d{1,2}"))
