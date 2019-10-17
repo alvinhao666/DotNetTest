@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 
 namespace JosnTest
 {
@@ -6,7 +7,8 @@ namespace JosnTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(JObject.Parse(""));
+            Console.ReadKey();
         }
     }
 }
