@@ -70,6 +70,9 @@ namespace 位于权限
             Console.WriteLine(sum); //18446744073709551615 一共64个
             Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
 
+
+            Console.WriteLine(8804682956799 & 8796093022208);
+
             Console.ReadKey();
         }
     }

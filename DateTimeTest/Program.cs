@@ -83,6 +83,8 @@ namespace DateTimeTest
             Console.WriteLine((int)(lastDay - DateTimeOffset.Now).Seconds);
 
 
+            DateTime now = new DateTime(637054848000000000);     //当前的ticks转为时间类型
+            Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm:ss"));              //输出指定的时间格式
             Console.ReadKey();
         }
     }
