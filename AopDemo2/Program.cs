@@ -30,7 +30,9 @@ namespace AopDemo2
 
 
             //注册服务
-            builder.Register(c => new AOPTest());
+            //builder.Register(c => new AOPTest());
+
+            builder.RegisterType<AOPTest>();
 
             //一定要在你注入的服务后面加上EnableInterfaceInterceptors来开启你的拦截
 
