@@ -90,7 +90,11 @@ namespace ConsoleApp3
             
             DervEmployee objDervEmployee = new DervEmployee();
             objDervEmployee.EmpInfo();
+            Student aaa = new Student();
 
+            Student bbb = new Student();
+
+            Console.WriteLine(aaa == bbb);
             Console.ReadKey();
         }
 
