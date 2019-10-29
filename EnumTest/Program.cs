@@ -13,6 +13,10 @@ namespace EnumTest
 
             Array arrays = Enum.GetValues(typeof(Type));
             Console.WriteLine(arrays.GetValue(0).ToString());
+
+            User s = new User() { type = Type.typeX };
+            User ss = new User() { type = Type.typeY };
+            Console.WriteLine(string.Format("{0} {1}", s.type, ss.type));
         }
     }
 
