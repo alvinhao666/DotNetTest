@@ -16,6 +16,8 @@ namespace EnumTest
 
             User s = new User() { type = Type.typeX };
             User ss = new User() { type = Type.typeY };
+            var sss = s.type.ToString();
+            s.type = (Type)4;
             Console.WriteLine(string.Format("{0} {1}", s.type, ss.type));
         }
     }
