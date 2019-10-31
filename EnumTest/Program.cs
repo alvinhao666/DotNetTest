@@ -19,6 +19,12 @@ namespace EnumTest
             var sss = s.type.ToString();
             s.type = (Type)4;
             Console.WriteLine(string.Format("{0} {1}", s.type, ss.type));
+
+            Type? sa = null;
+            Console.WriteLine(1);
+            Console.WriteLine(sa.GetValueOrDefault()); //getvalueordefault
+
+            Console.ReadKey();
         }
     }
 

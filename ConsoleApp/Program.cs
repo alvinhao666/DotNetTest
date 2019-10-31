@@ -39,10 +39,10 @@ namespace ConsoleApp3
         {
 
             //浮点型， 由于计算机表达十进制小数时有误差，控制循环次数可能会有误差，但也不一定。为保险起见，能用整型，则用整型。
-            for (var i = 0.1; i <= 1.0001; i = i + 0.05)
-            {
-                Console.WriteLine(i);
-            }
+            //for (var i = 0.1; i <= 1.0001; i = i + 0.05)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
             
             #region 小数点默认类型double
@@ -94,6 +94,8 @@ namespace ConsoleApp3
 
             Student bbb = new Student();
 
+
+            Console.WriteLine(Encoding.UTF8.GetBytes("666666")[0]);
             Console.WriteLine(aaa == bbb);
             Console.ReadKey();
         }
