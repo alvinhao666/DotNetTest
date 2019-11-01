@@ -171,7 +171,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议102_区分接口和�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议106_为静态类添加静态构造函数", "建议106_为静态类添加静态构造函数\建议106_为静态类添加静态构造函数.csproj", "{5C49548B-5120-4702-AABF-D986799B5074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "判断泛型的值是否为default(T)", "判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{61FD9340-0987-49BD-9779-484B2351FE54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "判断泛型的值是否为default(T)", "判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{61FD9340-0987-49BD-9779-484B2351FE54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetValueOrDefault", "GetValueOrDefault\GetValueOrDefault.csproj", "{BE384687-058E-4E52-871B-6AE762B6F76A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -439,6 +441,10 @@ Global
 		{61FD9340-0987-49BD-9779-484B2351FE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61FD9340-0987-49BD-9779-484B2351FE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61FD9340-0987-49BD-9779-484B2351FE54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE384687-058E-4E52-871B-6AE762B6F76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE384687-058E-4E52-871B-6AE762B6F76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE384687-058E-4E52-871B-6AE762B6F76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE384687-058E-4E52-871B-6AE762B6F76A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -510,6 +516,7 @@ Global
 		{2A00F641-7DC5-4AC2-8258-AC1B43054988} = {AA80BBE7-9B23-4037-9488-C717FAFAC59C}
 		{5C49548B-5120-4702-AABF-D986799B5074} = {AA80BBE7-9B23-4037-9488-C717FAFAC59C}
 		{61FD9340-0987-49BD-9779-484B2351FE54} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
+		{BE384687-058E-4E52-871B-6AE762B6F76A} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
