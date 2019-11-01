@@ -12,6 +12,7 @@ namespace GetValueOrDefault
 
             Console.WriteLine(a.GetValueOrDefault());
             Console.WriteLine(b.GetValueOrDefault());
+
             Console.ReadKey();
         }
     }
