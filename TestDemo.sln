@@ -173,9 +173,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议106_为静态类添�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "判断泛型的值是否为default(T)", "判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{61FD9340-0987-49BD-9779-484B2351FE54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetValueOrDefault", "GetValueOrDefault\GetValueOrDefault.csproj", "{BE384687-058E-4E52-871B-6AE762B6F76A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetValueOrDefault", "GetValueOrDefault\GetValueOrDefault.csproj", "{BE384687-058E-4E52-871B-6AE762B6F76A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yield", "Yield\Yield.csproj", "{02AA23A2-3DB8-419C-9E05-DB0145EF27D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yield", "Yield\Yield.csproj", "{02AA23A2-3DB8-419C-9E05-DB0145EF27D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "文件操作", "文件操作\文件操作.csproj", "{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -451,6 +453,10 @@ Global
 		{02AA23A2-3DB8-419C-9E05-DB0145EF27D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02AA23A2-3DB8-419C-9E05-DB0145EF27D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02AA23A2-3DB8-419C-9E05-DB0145EF27D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -524,6 +530,7 @@ Global
 		{61FD9340-0987-49BD-9779-484B2351FE54} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{BE384687-058E-4E52-871B-6AE762B6F76A} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{02AA23A2-3DB8-419C-9E05-DB0145EF27D7} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
+		{8E2AC31E-239C-4006-90BB-0E5DEE2BC1F0} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}

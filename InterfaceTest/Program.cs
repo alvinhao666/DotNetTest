@@ -18,17 +18,28 @@ namespace InterfaceTest
             Console.WriteLine(t.IsGenericType);
             Console.WriteLine(p2.GetType().FullName);
 
+            Console.WriteLine(typeof(IHuman).IsAssignableFrom(typeof(Person1)));
+            Console.WriteLine(typeof(Person1) != typeof(IPerson));
             Console.ReadKey();
         }
     }
 
-
-    public interface IPerson
+    public interface IHuman
     {
         int PersonType { get; set; }
     }
 
-    public class Person1 : IPerson
+    public interface IPerson
+    {
+        //int PersonType { get; set; }
+    }
+
+    public interface IMan : IPerson
+    {
+
+    }
+
+    public class Person1 : IMan, IHuman
     {
         public int Name;//Fields字段
         public int PersonType { get; set; }
