@@ -97,6 +97,7 @@ namespace ConsoleApp3
 
             Console.WriteLine(Encoding.UTF8.GetBytes("666666")[0]);
             Console.WriteLine(aaa == bbb);
+            Console.WriteLine((null is Student) + "1234");
             Console.ReadKey();
         }
 
