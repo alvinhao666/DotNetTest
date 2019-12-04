@@ -82,9 +82,7 @@ namespace ConsoleApp3
             object tt = t;//装箱
             ((Test)tt).test(300);//x还是100不变，为什么
 
-            Console.WriteLine(decimal.MinValue);
 
-            Console.WriteLine(default(List<string>)==null);
 
             Console.WriteLine(new Student().Sta);
             
@@ -97,9 +95,10 @@ namespace ConsoleApp3
 
             Console.WriteLine(Encoding.UTF8.GetBytes("666666")[0]);
             Console.WriteLine(aaa == bbb);
-            Console.WriteLine((null is Student) + "1234");
 
-            Console.WriteLine(default(long?)==null);
+
+            Console.WriteLine(decimal.MinValue);
+
             Console.ReadKey();
         }
 

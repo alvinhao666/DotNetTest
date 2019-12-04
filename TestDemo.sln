@@ -189,6 +189,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "Regex\Regex.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockingCollection", "BlockingCollection\BlockingCollection.csproj", "{9076CB74-5234-4997-8601-0D307EFA0D72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultTest", "DefaultTest\DefaultTest.csproj", "{BA151ADD-8828-410E-96C1-757E6277004A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -487,6 +489,10 @@ Global
 		{9076CB74-5234-4997-8601-0D307EFA0D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9076CB74-5234-4997-8601-0D307EFA0D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9076CB74-5234-4997-8601-0D307EFA0D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA151ADD-8828-410E-96C1-757E6277004A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA151ADD-8828-410E-96C1-757E6277004A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA151ADD-8828-410E-96C1-757E6277004A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA151ADD-8828-410E-96C1-757E6277004A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
