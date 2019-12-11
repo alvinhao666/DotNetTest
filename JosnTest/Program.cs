@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 
 namespace JosnTest
@@ -7,8 +8,20 @@ namespace JosnTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(JObject.Parse(""));
+            Console.WriteLine(JObject.Parse("")); //报错
+
+            string json = "{\"Name\":\"张三\"}";
+
+            var s = JsonConvert.DeserializeObject<Student>(json);
+            Console.WriteLine();
             Console.ReadKey();
         }
+    }
+
+    public class Student
+    { 
+        public string Name { get; set; }
+
+        public string Age { get; set; }
     }
 }

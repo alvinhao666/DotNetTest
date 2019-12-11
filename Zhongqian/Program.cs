@@ -11,24 +11,11 @@ namespace TaskTest
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Tasks have started...");
 
-            List<Task> tasks = new List<Task>();
-            for (int i = 0; i < 10; i++) //for循环太快，启动线程太慢
-            {
-                //var m = i;  
-                //Console.WriteLine(i.ToString());
-                tasks.Add(Task.Factory.StartNew(async () => { await Test(i); }));
-
-
-                //tasks.Add(Test(i));
-            }
-            await Task.WhenAll(tasks.ToArray());
-            Console.WriteLine("结束");
 
             //await MoreTaskTestAsync();
 
-
+            await TaskException.MissHandling();
             Console.ReadKey();
         }
 
@@ -63,6 +50,12 @@ namespace TaskTest
 
             await Task.WhenAll(tasks); //或者Task.WaitAll(tasks.ToArray());
             Console.WriteLine("多线程运行结束");
+        }
+
+
+        public static async Task TestExpection()
+        {
+            throw new Exception("SDFDSF");
         }
 
     }

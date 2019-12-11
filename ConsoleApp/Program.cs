@@ -136,6 +136,8 @@ namespace ConsoleApp3
     public class Student
     {
         public Status? Sta { get; set; } = Status.X;
+
+        public string Name { get; set; }
     }
 
     public enum Status
