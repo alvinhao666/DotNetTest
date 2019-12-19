@@ -8,7 +8,8 @@ namespace JosnTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(JObject.Parse("")); //报错
+            //Console.WriteLine(JObject.Parse("")); //报错
+            JsonConvert.SerializeObject(null);
 
             string json = "{\"Name\":\"张三\"}";
 

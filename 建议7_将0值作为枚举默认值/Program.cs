@@ -6,12 +6,12 @@ namespace 建议7_将0值作为枚举默认值
     class Program
     {   
         //那么，你一不小心编写了如下的代码，它的输出会是什么呢？
-        static Week week;
+        static Week? week;
         static void Main(string[] args)
         {
             Console.WriteLine(week);
 
-            week = (Week)9;   //controller 枚举须定义可为空 即不存在这两种情况
+            week = (Week)9;   
 
             Console.WriteLine(week);
 
