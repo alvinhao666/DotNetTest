@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace 位于权限
+namespace 位与权限
 {
     class Program
     {

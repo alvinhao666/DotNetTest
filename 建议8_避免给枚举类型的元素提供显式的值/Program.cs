@@ -23,7 +23,7 @@ namespace 建议8_避免给枚举类型的元素提供显式的值
     {
         Monday = 1,
         Tuesday = 2,
-        ValueTemp,
+        ValueTemp ,
         Wednesday = 3,
         Thursday = 4,
         Friday = 5,
