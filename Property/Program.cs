@@ -6,12 +6,13 @@ namespace Property
     {
         static void Main(string[] args)
         {
-            #region 属性get方法会重新执行
+            #region
             CCar car = new CCar() { a = 1 };
             car.b = 2;  
-            car.a = 5;
+            car.a = 5; 
             #endregion
-            
+
+            Console.WriteLine(car.c); //当用到时 才会触发get属性 抛出异常
             Console.ReadKey();
         }
     }
@@ -29,6 +30,7 @@ namespace Property
                 string d = "";
                 if (a > 0) d += a ;
                 if (b > 0) d += b;
+                throw new Exception("sdfsf");
                 return d;
             }
         }
