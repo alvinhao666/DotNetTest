@@ -104,7 +104,7 @@ namespace ConsoleApp3
 
 
             string sss = null;
-            sss = "111";
+
             Console.WriteLine(sss.ToString());
 
             Console.ReadKey();
