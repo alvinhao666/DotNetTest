@@ -86,7 +86,7 @@ namespace DateTimeTest
             DateTime now = new DateTime(637054848000000000);     //当前的ticks转为时间类型
             Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm:ss"));              //输出指定的时间格式
 
-            Console.WriteLine(DateTime.Parse("2019-10"));
+            Console.WriteLine(DateTime.Parse("2019年10月1日"));
 
             //Console.WriteLine(new DateTime(1970, 1, 1).AddMilliseconds(15698592000000000).ToShortDateString());
 
@@ -94,6 +94,8 @@ namespace DateTimeTest
             long mTime = long.Parse($"{1569859200}0000000");
             TimeSpan toNow = new TimeSpan(mTime);
             Console.WriteLine(startTime.Add(toNow));
+
+            Console.WriteLine(DateTime.Parse("2059年10月1日"));
             Console.ReadKey();
         }
     }

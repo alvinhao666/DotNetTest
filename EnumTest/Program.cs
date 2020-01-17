@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Sino.CapacityCloud.Core;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace EnumTest
 {
@@ -23,6 +25,24 @@ namespace EnumTest
             Type? sa = null;
             Console.WriteLine(1);
             Console.WriteLine(sa.GetValueOrDefault()); //getvalueordefault
+
+            FieldInfo[] fields = typeof(VehicleClassDetail).GetFields();
+            for (int i = 0; i < fields.Length; i++)
+            {
+                if (i > 0)
+                    Console.WriteLine(fields[i] + "--->" + (int)fields[i].GetValue(null));
+                else
+                    Console.WriteLine(fields[i]);
+            }
+
+
+            System.Array values = System.Enum.GetValues(typeof(VehicleClassDetail));
+            foreach (var value in values)
+            {
+                Console.WriteLine(value + "--" + (int)value);//获取名称和值
+            }
+
+
 
             Console.ReadKey();
         }

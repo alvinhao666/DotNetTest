@@ -99,6 +99,12 @@ namespace ConsoleApp3
 
             Console.WriteLine(decimal.MinValue);
 
+            int? s = null;
+            Console.WriteLine(s.ToString());
+
+            string sss = null;
+            Console.WriteLine(sss.ToString());
+
             Console.ReadKey();
         }
 
