@@ -119,6 +119,9 @@ namespace ListTest
 
             Console.WriteLine(string.Join(",", lst));
 
+            List<string> list = new List<string>();
+            list=list.DefaultIfEmpty("").ToList();
+
             Console.ReadKey();
         }
     }
