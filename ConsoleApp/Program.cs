@@ -35,6 +35,7 @@ namespace ConsoleApp3
     class Program
     {
         delegate int MyDelegate(int x, int y);
+        //private const DateTime date = DateTime.Now;
         static void Main(string[] args)
         {
 
@@ -66,12 +67,12 @@ namespace ConsoleApp3
 
             Console.WriteLine(Math.Pow(2, 64));//18446744073709551616 20位
 
-            ulong sum = Convert.ToUInt64(Math.Pow(2, 0));
-            for (int i = 1; i <= 63; i++) 
-            {
-                sum= sum | Convert.ToUInt64(Math.Pow(2, i));
-            }
-            Console.WriteLine(sum); //18446744073709551615 一共64个
+            //ulong sum = Convert.ToUInt64(Math.Pow(2, 0));
+            //for (int i = 1; i <= 63; i++) 
+            //{
+            //    sum= sum | Convert.ToUInt64(Math.Pow(2, i));
+            //}
+            //Console.WriteLine(sum); //18446744073709551615 一共64个
             Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
             #endregion
 
@@ -105,9 +106,16 @@ namespace ConsoleApp3
 
             string sss = null;
 
-            Console.WriteLine(sss.ToString());
+            //Console.WriteLine(sss.ToString());
 
             Console.WriteLine(3.3 > null);//始终为false
+
+            int? i = (int?)Status.X;
+
+            var list = new List<string>();
+            var dat = new List<string> { "1"};
+            list.AddRange(dat);
+
 
             Console.ReadKey();
         }
