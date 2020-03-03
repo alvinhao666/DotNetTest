@@ -14,6 +14,8 @@ namespace JosnTest
             string json = "{\"Name\":\"张三\"}";
 
             var s = JsonConvert.DeserializeObject<Student>(json);
+
+            var a = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(null)); //不报错
             Console.WriteLine();
             Console.ReadKey();
         }

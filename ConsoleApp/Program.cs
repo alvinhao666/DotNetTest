@@ -116,6 +116,7 @@ namespace ConsoleApp3
             var dat = new List<string> { "1"};
             list.AddRange(dat);
 
+            Console.WriteLine(-1> 0 & 1 > 0);
 
             Console.ReadKey();
         }
