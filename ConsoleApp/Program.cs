@@ -170,7 +170,19 @@ namespace ConsoleApp3
     {
         public Status? Sta { get; set; } = Status.X;
 
-        public string Name { get; set; }
+        private string _name = "abc";
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
+            }
+        }
 
         public DateTime ddd { get; set; } = DateTime.Now;
 
