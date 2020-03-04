@@ -36,6 +36,9 @@ namespace ConsoleApp3
     {
         delegate int MyDelegate(int x, int y);
         //private const DateTime date = DateTime.Now;
+
+
+
         static void Main(string[] args)
         {
 
@@ -115,6 +118,17 @@ namespace ConsoleApp3
             var list = new List<string>();
             var dat = new List<string> { "1"};
             list.AddRange(dat);
+            string str = "1234567";
+            var str1 = str.Substring(0, 2);
+            str1 = "21";
+            var str2 = str.Substring(2, 4);
+            Console.WriteLine(str1 + str2);
+
+            var pros = typeof(Student).GetProperties();
+            var fields= typeof(Student).GetFields();
+            var stu = new Student();
+
+            
 
             Console.WriteLine(-1> 0 & 1 > 0);
 
@@ -157,6 +171,12 @@ namespace ConsoleApp3
         public Status? Sta { get; set; } = Status.X;
 
         public string Name { get; set; }
+
+        public DateTime ddd { get; set; } = DateTime.Now;
+
+        public DateTime ddd2 => DateTime.Now;
+
+        public DateTime ddd3;
     }
 
     public enum Status
