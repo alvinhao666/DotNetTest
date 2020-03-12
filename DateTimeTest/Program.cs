@@ -96,6 +96,8 @@ namespace DateTimeTest
             Console.WriteLine(startTime.Add(toNow));
 
             Console.WriteLine(DateTime.Parse("2059年10月1日"));
+
+            Console.WriteLine(new DateTime().ToString());
             Console.ReadKey();
         }
     }

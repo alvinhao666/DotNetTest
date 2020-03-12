@@ -128,7 +128,11 @@ namespace ConsoleApp3
             var fields= typeof(Student).GetFields();
             var stu = new Student();
 
-            
+            var typebool = typeof(bool);
+            var typebool2 = typeof(bool?);
+            var typeint2 = typeof(int?);
+            Console.WriteLine(typebool == typebool2);
+            Console.WriteLine(typebool2 == typeint2);
 
             Console.WriteLine(-1> 0 & 1 > 0);
 
