@@ -122,6 +122,7 @@ namespace ListTest
             List<string> list = new List<string>();
             list=list.DefaultIfEmpty("").ToList();
 
+            Console.WriteLine(levelList.Where(x => x == 66).Sum(x => 5));
             Console.ReadKey();
         }
     }

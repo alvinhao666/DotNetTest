@@ -136,6 +136,8 @@ namespace ConsoleApp3
 
             Console.WriteLine(-1> 0 & 1 > 0);
 
+            Console.WriteLine(float.Parse("3.1415926654"));
+
             Console.ReadKey();
         }
 
