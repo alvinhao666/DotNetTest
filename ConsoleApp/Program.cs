@@ -138,6 +138,8 @@ namespace ConsoleApp3
 
             Console.WriteLine(float.Parse("3.1415926654"));
 
+            Console.WriteLine(Convert.ToInt64(null));
+
             Console.ReadKey();
         }
 

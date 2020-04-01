@@ -123,6 +123,17 @@ namespace ListTest
             list=list.DefaultIfEmpty("").ToList();
 
             Console.WriteLine(levelList.Where(x => x == 66).Sum(x => 5));
+
+            Console.WriteLine("xxx");
+            List<Person> persons = new List<Person>();
+            persons.Add(new Person { Age = 1 });
+            persons.Add(new Person { Age = 2});
+            persons.Add(new Person { Age = 3});
+            var persons2 = persons.Where(x => x.Age != 1);
+            foreach(var item in persons2)
+            {
+                Console.WriteLine(item.Age);
+            }
             Console.ReadKey();
         }
     }
