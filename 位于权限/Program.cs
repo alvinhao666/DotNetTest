@@ -19,7 +19,7 @@ namespace 位与权限
             var GROUP_C = ADD | DEL; // C 拥有增改权限
 
             // 禁止某种权限用"位与"和"位非"运算符
-            var GROUP_D = GROUP_A & ~UPD & ~SEL; // D 只拥有了增权限
+            var GROUP_D = GROUP_A & ~UPD & ~SEL; // D 只拥有了增加权限，删除权限
 
 
             Console.WriteLine(0 | 1);
@@ -173,6 +173,10 @@ namespace 位与权限
                 sum2 = sum2 | i;
             }
             Console.WriteLine(sum2);
+            Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
+            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))== 9223372036854775808);
+            Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
+            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63)));
         }
 
     }
