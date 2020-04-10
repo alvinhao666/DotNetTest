@@ -158,6 +158,7 @@ namespace ConsoleApp3
             Console.WriteLine(2 | 1073741824); //2的30次方
             Console.WriteLine(2 | 2147483648);
             Console.WriteLine(2 | 4294967296);
+            Console.WriteLine(2 | 4294967296);
 
             Console.WriteLine(Math.Pow(2, 30));
             long sum = 0;
@@ -170,12 +171,21 @@ namespace ConsoleApp3
             Console.WriteLine(2 | 2147483647); //2147483647
             Console.WriteLine(4 | 2147483647); //2147483647
             Console.WriteLine(8 | 2147483647); //2147483647
+     
 
             Console.WriteLine(Convert.ToString(2147483647, 2));
             Console.WriteLine(Convert.ToString(2147483647, 2).Length);
 
             Console.WriteLine(Convert.ToString(2147483648, 2));
             Console.WriteLine(Convert.ToString(2147483648, 2).Length);
+
+            Console.WriteLine(2 & 2147483647); //2147483647
+            Console.WriteLine(4 & 2147483647); //2147483647
+            Console.WriteLine(8 & 2147483647); //2147483647
+            Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
+            Console.WriteLine(Math.Pow(2, 53).ToString()); //9007199254740992
+
+            Console.WriteLine(Convert.ToString(9007199254740992, 2).Length);
             Console.ReadKey();
         }
 
