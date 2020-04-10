@@ -183,9 +183,15 @@ namespace ConsoleApp3
             Console.WriteLine(4 & 2147483647); //2147483647
             Console.WriteLine(8 & 2147483647); //2147483647
             Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
+
+
             Console.WriteLine(Math.Pow(2, 53).ToString()); //9007199254740992
 
             Console.WriteLine(Convert.ToString(9007199254740992, 2).Length);
+
+
+            Console.WriteLine(UInt32.MaxValue); //4294967295
+            Console.WriteLine(Int32.MaxValue); //2147483647
             Console.ReadKey();
         }
 
