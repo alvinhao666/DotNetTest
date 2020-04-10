@@ -170,6 +170,12 @@ namespace ConsoleApp3
             Console.WriteLine(2 | 2147483647); //2147483647
             Console.WriteLine(4 | 2147483647); //2147483647
             Console.WriteLine(8 | 2147483647); //2147483647
+
+            Console.WriteLine(Convert.ToString(2147483647, 2));
+            Console.WriteLine(Convert.ToString(2147483647, 2).Length);
+
+            Console.WriteLine(Convert.ToString(2147483648, 2));
+            Console.WriteLine(Convert.ToString(2147483648, 2).Length);
             Console.ReadKey();
         }
 
