@@ -140,6 +140,36 @@ namespace ConsoleApp3
 
             Console.WriteLine(Convert.ToInt64(null));
 
+            
+            Console.WriteLine(21.02.ToString("#0.#####"));
+
+            List<int> nums = new List<int>();
+            for(int b = 0; b < 10000000; b++)
+            {
+                nums.Add(b);
+            }
+
+            var datetimes = nums.Select(x => new { Name = x, Time =DateTime.Now }).ToList();
+            Console.WriteLine(datetimes[0].Time);
+            Console.WriteLine(datetimes[9999999].Time);
+
+
+            Console.WriteLine(2 | 536870912);
+            Console.WriteLine(2 | 1073741824); //2的30次方
+            Console.WriteLine(2 | 2147483648);
+            Console.WriteLine(2 | 4294967296);
+
+            Console.WriteLine(Math.Pow(2, 30));
+            long sum = 0;
+            for(int x = 0; x <= 30; x++)
+            {
+                sum = sum | Convert.ToInt64(Math.Pow(2, x));
+            }
+            Console.WriteLine(sum); //2147483647
+
+            Console.WriteLine(2 | 2147483647); //2147483647
+            Console.WriteLine(4 | 2147483647); //2147483647
+            Console.WriteLine(8 | 2147483647); //2147483647
             Console.ReadKey();
         }
 
