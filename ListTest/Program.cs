@@ -118,6 +118,7 @@ namespace ListTest
             lst = new List<string>() { "1","23"};
 
             Console.WriteLine(string.Join(",", lst));
+            Console.WriteLine();
 
             List<string> list = new List<string>();
             list=list.DefaultIfEmpty("").ToList();
@@ -134,6 +135,28 @@ namespace ListTest
             {
                 Console.WriteLine(item.Age);
             }
+
+
+
+            var level1s = new List<Level1> { new Level1() { Id=1,Name="1"} };
+            var level2s = new List<Level2> { new Level2() { Id = 2, Name = "2",Id1=1 }, new Level2() { Id = 3, Name = "3", Id1 = 1 } };
+
+            var level3s = new List<Level3> { new Level3() { Id = 4, Name = "5", Id2 = 2 }, new Level3() { Id = 5, Name = "5", Id2 = 3 } };
+
+            var list12 = new List<Level2>();
+            foreach (var item in level1s)
+            {
+                list12 = level2s.Where(a => a.Id1 == item.Id).ToList();
+                item.list2 = list12;
+            }
+            foreach(var item in level2s)
+            {
+                item.list3 = level3s.Where(a => a.Id2 == item.Id).ToList();
+            }
+
+            Console.WriteLine(list12[0] == level2s[0]); // True  where之后两个集合得元素还是同一个元素
+            //Console.WriteLine(list12[0] == level2s[1]); // True
+
             Console.ReadKey();
         }
     }
@@ -152,4 +175,33 @@ namespace ListTest
     }
 
 
+
+    public class Level1
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Level2> list2 { get; set; }
+    }
+
+    public class Level2
+    {
+        public int  Id { get; set; }
+        public int  Id1 { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Level3> list3 { get; set; }
+    }
+
+
+    public class Level3
+    {
+        public int Id { get; set; }
+
+        public int Id2 { get; set; }
+
+        public string Name { get; set; }
+    }
 }

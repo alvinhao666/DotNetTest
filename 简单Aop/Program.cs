@@ -36,13 +36,14 @@ namespace AopDemo1
 
     public interface IMysqlDriver
     {
-        [MysqlInterceptor]
+
         void GetData(int id);
     }
 
 
     public class MysqlDriver : IMysqlDriver
     {
+        [MysqlInterceptor]
         public void GetData(int id)
         {
             Console.WriteLine($"数据为{id}");
