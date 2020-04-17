@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>www.7tiny.com</Company>
+    <Copyright>www.7tiny.com</Copyright>
+    <PackageLicenseUrl>https://github.com/sevenTiny/SevenTiny.Bantina</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/sevenTiny/SevenTiny.Bantina</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/sevenTiny/src/master/images/7tiny.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/sevenTiny/SevenTiny.Bantina.git</RepositoryUrl>
+    <RepositoryType>.net standard</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
