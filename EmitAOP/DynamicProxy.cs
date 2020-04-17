@@ -210,7 +210,7 @@ namespace SevenTiny.Bantina.Aop
                     ilMethod.Emit(OpCodes.Stloc, result);
 
                     //1->2 before and 2->1 after
-                    foreach (var item in actionTypeBuilders.Reverse())
+                    foreach (var item in actionTypeBuilders.Reverse()) //顺序反转了
                     {
                         ilMethod.Emit(OpCodes.Ldloc, item.Value);
                         ilMethod.Emit(OpCodes.Ldloc, methodName);
