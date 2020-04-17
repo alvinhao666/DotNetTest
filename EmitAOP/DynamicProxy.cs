@@ -61,8 +61,8 @@ namespace SevenTiny.Bantina.Aop
         {
             Type interceptorAttributeType = impType.GetCustomAttribute(typeof(InterceptorBaseAttribute))?.GetType() ?? interceptorType;
 
-            var constructorBuilder = typeBuilder.DefineConstructor(MethodAttributes.Public, CallingConventions.Standard, null);
-            var ilOfCtor = constructorBuilder.GetILGenerator();
+            var constructorBuilder = typeBuilder.DefineConstructor(MethodAttributes.Public, CallingConventions.Standard, null); //定义一个构造函数
+            var ilOfCtor = constructorBuilder.GetILGenerator();  //获取IL生成器
             // ---- define fields ----
             FieldBuilder fieldInterceptor = null;
             if (interceptorAttributeType != null)
