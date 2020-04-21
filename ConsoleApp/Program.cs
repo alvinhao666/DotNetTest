@@ -192,6 +192,11 @@ namespace ConsoleApp3
 
             Console.WriteLine(UInt32.MaxValue); //4294967295
             Console.WriteLine(Int32.MaxValue); //2147483647
+
+            string url = "https://blog.csdn.net/vileman/article/details/84871000/sss.png";
+            int m = url.LastIndexOf('.')+1;
+            url = url.Substring(m);
+            Console.WriteLine(url);
             Console.ReadKey();
         }
 
