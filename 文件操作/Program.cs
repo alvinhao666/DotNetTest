@@ -101,13 +101,13 @@ namespace 文件操作
             //在 C# 语言中 Path 类主要用于文件路径的一些操作，它也是一个静态类
 
             Console.WriteLine("请输入一个文件路径：");
-            string path = Console.ReadLine();
+            path = Console.ReadLine();
             Console.WriteLine("不包含扩展名的文件名：" + Path.GetFileNameWithoutExtension(path));
             Console.WriteLine("文件扩展名：" + Path.GetExtension(path));
             Console.WriteLine("文件全名：" + Path.GetFileName(path));
             Console.WriteLine("文件路径：" + Path.GetDirectoryName(path));
             //更改文件扩展名
-            string newPath = Path.ChangeExtension(path, "doc");
+            newPath = Path.ChangeExtension(path, "doc");
             Console.WriteLine("更改后的文件全名：" + Path.GetFileName(newPath));
             Console.ReadKey();
         }

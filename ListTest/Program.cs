@@ -156,6 +156,13 @@ namespace ListTest
 
             Console.WriteLine(list12[0] == level2s[0]); // True  where之后两个集合得元素还是同一个元素
             //Console.WriteLine(list12[0] == level2s[1]); // True
+            
+            
+            lst = new List<string>() { "1","23","4"};
+            var lst1 = lst.Where(a => a == "5").ToList();
+            var lst2 = lst.FindAll(a => a == "5").ToList();
+            Console.WriteLine(lst1.Count);
+            Console.WriteLine(lst2.Count);
 
             Console.ReadKey();
         }
