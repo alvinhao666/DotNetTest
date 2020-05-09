@@ -20,7 +20,7 @@ namespace FanoutReceive
             IConnectionFactory connFactory = new ConnectionFactory//创建连接工厂对象
             {
                 HostName = "127.0.0.1",//IP地址
-                Port = 5672,//端口号
+                Port = 5672,//端口号d
                 UserName = "admin",//用户账号
                 Password = "admin"//用户密码
             };

@@ -197,7 +197,8 @@ namespace ConsoleApp3
             //int m = url.LastIndexOf('.')+1;
             //url = url.Substring(m);
 
-            var type = url.Split('.')[url.Split('.').Length - 1];
+            var array = url.Split('.');
+            var type = array[array.Length - 1];
             
             Console.WriteLine(type);
             Console.ReadKey();
