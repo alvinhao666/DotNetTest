@@ -201,6 +201,8 @@ namespace ConsoleApp3
             var type = array[array.Length - 1];
             
             Console.WriteLine(type);
+
+            Console.WriteLine(float.Parse("31.237212"));
             Console.ReadKey();
         }
 

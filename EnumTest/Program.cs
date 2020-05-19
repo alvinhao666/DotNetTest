@@ -11,7 +11,7 @@ namespace EnumTest
         {
             var users = new List<User>() { new User() { type = Type.typeX } };
 
-            int d = (int)Type.typeY;
+            Type d = (Type)4;
 
             Array arrays = Enum.GetValues(typeof(Type));
             Console.WriteLine(arrays.GetValue(0).ToString());

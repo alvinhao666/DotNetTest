@@ -98,6 +98,7 @@ namespace DateTimeTest
             Console.WriteLine(DateTime.Parse("2059年10月1日"));
 
             Console.WriteLine(new DateTime().ToString());
+            Console.WriteLine((DateTime.Parse("2020-05-18 09:31:00") - DateTime.Parse("2020-05-03 16:00:00")).TotalHours);
             Console.ReadKey();
         }
     }
