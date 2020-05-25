@@ -121,6 +121,15 @@ namespace 草根专栏Test
 
         }
 
+        //sealed 修饰方法或属性 //sealed是对虚方法或虚属性，也就是同override一起使用，如果不是虚方法或虚属性会报出错误：cannot be sealed because it is not an override
+        //public sealed string GetName()
+        //{
+        //    return "dove";
+        //}
+
+        //当对一个类应用 sealed 修饰符时，此修饰符会阻止其他类从该类继承。类似于Java中final关键字。
+
+
 
         // 静态类可以有子类 （错误）
     }
