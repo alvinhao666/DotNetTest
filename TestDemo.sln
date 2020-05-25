@@ -217,7 +217,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicReceive", "TopicReceiv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emit", "Emit\Emit.csproj", "{6E7DA404-183C-48C8-A37D-DCB34343A0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmitAOP", "EmitAOP\EmitAOP.csproj", "{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmitAOP", "EmitAOP\EmitAOP.csproj", "{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "草根专栏Test", "草根专栏Test\草根专栏Test.csproj", "{C8E117F7-63F1-4D46-9849-12C227F79588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -557,6 +559,10 @@ Global
 		{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E117F7-63F1-4D46-9849-12C227F79588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E117F7-63F1-4D46-9849-12C227F79588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E117F7-63F1-4D46-9849-12C227F79588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E117F7-63F1-4D46-9849-12C227F79588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

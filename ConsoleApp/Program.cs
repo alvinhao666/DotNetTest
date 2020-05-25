@@ -203,6 +203,10 @@ namespace ConsoleApp3
             Console.WriteLine(type);
 
             Console.WriteLine(float.Parse("31.237212"));
+
+
+
+
             Console.ReadKey();
         }
 
