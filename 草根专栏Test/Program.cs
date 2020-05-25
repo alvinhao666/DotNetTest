@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Runtime.CompilerServices;
 
 namespace 草根专栏Test
 {
@@ -75,6 +77,11 @@ namespace 草根专栏Test
             Console.WriteLine(arr[25]==default(char)); //其输出为0 （错误） 
             Console.WriteLine(arr[25] == '\0');
 
+            var x = new[] { '\u00AF', 0b0 };
+
+            Console.WriteLine(x.GetType()); //int[]类型
+
+            Console.WriteLine(Foo.X); //输出0
 
             Console.ReadKey();
         }
@@ -82,5 +89,47 @@ namespace 草根专栏Test
 
 
     public class Point { public int X, Y; }
+
+
+    public class Rectangle
+    {
+        public readonly float Width;  // A
+
+        public Rectangle(float width)  //B 
+        {
+            Width = width;
+        }
+
+        public readonly float Height; // C
+
+
+        // 执行顺序 ACB
+
+
+        //静态构造函数没有修饰符修饰(public,private),因为静态构造函数不是我们程序员调用的，是由.net 框架在合适的时机调用的。
+        //静态构造函数没有参数，因为框架不可能知道我们需要在函数中添加什么参数，所以规定不能使用参数。
+        //静态构造函数前面必须是static 关键字。如果不加这个关键字，那就是普通的构造函数了。
+        //静态构造函数中不能实例化实例变量。（变量可以分为类级别和实例级别的变量，其中类级别的有static关键字修饰）。
+        //静态函数的调用时机，是在类被实例化或者静态成员被调用的时候进行调用，并且是由.net框架来调用静态构造函数来初始化静态成员变量。
+        //一个类中只能有一个静态构造函数。
+        //无参数的静态构造函数和无参数的构造函数是可以并存的。因为他们一个属于类级别，一个属于实例级别，并不冲突。
+        //静态构造函数只会被执行一次。并且是在特点5中的调用时机中进行调用。
+        //就像如果没有在类中写构造函数，那么框架会为我们生成一个构造函数，那么如果我们在类中定义了静态变量，但是又没有定义静态构造函数，那么框架也会帮助我们来生成一个静态构造函数来让框架自身来调用。
+
+        static Rectangle()
+        {
+
+        }
+
+
+        // 静态类可以有子类 （错误）
+    }
+
+
+    class Foo
+    {
+        public static int X = Y;
+        public static int Y = 3;
+    }
 
 }
