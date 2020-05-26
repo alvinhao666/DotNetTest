@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace 草根专栏Test
@@ -83,12 +84,70 @@ namespace 草根专栏Test
 
             Console.WriteLine(Foo.X); //输出0
 
+
+            //int num = 9;
+            //object obj = num;
+            //long y = (long)obj; //System.InvalidCastException:“Unable to cast object of type 'System.Int32' to type 'System.Int64'.”
+            //object > long > int
+
+
+
+            //try
+            //{
+            //    Console.WriteLine("Try");
+            //    return;
+            //}
+            //finally 
+            //{
+            //    Console.WriteLine("Finally");
+            //}
+            //Console.WriteLine("Complete"); //输出try,finally
+
+            foreach(string s in Test())
+            {
+                Console.WriteLine(s);
+            }
+
             Console.ReadKey();
+        }
+
+
+        //static IEnumerable<string> Test()  //报错
+        //{
+        //    yield return "1";
+        //    yield return "2";
+        //    return;
+        //    yield return "3";
+        //}
+
+        //static IEnumerable<string> Test()
+        //{
+        //    try
+        //    {
+        //        yield return "1";
+        //        yield break;
+        //        yield return "2";
+        //    }
+        //    finally
+        //    {
+        //        yield return "3";  //报错 无法在finally子句体中生成
+        //    }
+        //    yield return "4";
+        //}
+
+        static IEnumerable<string> Test()  //输出 One,1,Two,2,Three,3
+        {
+            yield return "One";
+            Console.WriteLine(1);
+            yield return "Two";
+            Console.WriteLine(2);
+            yield return "Three";
+            Console.WriteLine(3);
         }
     }
 
 
-    public class Point { public int X, Y; }
+   public class Point { public int X, Y; }
 
 
     public class Rectangle
@@ -140,5 +199,4 @@ namespace 草根专栏Test
         public static int X = Y;
         public static int Y = 3;
     }
-
 }
