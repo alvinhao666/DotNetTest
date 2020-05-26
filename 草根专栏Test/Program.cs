@@ -118,12 +118,12 @@ namespace 草根专栏Test
             //var dudes = new[] { 
             //    new { Name="Bob",Age=30},
             //    new { Name="Tom", Age=40,Length=4}
-            //};  (错误)
+            //};  // (错误)
 
-            //var dudes2 = new[] {
-            //    new { Name="Bob",Age=30},
-            //    new { Name="Tom", Age=40}
-            //};（正确）
+            var dudes2 = new[] {
+                new { Name="Bob",Age=30},
+                new { Name="Tom", Age=40}
+            }; //（正确）
 
             //Console.WriteLine(typeof(dynamic) == typeof(object)); (编译报错)
             Console.WriteLine(typeof(List<dynamic>) == typeof(List<object>)); //true
