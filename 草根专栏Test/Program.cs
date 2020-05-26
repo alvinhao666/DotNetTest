@@ -108,9 +108,43 @@ namespace 草根专栏Test
                 Console.WriteLine(s);
             }
 
+            var a1 = new { X = 2, Y = 4 };
+            var a2 = new { X = 2, Y = 4 };
+            Console.WriteLine(a1.GetType());
+            Console.WriteLine(a1.GetType() == a2.GetType()); //true
+            Console.WriteLine(a1 == a2);//false
+
+
+            //var dudes = new[] { 
+            //    new { Name="Bob",Age=30},
+            //    new { Name="Tom", Age=40,Length=4}
+            //};  (错误)
+
+            //var dudes2 = new[] {
+            //    new { Name="Bob",Age=30},
+            //    new { Name="Tom", Age=40}
+            //};（正确）
+
+            //Console.WriteLine(typeof(dynamic) == typeof(object)); (编译报错)
+            Console.WriteLine(typeof(List<dynamic>) == typeof(List<object>)); //true
+            Console.WriteLine(typeof(dynamic[]) == typeof(object[])); //true
+
+            dynamic xx = "hello";
+            Console.WriteLine(xx.GetType().Name); //String 
+            xx = 123;
+            Console.WriteLine(xx.GetType().Name); //Int32
+
+
+            dynamic xxx = "hello";
+            int i = xxx;
+            Console.WriteLine(i); //编译不报错，运行报错
+
             Console.ReadKey();
         }
 
+
+        //dynamic Test2() => new { Name = "Tom", Age = 40 };（正确）
+        //var Test3() => new { Name = "Tom", Age = 40 }; （错误）
 
         //static IEnumerable<string> Test()  //报错
         //{
