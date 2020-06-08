@@ -15,7 +15,7 @@ namespace 草根专栏Test
             Console.WriteLine(-1.0 / 0.0); // -Infinity 负无穷
             Console.WriteLine(1.0 / 0.0); // double.PositiveInfinity 正无穷
 
-            Console.WriteLine(-1.0M / 0.0M); //报错
+            //Console.WriteLine(-1.0M / 0.0M); //报错
 
             var c = 1E06; // c是int类型（错误）
             Console.WriteLine(c);
