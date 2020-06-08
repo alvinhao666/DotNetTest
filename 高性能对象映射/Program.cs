@@ -7,8 +7,6 @@ namespace 高性能对象映射
     // https://www.cnblogs.com/castyuan/p/9324088.html
     class Program
     {
-        //private static const string ss = "123"; //错误 Const是静态常量，所以它本身就是Static的，因此不能手动再为Const增加一个Static修饰符
-        private const string ss = "123";
         static void Main(string[] args)
         {
 
