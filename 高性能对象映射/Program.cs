@@ -5,6 +5,7 @@ namespace 高性能对象映射
 {
 
     // https://www.cnblogs.com/castyuan/p/9324088.html
+    // https://github.com/rongguohao/.net-core-DTO
     class Program
     {
         static void Main(string[] args)
