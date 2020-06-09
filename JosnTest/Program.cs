@@ -11,11 +11,16 @@ namespace JosnTest
             //Console.WriteLine(JObject.Parse("")); //报错
             JsonConvert.SerializeObject(null);
 
-            string json = "{\"Name\":\"张三\"}";
+            string json = "";
 
-            var s = JsonConvert.DeserializeObject<Student>(json);
+            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null
 
             var a = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(null)); //不报错
+
+
+
+            var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
+
             Console.WriteLine();
             Console.ReadKey();
         }
