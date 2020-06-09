@@ -221,7 +221,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmitAOP", "EmitAOP\EmitAOP.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "草根专栏Test", "草根专栏Test\草根专栏Test.csproj", "{C8E117F7-63F1-4D46-9849-12C227F79588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expression", "Expression\Expression.csproj", "{6219D5A8-6385-42FC-BB86-0360B67E9ACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression", "Expression\Expression.csproj", "{6219D5A8-6385-42FC-BB86-0360B67E9ACF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "Hao.Snowflake\Hao.Snowflake.csproj", "{BEE1CA1B-F876-47CC-A122-7DEE28F59476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "雪花id测试", "雪花id测试\雪花id测试.csproj", "{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -569,6 +573,14 @@ Global
 		{6219D5A8-6385-42FC-BB86-0360B67E9ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6219D5A8-6385-42FC-BB86-0360B67E9ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6219D5A8-6385-42FC-BB86-0360B67E9ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE1CA1B-F876-47CC-A122-7DEE28F59476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE1CA1B-F876-47CC-A122-7DEE28F59476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE1CA1B-F876-47CC-A122-7DEE28F59476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE1CA1B-F876-47CC-A122-7DEE28F59476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
