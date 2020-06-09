@@ -15,6 +15,8 @@ namespace 雪花id测试
 
         static void Main(string[] args)
         {
+            Console.WriteLine(ConvertLongToDateTime(1288834974657L).ToString("yyyy-MM-dd HH:mm:ss"));
+
             Task.Run(() => GetID());
             Task.Run(() => GetID());
             Task.Run(() => GetID());
@@ -54,6 +56,15 @@ namespace 雪花id测试
 
             }
             Console.WriteLine($"任务{++taskCount}完成");
+        }
+
+        public static DateTime ConvertLongToDateTime(long d)
+        {
+            DateTime startTime = TimeZoneInfo.ConvertTimeFromUtc(new DateTime(1970, 1, 1), TimeZoneInfo.Local);
+            long mTime = long.Parse($"{d}0000");
+            TimeSpan toNow = new TimeSpan(mTime);
+            var time = startTime.Add(toNow);
+            return time;
         }
     }
 }
