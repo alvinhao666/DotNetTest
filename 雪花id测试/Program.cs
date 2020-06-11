@@ -22,6 +22,10 @@ namespace 雪花id测试
             Task.Run(() => GetID());
 
             Task.Run(() => Printf());
+            //set.Add(1);
+            //set.Add(1);
+            //set.Add(2);  
+            //Console.WriteLine(set.Count); //2
             Console.ReadKey();
         }
 
