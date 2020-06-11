@@ -225,7 +225,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression", "Expression\Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "Hao.Snowflake\Hao.Snowflake.csproj", "{BEE1CA1B-F876-47CC-A122-7DEE28F59476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "雪花id测试", "雪花id测试\雪花id测试.csproj", "{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "雪花id测试", "雪花id测试\雪花id测试.csproj", "{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryTest", "DictionaryTest\DictionaryTest.csproj", "{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -581,6 +583,10 @@ Global
 		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
