@@ -26,14 +26,14 @@ namespace EnumTest
             Console.WriteLine(1);
             Console.WriteLine(sa.GetValueOrDefault()); //getvalueordefault
 
-            FieldInfo[] fields = typeof(VehicleClassDetail).GetFields();
-            for (int i = 0; i < fields.Length; i++)
-            {
-                if (i > 0)
-                    Console.WriteLine(fields[i] + "--->" + (int)fields[i].GetValue(null));
-                else
-                    Console.WriteLine(fields[i]);
-            }
+            //FieldInfo[] fields = typeof(VehicleClassDetail).GetFields();
+            //for (int i = 0; i < fields.Length; i++)
+            //{
+            //    if (i > 0)
+            //        Console.WriteLine(fields[i] + "--->" + (int)fields[i].GetValue(null));
+            //    else
+            //        Console.WriteLine(fields[i]);
+            //}
 
 
             System.Array values = System.Enum.GetValues(typeof(VehicleClassDetail));
@@ -42,8 +42,9 @@ namespace EnumTest
                 Console.WriteLine(value + "--" + (int)value);//获取名称和值
             }
 
+            Type? ssss = null;
 
-
+            int i = (int)ssss;
             Console.ReadKey();
         }
     }
