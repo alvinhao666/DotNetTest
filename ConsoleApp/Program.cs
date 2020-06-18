@@ -216,8 +216,11 @@ namespace ConsoleApp3
             Console.WriteLine(Convert.ToInt64(Math.Pow(2, 0)));
 
 
-            Console.WriteLine("".Substring(0, 2));
+            //Console.WriteLine("".Substring(0, 2));
 
+            object num = 10;
+            long num2 = Convert.ToInt32(num);
+            Console.WriteLine(num2);
             Console.ReadKey();
         }
 

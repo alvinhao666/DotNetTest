@@ -159,15 +159,17 @@ namespace ListTest
             
             
             lst = new List<string>() { "1","23","4"};
-            var lst1 = lst.Where(a => a == "5").ToList();
-            var lst2 = lst.FindAll(a => a == "5").ToList();
+            var lst1=lst;
+            var lst2 = lst.FindAll(a => a == "1").ToList();
 
-            List<string> ssslst = null;
-            foreach(var item in ssslst)
-            {
-                Console.WriteLine("1");
-            }
-            Console.WriteLine(lst1.Count);
+            //List<string> ssslst = null;
+            //foreach(var item in ssslst) //报错
+            //{
+            //    Console.WriteLine("1");
+            //}
+            lst1[0]="666";
+            Console.WriteLine(lst[0]); // 666
+            Console.WriteLine(lst1[0]); // 666
             Console.WriteLine(lst2.Count);
 
             Console.ReadKey();

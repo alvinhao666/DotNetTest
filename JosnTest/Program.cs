@@ -22,9 +22,10 @@ namespace JosnTest
             //var result = System.Text.Json.JsonSerializer.Serialize(null); //编译报错
             var result = System.Text.Json.JsonSerializer.Serialize(st);  //"null"
 
-            var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
+            //var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
 
-            Console.WriteLine();
+
+            Console.WriteLine(JsonConvert.DeserializeObject("23424"));
             Console.ReadKey();
         }
     }
