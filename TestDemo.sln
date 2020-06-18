@@ -227,7 +227,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "Hao.Snowfl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "雪花id测试", "雪花id测试\雪花id测试.csproj", "{D3779FAC-D835-4EC7-A6CE-EF2938D4EA22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryTest", "DictionaryTest\DictionaryTest.csproj", "{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryTest", "DictionaryTest\DictionaryTest.csproj", "{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary_HashTable_List_HashSet区别", "Dictionary_HashTable_List_HashSet区别\Dictionary_HashTable_List_HashSet区别.csproj", "{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -587,6 +589,10 @@ Global
 		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95F734E3-EBDA-453A-9C41-4EFDBF175CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -680,6 +686,7 @@ Global
 		{6E7DA404-183C-48C8-A37D-DCB34343A0D6} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{723BCCA0-CE80-471A-8F41-F81CFD0BF1F6} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{6219D5A8-6385-42FC-BB86-0360B67E9ACF} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
+		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
