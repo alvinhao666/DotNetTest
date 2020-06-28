@@ -31,19 +31,22 @@ namespace 权重计算
         {
             var maxValue = pars.Sum(a => a.Value); //总权重
 
-            var num = new Random().Next(1, maxValue);//1到总权重之间随机个权重数字
-            var result = 0;
+            var num = new Random().Next(1, maxValue);//1到总权重之间随机个权重数字 10
+            var index = 0;
             var endValue = 0;
             foreach (var item in pars)
             {
-                var index = pars.ToList().IndexOf(item);  //0
-                var beginValue = index == 0 ? 0 : pars[index - 1]; //0
-                endValue += item.Value;  //1
-                result = item.Key; //0
+
+                var beginValue = index == 0 ? 0 : pars[index - 1]; //0  1  5
+                endValue += item.Value;  //1 6 10
+                //index = item.Key; //0 1 2
+                Console.WriteLine(beginValue+","+endValue+","+index);
+
                 if (num >= beginValue && num <= endValue)
                     break;
+                index++;
             }
-            return result;
+            return index;
         }
     }
 
