@@ -77,7 +77,7 @@ namespace 草根专栏Test
             //char是System.Char的一个别名
 
             char[] arr = new char[100];
-            Console.WriteLine(arr[25]==default(char)); //其输出为0 （错误） 
+            Console.WriteLine(arr[25]==default(char)); //其输出为0 （错误） 默认值 '\0'
             Console.WriteLine(arr[25] == '\0');
 
             var x = new[] { '\u00AF', 0b0 };
@@ -140,7 +140,7 @@ namespace 草根专栏Test
             dynamic xxx = "hello";
             int i = xxx;
             Console.WriteLine(i); //编译不报错，运行报错
-
+            
             Console.ReadKey();
         }
 
