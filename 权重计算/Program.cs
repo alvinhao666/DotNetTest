@@ -36,14 +36,14 @@ namespace 权重计算
             var endValue = 0;
             foreach (var item in pars)
             {
-
                 var beginValue = index == 0 ? 0 : pars[index - 1]; //0  1  5
                 endValue += item.Value;  //1 6 10
-                //index = item.Key; //0 1 2
+
                 Console.WriteLine(beginValue+","+endValue+","+index);
 
                 if (num >= beginValue && num <= endValue)
                     break;
+                
                 index++;
             }
             return index;
