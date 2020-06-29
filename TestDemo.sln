@@ -231,7 +231,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryTest", "Dictionar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary_HashTable_List_HashSet区别", "Dictionary_HashTable_List_HashSet区别\Dictionary_HashTable_List_HashSet区别.csproj", "{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "权重计算", "权重计算\权重计算.csproj", "{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "权重计算", "权重计算\权重计算.csproj", "{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IObservable", "IObservable\IObservable.csproj", "{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -599,6 +601,10 @@ Global
 		{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -694,6 +700,7 @@ Global
 		{6219D5A8-6385-42FC-BB86-0360B67E9ACF} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{C3C53AF4-5301-4B9C-BF45-236FC0CD8C12} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{8D4BAC08-E548-45E9-960A-13BAFDE6E8A4} = {E498B03A-F56B-4F61-AA74-D7FD1E1F59FA}
+		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
