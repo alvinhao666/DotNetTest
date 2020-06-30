@@ -227,6 +227,12 @@ namespace ConsoleApp3
             //Student sdfdf = new Student() { isT = null };
 
             //Console.WriteLine(sdfdf.isT?.Value ?? false);
+
+            string str3 = "1.";
+
+            var strArray = str3.Split('.'); //两个 第二个空""
+
+
             Console.ReadKey();
         }
 
