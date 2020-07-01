@@ -7,6 +7,18 @@ namespace DirectReceive
 {
     class Program
     {
+        //2个发送 3个接收
+
+        //启动  dotnet DirectClient.dll route1
+
+        //启动  dotnet DirectClient.dll route2
+
+        //接收  dotnet DirectReceive.dll route1
+
+        //接收  dotnet DirectReceive.dll route2   这两个同时消费 route2的数据
+        //接收  dotnet DirectReceive.dll route2
+
+        //生产者按routing key发送消息，不同的消费者端按不同的routing key接收消息。 可以有
         static void Main(string[] args)
         {
             if (args.Length == 0) throw new ArgumentException("args");
