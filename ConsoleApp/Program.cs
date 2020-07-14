@@ -232,6 +232,19 @@ namespace ConsoleApp3
 
             var strArray = str3.Split('.'); //两个 第二个空""
 
+            str3 = null ;
+            try
+            {
+                throw new H_Exception(str3); 
+            }
+            //catch (H_Exception ex)
+            //{
+            //    var aaaa = 1;
+            //}
+            catch (Exception ex)  // null 的话 会引发"Exception of type 'Sino.SinoException' was thrown."
+            {
+
+            }
 
             Console.ReadKey();
         }
@@ -322,6 +335,25 @@ namespace ConsoleApp3
     }
 
 
+    public class H_Exception : Exception
+    {
+        public int? Code { get; private set; }
 
+        public H_Exception() { }
+
+        public H_Exception(int? code)
+        {
+            this.Code = Code;
+        }
+
+        public H_Exception(string message) : base(message) { }
+
+        public H_Exception(string message, int? code) : base(message)
+        {
+            this.Code = code;
+        }
+
+        public H_Exception(string message, Exception innerException) : base(message, innerException) { }
+    }
 
 }
