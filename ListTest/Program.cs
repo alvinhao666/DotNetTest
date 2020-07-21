@@ -172,7 +172,30 @@ namespace ListTest
             Console.WriteLine(lst1[0]); // 666
             Console.WriteLine(lst2.Count);
 
+            //去重
+            var drivers = new List<Person> { new Person { Name = "张三", Age = 10 }, new Person { Name = "张三", Age = 10 } };
+
+            var newList = drivers.Distinct(new DistinctTest<Person>()).ToList();
+
             Console.ReadKey();
+        }
+    }
+
+
+    class DistinctTest<TModel> : IEqualityComparer<TModel>
+    {
+        public bool Equals(TModel x, TModel y)
+        {
+            //Test
+            Person t = x as Person;
+            Person tt = y as Person;
+            if (t != null && tt != null) return t.Name == tt.Name;
+            return false;
+        }
+
+        public int GetHashCode(TModel obj)
+        {
+            return obj.ToString().GetHashCode();
         }
     }
 
@@ -186,6 +209,7 @@ namespace ListTest
     
     public class Person
     {
+        public string Name { get; set; }
         public int Age { get; set; }
     }
 
