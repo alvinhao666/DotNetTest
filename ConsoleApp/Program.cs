@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace ConsoleApp3
 {
@@ -246,6 +248,10 @@ namespace ConsoleApp3
 
             }
 
+            Student stu222 = new Student { Name = "小李子", ddd = DateTime.Now };
+
+            Console.WriteLine(ToUrlParam(stu222));
+
             Console.ReadKey();
         }
 
@@ -268,7 +274,37 @@ namespace ConsoleApp3
             }
             return matchVale;
         }
-    
+
+
+        private static string ToUrlParam(object obj)
+        {
+            PropertyInfo[] properties = obj.GetType().GetProperties();
+            var count = properties.Length;
+            var index = 1;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("?");
+            foreach (var p in properties)
+            {
+                var v = p.GetValue(obj, null);
+
+                if (v == null) continue;
+
+                if (p.PropertyType.IsEnum)
+                {
+                    v = (int)v;
+                }
+
+                sb.Append($"{p.Name}={HttpUtility.UrlEncode(v.ToString())}");
+
+                if (index < count)
+                {
+                    sb.Append("&");
+                    index++;
+                }
+            }
+            return sb.ToString();
+        }
+
     }
 
 
@@ -286,7 +322,7 @@ namespace ConsoleApp3
 
     public class Student
     {
-        public Status? Sta { get; set; } = Status.X;
+        public Status Sta { get; set; } = Status.X;
 
         private string _name = "abc";
         public string Name
@@ -355,5 +391,7 @@ namespace ConsoleApp3
 
         public H_Exception(string message, Exception innerException) : base(message, innerException) { }
     }
+
+
 
 }
