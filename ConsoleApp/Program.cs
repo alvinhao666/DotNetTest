@@ -289,7 +289,7 @@ namespace ConsoleApp3
 
                 if (v == null) continue;
 
-                if (p.PropertyType.IsEnum)
+                if (p.PropertyType.IsEnum || IsNullableEnum(p.PropertyType))
                 {
                     v = (int)v;
                 }
@@ -305,7 +305,7 @@ namespace ConsoleApp3
             return sb.ToString();
         }
         
-        public static bool IsNullableEnum( Type t)
+        public static bool IsNullableEnum(Type t)
         {
             Type u = Nullable.GetUnderlyingType(t);
             return (u != null) && u.IsEnum;
@@ -313,8 +313,7 @@ namespace ConsoleApp3
 
         public static bool IsNullableEnum2(Type t)
         {
-            Type u = Nullable.GetUnderlyingType(t);
-            return (u != null) && u.IsEnum;
+            return t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Nullable<>) && t.GetGenericArguments()[0].IsEnum;
         }
     }
 
@@ -333,7 +332,7 @@ namespace ConsoleApp3
 
     public class Student
     {
-        public Status Sta { get; set; } = Status.X;
+        public Status? Sta { get; set; } = Status.Y;
 
         private string _name = "abc";
         public string Name
