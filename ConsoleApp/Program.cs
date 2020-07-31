@@ -250,7 +250,11 @@ namespace ConsoleApp3
 
             Student stu222 = new Student { Name = "小李子", ddd = DateTime.Now };
 
-            Console.WriteLine(ToUrlParam(stu222));
+            int number = 123;
+            Console.WriteLine(ToUrlParam(number));
+
+
+            bool abc = bool.Parse("true"); //可以转化 "1"不可以
 
             Console.ReadKey();
         }
