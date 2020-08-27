@@ -177,6 +177,17 @@ namespace ListTest
 
             var newList = drivers.Distinct(new DistinctTest<Person>()).ToList();
 
+
+            //var personss = new List<Person>();
+
+            //var count = personss.RemoveAll(a => a.Age == 10);
+
+            List<Person> personss = null;
+
+            var xx = personss?.Select(a => a.Age).ToList();
+
+            var sss= default(Tuple<List<Person>,int>);
+
             Console.ReadKey();
         }
     }

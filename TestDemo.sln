@@ -237,7 +237,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IObservable", "IObservable\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "explicit和implicit", "explicit和implicit\explicit和implicit.csproj", "{AF184810-A245-4018-8F14-3D68E69E750A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String", "String\String.csproj", "{19715487-C819-4B5F-B057-2FB157D00FA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String", "String\String.csproj", "{19715487-C819-4B5F-B057-2FB157D00FA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float有效位数", "Float有效位数\Float有效位数.csproj", "{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -617,6 +619,10 @@ Global
 		{19715487-C819-4B5F-B057-2FB157D00FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19715487-C819-4B5F-B057-2FB157D00FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19715487-C819-4B5F-B057-2FB157D00FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -715,6 +721,7 @@ Global
 		{03E86444-85A6-4E4F-8DD7-3357AC4F2ED7} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{AF184810-A245-4018-8F14-3D68E69E750A} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 		{19715487-C819-4B5F-B057-2FB157D00FA3} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
+		{775B6E6C-00C9-4DC2-85FA-2EFB108CCD4D} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}

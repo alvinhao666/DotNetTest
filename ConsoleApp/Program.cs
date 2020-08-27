@@ -256,6 +256,9 @@ namespace ConsoleApp3
 
             bool abc = bool.Parse("true"); //可以转化 "1"不可以
 
+
+            Console.WriteLine(string.Format("{0:D4}", 1)); //0001
+            Console.WriteLine(string.Format("{0:D4}", "1")); //1
             Console.ReadKey();
         }
 
