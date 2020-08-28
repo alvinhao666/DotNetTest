@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7.TaskTest", "Zhongqian\7.TaskTest.csproj", "{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.InterfaceTest", "InterfaceTest\4.InterfaceTest.csproj", "{B17541CF-6AEF-4670-9520-C852C34EB307}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3算法", "3算法", "{E498B03A-F56B-4F61-AA74-D7FD1E1F59FA}"
@@ -241,16 +239,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "Hao.Snowfl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "雪花id测试", "雪花id测试\雪花id测试.csproj", "{E16A3C2A-8C97-4AC9-B271-8EF6AF88CE96}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7.TaskTest", "TaskTest\7.TaskTest.csproj", "{92C62FDD-60F1-43E8-BF53-40669DDBC432}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A27217A-CAF6-4658-A2DC-C4B1DA55AC37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B17541CF-6AEF-4670-9520-C852C34EB307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B17541CF-6AEF-4670-9520-C852C34EB307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17541CF-6AEF-4670-9520-C852C34EB307}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -623,6 +619,10 @@ Global
 		{E16A3C2A-8C97-4AC9-B271-8EF6AF88CE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E16A3C2A-8C97-4AC9-B271-8EF6AF88CE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E16A3C2A-8C97-4AC9-B271-8EF6AF88CE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C62FDD-60F1-43E8-BF53-40669DDBC432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C62FDD-60F1-43E8-BF53-40669DDBC432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C62FDD-60F1-43E8-BF53-40669DDBC432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C62FDD-60F1-43E8-BF53-40669DDBC432}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
