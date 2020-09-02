@@ -253,8 +253,15 @@ namespace ConsoleApp3
             int number = 123;
             Console.WriteLine(ToUrlParam(number));
 
+            Console.WriteLine(string.Join(',', new List<string>() { "1221" }));
 
+            Console.WriteLine("1232".Split(',')[0]);
+
+            Console.WriteLine("SJQKllrDin3Mz+L4P0ius1ARF3uqfNEA6PiUEf8pncQjbxCnBnDZ0oIGe5CEruws9h11KvDZPr4FW1K8fIzASjSe1VCrubTLcYQygkh3rgxgkhkiNVpUAq2f+uL03eXSoYHPh42aYNduNhYFS0HmGmJWXK/7NZ6OFi0u5xxpQg==".Length);
+            Console.WriteLine("VhV+LQGJJSdPz2UfzymHqKbAu8nYxxDPRnOZu+fEymaOm96E+3iB02u6ca25/gM/FeDo0O9HbJN3jKRmR/MVdlNbChW2dTafnLxQgFhFGf4S8rD8ImS3J1BnuBjhwIDE0L1eoRw4EKkO53Hpxb20A0GfW9f5VcL5TiAd1brdA/s=".Length);
             bool abc = bool.Parse("true"); //可以转化 "1"不可以
+
+            Console.ReadKey();
         }
 
 

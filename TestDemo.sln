@@ -243,6 +243,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "雪花id测试", "雪花Id\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "雪花Id\Hao.Snowflake\Hao.Snowflake.csproj", "{7B1B440C-1398-4132-A981-A707A792CF38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLocal", "CSharp基础\AsyncLocal\AsyncLocal.csproj", "{02AC6BAA-DF49-4D13-902A-436959105D5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -625,6 +627,10 @@ Global
 		{7B1B440C-1398-4132-A981-A707A792CF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B1B440C-1398-4132-A981-A707A792CF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B1B440C-1398-4132-A981-A707A792CF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AC6BAA-DF49-4D13-902A-436959105D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AC6BAA-DF49-4D13-902A-436959105D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AC6BAA-DF49-4D13-902A-436959105D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AC6BAA-DF49-4D13-902A-436959105D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -727,6 +733,7 @@ Global
 		{CE7FCDC1-D233-4EF8-925F-6309A7C299DA} = {67063FED-1883-4C36-9E17-8961019CB55B}
 		{672080B4-D3FB-4836-9A28-D119BE9799DF} = {6B881609-C3AF-401C-82BA-5919BF5C9A2E}
 		{7B1B440C-1398-4132-A981-A707A792CF38} = {6B881609-C3AF-401C-82BA-5919BF5C9A2E}
+		{02AC6BAA-DF49-4D13-902A-436959105D5F} = {500ED28C-835D-45AD-9DE8-845A4BEF498F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
