@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -261,11 +262,21 @@ namespace ConsoleApp3
             Console.WriteLine("VhV+LQGJJSdPz2UfzymHqKbAu8nYxxDPRnOZu+fEymaOm96E+3iB02u6ca25/gM/FeDo0O9HbJN3jKRmR/MVdlNbChW2dTafnLxQgFhFGf4S8rD8ImS3J1BnuBjhwIDE0L1eoRw4EKkO53Hpxb20A0GfW9f5VcL5TiAd1brdA/s=".Length);
             bool abc = bool.Parse("true"); //可以转化 "1"不可以
 
+
+            Console.WriteLine(GetMd5("235423svxvxzvc"));
+
             Console.ReadKey();
         }
 
 
 
+        private static string GetMd5(string encryptString)
+        {
+            var md5 = MD5.Create();
+            var result = md5.ComputeHash(Encoding.UTF8.GetBytes(encryptString));
+            var strResult = BitConverter.ToString(result);
+            return strResult.Replace("-", "");
+        }
 
         static int Sum(int x ,int y)
         {
