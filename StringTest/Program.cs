@@ -44,7 +44,13 @@ namespace StringTest
 
             //D4就是转化含有4位整数位的字符串。比如 1.ToString("D4") = "0001"
 
-            Console.WriteLine("1212" ?? "");
+            string sdf = "1235_24234_1235_jssdf";
+
+            Console.WriteLine(sdf.Replace("1235_", ""));//替换所有
+
+            var i = sdf.IndexOf("1235_");
+            var s = sdf.Remove(i, "1235_".Length);//替换第一个
+            Console.WriteLine(s);
 
             Console.ReadKey();
         }
