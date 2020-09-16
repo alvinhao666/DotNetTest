@@ -35,12 +35,19 @@ namespace 委托
 
             areaDelegate2(length, width);
 
-            AreaDelegate areaDelegate3 = (a, b) =>  //Lambda表达式  Lambda表达式主要用来简化匿名方法的语法
+            AreaDelegate areaDelegate3 = (double a, double b) =>  //Lambda表达式  Lambda表达式主要用来简化匿名方法的语法
             {
                 Console.WriteLine("长方形的面积为：" + a * b);
             };
 
             areaDelegate3(length, width);
+
+            AreaDelegate areaDelegate4 = (a,b) =>  //简写的Lambda表达式
+            {
+                Console.WriteLine("长方形的面积为：" + a * b);
+            };
+
+            areaDelegate4(length, width);
 
 
             MyDelegate myDelegate = new MyDelegate(SayHello);  //命名方法委托
