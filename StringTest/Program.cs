@@ -52,6 +52,10 @@ namespace StringTest
             var s = sdf.Remove(i, "1235_".Length);//替换第一个
             Console.WriteLine(s);
 
+            var index = 1;
+
+            Console.WriteLine(index.ToString("D3"));
+
             Console.ReadKey();
         }
 
