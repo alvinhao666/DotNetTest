@@ -23,14 +23,32 @@ namespace 委托
             double length = double.Parse(Console.ReadLine());
             Console.WriteLine("请输入长方形的宽：");
             double width = double.Parse(Console.ReadLine()); 
-            AreaDelegate areaDelegate = delegate  //匿名委托
-            {
-                Console.WriteLine("长方形的面积为：" + length * width);
-            };
+
+            AreaDelegate areaDelegate = new AreaDelegate(Handle);
+
             areaDelegate(length, width);
+
+            AreaDelegate areaDelegate2 = delegate (double a,double b)  //匿名委托
+            {
+                Console.WriteLine("长方形的面积为：" + a * b);
+            };
+
+            areaDelegate2(length, width);
+
+            AreaDelegate areaDelegate3 = (a, b) =>  //Lambda表达式  Lambda表达式主要用来简化匿名方法的语法
+            {
+                Console.WriteLine("长方形的面积为：" + a * b);
+            };
+
+            areaDelegate3(length, width);
 
 
             MyDelegate myDelegate = new MyDelegate(SayHello);  //命名方法委托
+        }
+
+        public static void Handle(double length, double width)
+        {
+            Console.WriteLine("长方形的面积为：" + length * width);
         }
 
         public static void SayHello()
