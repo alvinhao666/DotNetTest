@@ -12,6 +12,8 @@ namespace 委托
 
     //多播委托是指在一个委托中注册多个方法，在注册方法时可以在委托中使用加号运算符或者减号运算符来实现添加或撤销方法。
 
+    // delegate 被编译器 编译成一个class, 所以才能传来传去(具体参考 《CLR via C#》第四版), 所以 Action、Func也是如此
+
     class Program
     {
         public delegate void AreaDelegate(double length, double width);

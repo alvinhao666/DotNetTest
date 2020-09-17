@@ -36,7 +36,7 @@ namespace TaskTest
             {
                 var tempi = i;  //线程变量：tempData，每个线程只访问自己的，互不影响，运行结果
                 //写多线程的时候需要注意，变量的作用域，否则程序运行出来的结果将不会是想要的结果，注意，注意变量作用域。
-                var t = Task.Run(() =>
+                var  = Task.Run(() =>
                 {
                     List<int> tempData = new List<int>();
                     foreach (var d in data)
