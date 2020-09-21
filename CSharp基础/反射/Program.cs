@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace 反射
@@ -14,12 +15,30 @@ namespace 反射
     {
         static void Main(string[] args)
         {
-            var demo=(Demo1)Activator.CreateInstance(typeof(Demo1));
+            var demo = (Demo1)Activator.CreateInstance(typeof(Demo1));
             demo.Name = "demo1";
             Console.WriteLine(demo.Name);
 
             Console.WriteLine(typeof(string).GetTypeInfo().IsClass); //string是引用类型
             Console.ReadKey();
+        }
+
+
+
+        static void SetValue(Object newObj, Object srcObj)
+        {
+            var newProperties = newObj.GetType().GetProperties();
+
+            var oldProperties = srcObj.GetType().GetProperties();
+
+            foreach (var n in newProperties)
+            {
+                var o = oldProperties.Where(a => a.Name == n.Name).FirstOrDefault();
+                if (o != null && n.Name == o.Name)
+                {
+                    n.SetValue(newObj, o.GetValue(srcObj), null);
+                }
+            }
         }
     }
 }
