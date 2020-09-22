@@ -249,7 +249,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议106_为静态类添�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "闭包", "CSharp基础\闭包\闭包.csproj", "{9A8D4A69-560F-48D1-ABAA-12FF2CD8FABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "结构Struct", "CSharp基础\结构Struct\结构Struct.csproj", "{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "结构Struct", "CSharp基础\结构Struct\结构Struct.csproj", "{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NopiStandard", "NopiStandard\NopiStandard.csproj", "{5B5CD1CE-E62D-4C11-B3EB-D35F189C1216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nopi", "Nopi\Nopi.csproj", "{089D590A-5E74-4548-919A-62ED30E3C2AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -649,6 +653,14 @@ Global
 		{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5CD1CE-E62D-4C11-B3EB-D35F189C1216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5CD1CE-E62D-4C11-B3EB-D35F189C1216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5CD1CE-E62D-4C11-B3EB-D35F189C1216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5CD1CE-E62D-4C11-B3EB-D35F189C1216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089D590A-5E74-4548-919A-62ED30E3C2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089D590A-5E74-4548-919A-62ED30E3C2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089D590A-5E74-4548-919A-62ED30E3C2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089D590A-5E74-4548-919A-62ED30E3C2AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
