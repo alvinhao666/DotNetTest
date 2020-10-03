@@ -264,6 +264,18 @@ namespace ConsoleApp3
 
 
             Console.WriteLine(GetMd5("235423svxvxzvc"));
+            
+            var isMy=false;
+            // Console.WriteLine(isMy = true);
+            // Console.WriteLine(true = isMy);
+            if (isMy = true)
+            {
+                Console.WriteLine("xxxx1111");
+            }
+            else
+            {
+                Console.WriteLine("xxxx2222");
+            }
 
             Console.ReadKey();
         }
