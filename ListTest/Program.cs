@@ -114,12 +114,6 @@ namespace ListTest
 
             #endregion
 
-
-            lst = new List<string>() { "1","23"};
-
-            Console.WriteLine(string.Join(",", lst));
-            Console.WriteLine();
-
             List<string> list = new List<string>();
             list=list.DefaultIfEmpty("").ToList();
 
@@ -187,6 +181,12 @@ namespace ListTest
             var xx = personss?.Select(a => a.Age).ToList();
 
             var sss= default(Tuple<List<Person>,int>);
+
+
+            lst = new List<string>() { "1" };
+
+            Console.WriteLine(string.Join(",", lst));
+            Console.WriteLine();
 
             Console.ReadKey();
         }

@@ -99,6 +99,12 @@ namespace DateTimeTest
 
             Console.WriteLine(new DateTime().ToString());
             Console.WriteLine((DateTime.Parse("2020-05-18 09:31:00") - DateTime.Parse("2020-05-03 16:00:00")).TotalHours);
+
+
+            Console.WriteLine(DateTime.Now);
+            Console.WriteLine(DateTimeOffset.Now);
+
+            Console.WriteLine(DateTimeOffset.Now.Ticks - DateTime.Now.Ticks);
             Console.ReadKey();
         }
     }

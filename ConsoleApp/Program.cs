@@ -265,6 +265,11 @@ namespace ConsoleApp3
 
             Console.WriteLine(GetMd5("235423svxvxzvc"));
 
+            Dictionary<string, int> sdfs = new Dictionary<string, int>();
+            sdfs.Add("订单",1);
+            sdfs.Add("海运", 2);
+            Console.WriteLine(JsonConvert.SerializeObject(sdfs));
+            Console.WriteLine(string.Join(",",new List<int>()));
             Console.ReadKey();
         }
 
