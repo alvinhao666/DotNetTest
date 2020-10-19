@@ -157,45 +157,6 @@ namespace ConsoleApp3
             Console.WriteLine(datetimes[9999999].Time);
 
 
-            Console.WriteLine(2 | 536870912);
-            Console.WriteLine(2 | 1073741824); //2的30次方
-            Console.WriteLine(2 | 2147483648);
-            Console.WriteLine(2 | 4294967296);
-            Console.WriteLine(2 | 4294967296);
-
-            Console.WriteLine(Math.Pow(2, 30));
-            long sum = 0;
-            for(int x = 0; x <= 30; x++)
-            {
-                sum = sum | Convert.ToInt64(Math.Pow(2, x));
-            }
-            Console.WriteLine(sum); //2147483647
-
-            Console.WriteLine(2 | 2147483647); //2147483647
-            Console.WriteLine(4 | 2147483647); //2147483647
-            Console.WriteLine(8 | 2147483647); //2147483647
-     
-
-            Console.WriteLine(Convert.ToString(2147483647, 2));
-            Console.WriteLine(Convert.ToString(2147483647, 2).Length);
-
-            Console.WriteLine(Convert.ToString(2147483648, 2));
-            Console.WriteLine(Convert.ToString(2147483648, 2).Length);
-
-            Console.WriteLine(2 & 2147483647); //2147483647
-            Console.WriteLine(4 & 2147483647); //2147483647
-            Console.WriteLine(8 & 2147483647); //2147483647
-            Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
-
-
-            Console.WriteLine(Math.Pow(2, 53).ToString()); //9007199254740992
-
-            Console.WriteLine(Convert.ToString(9007199254740992, 2).Length);
-
-
-            Console.WriteLine(UInt32.MaxValue); //4294967295
-            Console.WriteLine(Int32.MaxValue); //2147483647
-
             string url = "https://blog.csdn.net/vileman/article/details/84871000/sss.png";
             //int m = url.LastIndexOf('.')+1;
             //url = url.Substring(m);
@@ -277,10 +238,6 @@ namespace ConsoleApp3
                 Console.WriteLine("xxxx2222");
             }
 
-            Dictionary<string, int> sdfs = new Dictionary<string, int>();
-            sdfs.Add("订单",1);
-            sdfs.Add("海运", 2);
-            Console.WriteLine(JsonConvert.SerializeObject(sdfs));
             Console.WriteLine(string.Join(",",new List<int>()));
             Console.ReadKey();
         }

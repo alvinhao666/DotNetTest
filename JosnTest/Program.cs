@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace JosnTest
 {
@@ -26,6 +27,12 @@ namespace JosnTest
 
 
             Console.WriteLine(JsonConvert.DeserializeObject("23424"));
+
+
+            Dictionary<string, int> sdfs = new Dictionary<string, int>();
+            sdfs.Add("订单", 1);
+            sdfs.Add("海运", 2);
+            Console.WriteLine(JsonConvert.SerializeObject(sdfs));
             Console.ReadKey();
         }
     }
