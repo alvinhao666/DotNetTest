@@ -24,6 +24,7 @@ namespace JosnTest
             //var result = System.Text.Json.JsonSerializer.Serialize(null); //编译报错
             var result = System.Text.Json.JsonSerializer.Serialize(st);  //"null"
 
+            result = H_JsonSerializer.Serialize(st);
             var result2 = H_JsonSerializer.Serialize(new int[]{1,2});
 
             json = "";
