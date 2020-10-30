@@ -24,7 +24,15 @@ namespace JosnTest
             //var result = System.Text.Json.JsonSerializer.Serialize(null); //编译报错
             var result = System.Text.Json.JsonSerializer.Serialize(st);  //"null"
 
-            //var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
+            var result2 = H_JsonSerializer.Serialize(1);
+
+            json = "";
+            var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
+
+            json = "null";
+            cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json);  //null
+
+            Console.WriteLine(cacheUser == null);
 
 
             Console.WriteLine(JsonConvert.DeserializeObject("23424"));
@@ -35,24 +43,7 @@ namespace JosnTest
             sdfs.Add("海运", 2);
             Console.WriteLine(JsonConvert.SerializeObject(sdfs));
 
-            var allList = new List<Student>();
 
-            allList.Add(new Student { Name="1",Id="1" });
-
-            allList.Add(new Student { Name = "2", Id = "2" });
-
-            allList.Add(new Student { Name = "3", Id = "3" });
-
-            var childList = new List<Student>();
-
-            childList.Add(new Student { Name = "1", Id = "1" });
-
-            childList.Add(new Student { Name = "2", Id = "2" });
-            childList.Add(new Student { Name = "3", Id = "3" });
-            childList.Add(new Student { Name = "4", Id = "4" });
-
-
-            Console.WriteLine(JsonConvert.SerializeObject(childList.Where(x => allList.Any(b => b.Id == x.Id)).ToList()));
             Console.ReadKey();
         }
     }
@@ -63,4 +54,6 @@ namespace JosnTest
 
         public string Id { get; set; }
     }
+
+
 }

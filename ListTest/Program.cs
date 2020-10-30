@@ -186,10 +186,37 @@ namespace ListTest
             lst = new List<string>() { "1" };
 
             Console.WriteLine(string.Join(",", lst));
+
+
+            var allList = new List<Student>();
+
+            allList.Add(new Student { Name = "1", Id = "1" });
+
+            allList.Add(new Student { Name = "2", Id = "2" });
+
+            allList.Add(new Student { Name = "3", Id = "3" });
+
+            var childList = new List<Student>();
+
+            childList.Add(new Student { Name = "1", Id = "1" });
+
+            childList.Add(new Student { Name = "2", Id = "2" });
+            childList.Add(new Student { Name = "3", Id = "3" });
+            childList.Add(new Student { Name = "4", Id = "4" });
+
+
+            Console.WriteLine(JsonConvert.SerializeObject(childList.Where(x => allList.Any(b => b.Id == x.Id)).ToList()));
             Console.WriteLine();
 
             Console.ReadKey();
         }
+    }
+
+    public class Student
+    {
+        public string Name { get; set; }
+
+        public string Id { get; set; }
     }
 
 
