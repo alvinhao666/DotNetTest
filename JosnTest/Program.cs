@@ -24,7 +24,7 @@ namespace JosnTest
             //var result = System.Text.Json.JsonSerializer.Serialize(null); //编译报错
             var result = System.Text.Json.JsonSerializer.Serialize(st);  //"null"
 
-            var result2 = H_JsonSerializer.Serialize(1);
+            var result2 = H_JsonSerializer.Serialize(new int[]{1,2});
 
             json = "";
             var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错

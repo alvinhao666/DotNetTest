@@ -34,11 +34,11 @@ namespace JosnTest
         /// <typeparam name="TValue"></typeparam>
         /// <param name="json"></param>
         /// <returns></returns>
-        public static TValue Deserialize<TValue>(string json)
+        public static T Deserialize<T>(string json) where T:class
         {
             if (string.IsNullOrWhiteSpace(json)) return default;
 
-            return JsonSerializer.Deserialize<TValue>(json, new JsonSerializerOptions()
+            return JsonSerializer.Deserialize<T>(json, new JsonSerializerOptions()
             {
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                 PropertyNamingPolicy = null
