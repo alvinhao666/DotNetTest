@@ -9,12 +9,12 @@ namespace JosnTest
     public class H_JsonSerializer
     {
         /// <summary>
-        /// 序列化
+        /// 将对象序列化成json字符串
         /// </summary>
-        /// <typeparam name="TValue"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string Serialize<T>(T value) where T:class
+        public static string Serialize<T>(T value) where T : class,new()
         {
             if (value == null) return string.Empty;
 
@@ -29,16 +29,16 @@ namespace JosnTest
 
 
         /// <summary>
-        /// 反序列化
+        /// 将json字符串反序列化成对象
         /// </summary>
-        /// <typeparam name="TValue"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <param name="json"></param>
         /// <returns></returns>
-        public static TValue Deserialize<TValue>(string json)
+        public static T Deserialize<T>(string json) where T : class
         {
             if (string.IsNullOrWhiteSpace(json)) return default;
 
-            return JsonSerializer.Deserialize<TValue>(json, new JsonSerializerOptions()
+            return JsonSerializer.Deserialize<T>(json, new JsonSerializerOptions()
             {
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                 PropertyNamingPolicy = null
