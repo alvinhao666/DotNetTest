@@ -26,7 +26,7 @@ namespace JosnTest
 
             result = H_JsonSerializer.Serialize(st);
             
-            result = H_JsonSerializer.Serialize("string");
+            //result = H_JsonSerializer.Serialize("string");
             var result2 = H_JsonSerializer.Serialize(new int[]{1,2}.ToList());
 
             json = "";
