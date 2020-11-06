@@ -56,7 +56,32 @@ namespace StringTest
 
             Console.WriteLine(index.ToString("D3"));
 
+
+            string strssd = "7,3";
+
+            strssd = FormatDataTagsForOldApp(strssd);
+
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 处理数据标签
+        /// </summary>
+        /// <param name="expectStr"></param>
+        /// <returns></returns>
+        private static string FormatDataTagsForOldApp(string expectStr)
+        {
+            if (string.IsNullOrWhiteSpace(expectStr)) return "";
+
+            var array = expectStr.Split(',').ToList();
+
+            if (array.Contains("7")) array.Remove("7");
+
+            if (array.Contains("8")) array.Remove("8");
+
+            if (array.Count == 0) return "";
+
+            return string.Join(",", array);
         }
 
         public static string NoHTML(string Htmlstring)  //替换HTML标记
