@@ -42,9 +42,19 @@ namespace EnumTest
                 Console.WriteLine(value + "--" + (int)value);//获取名称和值
             }
 
-            Type? ssss = null;
+            //Type? ssss = null;
 
-            int i = (int)ssss;
+            //int i = (int)ssss;
+
+            CarType result;
+            Console.WriteLine(Enum.TryParse("C1", out result)); //true
+            Console.WriteLine(Enum.TryParse("C5", out result)); //false
+            Console.WriteLine(Enum.TryParse("0", out result)); //true
+            Console.WriteLine(Enum.TryParse("10", out result)); //true
+
+            Console.WriteLine(Enum.IsDefined(typeof(CarType), "C1")); //true
+            Console.WriteLine(Enum.IsDefined(typeof(CarType), "0")); //false
+            Console.WriteLine(Enum.IsDefined(typeof(CarType), 0)); //true
             Console.ReadKey();
         }
     }
@@ -58,5 +68,13 @@ namespace EnumTest
     {
         typeX,
         typeY
+    }
+
+
+    public enum CarType
+    { 
+        C1,
+        C2,
+        C3
     }
 }
