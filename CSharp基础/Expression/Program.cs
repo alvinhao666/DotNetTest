@@ -3,6 +3,7 @@ using System.Linq.Expressions;
 
 namespace Test
 {
+    //https://www.cnblogs.com/Ninputer/archive/2009/08/28/expression_tree1.html
     class Program
     {
         static void Main(string[] args)
