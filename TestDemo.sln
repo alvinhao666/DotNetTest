@@ -127,7 +127,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmitAOP", "CSharp基础\Emi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "explicit和implicit", "CSharp基础\explicit和implicit\explicit和implicit.csproj", "{7C013067-669E-4342-82AB-A0BD26528B64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression", "CSharp基础\Expression\Expression.csproj", "{041B954B-7142-47BB-839C-4F006B8D5B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression表达式树", "CSharp基础\Expression\Expression表达式树.csproj", "{041B954B-7142-47BB-839C-4F006B8D5B45}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Float有效位数", "CSharp基础\Float有效位数\Float有效位数.csproj", "{D3575E93-B2CE-4754-A5B5-A3F4028CBA2B}"
 EndProject

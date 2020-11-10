@@ -14,7 +14,7 @@ namespace DefaultTest
 
             int? b = null;
 
-            Console.WriteLine(a.GetValueOrDefault());
+            Console.WriteLine(a.GetValueOrDefault());   //GetValueOrDefault Nullable<T> 方法  返回结果 default<T>  不是null
             Console.WriteLine(b.GetValueOrDefault());
 
             Console.WriteLine(null is Student);
