@@ -51,8 +51,11 @@ namespace 委托
 
             areaDelegate4(length, width);
 
+            MyDelegate myDelegate = new MyDelegate(SayHello);
 
-            MyDelegate myDelegate = new MyDelegate(SayHello);  //命名方法委托
+            //MyDelegate myDelegate = SayHello;  //简写
+
+            myDelegate();
         }
 
         public static void Handle(double length, double width)
