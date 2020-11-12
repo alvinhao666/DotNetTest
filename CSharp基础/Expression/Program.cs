@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Dynamic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Test
@@ -21,7 +24,25 @@ namespace Test
             Expression<Action<string>> _consStringExp = Expression.Lambda<Action<string>>(_methodCallexpP, _parameExp);
             _consStringExp.Compile()("Hello!!");
 
+            User user = new User { Name = "123" };
+
+            UpdateAsync<User>(user => new {  });
+
             Console.ReadLine();
         }
+
+
+        static void UpdateAsync<T>(Expression<Func<T, object>> columns)
+        {
+
+            var properties = columns.Body.Type.GetProperties();
+            Console.WriteLine(properties.Length);
+        }
+    }
+
+
+    public class User
+    {
+        public string Name { get; set; }
     }
 }
