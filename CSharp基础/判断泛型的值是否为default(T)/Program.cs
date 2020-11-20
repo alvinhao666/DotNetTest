@@ -38,6 +38,15 @@ namespace 判断泛型的值是否为default_T_
             Console.WriteLine(type2.IsDefault());
             Console.WriteLine(type2.GetValueOrDefault().IsDefault());
             Console.WriteLine(type3.IsDefault());
+
+
+            int? a = 1;
+
+            int? b = null;
+
+            Console.WriteLine(a.GetValueOrDefault());   //GetValueOrDefault Nullable<T> 方法  返回结果 default<T>  不是null
+            Console.WriteLine(b.GetValueOrDefault());
+
             Console.ReadKey();
         }
 
