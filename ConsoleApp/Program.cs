@@ -152,9 +152,9 @@ namespace ConsoleApp3
                 nums.Add(b);
             }
 
-            var datetimes = nums.Select(x => new { Name = x, Time =DateTime.Now }).ToList();
-            Console.WriteLine(datetimes[0].Time);
-            Console.WriteLine(datetimes[9999999].Time);
+            //var datetimes = nums.Select(x => new { Name = x, Time =DateTime.Now }).ToList();
+            //Console.WriteLine(datetimes[0].Time);
+            //Console.WriteLine(datetimes[9999999].Time);
 
 
             string url = "https://blog.csdn.net/vileman/article/details/84871000/sss.png";
@@ -239,6 +239,30 @@ namespace ConsoleApp3
             }
 
             Console.WriteLine(string.Join(",",new List<int>()));
+
+            decimal x = 18.1200000000M;
+
+            Console.WriteLine(x);
+
+
+            var allCount = 1999;
+            var times = allCount / 2000 + 1;
+            var remainCount = allCount % 2000;
+
+            for (int j = 0; j < times; j++)
+            {
+                if (j == times - 1)
+                {
+                    var count= remainCount;
+                }
+                else
+                {
+                   var count = 2000;
+                }
+            }
+
+
+            Console.WriteLine(x);
             Console.ReadKey();
         }
 
