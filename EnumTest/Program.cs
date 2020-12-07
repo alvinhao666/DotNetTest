@@ -9,20 +9,20 @@ namespace EnumTest
     {
         static void Main(string[] args)
         {
-            var users = new List<User>() { new User() { type = Type.typeX } };
+            var users = new List<User>() { new User() { type = UserType.typeX } };
 
-            Type d = (Type)4;
+            UserType d = (UserType)4;
 
-            Array arrays = Enum.GetValues(typeof(Type));
+            Array arrays = Enum.GetValues(typeof(UserType));
             Console.WriteLine(arrays.GetValue(0).ToString());
 
-            User s = new User() { type = Type.typeX };
-            User ss = new User() { type = Type.typeY };
+            User s = new User() { type = UserType.typeX };
+            User ss = new User() { type = UserType.typeY };
             var sss = s.type.ToString();
-            s.type = (Type)4;
+            s.type = (UserType)4;
             Console.WriteLine(string.Format("{0} {1}", s.type, ss.type));
 
-            Type? sa = null;
+            UserType? sa = null;
             Console.WriteLine(1);
             Console.WriteLine(sa.GetValueOrDefault()); //getvalueordefault
 
@@ -55,16 +55,49 @@ namespace EnumTest
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "C1")); //true
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "0")); //false
             Console.WriteLine(Enum.IsDefined(typeof(CarType), 0)); //true
+
+
+            var car1 = Parse<CarType>("2");
+
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// 获取枚举实例
+        /// </summary>
+        /// <typeparam name="TEnum">枚举类型</typeparam>
+        /// <param name="member">成员名或值,范例:Enum1枚举有成员A=0,则传入"A"或"0"获取 Enum1.A</param>
+        public static TEnum Parse<TEnum>(object member)
+        {
+            string value = member?.ToString().Trim() ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                if (typeof(TEnum).IsGenericType)
+                    return default(TEnum);
+                throw new ArgumentNullException(nameof(member));
+            }
+            return (TEnum)Enum.Parse(GetType(typeof(TEnum)), value, true);
+        }
+
+        /// <summary>
+        /// 获取类型
+        /// </summary>
+        /// <param name="type">类型</param>
+        public static Type GetType(Type type)
+        {
+            var underType = Nullable.GetUnderlyingType(type);
+
+            return underType ?? type;
+        }
+
     }
 
     public class User
     {
-        public Type type { get; set; }
+        public UserType type { get; set; }
     }
 
-    public enum Type
+    public enum UserType
     {
         typeX,
         typeY
