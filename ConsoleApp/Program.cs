@@ -242,7 +242,7 @@ namespace ConsoleApp3
 
             decimal x = 18.1200000000M;
 
-            Console.WriteLine(x);
+            Console.WriteLine(x.ToString("0.####"));
 
 
             var allCount = 1999;
