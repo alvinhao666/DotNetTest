@@ -138,17 +138,18 @@ namespace ListTest
             var level3s = new List<Level3> { new Level3() { Id = 4, Name = "5", Id2 = 2 }, new Level3() { Id = 5, Name = "5", Id2 = 3 } };
 
             var list12 = new List<Level2>();
-            foreach (var item in level1s)
-            {
-                list12 = level2s.Where(a => a.Id1 == item.Id).ToList();
-                item.list2 = list12;
-            }
+            //level1s = null;
+            //foreach (var item in level1s)
+            //{
+            //    list12 = level2s.Where(a => a.Id1 == item.Id).ToList();
+            //    item.list2 = list12;
+            //}
             foreach(var item in level2s)
             {
                 item.list3 = level3s.Where(a => a.Id2 == item.Id).ToList();
             }
 
-            Console.WriteLine(list12[0] == level2s[0]); // True  where之后两个集合得元素还是同一个元素
+            //Console.WriteLine(list12[0] == level2s[0]); // True  where之后两个集合得元素还是同一个元素
             //Console.WriteLine(list12[0] == level2s[1]); // True
             
             
@@ -208,6 +209,17 @@ namespace ListTest
             Console.WriteLine(JsonConvert.SerializeObject(childList.Where(x => allList.Any(b => b.Id == x.Id)).ToList()));
             Console.WriteLine();
 
+
+            for (int i = 0, m = 1; i < 30; i++)
+            {
+                var array = new[] { 5, 6, 7, 6, 8, 10, 3, 10, 4, 13, 1, 13, 1, 87, 1, 27, 4, 23, 7, 20, 11, 16, 16, 11, 20, 7, 24, 3, 27, 1 }[i];
+                for (int l = 0; l < array; l++, m++)
+                {
+                    System.Console.Write((i % 2 > 0 ? "love"[m % 4] : ' ') + (m % 29 > 0 ? "" : "\n"));
+                }
+            }
+
+            System.Console.ReadLine();
             Console.ReadKey();
         }
 

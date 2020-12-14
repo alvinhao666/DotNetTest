@@ -240,10 +240,20 @@ namespace ConsoleApp3
 
             Console.WriteLine(string.Join(",",new List<int>()));
 
-            decimal x = 18.1200000000M;
+            decimal x = 0.994m;
 
-            Console.WriteLine(x.ToString("0.####"));
+            Console.WriteLine(decimal.Round(x, 2, MidpointRounding.AwayFromZero));  //1
 
+
+            x = 1.12345678912300m;
+
+            Console.WriteLine(x.ToString("0.#####"));
+
+             x = 0.995m;
+
+            Console.WriteLine(x.ToString("0.##"));
+
+            Console.WriteLine(string.Format("{0:N2}", x));
 
             var allCount = 1999;
             var times = allCount / 2000 + 1;
@@ -262,7 +272,7 @@ namespace ConsoleApp3
             }
 
 
-            Console.WriteLine(x);
+
             Console.ReadKey();
         }
 
