@@ -59,6 +59,8 @@ namespace EnumTest
 
             var car1 = Parse<CarType>("2");
 
+            Console.WriteLine(d is Enum);
+
             Console.ReadKey();
         }
 
