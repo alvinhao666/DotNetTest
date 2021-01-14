@@ -15,9 +15,12 @@ namespace JosnTest
 
             string json = "";
 
-            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null
+            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null  //不报错
 
-            var a = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(null)); //不报错
+            s = JsonConvert.DeserializeObject<Student>("null"); // null  //不报错
+             
+            var ss = JsonConvert.SerializeObject(null);  //不报错
+            var a = JsonConvert.DeserializeObject(ss); //不报错
 
             var st = new Student();
             st = null;
