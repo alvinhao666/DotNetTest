@@ -271,7 +271,7 @@ namespace ConsoleApp3
                 }
             }
 
-
+            Console.WriteLine("1".GetHashCode());
 
             Console.ReadKey();
         }
