@@ -54,6 +54,8 @@ namespace DapperDemo
                 }).AsList();
             }
 
+            students = dic.Values.ToList();
+
 
             Console.WriteLine("结束");
             Console.ReadKey();
