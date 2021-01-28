@@ -49,7 +49,7 @@ namespace DapperDemo
                         }
                     }
 
-                    return stu;
+                    return s;
 
                 }).AsList();
             }
