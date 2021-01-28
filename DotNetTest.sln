@@ -258,6 +258,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "买啤酒问题", "3算法\买啤酒问题\买啤酒问题.csproj", "{D9E6DBA2-3B71-44D8-91C3-5FB3DEB15AF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orm", "Orm", "{5D812A19-6B71-41D7-8A85-F61090C6C1BF}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\superman\Desktop\course.sql = C:\Users\superman\Desktop\course.sql
+		C:\Users\superman\Desktop\student.sql = C:\Users\superman\Desktop\student.sql
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDemo", "Orm\Dapper\DapperDemo.csproj", "{ECFB45EE-C734-4701-8385-FDF074D69DE7}"
 EndProject
