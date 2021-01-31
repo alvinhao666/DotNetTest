@@ -66,7 +66,11 @@ namespace JosnTest
             School school = new School() { Person = person };
             var schoolString = JsonConvert.SerializeObject(school);
 
-            school = JsonConvert.DeserializeObject<School>(schoolString); //接口和抽象类，不可以反序列化
+            //school = JsonConvert.DeserializeObject<School>(schoolString); //接口和抽象类，不可以反序列化
+
+
+            List<string> stringDemo = new List<string> { "1", "2", "3" };
+            Console.WriteLine(JsonConvert.SerializeObject(stringDemo));
 
             Console.ReadKey();
         }
