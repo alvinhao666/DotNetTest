@@ -61,6 +61,10 @@ namespace StringTest
 
             strssd = FormatDataTagsForOldApp(strssd);
 
+            string ssss = null;
+
+            Console.WriteLine(ssss + "123123"); //123123
+
             Console.ReadKey();
         }
 

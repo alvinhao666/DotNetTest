@@ -219,6 +219,11 @@ namespace ListTest
                 }
             }
 
+            List<int> list1 = new List<int> { 1,23,3,4,5,5,5};
+
+            list1 = list1.Distinct().ToList();
+            Console.WriteLine(list1.Count);
+
             System.Console.ReadLine();
             Console.ReadKey();
         }
