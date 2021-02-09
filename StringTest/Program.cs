@@ -65,6 +65,11 @@ namespace StringTest
 
             Console.WriteLine(ssss + "123123"); //123123
 
+
+            Console.WriteLine(string.Format("{0:D8}", 123123));
+
+            Console.WriteLine(123123.ToString().PadLeft(8, '0'));
+
             Console.ReadKey();
         }
 
