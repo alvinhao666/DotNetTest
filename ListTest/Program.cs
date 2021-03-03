@@ -224,6 +224,11 @@ namespace ListTest
             list1 = list1.Distinct().ToList();
             Console.WriteLine(list1.Count);
 
+
+            string[] asss = new string[] { "9c4bc23d-b733-4c18-a26d-2635e6d149b8", "886bb9af-e534-424c-b917-aec9c0f42435" };
+
+            Console.WriteLine(asss.Contains(""));
+
             System.Console.ReadLine();
             Console.ReadKey();
         }

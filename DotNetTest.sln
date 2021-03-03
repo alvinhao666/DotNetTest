@@ -258,12 +258,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "买啤酒问题", "3算法\买啤酒问题\买啤酒问题.csproj", "{D9E6DBA2-3B71-44D8-91C3-5FB3DEB15AF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orm", "Orm", "{5D812A19-6B71-41D7-8A85-F61090C6C1BF}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\superman\Desktop\course.sql = C:\Users\superman\Desktop\course.sql
-		C:\Users\superman\Desktop\student.sql = C:\Users\superman\Desktop\student.sql
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDemo", "Orm\Dapper\DapperDemo.csproj", "{ECFB45EE-C734-4701-8385-FDF074D69DE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinoData", "Orm\SinoData\SinoData.csproj", "{0FEABE57-0280-4092-A607-4D496994FB92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -675,6 +673,10 @@ Global
 		{ECFB45EE-C734-4701-8385-FDF074D69DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECFB45EE-C734-4701-8385-FDF074D69DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECFB45EE-C734-4701-8385-FDF074D69DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEABE57-0280-4092-A607-4D496994FB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FEABE57-0280-4092-A607-4D496994FB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FEABE57-0280-4092-A607-4D496994FB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FEABE57-0280-4092-A607-4D496994FB92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -785,6 +787,7 @@ Global
 		{3BB19D53-8FB1-4173-975E-1EAEB7E00CC0} = {9F9F655C-7D00-45F6-94C0-442E02189A86}
 		{D9E6DBA2-3B71-44D8-91C3-5FB3DEB15AF0} = {E498B03A-F56B-4F61-AA74-D7FD1E1F59FA}
 		{ECFB45EE-C734-4701-8385-FDF074D69DE7} = {5D812A19-6B71-41D7-8A85-F61090C6C1BF}
+		{0FEABE57-0280-4092-A607-4D496994FB92} = {5D812A19-6B71-41D7-8A85-F61090C6C1BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
