@@ -14,9 +14,9 @@ namespace SinoData
     {
         static void Main(string[] args)
         {
-            //string connectionString = "Data Source=192.168.1.201;port=23306;user id=root;password=123456;Initial Catalog=tmsystem;convertzerodatetime=True;Charset=utf8;";
+            string connectionString = "Data Source=192.168.1.201;port=23306;user id=root;password=123456;Initial Catalog=tmsystem;convertzerodatetime=True;Charset=utf8;";
 
-            string connectionString = "Data Source=rm-bp190vi3lw3f28742so.mysql.rds.aliyuncs.com;port=3306;user id=sino;password=sino258456A;Initial Catalog=tmsystem;convertzerodatetime=True;Charset=utf8;";
+
 
 
             StringBuilder sb = new StringBuilder();
@@ -31,7 +31,7 @@ namespace SinoData
 
                 List<LogisticsClientCode> list = new List<LogisticsClientCode>();
                 int count = 1;
-                foreach(var item in orders)
+                foreach (var item in orders)
                 {
                     var old = list.Where(a => a.LogisticsId == item.LogisticsId.Value && a.RealClientCode == item.RealClientCode).FirstOrDefault();
 
@@ -59,8 +59,8 @@ namespace SinoData
                         sb.Append(Environment.NewLine);
 
                         Console.WriteLine($"{count}处理完成,list有{list.Count}个");
-                        count++;           
-                    }  
+                        count++;
+                    }
                 }
 
                 Console.WriteLine($"需要修改得数据为{count}条");
