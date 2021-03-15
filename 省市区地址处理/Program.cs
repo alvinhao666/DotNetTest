@@ -105,7 +105,7 @@ namespace 省市区地址处理
 
                         var parentName = city.Name;
 
-                        var fullName = province.Name + city.Name + name;
+                        var fullName = (province.Name != city.Name ? province.Name + city.Name : province.Name) + name;
 
                         sb.Append($"({3},'{code}','{name}','{parentCode}','{parentName}','{fullName}')");
 
