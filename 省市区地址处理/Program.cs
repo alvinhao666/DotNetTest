@@ -46,7 +46,7 @@ namespace 省市区地址处理
                         p.Code = code.Substring(0, 2);
                         p.Name = name;
                         areaList.Add(p);
-                        sb.Append($"({1},'{p.Code}','{p.Name}',null,null,'{p.Name}'),");
+                        sb.Append($"(1,'{p.Code}','{p.Name}',null,null,'{p.Name}'),");
 
                         sb.Append(Environment.NewLine);
 
@@ -61,7 +61,7 @@ namespace 省市区地址处理
                                 a2.Code = codeNext;
                                 a2.Name = name;
                                 areaList.Add(a2);
-                                sb.Append($"({2},'{a2.Code}','{a2.Name}','{a2.Code}','{a2.Name}','{a2.Name}'),");
+                                sb.Append($"(2,'{a2.Code}','{a2.Name}','{a2.Code}','{a2.Name}','{a2.Name}'),");
                                 sb.Append(Environment.NewLine);
                             }
                         }
@@ -76,7 +76,7 @@ namespace 省市区地址处理
 
                         var fullName = province.Name + name;
 
-                        sb.Append($"({2},'{code}','{name}','{parentCode}','{parentName}','{fullName}'),");
+                        sb.Append($"(2,'{code}','{name}','{parentCode}','{parentName}','{fullName}'),");
                         sb.Append(Environment.NewLine);
 
                         Area a2 = new Area();
@@ -107,7 +107,7 @@ namespace 省市区地址处理
 
                         var fullName = (province.Name != city.Name ? province.Name + city.Name : province.Name) + name;
 
-                        sb.Append($"({3},'{code}','{name}','{parentCode}','{parentName}','{fullName}')");
+                        sb.Append($"(3,'{code}','{name}','{parentCode}','{parentName}','{fullName}')");
 
                         if (i != count)
                         {
