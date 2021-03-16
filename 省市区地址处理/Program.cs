@@ -76,13 +76,15 @@ namespace 省市区地址处理
 
                         var fullName = province.Name + name;
 
-                        sb.Append($"(2,'{code}','{name}','{parentCode}','{parentName}','{fullName}'),");
-                        sb.Append(Environment.NewLine);
-
                         Area a2 = new Area();
                         a2.Code = code.Substring(0, 4);
                         a2.Name = name;
                         areaList.Add(a2);
+
+                        sb.Append($"(2,'{a2.Code}','{a2.Name}','{parentCode}','{parentName}','{fullName}'),");
+                        sb.Append(Environment.NewLine);
+
+
                     }
                     //else if (code == "419001")
                     //{
@@ -107,7 +109,13 @@ namespace 省市区地址处理
 
                         var fullName = (province.Name != city.Name ? province.Name + city.Name : province.Name) + name;
 
-                        sb.Append($"(3,'{code}','{name}','{parentCode}','{parentName}','{fullName}'),");
+
+                        Area a3 = new Area();
+                        a3.Code = code;
+                        a3.Name = name;
+                        areaList.Add(a3);
+
+                        sb.Append($"(3,'{a3.Code}','{a3.Name}','{parentCode}','{parentName}','{fullName}'),");
 
                         sb.Append(Environment.NewLine);
                         //if (i != count)
@@ -120,10 +128,6 @@ namespace 省市区地址处理
                         //}
 
 
-                        Area a3 = new Area();
-                        a3.Code = code;
-                        a3.Name = name;
-                        areaList.Add(a3);
                     }
                 }
 
