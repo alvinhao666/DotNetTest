@@ -61,7 +61,7 @@ namespace 省市区地址处理
                                 a2.Code = codeNext;
                                 a2.Name = name;
                                 areaList.Add(a2);
-                                sb.Append($"(2,'{a2.Code}','{a2.Name}','{a2.Code}','{a2.Name}','{a2.Name}'),");
+                                sb.Append($"(2,'{a2.Code}','{a2.Name}','{p.Code}','{a2.Name}','{a2.Name}'),");
                                 sb.Append(Environment.NewLine);
                             }
                         }
