@@ -107,16 +107,17 @@ namespace 省市区地址处理
 
                         var fullName = (province.Name != city.Name ? province.Name + city.Name : province.Name) + name;
 
-                        sb.Append($"(3,'{code}','{name}','{parentCode}','{parentName}','{fullName}')");
+                        sb.Append($"(3,'{code}','{name}','{parentCode}','{parentName}','{fullName}'),");
 
-                        if (i != count)
-                        {
-                            sb.Append("," + Environment.NewLine);
-                        }
-                        else
-                        {
-                            sb.Append(";");
-                        }
+                        sb.Append(Environment.NewLine);
+                        //if (i != count)
+                        //{
+                        //    sb.Append("," + Environment.NewLine);
+                        //}
+                        //else
+                        //{
+                        //    sb.Append(";");
+                        //}
 
 
                         Area a3 = new Area();
@@ -125,6 +126,18 @@ namespace 省市区地址处理
                         areaList.Add(a3);
                     }
                 }
+
+                sb.Append($"(1,'71','台湾省',null,null,'台湾省')," + Environment.NewLine);
+                sb.Append($"(2,'7101','台湾省','71','台湾省','台湾省')," + Environment.NewLine);
+                sb.Append($"(3,'710101','台湾省','7101','台湾省','台湾省')," + Environment.NewLine);
+
+                sb.Append($"(1,'81','香港',null,null,'香港')," + Environment.NewLine);
+                sb.Append($"(2,'8101','香港','81','香港','香港')," + Environment.NewLine);
+                sb.Append($"(3,'810101','香港','8101','香港','香港')," + Environment.NewLine);
+
+                sb.Append($"(1,'82','澳门',null,null,'澳门')," + Environment.NewLine);
+                sb.Append($"(2,'8201','澳门','82','澳门','澳门')," + Environment.NewLine);
+                sb.Append($"(3,'820101','澳门','8201','澳门','澳门');");
             }
 
             System.IO.File.WriteAllText(@"E:\省市区.txt", sb.ToString());
