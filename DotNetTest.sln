@@ -263,7 +263,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDemo", "Orm\Dapper\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SinoData", "Orm\SinoData\SinoData.csproj", "{0FEABE57-0280-4092-A607-4D496994FB92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "省市区地址处理", "省市区地址处理\省市区地址处理.csproj", "{4DE73F9B-4158-4B0A-826D-1932517EAC07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "省市区地址处理", "省市区地址处理\省市区地址处理.csproj", "{4DE73F9B-4158-4B0A-826D-1932517EAC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "有序不重复GUID", "有序不重复GUID\有序不重复GUID.csproj", "{76AEF36B-AFB0-458E-AE24-3A3E9D637609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -683,6 +685,10 @@ Global
 		{4DE73F9B-4158-4B0A-826D-1932517EAC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DE73F9B-4158-4B0A-826D-1932517EAC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DE73F9B-4158-4B0A-826D-1932517EAC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76AEF36B-AFB0-458E-AE24-3A3E9D637609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76AEF36B-AFB0-458E-AE24-3A3E9D637609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76AEF36B-AFB0-458E-AE24-3A3E9D637609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76AEF36B-AFB0-458E-AE24-3A3E9D637609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
