@@ -15,9 +15,14 @@ namespace JosnTest
 
             string json = "";
 
-            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null
+            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null  //不报错
 
-            var a = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(null)); //不报错
+            s = JsonConvert.DeserializeObject<Student>("null"); // null  //不报错
+
+            var ssss = JsonConvert.SerializeObject("123123"); // null  //不报错
+
+            var ss = JsonConvert.SerializeObject(null);  //不报错
+            var a = JsonConvert.DeserializeObject(ss); //不报错
 
             var st = new Student();
             st = null;
@@ -53,12 +58,44 @@ namespace JosnTest
 
             var dds = JsonConvert.DeserializeObject<CrsIdentityData>(sssssd);
 
+            IPerson person = new Student() { Id = "123", Name = "小明" };
+            //var personString = JsonConvert.SerializeObject(person);
+
+            //person = JsonConvert.DeserializeObject<IPerson>(personString);
+
+            School school = new School() { Person = person };
+            var schoolString = JsonConvert.SerializeObject(school);
+
+            //school = JsonConvert.DeserializeObject<School>(schoolString); //接口和抽象类，不可以反序列化
+
+
+            List<string> stringDemo = new List<string> { "1", "2", "3" };
+            Console.WriteLine(JsonConvert.SerializeObject(stringDemo));
 
             Console.ReadKey();
         }
     }
 
-    public class Student
+    public class School
+    {
+        public IPerson Person { get; set; }
+    }
+
+    public abstract class  IPerson
+    {
+        public string Name { get; set; }
+
+        public string Id { get; set; }
+    }
+
+    //public interface IPerson
+    //{
+    //    string Name { get; set; }
+
+    //    string Id { get; set; }
+    //}
+
+    public class Student: IPerson
     { 
         public string Name { get; set; }
 

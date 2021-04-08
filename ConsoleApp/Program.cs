@@ -270,8 +270,11 @@ namespace ConsoleApp3
                    var count = 2000;
                 }
             }
+            decimal? aaaa = 10;
+            decimal? bbbb = null;
+            Console.WriteLine(aaaa-(bbbb??0));
 
-
+            Console.WriteLine("1".GetHashCode());
 
             Console.ReadKey();
         }

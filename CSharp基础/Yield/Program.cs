@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Yield
 {
+    //https://www.cnblogs.com/hulizhong/p/11763956.html
     //yield return 返回集合不是一次性返回所有集合元素，而是一次调用返回一个元素。
     class Program
     {
