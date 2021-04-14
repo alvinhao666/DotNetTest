@@ -15,7 +15,7 @@ namespace 省市区地址处理
             //Excel文件所在的地址
             FileInfo file = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "省市区.xlsx");
 
-            StringBuilder sb = new StringBuilder("insert into areainfos (Type,`Code`,`Name`,ParentCode,ParentName,FullName) values ");
+            StringBuilder sb = new StringBuilder("insert into zones (Type,`Code`,`Name`,ParentCode,ParentName,FullName) values ");
 
 
             List<Area> areaList = new List<Area>();
@@ -86,20 +86,34 @@ namespace 省市区地址处理
 
 
                     }
-                    //else if (code == "419001")
-                    //{
-                    //    sb.Append($"insert into areainfos (Type,Code,Name,ParentCode,ParentName,FullName) values ({3},'{code}','{name}','{411700}','驻马店市','河南省驻马店市济源市'");
-                    //}
-                    //else if (code == "")
                     else
                     {
                         var province = areaList.Where(a => a.Code.Length == 2 && a.Code == code.Substring(0, 2)).First();
 
                         var city = areaList.Where(a => a.Code.Length == 4 && a.Code == code.Substring(0, 4)).FirstOrDefault();
 
-                        if (city == null)
+                        if (city == null) //直辖县级市
                         {
-                            city = areaList.Where(a => a.Code.Length == 4).Last();
+                            //city = areaList.Where(a => a.Code.Length == 4).Last();
+
+                            Area a2 = new Area();
+                            a2.Code = code.Substring(0, 4);
+                            a2.Name = "直辖县级市";
+                            areaList.Add(a2);
+
+                            sb.Append($"(2,'{a2.Code}','{a2.Name}','{province.Code}','{province.Name}','{province.Name+a2.Name}'),");
+                            sb.Append(Environment.NewLine);
+
+                            Area a23 = new Area();
+                            a23.Code = code;
+                            a23.Name = name;
+                            areaList.Add(a23);
+
+                            sb.Append($"(3,'{a23.Code}','{a23.Name}','{a2.Code}','{a2.Name}','{province.Name+a2.Name + a23.Name}'),");
+
+                            sb.Append(Environment.NewLine);
+
+                            continue;
                         }
 
 
@@ -118,16 +132,6 @@ namespace 省市区地址处理
                         sb.Append($"(3,'{a3.Code}','{a3.Name}','{parentCode}','{parentName}','{fullName}'),");
 
                         sb.Append(Environment.NewLine);
-                        //if (i != count)
-                        //{
-                        //    sb.Append("," + Environment.NewLine);
-                        //}
-                        //else
-                        //{
-                        //    sb.Append(";");
-                        //}
-
-
                     }
                 }
 
