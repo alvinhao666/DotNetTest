@@ -86,7 +86,7 @@ namespace 省市区地址处理
 
                         string codeNext = excelWorksheet.Cells[i+1, 1].Value.ToString().Trim();
 
-                        if (codeNext.EndsWith("00")) // 东莞 中山  海南三沙
+                        if (codeNext.Substring(0,4)!=code.Substring(0,4)) // 东莞 中山  海南三沙
                         {
                             sb.Append($"(3,'{code}','市区','{a2.Code}','{a2.Name}','{fullName}市区'),");
                             sb.Append(Environment.NewLine);
