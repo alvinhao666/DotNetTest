@@ -84,7 +84,13 @@ namespace 省市区地址处理
                         sb.Append($"(2,'{a2.Code}','{a2.Name}','{parentCode}','{parentName}','{fullName}'),");
                         sb.Append(Environment.NewLine);
 
+                        string codeNext = excelWorksheet.Cells[i+1, 1].Value.ToString().Trim();
 
+                        if (codeNext.EndsWith("00"))
+                        {
+                            sb.Append($"(3,'{code}','市区','{a2.Code}','{a2.Name}','{fullName}市区'),");
+                            sb.Append(Environment.NewLine);
+                        }
                     }
                     else
                     {
