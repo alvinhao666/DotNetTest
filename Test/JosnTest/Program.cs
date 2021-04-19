@@ -72,6 +72,12 @@ namespace JosnTest
             List<string> stringDemo = new List<string> { "1", "2", "3" };
             Console.WriteLine(JsonConvert.SerializeObject(stringDemo));
 
+
+            string httpBody= "{\"alipay_fund_trans_uni_transfer_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"out_biz_no\":\"201808080001\",\"order_id\":\"20190801110070000006380000250621\",\"pay_fund_order_id\":\"20190801110070001506380000251556\",\"status\":\"SUCCESS\",\"trans_date\":\"2019-08-2100:00:00\"},\"sign\":\"ERITJKEIJKJHKKKKKKKHJEREEEEEEEEEEE\"}";
+
+            JObject jObj = JObject.Parse(httpBody);
+            JObject jArr = JObject.Parse(jObj["alipay_fund_trans_uni_transfer_response"].ToString());
+            var orderId = jArr["order_id"].ToString();
             Console.ReadKey();
         }
     }
