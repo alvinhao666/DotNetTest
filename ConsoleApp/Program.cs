@@ -58,30 +58,6 @@ namespace ConsoleApp3
             Console.WriteLine(a.GetType());
             #endregion
 
-            #region long类型
-            
-            Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
-
-            Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
-
-
-            //Console.WriteLine(Convert.ToInt64(Math.Pow(2, 64))); //报错
-
-            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))); //9223372036854775808 19位
-
-            //Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 64))); //报错
-
-            Console.WriteLine(Math.Pow(2, 64));//18446744073709551616 20位
-
-            //ulong sum = Convert.ToUInt64(Math.Pow(2, 0));
-            //for (int i = 1; i <= 63; i++) 
-            //{
-            //    sum= sum | Convert.ToUInt64(Math.Pow(2, i));
-            //}
-            //Console.WriteLine(sum); //18446744073709551615 一共64个
-            Console.WriteLine(18446744073709551615 & 2); //18446744073709551615 一共64个
-            #endregion
-
 
 
             Test t = new Test();
@@ -219,9 +195,6 @@ namespace ConsoleApp3
 
             Console.WriteLine("1232".Split(',')[0]);
 
-            Console.WriteLine("SJQKllrDin3Mz+L4P0ius1ARF3uqfNEA6PiUEf8pncQjbxCnBnDZ0oIGe5CEruws9h11KvDZPr4FW1K8fIzASjSe1VCrubTLcYQygkh3rgxgkhkiNVpUAq2f+uL03eXSoYHPh42aYNduNhYFS0HmGmJWXK/7NZ6OFi0u5xxpQg==".Length);
-            Console.WriteLine("VhV+LQGJJSdPz2UfzymHqKbAu8nYxxDPRnOZu+fEymaOm96E+3iB02u6ca25/gM/FeDo0O9HbJN3jKRmR/MVdlNbChW2dTafnLxQgFhFGf4S8rD8ImS3J1BnuBjhwIDE0L1eoRw4EKkO53Hpxb20A0GfW9f5VcL5TiAd1brdA/s=".Length);
-            bool abc = bool.Parse("true"); //可以转化 "1"不可以
 
 
             Console.WriteLine(GetMd5("235423svxvxzvc"));
