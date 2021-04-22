@@ -40,7 +40,26 @@ namespace ConsoleApp3
 
         static void Main(string[] args)
         {
+            var timestamp = DateTime.Now.Ticks.ToString();
+            string signature = MD5HASH("000694EFB5B9656EB9F8C3482CBEF32520D069A9" + timestamp);
 
+            Console.ReadKey();
+        }
+
+
+        /// <summary>
+        /// md5校验
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        private static string MD5HASH(string input)
+        {
+            using (var md5 = MD5.Create())
+            {
+                var result = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
+                var strResult = BitConverter.ToString(result);
+                return strResult.Replace("-", "");
+            }
         }
     }
 }

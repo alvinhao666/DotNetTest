@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -199,6 +200,12 @@ namespace RSA加密
             //bool isX = false;
             //string s = "Bearer 31123";
             //Console.WriteLine(s.Remove(0,7));
+
+            var a = LoadCertificateFile("rsa_private_key.pem").Replace("\n", "").Replace(" ", "").Replace("\t", "").Replace("\r", "");
+
+            var ss = "1231\\n".Replace("\n", "").Replace(" ", "").Replace("\t", "").Replace("\r", "");
+
+            Console.WriteLine(ss.Length);
             Console.ReadKey();
         }
 
@@ -216,6 +223,31 @@ namespace RSA加密
                 str_hamc_out = str_hamc_out.Replace("-", "");
 
                 return str_hamc_out;
+            }
+        }
+
+
+        private static string GetPem(string type, byte[] data)
+        {
+            var pem = Encoding.UTF8.GetString(data);
+            var header = string.Format("-----BEGIN {0}-----\\n", type);
+            var footer = string.Format("-----END {0}-----", type);
+            var start = pem.IndexOf(header) + header.Length;
+            var end = pem.IndexOf(footer, start);
+            var base64 = pem.Substring(start, end - start);
+            return base64;
+        }
+
+        private static string LoadCertificateFile(string filename)
+        {
+            using (var fs = File.OpenRead(filename))
+            {
+                var data = new byte[fs.Length];
+                fs.Read(data, 0, data.Length);
+                if (data[0] != 0x30)
+                    return GetPem("RSA PRIVATE KEY", data);
+
+                return null;
             }
         }
     }
