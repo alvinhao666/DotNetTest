@@ -253,25 +253,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "有序不重复GUID", "Tool
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "草根专栏Test", "CSharp基础\草根专栏Test\草根专栏Test.csproj", "{00E7D7B3-071B-4058-95B6-A051B6FA64A2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6D9C9930-FBFA-4555-8455-B868B662E572}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0Test", "0Test", "{6D9C9930-FBFA-4555-8455-B868B662E572}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeTest", "Test\DateTimeTest\DateTimeTest.csproj", "{9E9738E8-1822-4338-AFEC-286F5B345436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeTest", "0Test\DateTimeTest\DateTimeTest.csproj", "{9E9738E8-1822-4338-AFEC-286F5B345436}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumTest", "Test\EnumTest\EnumTest.csproj", "{496E7B0D-4568-4C1C-8D7E-DD1A06D8425E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumTest", "0Test\EnumTest\EnumTest.csproj", "{496E7B0D-4568-4C1C-8D7E-DD1A06D8425E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceTest", "Test\InterfaceTest\InterfaceTest.csproj", "{0A99E9FA-4E81-46F2-ACE3-F727385AB16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceTest", "0Test\InterfaceTest\InterfaceTest.csproj", "{0A99E9FA-4E81-46F2-ACE3-F727385AB16E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JosnTest", "Test\JosnTest\JosnTest.csproj", "{ACD93EE3-A804-4AF3-8163-278CF3517971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JosnTest", "0Test\JosnTest\JosnTest.csproj", "{ACD93EE3-A804-4AF3-8163-278CF3517971}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListTest", "Test\ListTest\ListTest.csproj", "{DA9E7580-0E75-4A7E-AACE-4D70AF9318AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListTest", "0Test\ListTest\ListTest.csproj", "{DA9E7580-0E75-4A7E-AACE-4D70AF9318AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringTest", "Test\StringTest\StringTest.csproj", "{3927A3EF-0D99-49BF-8FE5-590A3ACC2D26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringTest", "0Test\StringTest\StringTest.csproj", "{3927A3EF-0D99-49BF-8FE5-590A3ACC2D26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "Test\TaskTest\TaskTest.csproj", "{25B15B5E-1A45-46F8-9A71-E1F09FEC673E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTest", "0Test\TaskTest\TaskTest.csproj", "{25B15B5E-1A45-46F8-9A71-E1F09FEC673E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoolTest", "Test\BoolTest\BoolTest.csproj", "{27F9C9EB-A77A-4A78-A4B7-AD494395D87E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoolTest", "0Test\BoolTest\BoolTest.csproj", "{27F9C9EB-A77A-4A78-A4B7-AD494395D87E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "Test\ConsoleApp\ConsoleApp.csproj", "{43745624-8970-40CD-942E-5B38CE60D07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "0Test\ConsoleApp\ConsoleApp.csproj", "{43745624-8970-40CD-942E-5B38CE60D07B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
