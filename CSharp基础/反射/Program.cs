@@ -19,7 +19,52 @@ namespace 反射
             demo.Name = "demo1";
             Console.WriteLine(demo.Name);
 
-            Console.WriteLine(typeof(string).GetTypeInfo().IsClass); //string是引用类型
+            Console.WriteLine(typeof(string).GetTypeInfo().IsClass); //string是引用类型  IsClass是否是类或者委托
+
+
+            typeof(DeA).IsSubclassOf(typeof(Delegate)); //判断一个 Type 是否为委托类型
+            typeof(DeA).IsSubclassOf(typeof(MulticastDelegate)); //判断是否多播委托
+
+            // 普通委托
+            Type typeA = typeof(DeA);
+            Console.WriteLine("类型名称：" + typeA.Name);
+            Console.WriteLine("是否为类或委托：" + typeA.IsClass);
+            Console.WriteLine("是否为泛型：" + typeA.IsGenericType);
+            Console.WriteLine("是否已绑定参数类型：" + typeA.IsGenericTypeDefinition);
+            Console.WriteLine("可以用此 Type 创建实例：" + typeA.IsConstructedGenericType);
+
+
+            // 泛型委托，不绑定参数类型
+            Type typeB = typeof(DeB<>);
+            Console.WriteLine("\n\n类型名称：" + typeB.Name);
+            Console.WriteLine("是否为类或委托：" + typeB.IsClass);
+            Console.WriteLine("是否为泛型：" + typeB.IsGenericType);
+            Console.WriteLine("是否已绑定参数类型：" + typeB.IsGenericTypeDefinition);
+            Console.WriteLine("可以用此 Type 创建实例：" + typeB.IsConstructedGenericType);
+
+            // 泛型委托，绑定参数类型
+            Type typeBB = typeof(DeB<int>);
+            Console.WriteLine("\n\n类型名称：" + typeBB.Name);
+            Console.WriteLine("是否为类或委托：" + typeBB.IsClass);
+            Console.WriteLine("是否为泛型：" + typeBB.IsGenericType);
+            Console.WriteLine("是否已绑定参数类型：" + typeBB.IsGenericTypeDefinition);
+            Console.WriteLine("可以用此 Type 创建实例：" + typeBB.IsConstructedGenericType);
+
+            // 泛型类，未绑定参数
+            Type typeC = typeof(ClassC<>);
+            Console.WriteLine("\n\n类型名称：" + typeC.Name);
+            Console.WriteLine("是否为类或委托：" + typeC.IsClass);
+            Console.WriteLine("是否为泛型：" + typeC.IsGenericType);
+            Console.WriteLine("是否已绑定参数类型：" + typeC.IsGenericTypeDefinition);
+            Console.WriteLine("可以用此 Type 创建实例：" + typeC.IsConstructedGenericType);
+
+            // 泛型类型，已绑定参数
+            Type typeD = typeof(ClassC<int>);
+            Console.WriteLine("\n\n类型名称：" + typeD.Name);
+            Console.WriteLine("是否为类或委托：" + typeD.IsClass);
+            Console.WriteLine("是否为泛型：" + typeD.IsGenericType);
+            Console.WriteLine("是否已绑定参数类型：" + typeD.IsGenericTypeDefinition);
+            Console.WriteLine("可以用此 Type 创建实例：" + typeD.IsConstructedGenericType);
             Console.ReadKey();
         }
 
