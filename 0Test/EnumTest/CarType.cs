@@ -28,4 +28,12 @@ namespace Sino.CapacityCloud.Core
 
         H19=999
     }
+
+
+    public enum ProctolType
+    {
+        N1 = 0,
+        N2 = 0,
+        N3 = 0
+    }
 }

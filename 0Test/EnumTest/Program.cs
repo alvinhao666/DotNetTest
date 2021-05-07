@@ -59,6 +59,9 @@ namespace EnumTest
 
             var car1 = Parse<CarType>("2");
 
+            ProctolType pType = (ProctolType)0;
+
+            Console.WriteLine(ProctolType.N1 == ProctolType.N2); //相等
             Console.WriteLine(d is Enum);
 
             Console.ReadKey();
