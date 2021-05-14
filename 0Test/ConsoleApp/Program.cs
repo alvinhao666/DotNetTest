@@ -43,6 +43,11 @@ namespace ConsoleApp3
             var timestamp = DateTime.Now.Ticks.ToString();
             string signature = MD5HASH("000694EFB5B9656EB9F8C3482CBEF32520D069A9" + timestamp);
 
+            List<Person> persons = new List<Person>();
+            Person p1 = new Person() { Name = "张三" };
+            persons.Add(p1);
+            p1.Name = "王五"; 
+
             Console.ReadKey();
         }
 
@@ -60,6 +65,15 @@ namespace ConsoleApp3
                 var strResult = BitConverter.ToString(result);
                 return strResult.Replace("-", "");
             }
+        }
+
+
+        public class Person
+        { 
+            /// <summary>
+            /// 张三
+            /// </summary>
+            public string Name { get; set; }
         }
     }
 }
