@@ -65,6 +65,13 @@ namespace 反射
             Console.WriteLine("是否为泛型：" + typeD.IsGenericType);
             Console.WriteLine("是否已绑定参数类型：" + typeD.IsGenericTypeDefinition);
             Console.WriteLine("可以用此 Type 创建实例：" + typeD.IsConstructedGenericType);
+
+            // 反射获取某个属性名 对应的value值
+            Cftea cftea = new Cftea();
+            cftea.SiteName = "dfgdfg";
+            string siteName = Convert.ToString(cftea.GetType().GetProperty("SiteName").GetValue(cftea, null));
+            Console.WriteLine(siteName);
+
             Console.ReadKey();
         }
 
@@ -84,6 +91,18 @@ namespace 反射
                     n.SetValue(newObj, o.GetValue(srcObj), null);
                 }
             }
+        }
+
+
+        public class Cftea
+        {
+            public string SiteName { get; set; }
+            public string Domain { get; set; }
+
+            //public string GetValue(string name)
+            //{
+            //    return Convert.ToString(this.GetType().GetProperty(name).GetValue(this, null));
+            //}
         }
     }
 }

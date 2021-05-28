@@ -35,7 +35,7 @@ namespace ConsoleApp3
     //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
     //                   佛祖保佑       永不宕机     永无BUG            //
     ////////////////////////////////////////////////////////////////////
-    class Program
+    class cftea
     {
 
         static void Main(string[] args)
@@ -46,7 +46,7 @@ namespace ConsoleApp3
             List<Person> persons = new List<Person>();
             Person p1 = new Person() { Name = "张三" };
             persons.Add(p1);
-            p1.Name = "王五"; 
+            p1.Name = "王五";
 
             Console.ReadKey();
         }
@@ -74,6 +74,20 @@ namespace ConsoleApp3
             /// 张三
             /// </summary>
             public string Name { get; set; }
+        }
+
+
+        public class Cftea
+        {
+            public string SiteName { get; set; }
+            public string Domain { get; set; }
+
+            public List<string> Infos { get; set; }
+
+            //public string GetValue(string name)
+            //{
+            //    return Convert.ToString(this.GetType().GetProperty(name).GetValue(this, null));
+            //}
         }
     }
 }
