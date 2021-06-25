@@ -70,7 +70,20 @@ namespace StringTest
 
             Console.WriteLine(123123.ToString().PadLeft(8, '0'));
 
+            string testValue = "123";
+
+            TestRef(ref testValue);
+
+
+            Console.WriteLine(testValue);
+
             Console.ReadKey();
+        }
+
+
+        public static void TestRef(ref string value)
+        {
+            value = "xxxxx";
         }
 
         /// <summary>

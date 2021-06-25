@@ -48,6 +48,20 @@ namespace ConsoleApp3
             persons.Add(p1);
             p1.Name = "王五";
 
+            int? a = 1;
+            bool ss = a.GetType() == typeof(int);
+
+            Console.WriteLine(ss);
+
+            Console.WriteLine(typeof(int?));
+            //Console.WriteLine(a.GetType());
+
+            Console.WriteLine(typeof(int));
+            Console.WriteLine(a.GetType());
+
+
+            Console.WriteLine(31.97300.ToString("0.#####"));
+
             Console.ReadKey();
         }
 
