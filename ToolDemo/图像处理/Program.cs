@@ -9,12 +9,16 @@ namespace 图像处理
     {
         static async Task Main(string[] args)
         {
-            var base64String = await GetBase64String("https://sinostoragedev.oss-cn-hangzhou.aliyuncs.com/upload/E7F0615EE45A9C71B640D00AB6261DF7.png");
+            var base64String = await GetBase64String("https://sinostoragedev.oss-cn-hangzhou.aliyuncs.com/upload/24EC15DA-32A6-4765-879B-1A49F9C56488.png");
 
             using (SixLabors.ImageSharp.Image image = SixLabors.ImageSharp.Image.Load(Convert.FromBase64String(base64String)))
             {
-                var width = image.Width;
-                var height = image.Height;
+                Console.WriteLine(image.Width + "  " + image.Height);
+                Console.WriteLine((double)image.Width / image.Height);
+                Console.WriteLine((double)750 / 1334);
+                Console.WriteLine(image.Width / image.Height != 750 / 1334);
+                Console.WriteLine((image.Width / image.Height) != (750 / 1334));
+                if (image.Width / image.Height != 750 / 1334) throw new Exception("尺寸一有误，请重新选择图片");
             }
 
 
