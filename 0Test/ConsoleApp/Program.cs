@@ -62,6 +62,8 @@ namespace ConsoleApp3
 
             Console.WriteLine(31.97300.ToString("0.#####"));
 
+            Console.WriteLine(((decimal)42321) / 100);
+
             Console.ReadKey();
         }
 
