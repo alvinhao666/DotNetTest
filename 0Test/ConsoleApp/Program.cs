@@ -64,6 +64,13 @@ namespace ConsoleApp3
 
             Console.WriteLine(((decimal)42321) / 100);
 
+            Console.WriteLine((1 << 6) - 1);
+            Console.WriteLine(1 << 6 - 1);
+            Console.WriteLine(63 > ((1 << 6) - 1));
+
+
+            Console.WriteLine(DateTime.Now.AddMinutes(-5));
+
             Console.ReadKey();
         }
 
