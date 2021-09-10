@@ -4,9 +4,9 @@ using System.Data;
 using Dapper;
 using System.Collections.Generic;
 using System.Configuration;
-using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
+using MySqlConnector;
 
 namespace SinoData
 {
