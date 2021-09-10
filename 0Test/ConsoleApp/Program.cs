@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -70,6 +71,34 @@ namespace ConsoleApp3
 
 
             Console.WriteLine(DateTime.Now.AddMinutes(-5));
+
+            Console.WriteLine(decimal.Round((decimal)0.006, 2, MidpointRounding.AwayFromZero));
+
+            try
+            {
+                try
+                {
+                    var num = int.Parse("abc");
+                }
+                catch (Exception inner)
+                {
+                    try
+                    {
+                        var openLog = File.Open("DoesNotExist", FileMode.Open);
+                    }
+                    catch
+                    {
+                        throw new FileNotFoundException("OutterException", inner);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                string inMes, outMes;
+                if (e.InnerException != null)
+                    inMes = e.InnerException.Message;
+                outMes = e.Message;
+            }  
 
             Console.ReadKey();
         }

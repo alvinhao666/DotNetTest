@@ -229,12 +229,55 @@ namespace ListTest
 
             Console.WriteLine(asss.Contains(""));
 
-            System.Console.ReadLine();
+     
+
+            List<Student> studs = new List<Student>() { };
+
+            studs.Add(new Student() { Name = "11" });
+            studs.Add(new Student() { Name = "22" });
+            studs.Add(new Student() { Name = "33" });
+            studs.Add(new Student() { Name = "44" });
+            studs.Add(new Student() { Name = "55" });
+            studs.Add(new Student() { Name = "66" });
+
+            var listStuds = ChunkBy(studs, 2);
+
+            Console.WriteLine(0 / 2);//0
+            Console.WriteLine(1 / 2);//0
+            Console.WriteLine(2 / 2);//1
+            Console.WriteLine(3 / 2);//1
+            Console.WriteLine(4 / 2);//2
+            Console.WriteLine(5 / 2);//2
+
             Console.ReadKey();
         }
 
-       
+
+        public static List<List<T>> ChunkBy<T>(List<T> source, int chunkSize)
+        {
+            return source
+                .Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / chunkSize)
+                .Select(x => x.Select(v => v.Value).ToList())
+                .ToList();
+        }
+
+        //public static List<List<T>> ChunkBy<T>( List<T> list, int splitCount)
+        //{
+        //    var listGroup = new List<List<T>>();
+        //    int j = splitCount;
+        //    for (int i = 0; i < list.Count; i += splitCount)
+        //    {
+        //        var cList = list.Take(j).Skip(i).ToList();
+        //        j += splitCount;
+        //        listGroup.Add(cList);
+        //    }
+        //    return listGroup;
+        //}
+
     }
+
+
 
     public class Student
     {
