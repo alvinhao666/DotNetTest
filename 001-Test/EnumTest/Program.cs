@@ -52,6 +52,8 @@ namespace EnumTest
             Console.WriteLine(Enum.TryParse("0", out result)); //true
             Console.WriteLine(Enum.TryParse("10", out result)); //true
 
+            Console.WriteLine("-10" + Enum.TryParse("-10", out result)); //true
+
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "C1")); //true
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "0")); //false
             Console.WriteLine(Enum.IsDefined(typeof(CarType), 0)); //true
@@ -63,6 +65,16 @@ namespace EnumTest
 
             Console.WriteLine(ProctolType.N1 == ProctolType.N2); //相等
             Console.WriteLine(d is Enum);
+
+
+            //获取枚举所属类型
+            Type foo4 = Enum.GetUnderlyingType(typeof(CarType));
+
+            //获取所有枚举成员
+            Array foo5 = Enum.GetValues(typeof(CarType));
+
+            //获取所有枚举成员的字段名
+            string[] foo6 = Enum.GetNames(typeof(CarType));
 
             Console.ReadKey();
         }
