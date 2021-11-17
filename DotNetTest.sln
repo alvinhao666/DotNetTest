@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{54EABF72-A3D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AOP", "AOP", "{C32B5DBE-B4C3-41D6-81CD-1707A6C72F4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp基础", "CSharp基础", "{500ED28C-835D-45AD-9DE8-845A4BEF498F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005-CSharp基础", "005-CSharp基础", "{500ED28C-835D-45AD-9DE8-845A4BEF498F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "改善CSharp程序157个建议", "改善CSharp程序157个建议", "{FB9EDF72-3D08-45DB-B1D5-A8ACC048F22A}"
 EndProject
@@ -51,57 +51,57 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "路由模式", "路由模�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "通配符模式", "通配符模式", "{6A892B4D-C89A-42F7-82B8-615430686289}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ado.net", "CSharp基础\Ado.net\Ado.net.csproj", "{63F9F318-C73A-49A8-A35B-2D026E9B6A32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ado.net", "005-CSharp基础\Ado.net\Ado.net.csproj", "{63F9F318-C73A-49A8-A35B-2D026E9B6A32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary_HashTable_List_HashSet区别", "CSharp基础\Dictionary_HashTable_List_HashSet区别\Dictionary_HashTable_List_HashSet区别.csproj", "{F0CB93AB-5CFE-4E73-9042-C79E32F981BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary_HashTable_List_HashSet区别", "005-CSharp基础\Dictionary_HashTable_List_HashSet区别\Dictionary_HashTable_List_HashSet区别.csproj", "{F0CB93AB-5CFE-4E73-9042-C79E32F981BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynamic", "CSharp基础\Dynamic\Dynamic.csproj", "{9DEF49D1-FF29-43AD-A7C1-ECE87ACA8BAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dynamic", "005-CSharp基础\Dynamic\Dynamic.csproj", "{9DEF49D1-FF29-43AD-A7C1-ECE87ACA8BAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emit", "CSharp基础\Emit\Emit.csproj", "{95534138-9031-4776-805E-DDAB7B1026AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emit", "005-CSharp基础\Emit\Emit.csproj", "{95534138-9031-4776-805E-DDAB7B1026AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmitAOP", "CSharp基础\EmitAOP\EmitAOP.csproj", "{D8085F9E-3AED-466E-AF31-9AF332527004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmitAOP", "005-CSharp基础\EmitAOP\EmitAOP.csproj", "{D8085F9E-3AED-466E-AF31-9AF332527004}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "explicit和implicit", "CSharp基础\explicit和implicit\explicit和implicit.csproj", "{7C013067-669E-4342-82AB-A0BD26528B64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "explicit和implicit", "005-CSharp基础\explicit和implicit\explicit和implicit.csproj", "{7C013067-669E-4342-82AB-A0BD26528B64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression表达式树", "CSharp基础\Expression\Expression表达式树.csproj", "{041B954B-7142-47BB-839C-4F006B8D5B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expression表达式树", "005-CSharp基础\Expression\Expression表达式树.csproj", "{041B954B-7142-47BB-839C-4F006B8D5B45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Float有效位数", "CSharp基础\Float有效位数\Float有效位数.csproj", "{D3575E93-B2CE-4754-A5B5-A3F4028CBA2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Float有效位数", "005-CSharp基础\Float有效位数\Float有效位数.csproj", "{D3575E93-B2CE-4754-A5B5-A3F4028CBA2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetValueOrDefault", "CSharp基础\GetValueOrDefault\GetValueOrDefault.csproj", "{DE755D49-DC8F-492C-95DA-E7A3B935FEE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetValueOrDefault", "005-CSharp基础\GetValueOrDefault\GetValueOrDefault.csproj", "{DE755D49-DC8F-492C-95DA-E7A3B935FEE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IObservable", "CSharp基础\IObservable\IObservable.csproj", "{77635112-0DE6-4B1D-9292-6485C399F651}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IObservable", "005-CSharp基础\IObservable\IObservable.csproj", "{77635112-0DE6-4B1D-9292-6485C399F651}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaAndExpression", "CSharp基础\LambdaAndExpression\LambdaAndExpression.csproj", "{71FEB008-AEA4-4F82-A301-0CD5B1603EF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaAndExpression", "005-CSharp基础\LambdaAndExpression\LambdaAndExpression.csproj", "{71FEB008-AEA4-4F82-A301-0CD5B1603EF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Property", "CSharp基础\Property\Property.csproj", "{442098BA-0F95-474E-B3D1-E6A23EF26872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Property", "005-CSharp基础\Property\Property.csproj", "{442098BA-0F95-474E-B3D1-E6A23EF26872}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "CSharp基础\Regex\Regex.csproj", "{79D9EBFD-881A-430B-8E56-AD4DBA951B53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "005-CSharp基础\Regex\Regex.csproj", "{79D9EBFD-881A-430B-8E56-AD4DBA951B53}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Readonly", "CSharp基础\Readonly\Readonly.csproj", "{CAA71165-C975-44A4-BBEA-7E78F39D4F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Readonly", "005-CSharp基础\Readonly\Readonly.csproj", "{CAA71165-C975-44A4-BBEA-7E78F39D4F71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String", "CSharp基础\String\String.csproj", "{4F419A65-47EA-4200-9C1B-B182751EC8F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String", "005-CSharp基础\String\String.csproj", "{4F419A65-47EA-4200-9C1B-B182751EC8F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String.Formate", "CSharp基础\String.Formate\String.Formate.csproj", "{366EE5BB-22B8-4EC4-A86E-296DBD933882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String.Formate", "005-CSharp基础\String.Formate\String.Formate.csproj", "{366EE5BB-22B8-4EC4-A86E-296DBD933882}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yield", "CSharp基础\Yield\Yield.csproj", "{478A6008-4987-49E9-A504-BB595F92C386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yield", "005-CSharp基础\Yield\Yield.csproj", "{478A6008-4987-49E9-A504-BB595F92C386}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "反射", "CSharp基础\反射\反射.csproj", "{E1B1C7A7-2189-4D17-8E4C-F64CC17ABFA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "反射", "005-CSharp基础\反射\反射.csproj", "{E1B1C7A7-2189-4D17-8E4C-F64CC17ABFA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "流", "CSharp基础\流\流.csproj", "{8C839CD3-380F-4C9F-9BCB-DFF4BA0994EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "流", "005-CSharp基础\流\流.csproj", "{8C839CD3-380F-4C9F-9BCB-DFF4BA0994EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "判断泛型的值是否为default(T)", "CSharp基础\判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{2E98A64F-8840-4BD4-8E3D-732CA6FE8227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "判断泛型的值是否为default(T)", "005-CSharp基础\判断泛型的值是否为default(T)\判断泛型的值是否为default(T).csproj", "{2E98A64F-8840-4BD4-8E3D-732CA6FE8227}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "数值", "CSharp基础\数值\数值.csproj", "{B5C455BA-D037-4735-9CCB-A87A0BEA7345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "数值", "005-CSharp基础\数值\数值.csproj", "{B5C455BA-D037-4735-9CCB-A87A0BEA7345}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "托管和非托管", "CSharp基础\托管和非托管\托管和非托管.csproj", "{DD54EE13-D7A9-47FF-B9EE-1945FCC4EE45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "托管和非托管", "005-CSharp基础\托管和非托管\托管和非托管.csproj", "{DD54EE13-D7A9-47FF-B9EE-1945FCC4EE45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "委托", "CSharp基础\委托\委托.csproj", "{99062612-F358-4DE4-AEBE-1EB4A0C3DF10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "委托", "005-CSharp基础\委托\委托.csproj", "{99062612-F358-4DE4-AEBE-1EB4A0C3DF10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "位运算权限", "CSharp基础\位于权限\位运算权限.csproj", "{DDC58439-BF96-462D-9843-A1B2CCE923A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "位运算权限", "005-CSharp基础\位于权限\位运算权限.csproj", "{DDC58439-BF96-462D-9843-A1B2CCE923A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "文件操作", "CSharp基础\文件操作\文件操作.csproj", "{B9C97A8B-0D31-45F4-8D99-C1158ACF8E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "文件操作", "005-CSharp基础\文件操作\文件操作.csproj", "{B9C97A8B-0D31-45F4-8D99-C1158ACF8E9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "协变和逆变", "CSharp基础\协变和逆变\协变和逆变.csproj", "{6D456C21-9B56-4BF0-A09A-DA80505BC0E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "协变和逆变", "005-CSharp基础\协变和逆变\协变和逆变.csproj", "{6D456C21-9B56-4BF0-A09A-DA80505BC0E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutClient", "RabbitMQ\Exchange模式\发布订阅模式\FanoutClient\FanoutClient.csproj", "{DEF831C9-D9E1-47E6-AF3E-143DD5ABF5DD}"
 EndProject
@@ -125,7 +125,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "雪花id测试", "雪花Id\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hao.Snowflake", "雪花Id\Hao.Snowflake\Hao.Snowflake.csproj", "{7B1B440C-1398-4132-A981-A707A792CF38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLocal", "CSharp基础\AsyncLocal\AsyncLocal.csproj", "{02AC6BAA-DF49-4D13-902A-436959105D5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLocal", "005-CSharp基础\AsyncLocal\AsyncLocal.csproj", "{02AC6BAA-DF49-4D13-902A-436959105D5F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议3_区别对待强制转型与as和is", "改善CSharp程序157个建议\1~9\建议3_区别对待强制转型与as和is\建议3_区别对待强制转型与as和is.csproj", "{98D75471-1FA1-49A9-98E9-9744A183B65F}"
 EndProject
@@ -181,9 +181,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议102_区分接口和�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "建议106_为静态类添加静态构造函数", "改善CSharp程序157个建议\100~109\建议106_为静态类添加静态构造函数\建议106_为静态类添加静态构造函数.csproj", "{9C1CFC6E-C486-4251-A612-145128AB9625}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "闭包", "CSharp基础\闭包\闭包.csproj", "{9A8D4A69-560F-48D1-ABAA-12FF2CD8FABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "闭包", "005-CSharp基础\闭包\闭包.csproj", "{9A8D4A69-560F-48D1-ABAA-12FF2CD8FABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "结构Struct", "CSharp基础\结构Struct\结构Struct.csproj", "{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "结构Struct", "005-CSharp基础\结构Struct\结构Struct.csproj", "{AC5B213A-BCF1-4C7D-882B-B1F67D51DAE3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Excel", "Excel", "{9F9F655C-7D00-45F6-94C0-442E02189A86}"
 EndProject
@@ -203,19 +203,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "省市区地址处理", "To
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "有序不重复GUID", "ToolDemo\有序不重复GUID\有序不重复GUID.csproj", "{201ABCC6-C44B-4FEE-BF2B-AAC8B14E14BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "草根专栏Test", "CSharp基础\草根专栏Test\草根专栏Test.csproj", "{00E7D7B3-071B-4058-95B6-A051B6FA64A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "草根专栏Test", "005-CSharp基础\草根专栏Test\草根专栏Test.csproj", "{00E7D7B3-071B-4058-95B6-A051B6FA64A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001-Test", "001-Test", "{6D9C9930-FBFA-4555-8455-B868B662E572}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "析构函数", "CSharp基础\析构函数\析构函数.csproj", "{BC5F58B3-DB4D-47EB-A37C-33D289B236C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "析构函数", "005-CSharp基础\析构函数\析构函数.csproj", "{BC5F58B3-DB4D-47EB-A37C-33D289B236C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "线程", "CSharp基础\线程\线程.csproj", "{436C43CB-CBCF-457D-893A-7D9A32247DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "线程", "005-CSharp基础\线程\线程.csproj", "{436C43CB-CBCF-457D-893A-7D9A32247DA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "图像处理", "ToolDemo\图像处理\图像处理.csproj", "{18F540E8-DB50-4716-B219-9FB32DC1D7EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoferDemo", "ToolDemo\Gofer.Net\GoferDemo\GoferDemo.csproj", "{C01FBCEF-6725-4EDB-9F5A-565C09FA14AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Except", "CSharp基础\Except\Except.csproj", "{8646153F-6A03-4C88-A4AF-4347F2C4DE94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Except", "005-CSharp基础\Except\Except.csproj", "{8646153F-6A03-4C88-A4AF-4347F2C4DE94}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "idgenerator", "雪花Id\idgenerator\idgenerator.csproj", "{99553DFB-2397-42BD-B33A-496D8B428AF0}"
 EndProject
