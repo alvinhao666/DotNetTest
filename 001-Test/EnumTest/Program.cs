@@ -57,7 +57,7 @@ namespace EnumTest
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "C1")); //true
             Console.WriteLine(Enum.IsDefined(typeof(CarType), "0")); //false
             Console.WriteLine(Enum.IsDefined(typeof(CarType), 0)); //true
-
+            Console.WriteLine(Enum.IsDefined(typeof(CarType), 10));//false
 
             var car1 = Parse<CarType>("2");
 
