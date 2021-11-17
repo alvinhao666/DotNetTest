@@ -36,4 +36,12 @@ namespace Sino.CapacityCloud.Core
         N2 = 0,
         N3 = 0
     }
+
+
+    public enum AdminType
+    {
+        SuperAdmin = 1,
+        Admin = 2,
+        User = 3
+    }
 }

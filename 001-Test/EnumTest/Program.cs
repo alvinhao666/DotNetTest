@@ -76,6 +76,10 @@ namespace EnumTest
             //获取所有枚举成员的字段名
             string[] foo6 = Enum.GetNames(typeof(CarType));
 
+            var user = default(AdminType);
+            Console.WriteLine(user); //0
+            Console.WriteLine(Enum.IsDefined(typeof(AdminType), 0)); //false
+
             Console.ReadKey();
         }
 
