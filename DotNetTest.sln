@@ -285,17 +285,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDemo", "007-ORM\Dappe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "线程安全集合", "线程安全集合", "{8F5739A8-8AD7-473F-8930-2649DCA1E0C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentQueue", "005-CSharp基础\线程安全集合\ConcurrentQueue\ConcurrentQueue.csproj", "{A3CB36E9-10F8-4192-907C-AC16063D3670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentQueue", "005-CSharp基础\线程安全集合\ConcurrentQueue\ConcurrentQueue.csproj", "{A3CB36E9-10F8-4192-907C-AC16063D3670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentStack", "005-CSharp基础\线程安全集合\ConcurrentStack\ConcurrentStack.csproj", "{77CBA374-5016-4F0D-8BC5-73AA48BC8E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentStack", "005-CSharp基础\线程安全集合\ConcurrentStack\ConcurrentStack.csproj", "{77CBA374-5016-4F0D-8BC5-73AA48BC8E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentDictionary", "005-CSharp基础\线程安全集合\ConcurrentDictionary\ConcurrentDictionary.csproj", "{DB6201D3-1317-4E46-A554-8C5D2DD355EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentDictionary", "005-CSharp基础\线程安全集合\ConcurrentDictionary\ConcurrentDictionary.csproj", "{DB6201D3-1317-4E46-A554-8C5D2DD355EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentBag", "005-CSharp基础\线程安全集合\ConcurrentBag\ConcurrentBag.csproj", "{E2FC4E72-D661-41AD-9C14-ED644DC4837E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentBag", "005-CSharp基础\线程安全集合\ConcurrentBag\ConcurrentBag.csproj", "{E2FC4E72-D661-41AD-9C14-ED644DC4837E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockingCollection", "005-CSharp基础\线程安全集合\BlockingCollection\BlockingCollection.csproj", "{29E0A7AB-6781-4BB9-96BE-C4E7683A3861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockingCollection", "005-CSharp基础\线程安全集合\BlockingCollection\BlockingCollection.csproj", "{29E0A7AB-6781-4BB9-96BE-C4E7683A3861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionTest", "001-Test\ExceptionTest\ExceptionTest.csproj", "{1C1C1F08-D824-418E-9CF6-F716E90F7C35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionTest", "001-Test\ExceptionTest\ExceptionTest.csproj", "{1C1C1F08-D824-418E-9CF6-F716E90F7C35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

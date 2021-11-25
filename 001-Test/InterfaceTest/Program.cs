@@ -19,6 +19,14 @@ namespace InterfaceTest
             Console.WriteLine(p2.GetType().FullName);
 
             Console.WriteLine(typeof(IHuman).IsAssignableFrom(typeof(Person1)));
+            //bool res = { TypeA }.IsAssignableFrom({ TypeB}) ;
+
+            //如果TypeA和TypeB类型一样则返回true；
+
+            //如果TypeA是TypeB的父类则返回true;
+
+            //如果TypeB实现了接口TypeA则返回true;
+
             Console.WriteLine(typeof(Person1) != typeof(IPerson));
             Console.ReadKey();
         }
