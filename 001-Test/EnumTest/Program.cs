@@ -47,6 +47,8 @@ namespace EnumTest
             //int i = (int)ssss;
 
             CarType result;
+            Console.WriteLine("CarType100");
+            Console.WriteLine(Enum.Parse<CarType>("100")); // 100
             Console.WriteLine(Enum.TryParse("C1", out result)); //true
             Console.WriteLine(Enum.TryParse("C5", out result)); //false
             Console.WriteLine(Enum.TryParse("0", out result)); //true
