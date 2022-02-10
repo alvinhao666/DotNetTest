@@ -19,6 +19,11 @@ namespace GoferDemo
             //await taskClient.TaskScheduler.AddRecurringTask(() => WriteDate(),
             //    "0 */7 * * * *", "seven-minute-crontab");
 
+
+            //每天凌晨2点 减8个时区
+            //taskClient.TaskScheduler.AddRecurringTask(() => JobManager.AutoExpireNumber(),
+            //"0 0 18 * * *", "AutoExpireNumber").Wait();
+
             await taskClient.Listen();
 
             Console.ReadKey();
