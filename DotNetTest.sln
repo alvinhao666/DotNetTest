@@ -297,7 +297,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockingCollection", "005-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionTest", "001-Test\ExceptionTest\ExceptionTest.csproj", "{1C1C1F08-D824-418E-9CF6-F716E90F7C35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeCaseTest", "001-Test\SnakeCaseTest\SnakeCaseTest.csproj", "{09762510-A989-4C83-9686-DB3D679D3487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnakeCaseTest", "001-Test\SnakeCaseTest\SnakeCaseTest.csproj", "{09762510-A989-4C83-9686-DB3D679D3487}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapsterTest", "对象映射\MapsterTest\MapsterTest.csproj", "{3F96548C-7A70-4AA7-949E-ED8D7A74E892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -781,6 +783,10 @@ Global
 		{09762510-A989-4C83-9686-DB3D679D3487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09762510-A989-4C83-9686-DB3D679D3487}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09762510-A989-4C83-9686-DB3D679D3487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F96548C-7A70-4AA7-949E-ED8D7A74E892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F96548C-7A70-4AA7-949E-ED8D7A74E892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F96548C-7A70-4AA7-949E-ED8D7A74E892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F96548C-7A70-4AA7-949E-ED8D7A74E892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -919,6 +925,7 @@ Global
 		{29E0A7AB-6781-4BB9-96BE-C4E7683A3861} = {8F5739A8-8AD7-473F-8930-2649DCA1E0C9}
 		{1C1C1F08-D824-418E-9CF6-F716E90F7C35} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 		{09762510-A989-4C83-9686-DB3D679D3487} = {6D9C9930-FBFA-4555-8455-B868B662E572}
+		{3F96548C-7A70-4AA7-949E-ED8D7A74E892} = {96046A1E-934A-4BDD-82CB-9827747D78A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
