@@ -21,7 +21,14 @@ namespace 建议106_为静态类添加静态构造函数
 
             var user1 = new User() { Name = "张三" };
             User.Value = 2;
+            //user1.
             //静态变量只能通过“类.静态变量名”调用，类的实例不能调用；
+            //            被 static 关键字修饰的字段，叫做“静态字段”。
+            //静态字段不属于任何对象，只属于类，必须要用 类名.静态字段名 进行访问，反过来通过 对象名.静态字段名 的方式是访问不到静态字段的。
+
+//            被 static 关键字修饰的属性，叫做“静态属性”。
+//静态属性用于对静态字段进行封装，并保证静态字段值的合法性；
+//静态属性使用 类名.静态属性名 进行访问；
 
             var user2 = new User() { Name = "王五" };
 
@@ -32,6 +39,9 @@ namespace 建议106_为静态类添加静态构造函数
     public class User
     {
         public static int Value { get; set; } = 1;
+
+
+        public static int Value2 = 1;
 
 
         public string Name { get; set; }
