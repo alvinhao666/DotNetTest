@@ -18,8 +18,23 @@ namespace 建议106_为静态类添加静态构造函数
         static void Main(string[] args)
         {
             SampleClass.SampleMethod();
+
+            var user1 = new User() { Name = "张三" };
+            User.Value = 2;
+            //静态变量只能通过“类.静态变量名”调用，类的实例不能调用；
+
+            var user2 = new User() { Name = "王五" };
+
             Console.ReadKey();
         }
+    }
+
+    public class User
+    {
+        public static int Value { get; set; } = 1;
+
+
+        public string Name { get; set; }
     }
 
 
