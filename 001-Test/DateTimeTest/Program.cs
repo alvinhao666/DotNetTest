@@ -101,10 +101,16 @@ namespace DateTimeTest
             Console.WriteLine((DateTime.Parse("2020-05-18 09:31:00") - DateTime.Parse("2020-05-03 16:00:00")).TotalHours);
 
 
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(DateTimeOffset.Now);
+            Console.WriteLine(DateTime.Now);  //2022/3/3 15:00:22
+            Console.WriteLine(DateTimeOffset.Now); //带有时区  2022/3/3 15:00:22 +08:00
 
-            Console.WriteLine(DateTimeOffset.Now.Ticks - DateTime.Now.Ticks);
+            Console.WriteLine(DateTime.UtcNow);  //2022/3/3 7:01:56
+            Console.WriteLine(DateTimeOffset.UtcNow); //带有时区  2022/3/3 7:01:56 +00:00
+
+            Console.WriteLine(DateTime.Now.ToLocalTime());
+
+            Console.WriteLine(DateTime.Now.ToUniversalTime());
+
             Console.ReadKey();
         }
     }
