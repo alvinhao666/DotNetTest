@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Property
 {
@@ -9,22 +11,44 @@ namespace Property
         static void Main(string[] args)
         {
 
-            #region
-            CCar car = new CCar() { a = 1 };
+            //CCar car = new CCar() { a = 1 };
             //car.b = 2;
             //Console.WriteLine(CCar.x); // 5
             //car.a = 5; 
-            #endregion
-            if (car.c > 0)
-            {
-                Console.WriteLine(car.c); //当用到时 才会触发get属性  10
-                Console.WriteLine(car.c);
-            }
-    
+            //if (car.c > 0)
+            //{
+            //    Console.WriteLine(car.c); //当用到时 才会触发get属性  10
+            //    Console.WriteLine(car.c);
+            //}
+
+            Person p = new Person() { GivenNames = "1" };
+            p.PropertyChanged += Dc_PropertyChanged;
+            p.GivenNames = "2";
+
+
             Console.ReadKey();
         }
+
+        static void Dc_PropertyChanged(object sender,
+ System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Console.WriteLine($"{e.PropertyName} Changed");
+        }
+
     }
-    
+
+
+    //[AddINotifyPropertyChangedInterface]
+    public class Person : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string GivenNames { get; set; }
+        public string FamilyName { get; set; }
+
+        public string FullName => string.Format("{0} {1}", GivenNames, FamilyName);
+    }
+
     public class CCar
     {
         public static int x = 5;

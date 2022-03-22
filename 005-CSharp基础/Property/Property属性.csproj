@@ -5,4 +5,8 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+    </ItemGroup>
+
 </Project>
