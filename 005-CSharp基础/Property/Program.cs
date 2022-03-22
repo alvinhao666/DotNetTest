@@ -10,12 +10,13 @@ namespace Property
 
             #region
             CCar car = new CCar() { a = 1 };
-            car.b = 2;
-            Console.WriteLine(CCar.x); // 5
-            car.a = 5; 
+            //car.b = 2;
+            //Console.WriteLine(CCar.x); // 5
+            //car.a = 5; 
             #endregion
 
             Console.WriteLine(car.c); //当用到时 才会触发get属性  10
+            Console.WriteLine(car.c);
             Console.ReadKey();
         }
     }
@@ -31,6 +32,8 @@ namespace Property
         { 
             get
             {
+                Console.WriteLine("111");
+
                 x = 8;
                 return b + x;
             }

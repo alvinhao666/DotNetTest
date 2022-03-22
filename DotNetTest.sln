@@ -71,7 +71,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IObservable", "005-CSharp�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaAndExpression", "005-CSharp基础\LambdaAndExpression\LambdaAndExpression.csproj", "{71FEB008-AEA4-4F82-A301-0CD5B1603EF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Property", "005-CSharp基础\Property\Property.csproj", "{442098BA-0F95-474E-B3D1-E6A23EF26872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Property属性", "005-CSharp基础\Property\Property属性.csproj", "{442098BA-0F95-474E-B3D1-E6A23EF26872}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex", "005-CSharp基础\Regex\Regex.csproj", "{79D9EBFD-881A-430B-8E56-AD4DBA951B53}"
 EndProject
@@ -301,7 +301,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnakeCaseTest", "001-Test\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapsterTest", "对象映射\MapsterTest\MapsterTest.csproj", "{3F96548C-7A70-4AA7-949E-ED8D7A74E892}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlSugarDemo", "007-ORM\SqlSugarDemo\SqlSugarDemo.csproj", "{9DCC650C-CBBF-4BC7-B98A-0022414EA1A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlSugarDemo", "007-ORM\SqlSugarDemo\SqlSugarDemo.csproj", "{9DCC650C-CBBF-4BC7-B98A-0022414EA1A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
