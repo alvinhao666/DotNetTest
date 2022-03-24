@@ -30,6 +30,13 @@ namespace TypeTest
             Console.WriteLine(p1.GetType().GetHashCode());  //两次输出一样
             Console.WriteLine(p2.GetType().GetHashCode());
 
+            var s1 = new Student { Age = "1" };
+
+            var s2 = new Student { Age = "2" };
+
+            Console.WriteLine(s1.GetType().GetHashCode());  //两次输出一样
+            Console.WriteLine(s2.GetType().GetHashCode());
+
             Console.ReadKey();
 
         }
@@ -40,5 +47,10 @@ namespace TypeTest
     public class Person
     {
         public string Name { get; set; }
+    }
+
+    public class Student
+    {
+        public string Age { get; set; }
     }
 }
