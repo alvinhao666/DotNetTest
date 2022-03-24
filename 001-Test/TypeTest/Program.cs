@@ -23,9 +23,22 @@ namespace TypeTest
 
             Console.WriteLine(typeof(string));
 
+            var p1 = new Person { Name = "1" };
+
+            var p2 = new Person { Name = "2" };
+
+            Console.WriteLine(p1.GetType().GetHashCode());
+            Console.WriteLine(p2.GetType().GetHashCode());
 
             Console.ReadKey();
 
         }
+    }
+
+
+
+    public class Person
+    {
+        public string Name { get; set; }
     }
 }
