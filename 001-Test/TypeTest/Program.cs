@@ -27,7 +27,7 @@ namespace TypeTest
 
             var p2 = new Person { Name = "2" };
 
-            Console.WriteLine(p1.GetType().GetHashCode());
+            Console.WriteLine(p1.GetType().GetHashCode());  //两次输出一样
             Console.WriteLine(p2.GetType().GetHashCode());
 
             Console.ReadKey();
