@@ -17,9 +17,12 @@ namespace AsyncLocal
 
             Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode()); //AsyncLocal每设置一次值就会创建一个新的ExecutionContext并覆盖到Thread.CurrentThread.ExecutionContext
             var intercept = new Intercept();
-            await Intercept.Invoke1(); //异步执行
+
+            //Intercept.Invoke0();  //888
             Console.WriteLine(Program.v.Value); //123
-            await Intercept.Invoke2(); //没有异步执行
+            Intercept.Invoke1(); //异步执行
+            Console.WriteLine(Program.v.Value); //123
+            Intercept.Invoke2(); //没有异步执行
             Console.WriteLine(Program.v.Value); //888  
 
             Console.ReadKey();
@@ -28,6 +31,16 @@ namespace AsyncLocal
 
     public class Intercept
     {
+        public static void  Invoke0()
+        {
+            Console.WriteLine();
+
+
+            Program.v.Value = 888;
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
+            //await Task.CompletedTask;
+        }
+
         public static async Task Invoke1()
         {
             Console.WriteLine();
@@ -37,7 +50,7 @@ namespace AsyncLocal
 
             Program.v.Value = 888;
             Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
-            await Task.CompletedTask;
+            //await Task.CompletedTask; 加不加 结果都是123
         }
 
         public static Task Invoke2()
