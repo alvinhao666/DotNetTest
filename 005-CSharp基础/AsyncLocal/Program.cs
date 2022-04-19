@@ -8,18 +8,19 @@ namespace AsyncLocal
     {
         public static AsyncLocal<int> v = new AsyncLocal<int>();
  
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var task = Task.Run(async () =>
-            {
-                v.Value = 123;
-                var intercept = new Intercept();
-                await Intercept.Invoke1();
-                Console.WriteLine(Program.v.Value); //123
-                await Intercept.Invoke2(); //没有异步执行
-                Console.WriteLine(Program.v.Value); //888  
-            });
-            task.Wait();
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
+
+            v.Value = 123;
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode()); //AsyncLocal每设置一次值就会创建一个新的ExecutionContext并覆盖到Thread.CurrentThread.ExecutionContext
+            var intercept = new Intercept();
+            await Intercept.Invoke1(); //异步执行
+            Console.WriteLine(Program.v.Value); //123
+            await Intercept.Invoke2(); //没有异步执行
+            Console.WriteLine(Program.v.Value); //888  
 
             Console.ReadKey();
         }
@@ -29,13 +30,28 @@ namespace AsyncLocal
     {
         public static async Task Invoke1()
         {
+            Console.WriteLine();
+
+            Console.WriteLine("Invoke1线程：" + Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
+
             Program.v.Value = 888;
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
             await Task.CompletedTask;
         }
 
         public static Task Invoke2()
         {
+            Console.WriteLine();
+
+            Console.WriteLine("Invoke2线程：" + Thread.CurrentThread.ManagedThreadId);
+
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
+
             Program.v.Value = 888;
+
+
+            Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
             return Task.CompletedTask;
         }
     }
