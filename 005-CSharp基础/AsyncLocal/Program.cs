@@ -32,7 +32,7 @@ namespace AsyncLocal
         {
             Console.WriteLine();
 
-            Console.WriteLine("Invoke1线程：" + Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("Invoke1线程：" + Thread.CurrentThread.ManagedThreadId);  //异步操作会不会创建线程 ？  有可能会也有可能不会
             Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
 
             Program.v.Value = 888;
