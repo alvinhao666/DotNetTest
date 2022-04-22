@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace 控制台动画
 {
@@ -45,4 +46,38 @@ namespace 控制台动画
             catch (Exception) { }
         }
     }
+
+
+    //internal class StartingAnimation
+    //{
+    //    public static bool IsStarted = false;
+
+    //    public static Action Started = null!;
+
+    //    public static Task Start()
+    //    {
+    //        Console.CursorVisible = false;
+    //        return Flashing();
+    //    }
+
+    //    public static async Task Flashing()
+    //    {
+    //        string loading = "-";
+    //        while (!IsStarted)
+    //        {
+    //            Console.Write('\u0008');
+    //            switch (loading)
+    //            {
+    //                case "\\": loading = "|"; break;
+    //                case "|": loading = "/"; break;
+    //                case "/": loading = "-"; break;
+    //                case "-": loading = "\\"; break;
+    //            }
+    //            Console.Write(loading);
+    //            await Task.Delay(100);
+    //        }
+    //        Console.Write('\u0008');
+    //        Started();
+    //    }
+    //}
 }
