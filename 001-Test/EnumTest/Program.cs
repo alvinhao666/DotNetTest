@@ -113,6 +113,8 @@ namespace EnumTest
             Console.WriteLine(watch.ElapsedMilliseconds);
             Contract.Assert(true, "");
 
+            Console.WriteLine(CarType.C1.GetHashCode() == UserType.typeX.GetHashCode());
+            Console.WriteLine(CarType.C3.GetHashCode());
             Console.ReadKey();
         }
 
@@ -151,7 +153,7 @@ namespace EnumTest
         public UserType type { get; set; }
     }
 
-    public enum UserType:ushort
+    public enum UserType
     {
         typeX,
         typeY
@@ -162,6 +164,6 @@ namespace EnumTest
     { 
         C1,
         C2,
-        C3
+        C3 = 4
     }
 }
