@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class BST1<E> where E:IComparable<E>
+    class BST1<E> where E : IComparable<E>
     {
         private class Node
         {
@@ -21,7 +18,7 @@ namespace DataStructure
                 right = null;
             }
         }
-        
+
         private Node root;
         private int N;
 
@@ -40,13 +37,13 @@ namespace DataStructure
         {
             if (root == null)
             {
-                root = new Node(e); 
+                root = new Node(e);
                 N++;
                 return;
             }
 
-            Node pre = null;    
-            Node cur = root;    
+            Node pre = null;
+            Node cur = root;
 
             while (cur != null)
             {
@@ -55,18 +52,18 @@ namespace DataStructure
 
                 pre = cur;
 
-                if (e.CompareTo(cur.e) < 0)     
-                    cur = cur.left;     
+                if (e.CompareTo(cur.e) < 0)
+                    cur = cur.left;
                 else   //e.CompareTo(cur.e) > 0 
-                    cur = cur.right;    
+                    cur = cur.right;
             }
 
             cur = new Node(e);
 
             if (e.CompareTo(pre.e) < 0)
-                pre.left = cur;     
+                pre.left = cur;
             else    //e.CompareTo(pre.e) > 0
-                pre.right = cur;    
+                pre.right = cur;
 
             N++;
         }
@@ -74,11 +71,11 @@ namespace DataStructure
         //往二叉查找树中添加元素，递归实现
         public void Add(E e)
         {
-            root=Add(root, e);
+            root = Add(root, e);
         }
 
         //以node为根的树中添加元素e，添加后返回根节点node
-        private Node Add(Node node,E e)
+        private Node Add(Node node, E e)
         {
             if (node == null)
             {
@@ -89,7 +86,7 @@ namespace DataStructure
             if (e.CompareTo(node.e) < 0)
                 node.left = Add(node.left, e);
             else if (e.CompareTo(node.e) > 0)
-                node.right=Add(node.right, e);
+                node.right = Add(node.right, e);
 
             return node;
         }
@@ -101,7 +98,7 @@ namespace DataStructure
         }
 
         //以node为根的树是否包含元素e
-        private bool Contains(Node node,E e)
+        private bool Contains(Node node, E e)
         {
             if (node == null)
                 return false;
@@ -218,14 +215,14 @@ namespace DataStructure
             if (node.right == null)
                 return node;
 
-           return Max(node.right);
+            return Max(node.right);
         }
 
         // 从二叉查找树中删除最小值所在节点
         public E RemoveMin()
         {
             E ret = Min();
-            root=RemoveMin(root);
+            root = RemoveMin(root);
             return ret;
         }
 
@@ -239,7 +236,7 @@ namespace DataStructure
                 return node.right;
             }
 
-            node.left=RemoveMin(node.left);
+            node.left = RemoveMin(node.left);
             return node;
         }
 
@@ -269,7 +266,7 @@ namespace DataStructure
         // 从二叉查找树中删除元素为e的节点
         public void Remove(E e)
         {
-            root=Remove(root, e);
+            root = Remove(root, e);
         }
 
         // 删除掉以node为根的二叉查找树中值为e的节点
@@ -280,12 +277,12 @@ namespace DataStructure
 
             if (e.CompareTo(node.e) < 0)
             {
-                node.left=Remove(node.left, e);
+                node.left = Remove(node.left, e);
                 return node;
             }
             else if (e.CompareTo(node.e) > 0)
             {
-                node.right=Remove(node.right, e);
+                node.right = Remove(node.right, e);
                 return node;
             }
             else //e.CompareTo(node.e) == 0
@@ -308,8 +305,8 @@ namespace DataStructure
                 // 找到比待删除节点大的最小节点, 即待删除节点右子树的最小节点
                 // 用这个节点顶替待删除节点的位置
 
-                Node s=Min(node.right);
-                s.right=RemoveMin(node.right);
+                Node s = Min(node.right);
+                s.right = RemoveMin(node.right);
                 s.left = node.left;
 
                 return s;

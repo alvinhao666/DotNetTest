@@ -3,28 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace 建议46_显式释放资源需继承接口IDisposable
 {
-//    C#中的每一个类型都代表一种资源，资源分为两类：
-//
-//    托管资源：由CLR管理分配和释放的资源，即从CLR里new出来的对象。
-//
-//    非托管资源：不受CLR管理的对象，如Windows内核对象，或者文件、数据库连接、套接字、COOM对象等。
-//    继承IDisposable接口也为实现语法糖using带来了便利。如：
-//    using (SampleClass cl = new SampleClass())
-//    {
-//    //省略
-//    }
-//    等价于：
-//    SampleClass cl;
-//    try
-//    {
-//    cl == new SampleClass();
-//    //省略
-//    }
-//    finally
-//    {
-//    cl.Dispose();
-//    }
- public class SampleClass : IDisposable
+    //    C#中的每一个类型都代表一种资源，资源分为两类：
+    //
+    //    托管资源：由CLR管理分配和释放的资源，即从CLR里new出来的对象。
+    //
+    //    非托管资源：不受CLR管理的对象，如Windows内核对象，或者文件、数据库连接、套接字、COOM对象等。
+    //    继承IDisposable接口也为实现语法糖using带来了便利。如：
+    //    using (SampleClass cl = new SampleClass())
+    //    {
+    //    //省略
+    //    }
+    //    等价于：
+    //    SampleClass cl;
+    //    try
+    //    {
+    //    cl == new SampleClass();
+    //    //省略
+    //    }
+    //    finally
+    //    {
+    //    cl.Dispose();
+    //    }
+    public class SampleClass : IDisposable
     {
         //演示创建一个非托管资源
         private IntPtr nativeResource = Marshal.AllocHGlobal(100);

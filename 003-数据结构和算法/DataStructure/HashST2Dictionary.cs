@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
-    class HashST2Dictionary<Key,Value>:IDictionary<Key,Value>
+    class HashST2Dictionary<Key, Value> : IDictionary<Key, Value>
     {
         private HashST2<Key, Value> hashST2;
 
-        public int Count { get {return  hashST2.Count; } }
+        public int Count { get { return hashST2.Count; } }
 
         public bool IsEmpty { get { return hashST2.IsEmpty; } }
 
@@ -36,7 +30,7 @@ namespace DataStructure
 
         public bool ContainsKey(Key key)
         {
-           return hashST2.Contains(key);
+            return hashST2.Contains(key);
         }
 
         public Value Get(Key key)

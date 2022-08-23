@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
     class HashST1<Key>
     {
@@ -34,7 +28,7 @@ namespace DataStructure
 
         public void Add(Key key)
         {
-            LinkedList1<Key> list=hashtable[Hash(key)];
+            LinkedList1<Key> list = hashtable[Hash(key)];
             if (list.Contains(key)) return;
             else
             {

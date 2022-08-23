@@ -1,6 +1,5 @@
 ﻿using SevenTiny.Bantina.Aop;
 using System;
-using System.Diagnostics;
 
 namespace Test.SevenTiny.Bantina.Aop
 {

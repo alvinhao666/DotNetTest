@@ -24,13 +24,13 @@ namespace 委托
             Console.WriteLine("请输入长方形的长：");
             double length = double.Parse(Console.ReadLine());
             Console.WriteLine("请输入长方形的宽：");
-            double width = double.Parse(Console.ReadLine()); 
+            double width = double.Parse(Console.ReadLine());
 
             AreaDelegate areaDelegate = new AreaDelegate(Handle);
 
             areaDelegate(length, width);
 
-            AreaDelegate areaDelegate2 = delegate (double a,double b)  //匿名委托
+            AreaDelegate areaDelegate2 = delegate (double a, double b)  //匿名委托
             {
                 Console.WriteLine("长方形的面积为：" + a * b);
             };
@@ -44,7 +44,7 @@ namespace 委托
 
             areaDelegate3(length, width);
 
-            AreaDelegate areaDelegate4 = (a,b) =>  //简写的Lambda表达式
+            AreaDelegate areaDelegate4 = (a, b) =>  //简写的Lambda表达式
             {
                 Console.WriteLine("长方形的面积为：" + a * b);
             };

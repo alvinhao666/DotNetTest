@@ -84,9 +84,9 @@ namespace 省市区地址处理
                         sb.Append($"(2,'{a2.Code}','{a2.Name}','{parentCode}','{parentName}','{fullName}'),");
                         sb.Append(Environment.NewLine);
 
-                        string codeNext = excelWorksheet.Cells[i+1, 1].Value.ToString().Trim();
+                        string codeNext = excelWorksheet.Cells[i + 1, 1].Value.ToString().Trim();
 
-                        if (codeNext.Substring(0,4)!=code.Substring(0,4)) // 东莞 中山  海南三沙
+                        if (codeNext.Substring(0, 4) != code.Substring(0, 4)) // 东莞 中山  海南三沙
                         {
                             sb.Append($"(3,'{code}','市区','{a2.Code}','{a2.Name}','{fullName}市区'),");
                             sb.Append(Environment.NewLine);
@@ -107,7 +107,7 @@ namespace 省市区地址处理
                             a2.Name = "直辖县级市";
                             areaList.Add(a2);
 
-                            sb.Append($"(2,'{a2.Code}','{a2.Name}','{province.Code}','{province.Name}','{province.Name+a2.Name}'),");
+                            sb.Append($"(2,'{a2.Code}','{a2.Name}','{province.Code}','{province.Name}','{province.Name + a2.Name}'),");
                             sb.Append(Environment.NewLine);
 
                             Area a23 = new Area();
@@ -115,7 +115,7 @@ namespace 省市区地址处理
                             a23.Name = name;
                             areaList.Add(a23);
 
-                            sb.Append($"(3,'{a23.Code}','{a23.Name}','{a2.Code}','{a2.Name}','{province.Name+a2.Name + a23.Name}'),");
+                            sb.Append($"(3,'{a23.Code}','{a23.Name}','{a2.Code}','{a2.Name}','{province.Name + a2.Name + a23.Name}'),");
 
                             sb.Append(Environment.NewLine);
 

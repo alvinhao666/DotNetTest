@@ -57,14 +57,14 @@ namespace Property
         public int b { get; set; }
 
         public int c
-        { 
+        {
             get
             {
                 string a = "111";
 
-                List<string> list = new List<string>() ;
+                List<string> list = new List<string>();
 
-                Console.WriteLine(a+ "   "+ a.GetHashCode() + " " + list.GetHashCode());
+                Console.WriteLine(a + "   " + a.GetHashCode() + " " + list.GetHashCode());
 
                 x = 8;
                 return b + x;

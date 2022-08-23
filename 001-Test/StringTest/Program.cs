@@ -127,9 +127,9 @@ namespace StringTest
             Htmlstring = Regex.Replace(Htmlstring, @"&(copy|#169);", "\xa9", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&#(\d+);", "", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"<img[^>]*>;", "", RegexOptions.IgnoreCase);
-            Htmlstring=Htmlstring.Replace("<", "");
-            Htmlstring=Htmlstring.Replace(">", "");
-            Htmlstring=Htmlstring.Replace("\r\n", "");
+            Htmlstring = Htmlstring.Replace("<", "");
+            Htmlstring = Htmlstring.Replace(">", "");
+            Htmlstring = Htmlstring.Replace("\r\n", "");
             return Htmlstring;
         }
     }

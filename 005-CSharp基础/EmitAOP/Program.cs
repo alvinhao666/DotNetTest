@@ -1,6 +1,5 @@
 ﻿using SevenTiny.Bantina.Aop;
 using System;
-using System.Collections.Generic;
 using Test.SevenTiny.Bantina.Aop;
 
 namespace EmitAOP

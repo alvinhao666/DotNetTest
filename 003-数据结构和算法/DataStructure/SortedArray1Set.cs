@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SortedArray1Set<Key>:ISet<Key> where Key:IComparable<Key>
+    class SortedArray1Set<Key> : ISet<Key> where Key : IComparable<Key>
     {
         private SortedArray1<Key> s;
 
@@ -39,7 +35,7 @@ namespace DataStructure
         //O(log n)
         public bool Contains(Key key)
         {
-            return  s.Contains(key);
+            return s.Contains(key);
         }
     }
 }

@@ -39,11 +39,11 @@ namespace 权重计算
                 var beginValue = index == 0 ? 0 : pars[index - 1]; //0  1  5
                 endValue += item.Value;  //1 6 10
 
-                Console.WriteLine(beginValue+","+endValue+","+index);
+                Console.WriteLine(beginValue + "," + endValue + "," + index);
 
                 if (num >= beginValue && num <= endValue)
                     break;
-                
+
                 index++;
             }
             return index;

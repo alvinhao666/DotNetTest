@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sorting
+﻿namespace Sorting
 {
     //时间复杂度O(nlogn)
     //空间复杂度O（n）需要借助一个同样长度的辅助数组进行排序
@@ -19,7 +13,7 @@ namespace Sorting
         }
 
         //递归使用归并排序，对arr[l...r]的范围进行排序
-        private static void Sort(int[] arr,int[] temp,int l,int r)
+        private static void Sort(int[] arr, int[] temp, int l, int r)
         {
             //Console.WriteLine("Sort（{0},{1}）", l, r);
             if (l >= r) return;
@@ -34,7 +28,7 @@ namespace Sorting
         }
 
         // 将arr[l...mid]和arr[mid+1...r]两部分有序排列进行归并
-        private static void Merge(int[] arr,int[] temp,int l,int mid ,int r)
+        private static void Merge(int[] arr, int[] temp, int l, int mid, int r)
         {
             //Console.WriteLine("Merge（{0},{1},{2}）", l, mid, r);
 
@@ -43,9 +37,9 @@ namespace Sorting
             int k = l;
 
             //左右半边都有元素(将小的放到temp数组中)
-            while(i<=mid && j <= r)
+            while (i <= mid && j <= r)
             {
-                if(arr[i] < arr[j])
+                if (arr[i] < arr[j])
                     temp[k++] = arr[i++];
                 else //arr[i] >= arr[j]
                     temp[k++] = arr[j++];

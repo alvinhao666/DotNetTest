@@ -13,7 +13,7 @@ namespace _2策略模式
         {
             Message m = new Message(new XmlMessage());
 
-            Console.WriteLine(m.Insert(new MessageModel() {Message="插入",PublishTime=DateTime.Now }));
+            Console.WriteLine(m.Insert(new MessageModel() { Message = "插入", PublishTime = DateTime.Now }));
 
             Console.WriteLine(m.Get()[0].Message + " " + m.Get()[0].PublishTime.ToString());
 

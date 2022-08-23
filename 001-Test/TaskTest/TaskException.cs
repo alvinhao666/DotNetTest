@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TaskTest
@@ -20,7 +18,7 @@ namespace TaskTest
         }
 
         private static readonly Stopwatch stopWatch = new Stopwatch();
-        public  static async Task MissHandling()
+        public static async Task MissHandling()
         {
             stopWatch.Start();
             var taskOne = ThrowAfter(1000, new NotSupportedException("Error 1"));

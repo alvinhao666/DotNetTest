@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 结构Struct
+﻿namespace 结构Struct
 {
     class Program
     {
@@ -39,7 +37,7 @@ namespace 结构Struct
             this.x = x;
             this.y = y;
         }
-}
+    }
 
     //结构体中不允许实例属性或字段包含初始值设定项。但是，结构体允许静态属性或字段包含初始值设定项。
     //public struct Coords

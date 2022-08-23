@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sorting
+﻿namespace Sorting
 {
     class InsertSort
     {
@@ -28,9 +22,9 @@ namespace Sorting
         }
 
         //对arr[l...r]的范围使用插入排序
-        public static void Sort1(int[] arr,int l,int r)
+        public static void Sort1(int[] arr, int l, int r)
         {
-            for (int i = l+1; i <= r; i++)
+            for (int i = l + 1; i <= r; i++)
             {
                 int e = arr[i];
                 int j;

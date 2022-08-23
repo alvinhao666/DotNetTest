@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace 建议5_使用int_来确保值类型也可以为null
+﻿namespace 建议5_使用int_来确保值类型也可以为null
 {
-    
+
     //基元类型为什么需要为null？考虑两个场景：
 
     //1）数据库中一个int字段可以被设置为null。在C#中，值被取出来后，为了将它赋值给int类型，不得不首先判断一下它是否为null。如果将null直接赋值给int类型，会引发异常。

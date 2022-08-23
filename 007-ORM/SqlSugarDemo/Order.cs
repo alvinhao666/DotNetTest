@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
 
 /*
  * TMS v1.0.0 (http://vip56.cn)
@@ -13,7 +12,7 @@ namespace Sino.TMSystem.DomainModel.Order
     /// <summary>
     /// 订单总单
     /// </summary>
-    public class Order 
+    public class Order
     {
         public Guid Id { get; set; }
 

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace explicit和implicit
+﻿namespace explicit和implicit
 {
 
     ////explicit：代表用来声明显示自定义类型的转换

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace 反射
+﻿namespace 反射
 {
     public class Demo1
     {

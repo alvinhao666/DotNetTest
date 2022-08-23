@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sorting
+﻿namespace Sorting
 {
     //选择排序 O（n²）
     class SelectSort
@@ -22,10 +16,10 @@ namespace Sorting
             for (int i = 0; i < n; i++)
             {
                 //最小元素的索引min 从未排序的第一个位置i开始寻找
-                int min = i; 
+                int min = i;
 
                 //内层循环在[i+1...n)寻找最小值对应的索引min
-                for (int j = i+1; j < n; j++)
+                for (int j = i + 1; j < n; j++)
                 {
                     if (arr[j] < arr[min])
                         min = j;
@@ -36,7 +30,7 @@ namespace Sorting
             }
         }
 
-        private static void Swap(int[] arr,int i,int j)
+        private static void Swap(int[] arr, int i, int j)
         {
             int t = arr[i];
             arr[i] = arr[j];

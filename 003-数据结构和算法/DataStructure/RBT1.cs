@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -116,11 +112,11 @@ namespace DataStructure
 
             //如果出现右子结点是红色，而左子结点是黑色，进行左旋转
             if (IsRed(node.right) && !IsRed(node.left))
-                node=LeftRotate(node);
+                node = LeftRotate(node);
 
             //如果出现连续的左子结点都为红色，进行右旋转
             if (IsRed(node.left) && IsRed(node.left.left))
-                node=RightRoatate(node);
+                node = RightRoatate(node);
 
             //如果出现左右子结点均为红色，进行颜色翻转
             if (IsRed(node.left) && IsRed(node.right))

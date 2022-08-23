@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace _2策略模式
 {
@@ -10,7 +8,7 @@ namespace _2策略模式
 
         public Message(IMessageStrategy strategy)
         {
-             this._strategy = strategy;
+            this._strategy = strategy;
         }
 
         public List<MessageModel> Get()

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class RBT2Dictionary<Key,Value>:IDictionary<Key,Value> where Key:IComparable<Key>
+    class RBT2Dictionary<Key, Value> : IDictionary<Key, Value> where Key : IComparable<Key>
     {
         private RBT2<Key, Value> rbt;
 

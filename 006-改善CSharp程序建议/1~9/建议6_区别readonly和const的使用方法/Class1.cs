@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 建议6_区别readonly和const的使用方法
+﻿namespace 建议6_区别readonly和const的使用方法
 {
 
     //很多初学者分不清readonly和const的使用场合。在我看来，要使用const的理由只有一个，那就是效率。但是，在大部分应用情况下， “效率”并没有那么高的地位，所以我更愿意采用readonly，因为readonly赋予代码更多的灵活性。const和readonly的本质区别如 下：

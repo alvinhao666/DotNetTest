@@ -4,14 +4,14 @@ namespace 建议7_将0值作为枚举默认值
 {
     //允许使用的枚举类型有byte、sbyte、short、ushort、int、uint、long和ulong。应该始终将0值作为枚举类型的默认值。不过，这样做不是因为允许使用的枚举类型在声明时的默认值是0值，而是有工程上的意义。
     class Program
-    {   
+    {
         //那么，你一不小心编写了如下的代码，它的输出会是什么呢？
         static Week? week;
         static void Main(string[] args)
         {
             Console.WriteLine(week);
 
-            week = (Week)9;   
+            week = (Week)9;
 
             Console.WriteLine(week);
 

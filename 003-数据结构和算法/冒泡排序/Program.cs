@@ -19,11 +19,11 @@ namespace 冒泡排序
         public static void Sort(int[] arr)
         {
             int temp = 0;
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for(int j = i + 1; j < arr.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if(arr[i]>arr[j])
+                    if (arr[i] > arr[j])
                     {
                         temp = arr[j];
                         arr[j] = arr[i];

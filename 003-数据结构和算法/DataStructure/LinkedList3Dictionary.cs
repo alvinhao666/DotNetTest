@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
-    class LinkedList3Dictionary<Key,Value>:IDictionary<Key,Value>
+    class LinkedList3Dictionary<Key, Value> : IDictionary<Key, Value>
     {
         private LinkedList3<Key, Value> list;
 

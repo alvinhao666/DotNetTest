@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 闭包
+﻿namespace 闭包
 {
     // delegate 被编译器 编译成一个class, 所以才能传来传去(具体参考 《CLR via C#》第四版), 所以 Action、Func也是如此
 

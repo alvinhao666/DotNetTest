@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sorting
 {
@@ -25,7 +21,7 @@ namespace Sorting
                 return;
             }
 
-            int p =l + rd.Next(r - l + 1);
+            int p = l + rd.Next(r - l + 1);
 
             Swap(arr, l, p);
 

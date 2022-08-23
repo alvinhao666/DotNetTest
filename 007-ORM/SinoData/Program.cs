@@ -1,12 +1,10 @@
 ﻿
+using Dapper;
+using MySqlConnector;
 using System;
 using System.Data;
-using Dapper;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
-using MySqlConnector;
 
 namespace SinoData
 {
@@ -74,11 +72,11 @@ namespace SinoData
 
                 Console.WriteLine($"共{enterprises.Count}条数据");
 
-                var enterprisesGroups = enterprises.GroupBy(a => a.CreationTime.Date).OrderBy(a=>a.Key);
+                var enterprisesGroups = enterprises.GroupBy(a => a.CreationTime.Date).OrderBy(a => a.Key);
 
                 var preFix = "TYR";
 
-                foreach(var items in enterprisesGroups)
+                foreach (var items in enterprisesGroups)
                 {
                     var orderByItems = items.OrderBy(a => a.CreationTime);
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sorting
+﻿namespace Sorting
 {
     //时间复杂度O(nlogn)
     //空间复杂度O（n）需要借助一个同样长度的辅助数组进行排序

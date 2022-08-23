@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 建议3_区别对待强制转型与as和is
+﻿namespace 建议3_区别对待强制转型与as和is
 {
     /// <summary>
     /// explicit和implicit关键字分别表示显式的类型转换和隐式的类型转换。
@@ -32,7 +30,7 @@ namespace 建议3_区别对待强制转型与as和is
         public string Name { get; set; }
     }
 
-    public class  SecondType
+    public class SecondType
     {
         public string Name { get; set; }
 

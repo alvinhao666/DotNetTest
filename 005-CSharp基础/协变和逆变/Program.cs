@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace 协变和逆变
 {
@@ -34,14 +33,14 @@ namespace 协变和逆变
         }
     }
 
-   
+
 
     public class Human
     {
         public string Name { get; set; }
     }
 
-    public class Chinese:Human
+    public class Chinese : Human
     {
         public string age { get; set; }
     }

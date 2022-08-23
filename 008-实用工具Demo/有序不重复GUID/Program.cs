@@ -6,7 +6,7 @@ namespace 有序不重复GUID
     {
         static void Main(string[] args)
         {
-            for(int i = 0; i <= 1000; i++)
+            for (int i = 0; i <= 1000; i++)
             {
                 Console.WriteLine(Util.NewMongodbId());
             }

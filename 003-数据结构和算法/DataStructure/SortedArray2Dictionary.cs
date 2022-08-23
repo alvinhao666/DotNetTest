@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SortedArray2Dictionary<Key,Value>:IDictionary<Key,Value> where Key:IComparable<Key>
+    class SortedArray2Dictionary<Key, Value> : IDictionary<Key, Value> where Key : IComparable<Key>
     {
         private SortedArray2<Key, Value> s2;
 
@@ -45,7 +41,7 @@ namespace DataStructure
         //O(log n)
         public Value Get(Key key)
         {
-           return  s2.Get(key);
+            return s2.Get(key);
         }
 
         //O(log n)

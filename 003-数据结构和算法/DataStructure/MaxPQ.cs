@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class MaxPQ<E>:IQueue<E> where E:IComparable<E>
+    class MaxPQ<E> : IQueue<E> where E : IComparable<E>
     {
         private MaxHeap<E> heap;
 
@@ -31,12 +27,12 @@ namespace DataStructure
 
         public E Dequeue()
         {
-           return heap.RemoveMax();
+            return heap.RemoveMax();
         }
 
         public E Peek()
         {
-           return  heap.Max();
+            return heap.Max();
         }
 
         public override string ToString()

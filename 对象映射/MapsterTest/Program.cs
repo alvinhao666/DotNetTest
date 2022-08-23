@@ -10,13 +10,13 @@ namespace MapsterTest
         {
             var user = new User { Name = "张三", Age = 10 };
 
-            var input =new User { Name = "张三3",Age = 11 };
+            var input = new User { Name = "张三3", Age = 11 };
 
 
             var user2 = input.Adapt(user);
 
 
-            Console.WriteLine(user.Name + "  " +user.Age);
+            Console.WriteLine(user.Name + "  " + user.Age);
 
             Console.WriteLine(user2.Name + "  " + user2.Age);
 

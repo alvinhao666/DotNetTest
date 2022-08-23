@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class RBT1Set<E>:ISet<E> where E:IComparable<E>
+    class RBT1Set<E> : ISet<E> where E : IComparable<E>
     {
         private RBT1<E> rbt;
 

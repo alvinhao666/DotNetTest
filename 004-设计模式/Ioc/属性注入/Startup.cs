@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using Alexinea.Autofac.Extensions.DependencyInjection;
+﻿using Alexinea.Autofac.Extensions.DependencyInjection;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using System;
+using System.Linq;
 
 namespace 属性注入
 {
@@ -41,7 +36,7 @@ namespace 属性注入
             //所以.这个过程,让我们无法使用Autofac的一些更高级功能.比如属性注入(关于属性注入的好坏..属于仁者见仁智者见智的东西, 这里我们不讨论它是好还是坏.)
 
             //Replace代码的意思：使用ServiceBasedControllerActivator替换DefaultControllerActivator（意味着框架现在会尝试从IServiceProvider中解析控制器实例，也就是return new AutofacServiceProvider(Container);
-            
+
             services.AddMvc();
             //替换控制器所有者,详见有道笔记
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());

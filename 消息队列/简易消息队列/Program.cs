@@ -5,7 +5,7 @@ namespace 简易消息队列
 {
     class Program
     {
-        static void  Main(string[] args)
+        static void Main(string[] args)
         {
             Task.Factory.StartNew(() =>
             {

@@ -1,7 +1,5 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace 草根专栏Test
 {
@@ -77,7 +75,7 @@ namespace 草根专栏Test
             //char是System.Char的一个别名
 
             char[] arr = new char[100];
-            Console.WriteLine(arr[25]==default(char)); //其输出为0 （错误） 默认值 '\0'
+            Console.WriteLine(arr[25] == default(char)); //其输出为0 （错误） 默认值 '\0'
             Console.WriteLine(arr[25] == '\0');
 
             var x = new[] { '\u00AF', 0b0 };
@@ -105,7 +103,7 @@ namespace 草根专栏Test
             //}
             //Console.WriteLine("Complete"); //输出try,finally
 
-            foreach(string s in Test())
+            foreach (string s in Test())
             {
                 Console.WriteLine(s);
             }
@@ -140,7 +138,7 @@ namespace 草根专栏Test
             dynamic xxx = "hello";
             int i = xxx;
             Console.WriteLine(i); //编译不报错，运行报错
-            
+
             Console.ReadKey();
         }
 
@@ -183,7 +181,7 @@ namespace 草根专栏Test
     }
 
 
-   public class Point { public int X, Y; }
+    public class Point { public int X, Y; }
 
 
     public class Rectangle

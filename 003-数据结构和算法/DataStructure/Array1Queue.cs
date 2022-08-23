@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
     //数组队列
-    class Array1Queue<E>:IQueue<E>
+    class Array1Queue<E> : IQueue<E>
     {
         //动态数组作为底层的数据结构
         private Array1<E> arr;

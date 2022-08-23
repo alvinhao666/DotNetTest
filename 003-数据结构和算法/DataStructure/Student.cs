@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
     //Student是一个可比较的类型
     //实现了IComparable<Student>接口中的比较方法CompareTo（）
-    class Student :IComparable<Student>
+    class Student : IComparable<Student>
     {
         private string name;
         private int tall;
 
-        public Student(string name,int tall)
+        public Student(string name, int tall)
         {
             this.name = name;
             this.tall = tall;

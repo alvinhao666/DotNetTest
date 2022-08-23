@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -32,7 +29,7 @@ namespace DataStructure
             }
         }
 
-        private Node head;  
+        private Node head;
         private Node tail;  //尾指针标记链表尾部结点
         private int N;
 

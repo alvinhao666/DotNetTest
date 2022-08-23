@@ -45,7 +45,7 @@ namespace Client
             //}
             #endregion
 
-            
+
             #region 竞争消费模式 worker模式 一个消息生产者,多个消息消费者,一个队列
             IConnectionFactory conFactory = new ConnectionFactory//创建连接工厂对象
             {

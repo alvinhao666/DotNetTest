@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -41,7 +37,7 @@ namespace DataStructure
         //二分查找法，在有序数组arr中，查找target
         //如果找到target，返回相应的索引index
         //如果没有找到target，返回-1
-        public static int BinarySearch(int[] arr,int target)
+        public static int BinarySearch(int[] arr, int target)
         {
             //在[l...r]范围里寻找target
             int l = 0;

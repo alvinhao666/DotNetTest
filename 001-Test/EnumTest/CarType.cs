@@ -1,12 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sino.CapacityCloud.Core
+﻿namespace Sino.CapacityCloud.Core
 {
     public enum VehicleClassDetail
-    { 
+    {
 
         H10,
 
@@ -26,7 +21,7 @@ namespace Sino.CapacityCloud.Core
 
         H18,
 
-        H19=999
+        H19 = 999
     }
 
 

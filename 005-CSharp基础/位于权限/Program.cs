@@ -168,13 +168,13 @@ namespace 位与权限
                 2199023255552
             };
             ulong sum2 = 0;
-            foreach(var i in list3)
+            foreach (var i in list3)
             {
                 sum2 = sum2 | i;
             }
             Console.WriteLine(sum2);
             Console.WriteLine(long.MaxValue);//9223372036854775807  19位   负号- 20位
-            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63))== 9223372036854775808);
+            Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63)) == 9223372036854775808);
             Console.WriteLine(ulong.MaxValue);//18446744073709551615 20位 
             Console.WriteLine(Convert.ToUInt64(Math.Pow(2, 63)));
         }

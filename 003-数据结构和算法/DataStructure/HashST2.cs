@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
-    class HashST2<Key,Value>
+    class HashST2<Key, Value>
     {
-        private LinkedList3<Key,Value>[] hashtable;
+        private LinkedList3<Key, Value>[] hashtable;
         private int N;
         private int M;
 
@@ -16,9 +10,9 @@ namespace DataStructure
         {
             this.M = M;
             N = 0;
-            hashtable = new LinkedList3<Key,Value>[M];
+            hashtable = new LinkedList3<Key, Value>[M];
             for (int i = 0; i < M; i++)
-                hashtable[i] = new LinkedList3<Key,Value>();
+                hashtable[i] = new LinkedList3<Key, Value>();
         }
 
         public HashST2() : this(97) { }
@@ -32,21 +26,21 @@ namespace DataStructure
             return (key.GetHashCode() & 0x7fffffff) % M;
         }
 
-        public void Add(Key key,Value value)
+        public void Add(Key key, Value value)
         {
-            LinkedList3<Key,Value> list = hashtable[Hash(key)];
+            LinkedList3<Key, Value> list = hashtable[Hash(key)];
             if (list.Contains(key))
                 list.Set(key, value);
             else
             {
-                list.Add(key,value);
+                list.Add(key, value);
                 N++;
             }
         }
 
         public void Remove(Key key)
         {
-            LinkedList3<Key,Value> list = hashtable[Hash(key)];
+            LinkedList3<Key, Value> list = hashtable[Hash(key)];
             if (list.Contains(key))
             {
                 list.Remove(key);
@@ -56,7 +50,7 @@ namespace DataStructure
 
         public bool Contains(Key key)
         {
-            LinkedList3<Key,Value> list = hashtable[Hash(key)];
+            LinkedList3<Key, Value> list = hashtable[Hash(key)];
             return list.Contains(key);
         }
 
@@ -66,7 +60,7 @@ namespace DataStructure
             return list.Get(key);
         }
 
-        public void Set(Key key,Value newValue)
+        public void Set(Key key, Value newValue)
         {
             LinkedList3<Key, Value> list = hashtable[Hash(key)];
             list.Set(key, newValue);

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sorting
 {
     //三向切分的快速排序
-    public  class QuickSort3
+    public class QuickSort3
     {
         private static Random rd = new Random();
 
@@ -17,7 +13,7 @@ namespace Sorting
             Sort(arr, 0, n - 1);
         }
 
-        private static void Sort(int[] arr,int l ,int r)
+        private static void Sort(int[] arr, int l, int r)
         {
             //对小规模的数组使用插入排序，避免频繁的递归调用
             if (r - l + 1 <= 15)
@@ -38,15 +34,15 @@ namespace Sorting
             int i = l + 1;     // arr[lt+1...i-1] == v
 
             //往三个区间填充元素
-            while(i < gt)
+            while (i < gt)
             {
-                if(arr[i] < v)
+                if (arr[i] < v)
                 {
                     lt++;
                     Swap(arr, i, lt);
                     i++;
                 }
-                else if(arr[i] > v)
+                else if (arr[i] > v)
                 {
                     gt--;
                     Swap(arr, i, gt);
@@ -65,7 +61,7 @@ namespace Sorting
 
         }
 
-        private static void Swap(int[] arr,int i,int j)
+        private static void Swap(int[] arr, int i, int j)
         {
             int e = arr[i];
             arr[i] = arr[j];

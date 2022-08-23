@@ -7,7 +7,7 @@ namespace AsyncLocal
     class Program
     {
         public static AsyncLocal<int> v = new AsyncLocal<int>();
- 
+
         static async Task Main(string[] args)
         {
             Console.WriteLine(Thread.CurrentThread.ExecutionContext.GetHashCode());
@@ -31,7 +31,7 @@ namespace AsyncLocal
 
     public class Intercept
     {
-        public static void  Invoke0()
+        public static void Invoke0()
         {
             Console.WriteLine();
 

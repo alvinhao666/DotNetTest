@@ -51,7 +51,7 @@ namespace InterfaceTest
     {
         public int Name;//Fields字段
         public int PersonType { get; set; }
-        
+
 
         public class Classes
         {

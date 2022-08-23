@@ -2,13 +2,13 @@
 
 namespace 析构函数
 {
-        //    C#如何立即回收内存
+    //    C#如何立即回收内存
 
-        //1.把对象赋值为null
+    //1.把对象赋值为null
 
-        //2.立即调用GC.Collect();
- 
-        //注意：这个也只是强制垃圾回收器去回收，但具体什么时候执行不确定。
+    //2.立即调用GC.Collect();
+
+    //注意：这个也只是强制垃圾回收器去回收，但具体什么时候执行不确定。
     class Program
     {
         static void Main(string[] args)
@@ -42,7 +42,7 @@ namespace 析构函数
     }
 
 
-    public class Person 
+    public class Person
     {
         public string Name { get; set; }
 

@@ -79,6 +79,6 @@ namespace 建议12_重写Equals时也要重写GetHashCode
 
     class PersonMoreInfo
     {
-       public string SomeInfo { get; set; }
+        public string SomeInfo { get; set; }
     }
 }

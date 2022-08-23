@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class BST2Dictionary<Key,Value>:IDictionary<Key,Value> where Key:IComparable<Key>
+    class BST2Dictionary<Key, Value> : IDictionary<Key, Value> where Key : IComparable<Key>
     {
         private BST2<Key, Value> bst;
 
@@ -26,12 +22,12 @@ namespace DataStructure
 
         public bool ContainsKey(Key key)
         {
-           return bst.Contains(key);
+            return bst.Contains(key);
         }
 
         public Value Get(Key key)
         {
-           return bst.Get(key);
+            return bst.Get(key);
         }
 
         public void Remove(Key key)

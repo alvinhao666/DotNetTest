@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sorting
 {
-    class Date:IComparable<Date>
+    class Date : IComparable<Date>
     {
         private int year;
         private int month;
         private int day;
         private string happen;
 
-        public Date(int year,int month,int day,string happen)
+        public Date(int year, int month, int day, string happen)
         {
             this.year = year;
             this.month = month;

@@ -27,7 +27,7 @@ namespace 建议11_区别对待__和Equals
             //注意 由于操作符“==”和“Equals”方法从语法实现上来说，都可以被重载为表示“值相等性”和“引用相等性”。所以，为了明确有一种方法肯 定比较的是“引用相等性”，
             //FCL中提供了Object.ReferenceEquals方法。该方法比较的是：两个示例是否是同一个示例。
 
- 
+
         }
 
         static void ValueTypeOPEquals()

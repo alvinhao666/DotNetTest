@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
-    class HashST1Set<Key>:ISet<Key>
+    class HashST1Set<Key> : ISet<Key>
     {
         private HashST1<Key> hashST1;
 
-        public int Count { get {return  hashST1.Count; } }
+        public int Count { get { return hashST1.Count; } }
 
         public bool IsEmpty { get { return hashST1.IsEmpty; } }
 

@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Linq.Expressions.Expression;
 namespace System
 {
     public class MapperConfig<TSource, TTarget> where TSource : class where TTarget : class, new()
@@ -15,17 +7,17 @@ namespace System
         /// <summary>
         /// 指定列转换
         /// </summary>
-        public Action<TSource, TTarget> BindAction { get;  set; }
+        public Action<TSource, TTarget> BindAction { get; set; }
 
         /// <summary>
         /// 忽略需要转换的列
         /// </summary>
-        public  List<string> IgnoreColoums { get; private set; }
+        public List<string> IgnoreColoums { get; private set; }
 
         /// <summary>
         /// 忽略大小写
         /// </summary>
-        public  bool IgnoreCase { get;  set; }
+        public bool IgnoreCase { get; set; }
 
         public void Bind(Action<TSource, TTarget> action)
         {
@@ -33,7 +25,7 @@ namespace System
         }
 
 
-        public void Ignore(Expression<Func<TTarget,object>> expression)
+        public void Ignore(Expression<Func<TTarget, object>> expression)
         {
             LambdaExpression lambda = expression as LambdaExpression;
             if (lambda == null)

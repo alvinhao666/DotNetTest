@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -10,7 +7,7 @@ namespace DataStructure
     //存储的元素必须是可比较的。这样才能进行排序。
     //数据类型Key必须是实现了可比较的接口IComparable<Key>，才能进行元素的存储。
     //where Key:IComparable<Key> 对Key进行泛型约束，限定Key类型，不能是任意类型
-    class SortedArray1<Key> where Key:IComparable<Key>
+    class SortedArray1<Key> where Key : IComparable<Key>
     {
         private Key[] keys;
         private int N;
@@ -26,7 +23,7 @@ namespace DataStructure
 
         public bool IsEmpty { get { return N == 0; } }
 
-        public  int Rank(Key key)
+        public int Rank(Key key)
         {
             //在[l...r]范围里寻找key
             int l = 0;
@@ -50,15 +47,15 @@ namespace DataStructure
 
         public void Add(Key key)
         {
-            int i = Rank(key); 
+            int i = Rank(key);
 
-            if (N == keys.Length)   
+            if (N == keys.Length)
                 ResetCapacity(2 * keys.Length);
 
-            if ( i < N && keys[i].CompareTo(key) == 0)
+            if (i < N && keys[i].CompareTo(key) == 0)
                 return;
 
-            for (int j = N-1; j >= i; j--)
+            for (int j = N - 1; j >= i; j--)
                 keys[j + 1] = keys[j];
 
             keys[i] = key;
@@ -72,10 +69,10 @@ namespace DataStructure
 
             int i = Rank(key);
 
-            if (i==N || keys[i].CompareTo(key) != 0)
+            if (i == N || keys[i].CompareTo(key) != 0)
                 return;
 
-            for (int j = i+1; j <= N-1; j++)
+            for (int j = i + 1; j <= N - 1; j++)
                 keys[j - 1] = keys[j];
 
             N--;

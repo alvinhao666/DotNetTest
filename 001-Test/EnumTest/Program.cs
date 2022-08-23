@@ -1,9 +1,6 @@
-﻿using Sino.CapacityCloud.Core;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
-using System.Reflection;
 
 namespace EnumTest
 {
@@ -161,7 +158,7 @@ namespace EnumTest
 
 
     public enum CarType
-    { 
+    {
         C1,
         C2,
         C3 = 4

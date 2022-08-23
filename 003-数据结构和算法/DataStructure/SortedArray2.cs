@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -10,7 +7,7 @@ namespace DataStructure
     //存储的元素必须是可比较的。这样才能进行排序。
     //数据类型Key必须是实现了可比较的接口IComparable<Key>，才能进行元素的存储。
     //where Key:IComparable<Key> 对Key进行泛型约束，限定Key类型，不能是任意类型
-    class SortedArray2<Key,Value> where Key : IComparable<Key>
+    class SortedArray2<Key, Value> where Key : IComparable<Key>
     {
         private Key[] keys;
         private Value[] values;
@@ -60,10 +57,10 @@ namespace DataStructure
             if (i < N && keys[i].CompareTo(key) == 0)
                 return values[i];
             else
-                throw new ArgumentException("键"+key+"不存在");
+                throw new ArgumentException("键" + key + "不存在");
         }
 
-        public void Add(Key key,Value value)
+        public void Add(Key key, Value value)
         {
             int i = Rank(key);
 
@@ -191,7 +188,7 @@ namespace DataStructure
             res.Append("[");
             for (int i = 0; i < N; i++)
             {
-                res.Append("{"+keys[i]+","+values[i]+"}");
+                res.Append("{" + keys[i] + "," + values[i] + "}");
                 if (i != N - 1)
                     res.Append(", ");
             }

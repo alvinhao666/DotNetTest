@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 建议9_习惯重载运算符
+﻿namespace 建议9_习惯重载运算符
 {
     class Program
     {

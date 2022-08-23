@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sorting
+﻿namespace Sorting
 {
     //冒泡排序 O（n²）
     class BubbleSort
@@ -28,7 +22,7 @@ namespace Sorting
         }
 
         //交换数组中索引i和j对应元素的位置
-        private static void Swap(int[] arr,int i,int j)
+        private static void Swap(int[] arr, int i, int j)
         {
             int t = arr[i];
             arr[i] = arr[j];

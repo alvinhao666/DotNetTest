@@ -30,9 +30,9 @@ namespace JosnTest
             var result = System.Text.Json.JsonSerializer.Serialize(st);  //"null"
 
             result = H_JsonSerializer.Serialize(st);
-            
+
             //result = H_JsonSerializer.Serialize("string");
-            var result2 = H_JsonSerializer.Serialize(new int[]{1,2}.ToList());
+            var result2 = H_JsonSerializer.Serialize(new int[] { 1, 2 }.ToList());
 
             json = "";
             //var cacheUser = System.Text.Json.JsonSerializer.Deserialize<Student>(json); // 空字符串报错
@@ -73,7 +73,7 @@ namespace JosnTest
             Console.WriteLine(JsonConvert.SerializeObject(stringDemo));
 
 
-            string httpBody= "{\"alipay_fund_trans_uni_transfer_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"out_biz_no\":\"201808080001\",\"order_id\":\"20190801110070000006380000250621\",\"pay_fund_order_id\":\"20190801110070001506380000251556\",\"status\":\"SUCCESS\",\"trans_date\":\"2019-08-2100:00:00\"},\"sign\":\"ERITJKEIJKJHKKKKKKKHJEREEEEEEEEEEE\"}";
+            string httpBody = "{\"alipay_fund_trans_uni_transfer_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"out_biz_no\":\"201808080001\",\"order_id\":\"20190801110070000006380000250621\",\"pay_fund_order_id\":\"20190801110070001506380000251556\",\"status\":\"SUCCESS\",\"trans_date\":\"2019-08-2100:00:00\"},\"sign\":\"ERITJKEIJKJHKKKKKKKHJEREEEEEEEEEEE\"}";
 
             JObject jObj = JObject.Parse(httpBody);
             JObject jArr = JObject.Parse(jObj["alipay_fund_trans_uni_transfer_response"].ToString());
@@ -87,7 +87,7 @@ namespace JosnTest
         public IPerson Person { get; set; }
     }
 
-    public abstract class  IPerson
+    public abstract class IPerson
     {
         public string Name { get; set; }
 
@@ -101,8 +101,8 @@ namespace JosnTest
     //    string Id { get; set; }
     //}
 
-    public class Student: IPerson
-    { 
+    public class Student : IPerson
+    {
         public string Name { get; set; }
 
         public string Id { get; set; }

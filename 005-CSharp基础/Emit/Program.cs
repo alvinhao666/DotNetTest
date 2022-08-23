@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
@@ -11,7 +10,7 @@ namespace Emit
         {
             dynamic obj = CreateAssembly();
             //LoadAssembly();
-            
+
             obj.MyMethod();
 
             Console.ReadKey();

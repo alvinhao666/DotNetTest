@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Dictionary_HashTable_List_HashSet区别
 {
@@ -37,7 +36,7 @@ namespace Dictionary_HashTable_List_HashSet区别
             ht.Remove("深圳"); //移除一个keyvalue键值对
             ht.Clear(); //移除所有元素
 
-            foreach(DictionaryEntry de in ht) //ht为一个Hashtable实例
+            foreach (DictionaryEntry de in ht) //ht为一个Hashtable实例
             {
                 Console.WriteLine(de.Key);  //de.Key对应于keyvalue键值对key
                 Console.WriteLine(de.Value);  //de.Key对应于keyvalue键值对value
@@ -81,7 +80,7 @@ namespace Dictionary_HashTable_List_HashSet区别
             #endregion
 
 
-            
+
             Console.ReadKey();
         }
     }

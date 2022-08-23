@@ -7,7 +7,7 @@ namespace RegexDemo
     {
         static void Main(string[] args)
         {
-            var str= Regex.Split("ffgdsGSDF".ToString(), "G", RegexOptions.IgnoreCase);//忽略大小写
+            var str = Regex.Split("ffgdsGSDF".ToString(), "G", RegexOptions.IgnoreCase);//忽略大小写
             Console.WriteLine(str[0]);
             Console.ReadKey();
         }

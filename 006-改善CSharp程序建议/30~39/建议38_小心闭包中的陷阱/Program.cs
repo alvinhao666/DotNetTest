@@ -8,9 +8,10 @@ namespace 建议38_小心闭包中的陷阱
         static void Main(string[] args)
         {
             List<Action> lists = new List<Action>();
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
-                Action t = () => {
+                Action t = () =>
+                {
                     Console.WriteLine(i.ToString());
                 };
                 lists.Add(t);

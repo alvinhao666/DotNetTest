@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
     //链表栈
-    class LinkedList1Stack<E>:IStack<E>
+    class LinkedList1Stack<E> : IStack<E>
     {
         //链表作为底层数据结构存储元素
         private LinkedList1<E> list;

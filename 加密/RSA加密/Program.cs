@@ -1,21 +1,7 @@
-﻿using Dapper;
-using HttpCode.Core;
-using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Data;
-using System.Diagnostics;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
 
 namespace RSA加密
 {
@@ -105,11 +91,11 @@ namespace RSA加密
             //Console.WriteLine(A3);
             //Console.ReadKey();
 
-               string publicKey =
-            "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMkmzEoj7LFqLmfKqix11b2A5SMXsAE9ag/9Uq+YeiJfFq5TtP7VpGdJUx06SgQqghgWL5hXLRVTMUn8LVW2SmHV0WjvFAqhtTK9CyTYFQ9wFXy7tpxHcl6jZnw8rokzY2y4yN5WbzEJ4+1c9j0Yp+oeTk0NauyOC03lEOEY9BGwIDAQAB";
+            string publicKey =
+         "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMkmzEoj7LFqLmfKqix11b2A5SMXsAE9ag/9Uq+YeiJfFq5TtP7VpGdJUx06SgQqghgWL5hXLRVTMUn8LVW2SmHV0WjvFAqhtTK9CyTYFQ9wFXy7tpxHcl6jZnw8rokzY2y4yN5WbzEJ4+1c9j0Yp+oeTk0NauyOC03lEOEY9BGwIDAQAB";
 
-         string privateKey =
-            "MIICXAIBAAKBgQDMkmzEoj7LFqLmfKqix11b2A5SMXsAE9ag/9Uq+YeiJfFq5TtP7VpGdJUx06SgQqghgWL5hXLRVTMUn8LVW2SmHV0WjvFAqhtTK9CyTYFQ9wFXy7tpxHcl6jZnw8rokzY2y4yN5WbzEJ4+1c9j0Yp+oeTk0NauyOC03lEOEY9BGwIDAQABAoGAO106Zw1V/4VAHHaM5dPIycA21684LFuVav8Skvf6Xhl4pzaCMb2E9vEZ4m2yVjdBpwdu+024dfqtagy6c0OkPvNr6hp18DkjG94iERAWYTzO26hFaeRj/66p9O0I5VJauOCifwzHI50OM/qV0gUzTCeMu7wh6TXylK9RCpMVx7ECQQDo0kTBkqTKIxI98pauI2zwIpkmpzwVdxnqNNZC8UxaM2VZ6uTkJaQoc1BtpclgXAtRM4qN2agMa3E89ggf+B1FAkEA4PAvzu4zbjT5z9LdieP/Y/AMmGk/1OF2cK3R6ft5IG5GDRY1i/seHzLOMp4c6yxwo3cvHwaJ39z1bHUxVw3a3wJBANx626/w3muqYMkXZYiNdcnHCf/n2Wd+faUk2k9U0XiOOYm4f4BrARVpdp4PpS/CmtkQFUMV/yWbzgXr/G/B+H0CQGKRHYIB40uRrz4gWq/H1uvGDt7ij/QK8EmkAW4UohlR+SRW7RPv8F0feDe6DVYIXTtkSKPBy7zrKChkmkBZc+UCQCLSSKhMl6X/CZr13zM9pjiwEEXFmxL61ErUc9/qvOkSvzSqbC/XD1GZ996HS4iMoSt7GXqmuX9xsIMwuQIMIE4=";
+            string privateKey =
+               "MIICXAIBAAKBgQDMkmzEoj7LFqLmfKqix11b2A5SMXsAE9ag/9Uq+YeiJfFq5TtP7VpGdJUx06SgQqghgWL5hXLRVTMUn8LVW2SmHV0WjvFAqhtTK9CyTYFQ9wFXy7tpxHcl6jZnw8rokzY2y4yN5WbzEJ4+1c9j0Yp+oeTk0NauyOC03lEOEY9BGwIDAQABAoGAO106Zw1V/4VAHHaM5dPIycA21684LFuVav8Skvf6Xhl4pzaCMb2E9vEZ4m2yVjdBpwdu+024dfqtagy6c0OkPvNr6hp18DkjG94iERAWYTzO26hFaeRj/66p9O0I5VJauOCifwzHI50OM/qV0gUzTCeMu7wh6TXylK9RCpMVx7ECQQDo0kTBkqTKIxI98pauI2zwIpkmpzwVdxnqNNZC8UxaM2VZ6uTkJaQoc1BtpclgXAtRM4qN2agMa3E89ggf+B1FAkEA4PAvzu4zbjT5z9LdieP/Y/AMmGk/1OF2cK3R6ft5IG5GDRY1i/seHzLOMp4c6yxwo3cvHwaJ39z1bHUxVw3a3wJBANx626/w3muqYMkXZYiNdcnHCf/n2Wd+faUk2k9U0XiOOYm4f4BrARVpdp4PpS/CmtkQFUMV/yWbzgXr/G/B+H0CQGKRHYIB40uRrz4gWq/H1uvGDt7ij/QK8EmkAW4UohlR+SRW7RPv8F0feDe6DVYIXTtkSKPBy7zrKChkmkBZc+UCQCLSSKhMl6X/CZr13zM9pjiwEEXFmxL61ErUc9/qvOkSvzSqbC/XD1GZ996HS4iMoSt7GXqmuX9xsIMwuQIMIE4=";
 
 
             ////2048 公钥
@@ -297,7 +283,7 @@ namespace RSA加密
 
     //}
 
-    class Person:IPerson
+    class Person : IPerson
     {
         public string Name { get; set; }
 

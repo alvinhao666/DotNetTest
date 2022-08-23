@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
     //第三版的链表类，只具备头指针，存储键值对的数据
-    class LinkedList3<Key,Value>
+    class LinkedList3<Key, Value>
     {
         //私有的内部结点类
         //这个类相比较以前的LinkedList1的结点类多存储了一个value变量而已
@@ -17,7 +13,7 @@ namespace DataStructure
             public Value value;     //值
             public Node next;
 
-            public Node (Key key,Value value,Node next)
+            public Node(Key key, Value value, Node next)
             {
                 this.key = key;
                 this.value = value;
@@ -59,7 +55,7 @@ namespace DataStructure
         }
 
         //往链表添加键值对数据
-        public void Add(Key key,Value value)
+        public void Add(Key key, Value value)
         {
             Node node = GetNode(key);
 
@@ -91,7 +87,7 @@ namespace DataStructure
         }
 
         //将键对应的值改成一个新的值
-        public void Set(Key key,Value newValue)
+        public void Set(Key key, Value newValue)
         {
             Node node = GetNode(key);
 

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
@@ -16,7 +13,7 @@ namespace DataStructure
             public Node next;   //存储下一个结点的引用
 
             //通过元素和下一个结点的引用创建结点
-            public Node(E e,Node next)
+            public Node(E e, Node next)
             {
                 this.e = e;
                 this.next = next;
@@ -37,10 +34,10 @@ namespace DataStructure
         }
 
         //头指针标识链表的头部
-        private Node head;  
+        private Node head;
 
         //链表中元素的个数
-        private int N;      
+        private int N;
 
         //链表初始化一个结点也没有，head指向空，N为0
         public LinkedList1()
@@ -62,7 +59,7 @@ namespace DataStructure
         }
 
         //往链表添加元素
-        public void Add(int index,E e)
+        public void Add(int index, E e)
         {
             if (index < 0 || index > N)
                 throw new ArgumentException("非法索引");
@@ -73,12 +70,12 @@ namespace DataStructure
                 //node.next = head;
                 //head = node;
 
-                head=new Node(e, head);
+                head = new Node(e, head);
             }
             else
             {
                 Node pre = head;
-                for (int i = 0; i < index-1; i++)
+                for (int i = 0; i < index - 1; i++)
                     pre = pre.next;
 
                 //Node node = new Node(e);
@@ -113,7 +110,7 @@ namespace DataStructure
             for (int i = 0; i < index; i++)
                 cur = cur.next;
 
-            return cur.e; 
+            return cur.e;
         }
 
         //获取链表头部元素
@@ -129,7 +126,7 @@ namespace DataStructure
         }
 
         //修改链表元素的值
-        public void Set(int index,E newE)
+        public void Set(int index, E newE)
         {
             if (index < 0 || index >= N)
                 throw new ArgumentException("非法索引");
@@ -172,7 +169,7 @@ namespace DataStructure
             else
             {
                 Node pre = head;
-                for (int i = 0; i < index-1; i++)
+                for (int i = 0; i < index - 1; i++)
                     pre = pre.next;
 
                 Node delNode = pre.next;
@@ -181,7 +178,7 @@ namespace DataStructure
                 return delNode.e;
             }
         }
-       
+
         //删除链表的头部元素
         public E RemoveFirst()
         {
@@ -226,7 +223,7 @@ namespace DataStructure
                 }
             }
         }
-      
+
         //打印链表
         public override string ToString()
         {

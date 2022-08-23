@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class BST2<Key,Value> where Key : IComparable<Key>
+    class BST2<Key, Value> where Key : IComparable<Key>
     {
         private class Node
         {
@@ -15,7 +11,7 @@ namespace DataStructure
             public Node left;
             public Node right;
 
-            public Node(Key key,Value value)
+            public Node(Key key, Value value)
             {
                 this.key = key;
                 this.value = value;
@@ -37,17 +33,17 @@ namespace DataStructure
 
         public bool IsEmpty { get { return N == 0; } }
 
-        public void Add(Key key,Value value)
+        public void Add(Key key, Value value)
         {
-            root = Add(root, key,value);
+            root = Add(root, key, value);
         }
 
-        private Node Add(Node node, Key key,Value value)
+        private Node Add(Node node, Key key, Value value)
         {
             if (node == null)
             {
                 N++;
-                return new Node(key,value);
+                return new Node(key, value);
             }
 
             if (key.CompareTo(node.key) < 0)
@@ -125,7 +121,7 @@ namespace DataStructure
         }
 
         //返回以node为根节点的二叉查找树中，key所在的节点
-        private Node GetNode(Node node,Key key)
+        private Node GetNode(Node node, Key key)
         {
             if (node == null) return null;
 
@@ -152,7 +148,7 @@ namespace DataStructure
                 return node.value;
         }
 
-        public void Set(Key key,Value newValue)
+        public void Set(Key key, Value newValue)
         {
             Node node = GetNode(root, key);
 

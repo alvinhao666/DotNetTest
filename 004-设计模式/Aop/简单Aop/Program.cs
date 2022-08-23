@@ -1,5 +1,4 @@
-﻿using AspectCore.Configuration;
-using AspectCore.DynamicProxy;
+﻿using AspectCore.DynamicProxy;
 using AspectCore.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -16,7 +15,7 @@ namespace AopDemo1
             services.AddTransient<IMysqlDriver, MysqlDriver>();
             IServiceProvider serviceProvider = services.BuildAspectInjectorProvider();
 
-            var mysql=serviceProvider.GetService<IMysqlDriver>();
+            var mysql = serviceProvider.GetService<IMysqlDriver>();
 
             mysql.GetData(1);
             Console.ReadKey();

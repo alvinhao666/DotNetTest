@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace NetCore
 {
@@ -28,13 +27,15 @@ namespace NetCore
         }
 
         public static RequestDelegate FooMiddleware(RequestDelegate next)
-        => async context => {
+        => async context =>
+        {
             await context.Response.WriteAsync("Foo=>");
             await next(context);
         };
 
         public static RequestDelegate BarMiddleware(RequestDelegate next)
-        => async context => {
+        => async context =>
+        {
             await context.Response.WriteAsync("Bar=>");
             await next(context);
         };

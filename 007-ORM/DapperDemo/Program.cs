@@ -1,11 +1,5 @@
 ﻿
 using System;
-using System.Data;
-using Dapper;
-using System.Collections.Generic;
-using System.Configuration;
-using MySql.Data.MySqlClient;
-using System.Linq;
 
 namespace DapperDemo
 {
@@ -27,15 +21,15 @@ namespace DapperDemo
 
             //    students = connection.Query<Student,Course,Student>(sql,(s,c) => {
 
-            
+
             //        Student stu;
-       
+
             //        if (!dic.TryGetValue(s.Id, out stu))
             //        {
             //            dic.Add(s.Id, stu = s);
             //        }
 
-        
+
             //        if (stu.Courses == null)
             //        {
             //            stu.Courses = new List<Course>();

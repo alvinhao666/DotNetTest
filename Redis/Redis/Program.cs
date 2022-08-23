@@ -1,9 +1,8 @@
-﻿using StackExchange.Redis;
+﻿using CSRedis;
+using Newtonsoft.Json;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Text;
-using CSRedis;
 using System.Threading;
 
 namespace Redis
@@ -13,10 +12,10 @@ namespace Redis
         static void Main(string[] args)
         {
             var redis = ConnectionMultiplexer.Connect("47.96.143.165:6379,allowAdmin = true");
-            var result=redis.GetDatabase().ScriptEvaluate(LuaScript.Prepare(
+            var result = redis.GetDatabase().ScriptEvaluate(LuaScript.Prepare(
                 //Redis的keys模糊查询：
 
-                " local ks = redis.call('get', @key) "+
+                " local ks = redis.call('get', @key) " +
                 " return ks "
    ),
             new { key = "TMSystemWebInstanceEmployeeList7f062263-c0e0-47c8-9886-67eca77aaf3e" });
@@ -26,7 +25,7 @@ namespace Redis
                 //var vals = ((StackExchange.Redis.RedisResult[])((StackExchange.Redis.RedisResult[])result)[1]);
                 //foreach (var item in vals)
                 //{
-        
+
                 //}
                 list.Add(JsonConvert.DeserializeObject<EmployeeRedisListOutput>(result.ToString()));
             }
@@ -57,7 +56,7 @@ namespace Redis
 
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            RedisHelper.Subscribe(("rgh", msg => Console.WriteLine("订阅者"+msg.Body)));
+            RedisHelper.Subscribe(("rgh", msg => Console.WriteLine("订阅者" + msg.Body)));
 
             Console.ForegroundColor = ConsoleColor.White;
             RedisHelper.Set("name", "祝雷");//设置值。默认永不过期

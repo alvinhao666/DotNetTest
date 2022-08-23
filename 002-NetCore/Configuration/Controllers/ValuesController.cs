@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
 
 namespace Configuration.Controllers
 {
@@ -30,7 +28,7 @@ namespace Configuration.Controllers
 
         {
 
-             MySettings1 = settings1.Value;
+            MySettings1 = settings1.Value;
             MySettings2 = settings2.Value;
 
             Configuration = configuration;
@@ -41,7 +39,7 @@ namespace Configuration.Controllers
 
         public IActionResult Index()
 
-        {   
+        {
             //操作的是最外部的appsettings.json,不是bin目录里面的
             var m1 = MySettings1.Message;//不会变
 

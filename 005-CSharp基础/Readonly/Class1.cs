@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Example02Lib
+﻿namespace Example02Lib
 {
     public class Class1
     {

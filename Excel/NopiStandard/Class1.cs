@@ -1,7 +1,6 @@
 ﻿using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.SS.Util;
-using System;
 using System.IO;
 
 namespace NopiStandard
@@ -79,7 +78,7 @@ namespace NopiStandard
         /// <param name="lastcol"></param>
         /// <param name="vals"></param>
         /// <param name="sheetindex"></param>
-        public static void  SetCellDropdownList(HSSFWorkbook workbook, ISheet sheet, string name, int firstrow, int lastrow, int firstcol, int lastcol, string[] vals, int sheetindex = 1)
+        public static void SetCellDropdownList(HSSFWorkbook workbook, ISheet sheet, string name, int firstrow, int lastrow, int firstcol, int lastcol, string[] vals, int sheetindex = 1)
         {
             //先创建一个Sheet专门用于存储下拉项的值
             ISheet sheet2 = workbook.CreateSheet(name);

@@ -1,7 +1,4 @@
 ﻿using Autofac.Extras.DynamicProxy;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AopDemo2
 {

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class RBT2<Key,Value> where Key : IComparable<Key>
+    class RBT2<Key, Value> where Key : IComparable<Key>
     {
         private const bool Red = true;
         private const bool Black = false;
@@ -19,7 +15,7 @@ namespace DataStructure
             public Node right;
             public bool color;
 
-            public Node(Key key,Value value)
+            public Node(Key key, Value value)
             {
                 this.key = key;
                 this.value = value;
@@ -96,19 +92,19 @@ namespace DataStructure
         }
 
         //往红黑树中添加元素，递归实现
-        public void Add(Key key,Value value)
+        public void Add(Key key, Value value)
         {
-            root = Add(root, key,value);
+            root = Add(root, key, value);
             root.color = Black;
         }
 
         //以node为根的树中添加元素e，添加后返回根节点node
-        private Node Add(Node node, Key key,Value value)
+        private Node Add(Node node, Key key, Value value)
         {
             if (node == null)
             {
                 N++;
-                return new Node(key,value); //默认为红结点
+                return new Node(key, value); //默认为红结点
             }
 
             if (key.CompareTo(node.key) < 0)

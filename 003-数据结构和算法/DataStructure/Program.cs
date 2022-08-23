@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using Sorting;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sorting;
 
 namespace DataStructure
 {
@@ -18,7 +13,7 @@ namespace DataStructure
             int[] a = TestSearch.ReadFile("测试文件3/TopM.txt");
             QuickSort3.Sort(a);
             for (int i = 0; i < 10; i++)
-                Console.Write(a[i]+", ");
+                Console.Write(a[i] + ", ");
 
             Console.WriteLine();
 
@@ -31,7 +26,7 @@ namespace DataStructure
                 int value = int.Parse(sr.ReadLine());
                 if (pq.Count < 10)
                     pq.Enqueue(value);
-                else if(value < pq.Peek())
+                else if (value < pq.Peek())
                 {
                     pq.Dequeue();
                     pq.Enqueue(value);

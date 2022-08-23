@@ -54,19 +54,19 @@ namespace ListTest
             #endregion
 
             #region 去重
-            var apps = new List<int>(){ 1,2,3,1,2,4,1};
+            var apps = new List<int>() { 1, 2, 3, 1, 2, 4, 1 };
             var levels = apps.Distinct().ToList();
             #endregion
 
             #region 序列化
-            List<ulong> ls = new List<ulong>() { 1,2,3};
+            List<ulong> ls = new List<ulong>() { 1, 2, 3 };
             string lsStr = JsonConvert.SerializeObject(ls);
 
             lsStr = "[]";
             ls = JsonConvert.DeserializeObject<List<ulong>>(lsStr);
             #endregion
 
-            var levelList = new List<int> { 1,2,3,4};
+            var levelList = new List<int> { 1, 2, 3, 4 };
 
             var applist = new List<App> { new App() { Level = 1, Number = 1 }, new App { Level = 2, Number = 4 }, new App { Level = 1, Number = 8 } };
 
@@ -75,12 +75,12 @@ namespace ListTest
             foreach (var item in applist)
             {
                 int index = levelList.IndexOf(item.Level);
-                if (index>-1)
+                if (index > -1)
                 {
                     auths[index] = auths[index] | item.Number;
                 }
             }
-            
+
             #region Foreach
             List<Person> lstInt = new List<Person>() { new Person() { Age = 1 }, new Person() { Age = 2 } };
             lstInt.ForEach(b =>
@@ -103,37 +103,39 @@ namespace ListTest
 
 
             List<int> ints = new List<int>() { 1, 2, 3 };
-            ints.ForEach(x => {
+            ints.ForEach(x =>
+            {
                 x = x + 1;
             }); //没变化
 
             List<String> intss = new List<String>() { "1", "1", "1" };
-            intss.ForEach(x => {
+            intss.ForEach(x =>
+            {
                 x = x + 1;
             });//没变化
 
             #endregion
 
             List<string> list = new List<string>();
-            list=list.DefaultIfEmpty("").ToList();
+            list = list.DefaultIfEmpty("").ToList();
 
             Console.WriteLine(levelList.Where(x => x == 66).Sum(x => 5));
 
             Console.WriteLine("xxx");
             List<Person> persons = new List<Person>();
             persons.Add(new Person { Age = 1 });
-            persons.Add(new Person { Age = 2});
-            persons.Add(new Person { Age = 3});
+            persons.Add(new Person { Age = 2 });
+            persons.Add(new Person { Age = 3 });
             var persons2 = persons.Where(x => x.Age != 1);
-            foreach(var item in persons2)
+            foreach (var item in persons2)
             {
                 Console.WriteLine(item.Age);
             }
 
 
 
-            var level1s = new List<Level1> { new Level1() { Id=1,Name="1"} };
-            var level2s = new List<Level2> { new Level2() { Id = 2, Name = "2",Id1=1 }, new Level2() { Id = 3, Name = "3", Id1 = 1 } };
+            var level1s = new List<Level1> { new Level1() { Id = 1, Name = "1" } };
+            var level2s = new List<Level2> { new Level2() { Id = 2, Name = "2", Id1 = 1 }, new Level2() { Id = 3, Name = "3", Id1 = 1 } };
 
             var level3s = new List<Level3> { new Level3() { Id = 4, Name = "5", Id2 = 2 }, new Level3() { Id = 5, Name = "5", Id2 = 3 } };
 
@@ -144,17 +146,17 @@ namespace ListTest
             //    list12 = level2s.Where(a => a.Id1 == item.Id).ToList();
             //    item.list2 = list12;
             //}
-            foreach(var item in level2s)
+            foreach (var item in level2s)
             {
                 item.list3 = level3s.Where(a => a.Id2 == item.Id).ToList();
             }
 
             //Console.WriteLine(list12[0] == level2s[0]); // True  where之后两个集合得元素还是同一个元素
             //Console.WriteLine(list12[0] == level2s[1]); // True
-            
-            
-            lst = new List<string>() { "1","23","4"};
-            var lst1=lst;
+
+
+            lst = new List<string>() { "1", "23", "4" };
+            var lst1 = lst;
             var lst2 = lst.FindAll(a => a == "1").ToList();
 
             //List<string> ssslst = null;
@@ -162,7 +164,7 @@ namespace ListTest
             //{
             //    Console.WriteLine("1");
             //}
-            lst1[0]="666";
+            lst1[0] = "666";
             Console.WriteLine(lst[0]); // 666
             Console.WriteLine(lst1[0]); // 666
             Console.WriteLine(lst2.Count);
@@ -181,7 +183,7 @@ namespace ListTest
 
             var xx = personss?.Select(a => a.Age).ToList();
 
-            var sss= default(Tuple<List<Person>,int>);
+            var sss = default(Tuple<List<Person>, int>);
 
 
             lst = new List<string>() { "1" };
@@ -219,7 +221,7 @@ namespace ListTest
                 }
             }
 
-            List<int> list1 = new List<int> { 1,23,3,4,5,5,5};
+            List<int> list1 = new List<int> { 1, 23, 3, 4, 5, 5, 5 };
 
             list1 = list1.Distinct().ToList();
             Console.WriteLine(list1.Count);
@@ -229,7 +231,7 @@ namespace ListTest
 
             Console.WriteLine(asss.Contains(""));
 
-     
+
 
             List<Student> studs = new List<Student>() { };
 
@@ -311,7 +313,7 @@ namespace ListTest
 
         public ulong Number { get; set; }
     }
-    
+
     public class Person
     {
         public string Name { get; set; }
@@ -331,8 +333,8 @@ namespace ListTest
 
     public class Level2
     {
-        public int  Id { get; set; }
-        public int  Id1 { get; set; }
+        public int Id { get; set; }
+        public int Id1 { get; set; }
 
         public string Name { get; set; }
 

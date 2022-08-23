@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sorting
 {
     class BubbleSortGeneric
     {
-        public static void Sort<E>(E[] arr) where E:IComparable<E>
+        public static void Sort<E>(E[] arr) where E : IComparable<E>
         {
             int n = arr.Length;
 
@@ -18,7 +14,7 @@ namespace Sorting
                 //减去i 不需要对已经排好序的元素再次进行比较
                 for (int j = 0; j < n - 1 - i; j++)
                 {
-                    if (arr[j].CompareTo(arr[j + 1])>0)
+                    if (arr[j].CompareTo(arr[j + 1]) > 0)
                         Swap(arr, j, j + 1);
                 }
             }

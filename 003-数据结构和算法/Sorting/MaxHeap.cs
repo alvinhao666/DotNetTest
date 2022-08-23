@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Sorting
 {
     //最大堆
-    class MaxHeap<E> where E:IComparable<E>
+    class MaxHeap<E> where E : IComparable<E>
     {
         private E[] heap;
         private int N;
@@ -103,7 +100,7 @@ namespace Sorting
         {
             while (2 * k <= N)
             {
-                int j = 2 * k; 
+                int j = 2 * k;
 
                 if (j + 1 <= N && heap[j + 1].CompareTo(heap[j]) > 0) j++;
 
@@ -115,7 +112,7 @@ namespace Sorting
             }
         }
 
-        private void Swap(int i,int j)
+        private void Swap(int i, int j)
         {
             E e = heap[i];
             heap[i] = heap[j];

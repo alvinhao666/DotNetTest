@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Dynamic;
-using System.Linq;
+﻿using System;
 using System.Linq.Expressions;
 
 namespace Test
@@ -26,7 +23,7 @@ namespace Test
 
             User user = new User { Name = "123" };
 
-            UpdateAsync<User>(user => new {  });
+            UpdateAsync<User>(user => new { });
 
             Console.ReadLine();
         }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Encodings.Web;
+﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 
 namespace JosnTest
@@ -14,7 +11,7 @@ namespace JosnTest
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string Serialize<T>(T value) where T : class,new()
+        public static string Serialize<T>(T value) where T : class, new()
         {
             if (value == null) return string.Empty;
 

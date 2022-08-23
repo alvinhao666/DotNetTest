@@ -12,7 +12,7 @@ namespace SqlSugarDemo
             SqlSugarClient db = new SqlSugarClient(new ConnectionConfig()
             {
                 //ConnectionString = "Data Source=192.168.1.27;port=3306;user id=root;password=123456;Initial Catalog=tmsystem;convertzerodatetime=True;Charset=utf8;",
-                
+
                 DbType = DbType.MySql,
                 IsAutoCloseConnection = true
             });

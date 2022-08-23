@@ -29,7 +29,7 @@ namespace Readonly
 
     public class TestReadonly
     {
-        private  readonly int x=1; //X是只读字段
+        private readonly int x = 1; //X是只读字段
         public TestReadonly()
         {
             // 只能在初始化时，构造函数里面，对只读字段赋值或者声明时赋值
@@ -71,7 +71,7 @@ namespace Readonly
 
     class TestClass2
     {
-        private int someValue; 
+        private int someValue;
 
         public void ChangeValue(int newValue) //eadonly修饰的字段，其初始化仅是固定了其引用（地址不能修改），但它引用的对象的属性是可以更改的。
         {
