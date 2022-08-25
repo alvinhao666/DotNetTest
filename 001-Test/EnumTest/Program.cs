@@ -14,6 +14,8 @@ namespace EnumTest
 
             Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //false
 
+            Console.WriteLine(d.GetHashCode());
+
             d= (UserType)1;
 
 
