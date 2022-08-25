@@ -10,7 +10,14 @@ namespace EnumTest
         {
             //var users = new List<User>() { new User() { type = UserType.typeX } };
 
-            //UserType d = (UserType)4;
+            Enum d = (UserType)4;
+
+            Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //false
+
+            d= (UserType)1;
+
+
+            Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //true
 
             //Array arrays = Enum.GetValues(typeof(UserType));
             //Console.WriteLine(arrays.GetValue(0).ToString());
