@@ -24,6 +24,8 @@ namespace EnumTest
 
             Color myColor = Color.Red | Color.White | Color.Blue;
 
+            Console.WriteLine(Enum.IsDefined(typeof(Color), myColor));  //false
+
             Console.WriteLine(myColor.ToString());
             Console.WriteLine(myColor.ToString().Replace(" ", ""));
 
