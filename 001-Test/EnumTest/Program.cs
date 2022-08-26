@@ -21,6 +21,11 @@ namespace EnumTest
 
             Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //true
 
+
+            Color myColor = Color.Red | Color.White | Color.Blue;
+
+            Console.WriteLine(myColor.ToString());
+
             //Array arrays = Enum.GetValues(typeof(UserType));
             //Console.WriteLine(arrays.GetValue(0).ToString());
 
@@ -171,5 +176,15 @@ namespace EnumTest
         C1,
         C2,
         C3 = 4
+    }
+
+    [Flags] //Flags属性表示此枚举为位域枚举
+    enum Color
+    {
+        None = 0,
+        Red = 1,
+        White = 2,
+        Blue = 4,
+        Black = 8
     }
 }
