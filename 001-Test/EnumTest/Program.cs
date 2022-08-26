@@ -25,6 +25,7 @@ namespace EnumTest
             Color myColor = Color.Red | Color.White | Color.Blue;
 
             Console.WriteLine(myColor.ToString());
+            Console.WriteLine(myColor.ToString().Replace(" ", ""));
 
             //Array arrays = Enum.GetValues(typeof(UserType));
             //Console.WriteLine(arrays.GetValue(0).ToString());
