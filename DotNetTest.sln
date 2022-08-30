@@ -309,6 +309,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epplus省市区联动", "Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "解决方案重命名工具", "008-实用工具Demo\解决方案重命名工具\解决方案重命名工具.csproj", "{2CEDEDF7-EF5B-4696-954F-4F97AB89733C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacTest", "001-Test\AutofacTest\AutofacTest.csproj", "{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -811,6 +813,10 @@ Global
 		{2CEDEDF7-EF5B-4696-954F-4F97AB89733C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CEDEDF7-EF5B-4696-954F-4F97AB89733C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CEDEDF7-EF5B-4696-954F-4F97AB89733C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -954,6 +960,7 @@ Global
 		{1CB907C7-EE6F-4AFC-8CB3-DF57E1AE78FF} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 		{51256096-05C8-4799-B147-E6FBDF98A7F3} = {9F9F655C-7D00-45F6-94C0-442E02189A86}
 		{2CEDEDF7-EF5B-4696-954F-4F97AB89733C} = {78E7FCD5-2ABA-4912-8876-E8888E1C7349}
+		{80DB62CB-EC6A-423A-8F4E-F1EEF3199FFF} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
