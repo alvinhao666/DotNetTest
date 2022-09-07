@@ -15,6 +15,7 @@ namespace AutoMapper_Vs_Mapster
     {
         //运行  dotnet run --project .\AutoMapper_Vs_Mapster.csproj -c Release
 
+        //原文 https://www.cnblogs.com/hippieZhou/p/15590457.html
 
         static void Main(string[] args)
         {
