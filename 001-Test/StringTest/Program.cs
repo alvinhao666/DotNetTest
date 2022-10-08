@@ -77,7 +77,30 @@ namespace StringTest
 
             Console.WriteLine(testValue);
 
+            SA sa = new SA();
+
+            sa.String();
+
+            SA sa2 = new SA();
+
+            sa2.String();
+
             Console.ReadKey();
+        }
+
+        public class SA
+        {
+            public static Guid Instance = Guid.NewGuid(); //静态变量 不属于任何一个实例对象
+
+
+            public static Guid Instance2 { get; } = Guid.NewGuid();  //静态变量 不属于任何一个实例对象
+
+            public void String()
+            {
+                Console.WriteLine(Instance.ToString());
+
+                Console.WriteLine(Instance2.ToString());
+            }
         }
 
 
@@ -133,4 +156,7 @@ namespace StringTest
             return Htmlstring;
         }
     }
+
+
+
 }
