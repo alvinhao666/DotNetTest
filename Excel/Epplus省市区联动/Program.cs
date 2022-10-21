@@ -65,7 +65,7 @@ using (ExcelPackage ep = new ExcelPackage())
     //            citySourceWs.Cells[k + 2, allCityCount + 1].Value = area.Name;
     //        }
 
-    //        ep.Workbook.Names.Add(pro.Name + city.Name, citySourceWs.Cells[2, allCityCount + 1, areas.Count + 1, allCityCount + 1]);
+    //        ep.Workbook.Names.Add(pro.Name +"_"+ city.Name, citySourceWs.Cells[2, allCityCount + 1, areas.Count + 1, allCityCount + 1]);
 
     //        allCityCount++;
     //    }
@@ -86,7 +86,7 @@ using (ExcelPackage ep = new ExcelPackage())
     //区下拉框
     var validation3 = ws.DataValidations.AddListValidation("C3:C100");
     SetExcelListValidation(validation3);
-    validation3.Formula.ExcelFormula = "INDIRECT($A3&$B3)";
+    validation3.Formula.ExcelFormula = @"INDIRECT($A3&""_""&$B3)";
 
     //省下拉框
     var validation4 = ws.DataValidations.AddListValidation("D3:D100");
@@ -100,7 +100,7 @@ using (ExcelPackage ep = new ExcelPackage())
     //区下拉框
     var validation6 = ws.DataValidations.AddListValidation("F3:F100");
     SetExcelListValidation(validation6);
-    validation6.Formula.ExcelFormula = "INDIRECT($D3&$E3)";
+    validation6.Formula.ExcelFormula = @"INDIRECT($D3&""_""&$E3)";
 
     ep.Workbook.CreateVBAProject();
     OfficeOpenXml.VBA.ExcelVbaProject proj = ep.Workbook.VbaProject;
