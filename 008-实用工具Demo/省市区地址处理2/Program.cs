@@ -33,10 +33,10 @@ namespace 省市区地址处理2
                     Area p = new Area();
                     p.Code = code;
 
-                    if (adrress == "新疆博尔塔拉蒙古自治州阿拉山口市")
-                    {
-                        var ssss = 0;
-                    }
+                    //if (adrress == "北京市北京市")
+                    //{
+                    //    var ssss = 0;
+                    //}
 
                     if (code.Length >= 4)
                     {
@@ -169,34 +169,8 @@ namespace 省市区地址处理2
                     town = item;
                 }
             }
-            //foreach (Match match in Regex.Matches(address, regex))
-            //{
-            //    province = match.Groups[1].Value;
-            //    city = match.Groups[2].Value;
-            //    district = match.Groups[3].Value;
-            //    town = match.Groups[4].Value;
-            //}
-
-            IsSymmetry2(province, ref province, ref city);
 
             return new List<string> { province, city, district, town };
-        }
-
-        static void IsSymmetry2(string str, ref string province, ref string city)
-        {
-            if (string.IsNullOrEmpty(str) || str.Length == 1)
-            {
-                return;
-            }
-            var halfLength = str.Length / 2;
-            var str1 = str.Substring(0, halfLength);
-            var str2 = new String(str.Substring(str.Length % 2 == 0 ? halfLength : halfLength + 1, halfLength).ToArray());
-
-            if (str1.Equals(str2))
-            {
-                province = str1;
-                city = str1;
-            }
         }
     }
 
