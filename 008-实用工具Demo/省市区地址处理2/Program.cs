@@ -33,7 +33,7 @@ namespace 省市区地址处理2
                     Area p = new Area();
                     p.Code = code;
 
-                    if (adrress == "北京市北京市东城区")
+                    if (adrress == "新疆博尔塔拉蒙古自治州阿拉山口市")
                     {
                         var ssss = 0;
                     }
@@ -45,9 +45,7 @@ namespace 省市区地址处理2
                         p.Shi = result[1];
                         p.Qu = result[2] + result[3];
 
-                        //if (p.Shi == "" && p.Qu.Length > 0) p.Shi = p.Qu;
-
-                        //if (p.Qu.Length == 0 && result[3].Length>0) p.Qu = result[3];
+                        if (p.Qu.Length == 0 && p.Shi.Length>0) p.Qu = p.Shi;
                     }
                     else
                     {
@@ -82,8 +80,7 @@ namespace 省市区地址处理2
 
                     areaList.Add(p);
                 }
-            }
-            
+            }            
             
 
             Console.WriteLine($"共有{areaList.Count}条数据");
