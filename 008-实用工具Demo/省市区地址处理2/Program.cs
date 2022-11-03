@@ -124,7 +124,7 @@ namespace 省市区地址处理2
                 }
             }
 
-            System.IO.File.WriteAllText(@"F:\省市区.txt", sb.ToString().TrimEnd(',') + ";");
+            System.IO.File.WriteAllText(@"F:\省市区.txt", sb.ToString());
             Console.WriteLine($"完成  {dataCount}");
 
             Console.ReadKey();
