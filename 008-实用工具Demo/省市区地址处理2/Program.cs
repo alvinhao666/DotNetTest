@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,21 +33,21 @@ namespace 省市区地址处理2
                     Area p = new Area();
                     p.Code = code;
 
-                    //if (adrress == "湖北省仙桃市仙桃市")
-                    //{
-                    //    var ssss = 0;
-                    //}
+                    if (adrress == "北京市北京市东城区")
+                    {
+                        var ssss = 0;
+                    }
 
                     if (code.Length >= 4)
                     {
                         var result = Split(adrress);
                         p.Sheng = result[0];
                         p.Shi = result[1];
-                        p.Qu = result[2];
+                        p.Qu = result[2] + result[3];
 
-                        if (p.Shi == "" && p.Qu.Length > 0) p.Shi = p.Qu;
+                        //if (p.Shi == "" && p.Qu.Length > 0) p.Shi = p.Qu;
 
-                        if (p.Qu.Length == 0 && result[3].Length>0) p.Qu = result[3];
+                        //if (p.Qu.Length == 0 && result[3].Length>0) p.Qu = result[3];
                     }
                     else
                     {
@@ -147,19 +148,41 @@ namespace 省市区地址处理2
 
             string town = "";
 
-            string regex = "(?<province>[^省]+省|[^自治区]+自治区|.+市)(?<city>[^自治州]+自治州|.+区划|[^市]+市|[^盟]+盟|[^地区]+地区)?(?<county>[^市]+市|[^县]+县|[^旗]+旗|.+区)?(?<town>[^区]+区|.+镇)?(?<village>.*)";
+            string regex = "(?<province>[^省]+自治区|.*?省|.*?行政区|.*?市)?(?<city>[^市]+自治州|.*?地区|.*?行政单位|.+盟|市辖区|.*?市|.*?县)?(?<county>[^(区|市|县|旗|岛)]+区|.*?市|.*?县|.*?旗|.*?岛)?(?<village>.*)";
 
-            foreach (Match match in Regex.Matches(address, regex))
+
+            string[] res = Regex.Split(address, regex);
+
+            foreach(var item in res)
             {
-                province = match.Groups[1].Value;
-                city = match.Groups[2].Value;
-                district = match.Groups[3].Value;
-                town = match.Groups[4].Value;
+                if (!string.IsNullOrWhiteSpace(item) && province=="")
+                {
+                    province = item;
+                }
+                else if (!string.IsNullOrWhiteSpace(item) && city == "")
+                {
+                    city = item;
+                }
+                else if (!string.IsNullOrWhiteSpace(item) && district == "")
+                {
+                    district = item;
+                }
+                else if (!string.IsNullOrWhiteSpace(item) && town == "")
+                {
+                    town = item;
+                }
             }
+            //foreach (Match match in Regex.Matches(address, regex))
+            //{
+            //    province = match.Groups[1].Value;
+            //    city = match.Groups[2].Value;
+            //    district = match.Groups[3].Value;
+            //    town = match.Groups[4].Value;
+            //}
 
             IsSymmetry2(province, ref province, ref city);
 
-            return new List<string>() { province, city, district, town };
+            return new List<string> { province, city, district, town };
         }
 
         static void IsSymmetry2(string str, ref string province, ref string city)
