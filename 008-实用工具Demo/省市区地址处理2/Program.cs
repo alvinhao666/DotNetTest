@@ -1,5 +1,6 @@
 ﻿using OfficeOpenXml;
 using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
+using Sino.MSLS.DomainModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,13 @@ namespace 省市区地址处理2
     {
         static void Main(string[] args)
         {
+            //IFreeSql fsql = new FreeSql.FreeSqlBuilder()
+            //       .UseConnectionString(FreeSql.DataType.MySql, @"Data Source=192.168.1.27;port=3306;user id=root;password=123456;Initial Catalog=taihang_slsystem;convertzerodatetime=True;AutoEnlist=false;Charset=utf8;sslmode=none;")
+            //       .Build();
+
+
+            //var zones = fsql.Select<Zone>().ToList();
+
             //Excel文件所在的地址
             FileInfo file = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "运输区域分好版.xlsx");
 
@@ -29,6 +37,11 @@ namespace 省市区地址处理2
                 {
                     string code = excelWorksheet.Cells[i, 1].Value.ToString().Trim();
                     string adrress = excelWorksheet.Cells[i, 2].Value.ToString().Trim();
+
+                    //if (code != zones[i - 2].Code)
+                    //{
+                    //    throw new Exception($"错误 i={i},code={code},zonesid={zones[i-2].Id}");
+                    //}
 
                     Area p = new Area();
                     p.Code = code;
