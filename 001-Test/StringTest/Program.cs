@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -85,6 +86,22 @@ namespace StringTest
 
             sa2.String();
 
+
+            Student sa1 = new Student { Name="张三",Age =10};
+
+            List<Student> slist1 = new List<Student>() { sa1 };
+
+            List<Student> slist2 = new List<Student>() { sa1 };
+
+            //sa1.Name = "李四";
+            //sa1.Age = 20;
+
+            //Console.WriteLine(slist1[0].Name + slist1[0].Age);
+            //Console.WriteLine(slist2[0].Name + slist2[0].Age);
+
+            slist1[0].Name = "李四";
+            Console.WriteLine(slist2[0].Name + slist2[0].Age);
+
             Console.ReadKey();
         }
 
@@ -158,5 +175,16 @@ namespace StringTest
     }
 
 
+
+    public class Student
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Name { get; set; }
+
+
+        public int Age { get; set; }
+    }
 
 }
