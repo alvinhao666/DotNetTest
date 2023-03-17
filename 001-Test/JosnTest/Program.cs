@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MessagePack;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -78,8 +79,38 @@ namespace JosnTest
             JObject jObj = JObject.Parse(httpBody);
             JObject jArr = JObject.Parse(jObj["alipay_fund_trans_uni_transfer_response"].ToString());
             var orderId = jArr["order_id"].ToString();
+
+            #region MessagePack
+            MyClass message = new MyClass()
+            {
+                Name = "DOTNET开发跳槽",
+                Quantity = 100,
+                Anything = new List<object>(new object[] { "欢迎关注公众号DOTNET开发跳槽", 2, false, 4.2d, "祝大家学业有成" })
+            };
+
+            // 序列化
+            var buffer = MessagePackSerializer.Serialize(
+              message,
+              MessagePack.Resolvers.ContractlessStandardResolver.Options);
+
+            var json2 = MessagePackSerializer.ConvertToJson(buffer);
+
+            Console.WriteLine(json2);
+
+            MyClass returnMsg = MessagePackSerializer.Deserialize<MyClass>(buffer, MessagePack.Resolvers.ContractlessStandardResolver.Options);
+            #endregion
+
+
+
             Console.ReadKey();
         }
+    }
+
+    public class MyClass
+    {
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+        public List<object> Anything { get; set; }
     }
 
     public class School
