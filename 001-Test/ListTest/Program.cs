@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace ListTest
@@ -250,6 +251,8 @@ namespace ListTest
             Console.WriteLine(3 / 2);//1
             Console.WriteLine(4 / 2);//2
             Console.WriteLine(5 / 2);//2
+
+            Console.WriteLine(new DataTable().Compute("1+3+4*10", null));
 
             Console.ReadKey();
         }

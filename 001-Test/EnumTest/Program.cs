@@ -1,33 +1,38 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
+using Hao;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
+using System.Linq;
 
 namespace EnumTest
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             //var users = new List<User>() { new User() { type = UserType.typeX } };
 
-            Enum d = (UserType)4;
+            //Enum d = (UserType)4;
 
-            Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //false
+            //Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //false
 
-            Console.WriteLine(d.GetHashCode());
+            //Console.WriteLine(d.GetHashCode());
 
-            d= (UserType)1;
-
-
-            Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //true
+            //d= (UserType)1;
 
 
-            Color myColor = Color.Red | Color.White | Color.Blue;
+            //Console.WriteLine(Enum.IsDefined(typeof(UserType), d)); //true
 
-            Console.WriteLine(Enum.IsDefined(typeof(Color), myColor));  //false
 
-            Console.WriteLine(myColor.ToString());
-            Console.WriteLine(myColor.ToString().Replace(" ", ""));
+            //Color myColor = Color.Red | Color.White | Color.Blue;
+
+            //Console.WriteLine(Enum.IsDefined(typeof(Color), myColor));  //false
+
+            //Console.WriteLine(myColor.ToString());
+            //Console.WriteLine(myColor.ToString().Replace(" ", ""));
 
             //Array arrays = Enum.GetValues(typeof(UserType));
             //Console.WriteLine(arrays.GetValue(0).ToString());
@@ -98,37 +103,42 @@ namespace EnumTest
             //Console.WriteLine(user); //0
             //Console.WriteLine(Enum.IsDefined(typeof(AdminType), 0)); //false
 
-            Stopwatch watch = new Stopwatch();
+            //Stopwatch watch = new Stopwatch();
 
-            Enum userEnum = UserType.typeY;
+            //Enum userEnum = UserType.typeY;
 
-            watch.Start();
+            //watch.Start();
 
-            for (int i = 0; i < 10000000; i++)
-            {
-                var t = Convert.ToInt32(userEnum);
-            }
-            watch.Stop();
+            //for (int i = 0; i < 10000000; i++)
+            //{
+            //    var t = Convert.ToInt32(userEnum);
+            //}
+            //watch.Stop();
 
-            Console.WriteLine(watch.ElapsedMilliseconds);
+            //Console.WriteLine(watch.ElapsedMilliseconds);
 
-            watch.Restart();
-            var intTYpe = typeof(int);
-            for (int i = 0; i < 10000000; i++)
-            {
-                if (userEnum.GetType().UnderlyingSystemType == intTYpe)
-                {
-                    //var t = userEnum.GetHashCode();
-                }
-                var t = userEnum.GetHashCode();
-            }
-            watch.Stop();
+            //watch.Restart();
+            //var intTYpe = typeof(int);
+            //for (int i = 0; i < 10000000; i++)
+            //{
+            //    if (userEnum.GetType().UnderlyingSystemType == intTYpe)
+            //    {
+            //        //var t = userEnum.GetHashCode();
+            //    }
+            //    var t = userEnum.GetHashCode();
+            //}
+            //watch.Stop();
 
-            Console.WriteLine(watch.ElapsedMilliseconds);
-            Contract.Assert(true, "");
+            //Console.WriteLine(watch.ElapsedMilliseconds);
+            //Contract.Assert(true, "");
 
-            Console.WriteLine(CarType.C1.GetHashCode() == UserType.typeX.GetHashCode());
-            Console.WriteLine(CarType.C3.GetHashCode());
+            //Console.WriteLine(CarType.C1.GetHashCode() == UserType.typeX.GetHashCode());
+            //Console.WriteLine(CarType.C3.GetHashCode());
+
+            //Console.WriteLine(EqualityComparer<UserType>.Default.GetHashCode(UserType.typeY));
+
+            TestCast();
+
             Console.ReadKey();
         }
 
@@ -158,6 +168,54 @@ namespace EnumTest
             var underType = Nullable.GetUnderlyingType(type);
 
             return underType ?? type;
+        }
+
+
+        /// <summary>
+        /// 测试转化性能
+        /// </summary>
+        public static void TestCast()
+        {
+            var summary = BenchmarkRunner.Run<EnumPerformanceTest>();
+
+            Console.ReadKey();
+        }
+
+
+        public class EnumPerformanceTest
+        {
+            public int count = 10000;
+
+            public Enum @enum = UserType.typeY;
+
+
+            [Benchmark]
+            public void IntConvert()
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    int value = Convert.ToInt32(@enum);
+                }
+
+            }
+
+            [Benchmark]
+            public void GetHashCode1()
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    int value = @enum.ToInt();
+                }
+            }
+
+            [Benchmark]
+            public void GetHashCode2()
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    int value = EqualityComparer<UserType>.Default.GetHashCode(UserType.typeY);
+                }
+            }
         }
 
     }
