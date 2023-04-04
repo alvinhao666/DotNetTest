@@ -196,8 +196,25 @@ namespace EnumTest
                 {
                     int value = Convert.ToInt32(@enum);
                 }
-
             }
+
+            [Benchmark]
+            public void EnumConvert()
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    var type = @enum.GetType();
+
+                    if (!Enum.IsDefined(type, @enum)) throw new ArgumentException("@enum不属于该枚举", nameof(@enum));
+
+                    var fieldName = @enum.ToString();
+
+                    object result = Enum.Parse(type, fieldName);
+
+                    int value = (int)result;
+                }
+            }
+
 
             [Benchmark]
             public void GetHashCode1()
