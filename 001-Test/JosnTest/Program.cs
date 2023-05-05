@@ -19,6 +19,8 @@ namespace JosnTest
 
             var s = JsonConvert.DeserializeObject<Student>(json); // s = null  //不报错
 
+            s = JsonConvert.DeserializeObject<Student>(null);  // 报错 System.ArgumentNullException:“Value cannot be null. ”
+
             s = JsonConvert.DeserializeObject<Student>("null"); //  s = null  //不报错
 
             var ssss = JsonConvert.SerializeObject("123123"); // 结果  "123123"  //不报错
