@@ -12,18 +12,16 @@ namespace JosnTest
         static void Main(string[] args)
         {
             //Console.WriteLine(JObject.Parse("")); //报错
-            JsonConvert.SerializeObject(null);
+            var value = JsonConvert.SerializeObject(null); // value = "null"
+            value = JsonConvert.SerializeObject("");  //  value = ""
 
             string json = "";
 
-            var s = JsonConvert.DeserializeObject<Student>(json); //空字符串 null  //不报错
+            var s = JsonConvert.DeserializeObject<Student>(json); // s = null  //不报错
 
-            s = JsonConvert.DeserializeObject<Student>("null"); // null  //不报错
+            s = JsonConvert.DeserializeObject<Student>("null"); //  s = null  //不报错
 
-            var ssss = JsonConvert.SerializeObject("123123"); // null  //不报错
-
-            var ss = JsonConvert.SerializeObject(null);  //不报错
-            var a = JsonConvert.DeserializeObject(ss); //不报错
+            var ssss = JsonConvert.SerializeObject("123123"); // 结果  "123123"  //不报错
 
             var st = new Student();
             st = null;
