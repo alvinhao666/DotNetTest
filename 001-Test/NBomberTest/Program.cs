@@ -14,6 +14,7 @@ using NBomber.Plugins.Network.Ping;
 
 namespace NBomberTest
 {
+    //接口压测工具
     class Program
     {
         static void Main(string[] args)
