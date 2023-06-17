@@ -15,7 +15,7 @@ namespace AopDemo2
             IServiceCollection services = new ServiceCollection();
 
             IConfiguration conf = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory)
-                                                        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) //热加载，\bin\Debug\netcoreapp2.2\appsettings.json
+                                                        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) //热加载，\bin\Debug\net6.0\appsettings.json
                                                         .Build();
 
             services.AddLogging(a => a.AddConfiguration(conf.GetSection("Logging")).AddConsole());

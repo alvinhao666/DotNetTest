@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>7.1</LangVersion>
+    <TargetFramework>net6net6.00</TargetFramework>
   </PropertyGroup>
 
 </Project>
