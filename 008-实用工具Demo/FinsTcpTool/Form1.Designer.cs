@@ -39,40 +39,45 @@
             // lbl_IP
             // 
             this.lbl_IP.AutoSize = true;
-            this.lbl_IP.Location = new System.Drawing.Point(12, 26);
+            this.lbl_IP.Location = new System.Drawing.Point(24, 52);
+            this.lbl_IP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_IP.Name = "lbl_IP";
-            this.lbl_IP.Size = new System.Drawing.Size(41, 12);
+            this.lbl_IP.Size = new System.Drawing.Size(82, 24);
             this.lbl_IP.TabIndex = 0;
             this.lbl_IP.Text = "IP地址";
             // 
             // txt_IP
             // 
-            this.txt_IP.Location = new System.Drawing.Point(59, 17);
+            this.txt_IP.Location = new System.Drawing.Point(118, 34);
+            this.txt_IP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_IP.Name = "txt_IP";
-            this.txt_IP.Size = new System.Drawing.Size(139, 21);
+            this.txt_IP.Size = new System.Drawing.Size(274, 35);
             this.txt_IP.TabIndex = 1;
             // 
             // txt_Port
             // 
-            this.txt_Port.Location = new System.Drawing.Point(59, 52);
+            this.txt_Port.Location = new System.Drawing.Point(118, 104);
+            this.txt_Port.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_Port.Name = "txt_Port";
-            this.txt_Port.Size = new System.Drawing.Size(139, 21);
+            this.txt_Port.Size = new System.Drawing.Size(274, 35);
             this.txt_Port.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(24, 122);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "端口号";
             // 
             // btn_Connect
             // 
-            this.btn_Connect.Location = new System.Drawing.Point(221, 17);
+            this.btn_Connect.Location = new System.Drawing.Point(442, 34);
+            this.btn_Connect.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_Connect.Name = "btn_Connect";
-            this.btn_Connect.Size = new System.Drawing.Size(75, 56);
+            this.btn_Connect.Size = new System.Drawing.Size(150, 112);
             this.btn_Connect.TabIndex = 4;
             this.btn_Connect.Text = "连接";
             this.btn_Connect.UseVisualStyleBackColor = true;
@@ -80,9 +85,10 @@
             // 
             // btn_Close
             // 
-            this.btn_Close.Location = new System.Drawing.Point(315, 17);
+            this.btn_Close.Location = new System.Drawing.Point(630, 34);
+            this.btn_Close.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(75, 56);
+            this.btn_Close.Size = new System.Drawing.Size(150, 112);
             this.btn_Close.TabIndex = 5;
             this.btn_Close.Text = "断开";
             this.btn_Close.UseVisualStyleBackColor = true;
@@ -90,17 +96,19 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 172);
+            this.ClientSize = new System.Drawing.Size(848, 344);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Connect);
             this.Controls.Add(this.txt_Port);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_IP);
             this.Controls.Add(this.lbl_IP);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "FinsTcp测试工具";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
