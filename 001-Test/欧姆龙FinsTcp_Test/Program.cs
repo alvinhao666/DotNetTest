@@ -38,17 +38,17 @@ namespace 欧姆龙FinsTcp_Test
             //}
 
 
-            if (_etherNetPLC.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "300.0", out short retData1) == 0)
+            if (_etherNetPLC?.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "300.0", out short retData1) == 0)
             {
                 //var bytes = BitConverter.GetBytes(retData);
             }
 
-            if (_etherNetPLC.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "305.2", out short retData2) == 0)
+            if (_etherNetPLC?.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "305.2", out short retData2) == 0)
             {
                 //var bytes = BitConverter.GetBytes(retData2);
             }
 
-            if (_etherNetPLC.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "305.3", out short retData3) == 0)
+            if (_etherNetPLC?.GetBitState(OmronFinsTCP.Net.PlcMemory.DM, "305.3", out short retData3) == 0)
             {
                 //var bytes = BitConverter.GetBytes(retData3);
             }
@@ -72,18 +72,23 @@ namespace 欧姆龙FinsTcp_Test
 
             //string s = "[True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True]";
 
-            string s = "[True,True,True,True,True,True,True,True,True,True,True]";
+            string s = "[True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True]";
 
             var boolArray = JsonConvert.DeserializeObject<bool[]>(s.ToLower());
 
-            var bytesArray = PackBoolsInByteArray(boolArray);
+            var bytesArray = Convert_BoolArray_To_ByteArray(boolArray);
 
-            var shortArray = ConvertByteArrayToShortArray(bytesArray);
+            Console.WriteLine("bytesArray :" + JsonConvert.SerializeObject(bytesArray.Select(a=>(int)a)));
+
+            var shortArray = Convert_ByteArray_ToShort_Array(bytesArray);
+
+            Console.WriteLine("shortArray :" + JsonConvert.SerializeObject(shortArray));
 
             Console.ReadKey();
         }
 
-        private static byte[] PackBoolsInByteArray(bool[] bools)
+
+        private static byte[] Convert_BoolArray_To_ByteArray(bool[] bools)
         {
             int len = bools.Length;
             int bytes = len >> 3;
@@ -97,13 +102,7 @@ namespace 欧姆龙FinsTcp_Test
             return arr2;
         }
 
-
-        /// <summary>
-        /// Convert Byte Array To Bool Array
-        /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns></returns>
-        private static short[] ConvertByteArrayToShortArray(byte[] bytes)
+        private static short[] Convert_ByteArray_ToShort_Array(byte[] bytes)
         {
             short[] samples = new short[bytes.Length];
             Buffer.BlockCopy(bytes, 0, samples, 0, bytes.Length);
