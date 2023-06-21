@@ -77,6 +77,7 @@ namespace FinsTcpTool
             }
             catch (Exception ex)
             {
+                this.btn_Connect.Text = "连接";
                 MessageBox.Show($"连接失败! {ex}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -343,6 +344,10 @@ namespace FinsTcpTool
             {
                 var result = ConvertToArray(data);
 
+                //var resultBytes = BitConverter.GetBytes(data);
+
+                //var resultBOols = ConvertByteArrayToBoolArray(resultBytes);
+
                 SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result)}");
             }
             else
@@ -365,6 +370,37 @@ namespace FinsTcpTool
             return result;
         }
 
+
+
+        /// <summary>
+        /// Convert Byte Array To Bool Array
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        public bool[] ConvertByteArrayToBoolArray(byte[] bytes)
+        {
+            System.Collections.BitArray b = new System.Collections.BitArray(bytes);
+            bool[] bitValues = new bool[b.Count];
+            b.CopyTo(bitValues, 0);
+            return bitValues;
+        }
+
+        ///// <summary>
+        ///// Packs a bit array into bytes, most significant bit first
+        ///// </summary>
+        ///// <param name="boolArr"></param>
+        ///// <returns></returns>
+        //public static byte[] ConvertBoolArrayToByteArray(bool[] boolArr)
+        //{
+        //    byte[] byteArr = new byte[(boolArr.Length + 7) / 8];
+        //    for (int i = 0; i < byteArr.Length; i++)
+        //    {
+        //        byteArr[i] = ReadByte(boolArr, 8 * i);
+        //    }
+        //    return byteArr;
+        //}
+
+
         private bool[] ConvertToArray(short @short)
         {
             var result = new bool[16];
@@ -374,7 +410,9 @@ namespace FinsTcpTool
                 @short = (short)(@short >> 1);
             }
             return result;
+
         }
+
 
         //private byte[] PackBoolsInByteArray(bool[] bools)
         //{
