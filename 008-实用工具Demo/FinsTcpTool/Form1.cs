@@ -1,4 +1,5 @@
-﻿using OmronFinsTCP.Net;
+﻿using Newtonsoft.Json;
+using OmronFinsTCP.Net;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,15 +29,9 @@ namespace FinsTcpTool
             InitializeComponent();
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            txt_IP.SelectionStart = 0;
-            txt_IP.SelectionLength = 0;
-            btn_Close.Enabled = false;
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            btn_Close.Enabled = false;
             LocalConfig.Instance.LoadConfig();
             txt_IP.Text = LocalConfig.Instance.IP;
             txt_Port.Text = LocalConfig.Instance.Port.ToString();
@@ -59,7 +54,7 @@ namespace FinsTcpTool
                         this.btn_Connect.Text = "连接中...";
                     }));
 
-                    await Task.Delay(5000);
+                    await Task.Delay(1000);
 
                     _etherNetPLC = new EtherNetPLC();
 
@@ -179,6 +174,275 @@ namespace FinsTcpTool
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// bool写入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WriteBool_Click(object sender, EventArgs e)
+        {
+            if (_etherNetPLC == null)
+            {
+                MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_InAddr.Text))
+            {
+                MessageBox.Show("请填写地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_InValue.Text))
+            {
+                MessageBox.Show("请填写值", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string writeValue = txt_InValue.Text.Trim();
+
+            bool flag = false;
+
+            if (writeValue == "1")
+            {
+                flag = true;
+            }
+            else if(writeValue == "0")
+            {
+                flag = false;
+            }
+            else
+            {
+                try
+                {
+                    flag = bool.Parse(txt_InValue.Text.Trim());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("写入值有误", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            string writeAddr = txt_InAddr.Text.Trim();
+
+            if(!writeAddr.Contains(".")) writeAddr += ".0";
+
+            _etherNetPLC.SetBitState(PlcMemory.DM, writeAddr, flag ? BitState.ON : BitState.OFF);
+        }
+
+        /// <summary>
+        /// bool读取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ReadBool_Click(object sender, EventArgs e)
+        {
+            if (_etherNetPLC == null)
+            {
+                MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_OutAddr.Text))
+            {
+                MessageBox.Show("请填写地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string readAddr = txt_OutAddr.Text.Trim();
+
+            if (!readAddr.Contains(".")) readAddr += ".0";
+
+            if(_etherNetPLC.GetBitState(PlcMemory.DM, readAddr, out short data) == 0)
+            {
+                SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {(data == 1 ? "True" : "False")}");
+            }
+            else
+            {
+                MessageBox.Show("读取失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        /// <summary>
+        /// bool数组写入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WriteBools_Click(object sender, EventArgs e)
+        {
+            if (_etherNetPLC == null)
+            {
+                MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_InAddr.Text))
+            {
+                MessageBox.Show("请填写地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_InValue.Text))
+            {
+                MessageBox.Show("请填写值", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            bool[] boolsArray;
+
+            try
+            {
+                boolsArray = JsonConvert.DeserializeObject<bool[]>(txt_InValue.Text.Trim().ToLower());
+
+                if (boolsArray.Length == 0)
+                {
+                    MessageBox.Show("数组不能为空", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("值有误", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw;
+            }
+
+            string writeAddr = txt_InAddr.Text.Trim();
+
+            if (writeAddr.Contains(".")) writeAddr = writeAddr.Split('.')[0];
+
+            var shortValue = BitsToWord(boolsArray);
+
+            _etherNetPLC.WriteWord(PlcMemory.DM, short.Parse(writeAddr), shortValue);
+        }
+
+        /// <summary>
+        /// bool数组读取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ReadBools_Click(object sender, EventArgs e)
+        {
+            if (_etherNetPLC == null)
+            {
+                MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_OutAddr.Text))
+            {
+                MessageBox.Show("请填写地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string readAddr = txt_OutAddr.Text.Trim();
+
+            if (readAddr.Contains(".")) readAddr = readAddr.Split('.')[0];
+
+            if (_etherNetPLC.ReadWord(PlcMemory.DM, short.Parse(readAddr), out short data) == 0)
+            {
+                var result = ConvertToArray(data);
+
+                SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result)}");
+            }
+            else
+            {
+                MessageBox.Show("读取失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+
+
+        private  short BitsToWord(bool[] bits)
+        {
+            short result = 0;
+            for (int i = 0; i < bits.Length; i++)
+            {
+                if (bits[i])
+                    result |= (short)(1 << i);
+            }
+            return result;
+        }
+
+        private bool[] ConvertToArray(short @short)
+        {
+            var result = new bool[16];
+            for (int i = 0; i < 16; i++)
+            {
+                result[i] = (@short & (short)1) == (short)1 ? true : false;
+                @short = (short)(@short >> 1);
+            }
+            return result;
+        }
+
+        //private byte[] PackBoolsInByteArray(bool[] bools)
+        //{
+        //    int len = bools.Length;
+        //    int bytes = len >> 3;
+        //    if ((len & 0x07) != 0) ++bytes;
+        //    byte[] arr2 = new byte[bytes];
+        //    for (int i = 0; i < bools.Length; i++)
+        //    {
+        //        if (bools[i])
+        //            arr2[i >> 3] |= (byte)(1 << (i & 0x07));
+        //    }
+        //    return arr2;
+        //}
+
+        //IEnumerable<byte> PackBools(IEnumerable<bool> bools)
+        //{
+        //    int bitIndex = 0;
+        //    byte currentByte = 0;
+        //    foreach (bool val in bools)
+        //    {
+        //        if (val)
+        //            currentByte |= (byte)(1 << bitIndex);
+        //        if (++bitIndex == 8)
+        //        {
+        //            yield return currentByte;
+        //            bitIndex = 0;
+        //            currentByte = 0;
+        //        }
+        //    }
+        //    if (bitIndex != 8)
+        //    {
+        //        yield return currentByte;
+        //    }
+        //}
+
+
+        //public short toShort(byte[] b)
+        //{
+        //    short s = 0;
+        //    short s0 = (short)(b[0] & 0xff);// 最低位  
+        //    short s1 = (short)(b[1] & 0xff);
+        //    s1 <<= 8;
+        //    s = (short)(s0 | s1);
+        //    return s;
+        //}
+
+        private void SetListBoxData(string str)
+        {
+            if (lstBox.InvokeRequired)
+            {
+                Action<string> actionDelegate = (x) =>
+                {
+
+                    lstBox.Items.Add(str);
+
+                    lstBox.TopIndex = lstBox.Items.Count - (int)(lstBox.Height / lstBox.ItemHeight);
+
+                };
+
+                lstBox.Invoke(actionDelegate, str);
+            }
+            else
+            {
+                lstBox.Items.Add(str);
+
+                lstBox.TopIndex = lstBox.Items.Count - (int)(lstBox.Height / lstBox.ItemHeight);
+            }
         }
     }
 }
