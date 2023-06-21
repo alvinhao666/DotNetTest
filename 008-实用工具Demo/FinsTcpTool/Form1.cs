@@ -312,9 +312,12 @@ namespace FinsTcpTool
 
             if (writeAddr.Contains(".")) writeAddr = writeAddr.Split('.')[0];
 
-            var shortValue = BitsToWord(boolsArray);
 
-            _etherNetPLC.WriteWord(PlcMemory.DM, short.Parse(writeAddr), shortValue);
+            var bytesArray = PackBoolsInByteArray(boolsArray);
+
+            var shortArray = ConvertByteArrayToShortArray(bytesArray);
+
+            _etherNetPLC.WriteWords(PlcMemory.DM, short.Parse(writeAddr), (short)shortArray.Length, shortArray);
         }
 
         /// <summary>
@@ -342,13 +345,13 @@ namespace FinsTcpTool
 
             if (_etherNetPLC.ReadWord(PlcMemory.DM, short.Parse(readAddr), out short data) == 0)
             {
-                var result = ConvertToArray(data);
+                //var result = ConvertToArray(data);
 
                 //var resultBytes = BitConverter.GetBytes(data);
 
                 //var resultBOols = ConvertByteArrayToBoolArray(resultBytes);
 
-                SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result)}");
+                //SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result)}");
             }
             else
             {
@@ -357,108 +360,31 @@ namespace FinsTcpTool
             }
         }
 
-
-
-        private  short BitsToWord(bool[] bits)
+        private static byte[] PackBoolsInByteArray(bool[] bools)
         {
-            short result = 0;
-            for (int i = 0; i < bits.Length; i++)
+            int len = bools.Length;
+            int bytes = len >> 3;
+            if ((len & 0x07) != 0) ++bytes;
+            byte[] arr2 = new byte[bytes];
+            for (int i = 0; i < bools.Length; i++)
             {
-                if (bits[i])
-                    result |= (short)(1 << i);
+                if (bools[i])
+                    arr2[i >> 3] |= (byte)(1 << (i & 0x07));
             }
-            return result;
+            return arr2;
         }
-
-
 
         /// <summary>
         /// Convert Byte Array To Bool Array
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
-        public bool[] ConvertByteArrayToBoolArray(byte[] bytes)
+        private static short[] ConvertByteArrayToShortArray(byte[] bytes)
         {
-            System.Collections.BitArray b = new System.Collections.BitArray(bytes);
-            bool[] bitValues = new bool[b.Count];
-            b.CopyTo(bitValues, 0);
-            return bitValues;
+            short[] samples = new short[bytes.Length];
+            Buffer.BlockCopy(bytes, 0, samples, 0, bytes.Length);
+            return samples;
         }
-
-        ///// <summary>
-        ///// Packs a bit array into bytes, most significant bit first
-        ///// </summary>
-        ///// <param name="boolArr"></param>
-        ///// <returns></returns>
-        //public static byte[] ConvertBoolArrayToByteArray(bool[] boolArr)
-        //{
-        //    byte[] byteArr = new byte[(boolArr.Length + 7) / 8];
-        //    for (int i = 0; i < byteArr.Length; i++)
-        //    {
-        //        byteArr[i] = ReadByte(boolArr, 8 * i);
-        //    }
-        //    return byteArr;
-        //}
-
-
-        private bool[] ConvertToArray(short @short)
-        {
-            var result = new bool[16];
-            for (int i = 0; i < 16; i++)
-            {
-                result[i] = (@short & (short)1) == (short)1 ? true : false;
-                @short = (short)(@short >> 1);
-            }
-            return result;
-
-        }
-
-
-        //private byte[] PackBoolsInByteArray(bool[] bools)
-        //{
-        //    int len = bools.Length;
-        //    int bytes = len >> 3;
-        //    if ((len & 0x07) != 0) ++bytes;
-        //    byte[] arr2 = new byte[bytes];
-        //    for (int i = 0; i < bools.Length; i++)
-        //    {
-        //        if (bools[i])
-        //            arr2[i >> 3] |= (byte)(1 << (i & 0x07));
-        //    }
-        //    return arr2;
-        //}
-
-        //IEnumerable<byte> PackBools(IEnumerable<bool> bools)
-        //{
-        //    int bitIndex = 0;
-        //    byte currentByte = 0;
-        //    foreach (bool val in bools)
-        //    {
-        //        if (val)
-        //            currentByte |= (byte)(1 << bitIndex);
-        //        if (++bitIndex == 8)
-        //        {
-        //            yield return currentByte;
-        //            bitIndex = 0;
-        //            currentByte = 0;
-        //        }
-        //    }
-        //    if (bitIndex != 8)
-        //    {
-        //        yield return currentByte;
-        //    }
-        //}
-
-
-        //public short toShort(byte[] b)
-        //{
-        //    short s = 0;
-        //    short s0 = (short)(b[0] & 0xff);// 最低位  
-        //    short s1 = (short)(b[1] & 0xff);
-        //    s1 <<= 8;
-        //    s = (short)(s0 | s1);
-        //    return s;
-        //}
 
         private void SetListBoxData(string str)
         {

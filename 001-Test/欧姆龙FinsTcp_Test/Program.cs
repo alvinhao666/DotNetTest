@@ -1,4 +1,5 @@
-﻿using OmronFinsTCP.Net;
+﻿using Newtonsoft.Json;
+using OmronFinsTCP.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,8 +70,45 @@ namespace 欧姆龙FinsTcp_Test
             //    }
             //}
 
+            //string s = "[True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True]";
+
+            string s = "[True,True,True,True,True,True,True,True,True,True,True]";
+
+            var boolArray = JsonConvert.DeserializeObject<bool[]>(s.ToLower());
+
+            var bytesArray = PackBoolsInByteArray(boolArray);
+
+            var shortArray = ConvertByteArrayToShortArray(bytesArray);
 
             Console.ReadKey();
         }
+
+        private static byte[] PackBoolsInByteArray(bool[] bools)
+        {
+            int len = bools.Length;
+            int bytes = len >> 3;
+            if ((len & 0x07) != 0) ++bytes;
+            byte[] arr2 = new byte[bytes];
+            for (int i = 0; i < bools.Length; i++)
+            {
+                if (bools[i])
+                    arr2[i >> 3] |= (byte)(1 << (i & 0x07));
+            }
+            return arr2;
+        }
+
+
+        /// <summary>
+        /// Convert Byte Array To Bool Array
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        private static short[] ConvertByteArrayToShortArray(byte[] bytes)
+        {
+            short[] samples = new short[bytes.Length];
+            Buffer.BlockCopy(bytes, 0, samples, 0, bytes.Length);
+            return samples;
+        }
+
     }
 }
