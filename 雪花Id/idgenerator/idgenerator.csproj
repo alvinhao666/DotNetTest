@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Yitter.IdGenerator" Version="1.0.12" />
+    <PackageReference Include="Yitter.IdGenerator" Version="1.0.14" />
   </ItemGroup>
 
 </Project>
