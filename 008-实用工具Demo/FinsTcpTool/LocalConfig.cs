@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinsTcpTool
 {
@@ -18,7 +13,7 @@ namespace FinsTcpTool
 
         public string IP { get; set; }
 
-        public ushort Port { get; set; } 
+        public ushort Port { get; set; }
 
 
         public void SaveConfig()

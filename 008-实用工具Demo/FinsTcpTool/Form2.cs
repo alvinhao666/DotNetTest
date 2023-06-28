@@ -1,5 +1,6 @@
-﻿using Newtonsoft.Json;
-using OmronFinsTCP.Net;
+﻿using HslCommunication;
+using HslCommunication.Profinet.Omron;
+using Newtonsoft.Json;
 using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -7,9 +8,9 @@ using System.Windows.Forms;
 
 namespace FinsTcpTool
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        EtherNetPLC _etherNetPLC;
+        OmronFinsNet _omronFinsNet;
 
         private string _ip;
 
@@ -17,7 +18,7 @@ namespace FinsTcpTool
 
         private bool _isConnected = false;
 
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
@@ -51,24 +52,16 @@ namespace FinsTcpTool
 
                     await Task.Delay(1000);
 
-                    _etherNetPLC = new EtherNetPLC();
+                    _omronFinsNet = new OmronFinsNet(_ip, _port);
 
-                    if (_etherNetPLC.Link(_ip, (short)_port, 5000) == 0)
-                    {
-                        _isConnected = true;
+                    _isConnected = true;
 
-                        this.Invoke(new Action(() =>
-                        {
-                            this.btn_Connect.Text = "已连接...";
-                            this.btn_Connect.Enabled = false;
-                            this.btn_Close.Enabled = true;
-                        }));
-                    }
-                    else
+                    this.Invoke(new Action(() =>
                     {
-                        this.btn_Connect.Text = "连接";
-                        MessageBox.Show("连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        this.btn_Connect.Text = "已连接...";
+                        this.btn_Connect.Enabled = false;
+                        this.btn_Close.Enabled = true;
+                    }));
 
                 });
             }
@@ -86,7 +79,7 @@ namespace FinsTcpTool
         /// <param name="e"></param>
         private async void btn_Close_Click(object sender, EventArgs e)
         {
-            if (!_isConnected || _etherNetPLC == null) return;
+            if (!_isConnected || _omronFinsNet == null) return;
 
             this.btn_Close.Enabled = false;
             try
@@ -94,7 +87,8 @@ namespace FinsTcpTool
                 await Task.Run(() =>
                 {
 
-                    if (_etherNetPLC.Close() == 0)
+                    var result = _omronFinsNet.ConnectClose();
+                    if (result.IsSuccess)
                     {
                         _isConnected = false;
                         this.Invoke(new Action(() =>
@@ -107,7 +101,7 @@ namespace FinsTcpTool
                     else
                     {
                         this.btn_Close.Enabled = true;
-                        MessageBox.Show($"断开失败! ", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"断开失败! {result.Message} ", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 });
@@ -183,7 +177,7 @@ namespace FinsTcpTool
         /// <param name="e"></param>
         private void btn_WriteBool_Click(object sender, EventArgs e)
         {
-            if (_etherNetPLC == null)
+            if (_omronFinsNet == null)
             {
                 MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -227,9 +221,12 @@ namespace FinsTcpTool
 
             string writeAddr = txt_InAddr.Text.Trim();
 
-            if (!writeAddr.Contains(".")) writeAddr += ".0";
+            var result = _omronFinsNet.Write(writeAddr, flag);
 
-            _etherNetPLC.SetBitState(PlcMemory.DM, writeAddr, flag ? BitState.ON : BitState.OFF);
+            if (!result.IsSuccess)
+            {
+                MessageBox.Show($"写入发生错误 {result.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         /// <summary>
@@ -237,9 +234,9 @@ namespace FinsTcpTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ReadBool_Click(object sender, EventArgs e)
+        private async void btn_ReadBool_Click(object sender, EventArgs e)
         {
-            if (_etherNetPLC == null)
+            if (_omronFinsNet == null)
             {
                 MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -253,15 +250,38 @@ namespace FinsTcpTool
 
             string readAddr = txt_OutAddr.Text.Trim();
 
-            if (!readAddr.Contains(".")) readAddr += ".0";
+            try
+            {
+                this.btn_ReadBool.Text = "读取中...";
+                this.btn_ReadBool.Enabled = false;
+                await Task.Run(() =>
+                {
+                    OperateResult<bool> result = _omronFinsNet.ReadBool(readAddr);
 
-            if (_etherNetPLC.GetBitState(PlcMemory.DM, readAddr, out short data) == 0)
-            {
-                SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {(data == 1 ? "True" : "False")}");
+                    if (!result.IsSuccess)
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            this.btn_ReadBool.Text = "bool读取";
+                            this.btn_ReadBool.Enabled = true;
+                        }));
+                        MessageBox.Show($"读取失败 {result.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    this.Invoke(new Action(() =>
+                    {
+                        this.btn_ReadBool.Text = "bool读取";
+                        this.btn_ReadBool.Enabled = true;
+                        SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {result.Content}");
+                    }));
+                });
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("读取失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.btn_ReadBool.Text = "bool读取";
+                this.btn_ReadBool.Enabled = true;
+                MessageBox.Show($"读取失败 {ex.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -273,7 +293,7 @@ namespace FinsTcpTool
         /// <param name="e"></param>
         private void btn_WriteBools_Click(object sender, EventArgs e)
         {
-            if (_etherNetPLC == null)
+            if (_omronFinsNet == null)
             {
                 MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -309,14 +329,13 @@ namespace FinsTcpTool
 
             string writeAddr = txt_InAddr.Text.Trim();
 
-            if (writeAddr.Contains(".")) writeAddr = writeAddr.Split('.')[0];
+            var result = _omronFinsNet.Write(writeAddr, boolsArray);
 
-
-            var bytesArray = PackBoolsInByteArray(boolsArray);
-
-            var shortArray = ConvertByteArrayToShortArray(bytesArray);
-
-            _etherNetPLC.WriteWords(PlcMemory.DM, short.Parse(writeAddr), (short)shortArray.Length, shortArray);
+            if (!result.IsSuccess)
+            {
+                MessageBox.Show($"写入失败 {result.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         /// <summary>
@@ -324,9 +343,9 @@ namespace FinsTcpTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ReadBools_Click(object sender, EventArgs e)
+        private async void btn_ReadBools_Click(object sender, EventArgs e)
         {
-            if (_etherNetPLC == null)
+            if (_omronFinsNet == null)
             {
                 MessageBox.Show("请先连接通讯地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -340,50 +359,45 @@ namespace FinsTcpTool
 
             string readAddr = txt_OutAddr.Text.Trim();
 
-            if (readAddr.Contains(".")) readAddr = readAddr.Split('.')[0];
 
-            if (_etherNetPLC.ReadWord(PlcMemory.DM, short.Parse(readAddr), out short data) == 0)
+            try
             {
-                //var result = ConvertToArray(data);
+                this.btn_ReadBools.Text = "读取中...";
+                this.btn_ReadBools.Enabled = false;
+                await Task.Run(() =>
+                {
 
-                //var resultBytes = BitConverter.GetBytes(data);
+                    OperateResult<bool[]> result = _omronFinsNet.ReadBool(readAddr, 160);
 
-                //var resultBOols = ConvertByteArrayToBoolArray(resultBytes);
+                    if (!result.IsSuccess)
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            this.btn_ReadBools.Text = "bool数组读取";
+                            this.btn_ReadBools.Enabled = true;
+                        }));
+                        MessageBox.Show($"读取失败 {result.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
-                //SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result)}");
+
+                    this.Invoke(new Action(() =>
+                    {
+                        this.btn_ReadBools.Text = "bool数组读取";
+                        this.btn_ReadBools.Enabled = true;
+                        SetListBoxData($"[{DateTime.Now.ToString("HH:mm:ss fff")}]  {JsonConvert.SerializeObject(result.Content)}");
+                    }));
+                });
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("读取失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.btn_ReadBools.Text = "bool数组读取";
+                this.btn_ReadBools.Enabled = true;
+                MessageBox.Show($"读取失败 {ex.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
-        private static byte[] PackBoolsInByteArray(bool[] bools)
-        {
-            int len = bools.Length;
-            int bytes = len >> 3;
-            if ((len & 0x07) != 0) ++bytes;
-            byte[] arr2 = new byte[bytes];
-            for (int i = 0; i < bools.Length; i++)
-            {
-                if (bools[i])
-                    arr2[i >> 3] |= (byte)(1 << (i & 0x07));
-            }
-            return arr2;
-        }
-
-        /// <summary>
-        /// Convert Byte Array To Bool Array
-        /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns></returns>
-        private static short[] ConvertByteArrayToShortArray(byte[] bytes)
-        {
-            short[] samples = new short[bytes.Length];
-            Buffer.BlockCopy(bytes, 0, samples, 0, bytes.Length);
-            return samples;
-        }
 
         private void SetListBoxData(string str)
         {
