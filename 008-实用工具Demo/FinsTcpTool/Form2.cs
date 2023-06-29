@@ -2,6 +2,7 @@
 using HslCommunication.Profinet.Omron;
 using Newtonsoft.Json;
 using System;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -91,6 +92,7 @@ namespace FinsTcpTool
                     if (result.IsSuccess)
                     {
                         _isConnected = false;
+                        _omronFinsNet = null;
                         this.Invoke(new Action(() =>
                         {
                             this.btn_Connect.Text = "连接";
@@ -128,6 +130,8 @@ namespace FinsTcpTool
             LocalConfig.Instance.Port = _port;
 
             LocalConfig.Instance.SaveConfig();
+
+            MessageBox.Show($"保存成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 

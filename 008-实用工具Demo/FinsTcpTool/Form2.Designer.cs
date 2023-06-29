@@ -36,19 +36,19 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_WriteBool = new System.Windows.Forms.Button();
-            this.txt_InAddr = new System.Windows.Forms.TextBox();
+            this.btn_WriteBools = new System.Windows.Forms.Button();
             this.txt_InValue = new System.Windows.Forms.TextBox();
+            this.txt_InAddr = new System.Windows.Forms.TextBox();
+            this.btn_WriteBool = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lstBox = new System.Windows.Forms.ListBox();
+            this.btn_ReadBools = new System.Windows.Forms.Button();
+            this.btn_ReadBool = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_OutAddr = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_ReadBool = new System.Windows.Forms.Button();
-            this.btn_WriteBools = new System.Windows.Forms.Button();
-            this.btn_ReadBools = new System.Windows.Forms.Button();
-            this.lstBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -137,25 +137,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "写入";
             // 
-            // label2
+            // btn_WriteBools
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(10, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "地址";
+            this.btn_WriteBools.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_WriteBools.Location = new System.Drawing.Point(67, 169);
+            this.btn_WriteBools.Name = "btn_WriteBools";
+            this.btn_WriteBools.Size = new System.Drawing.Size(109, 29);
+            this.btn_WriteBools.TabIndex = 10;
+            this.btn_WriteBools.Text = "bool数组写入";
+            this.btn_WriteBools.UseVisualStyleBackColor = true;
+            this.btn_WriteBools.Click += new System.EventHandler(this.btn_WriteBools_Click);
             // 
-            // label3
+            // txt_InValue
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(10, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "值";
+            this.txt_InValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_InValue.Location = new System.Drawing.Point(67, 72);
+            this.txt_InValue.Name = "txt_InValue";
+            this.txt_InValue.Size = new System.Drawing.Size(139, 23);
+            this.txt_InValue.TabIndex = 8;
+            // 
+            // txt_InAddr
+            // 
+            this.txt_InAddr.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_InAddr.Location = new System.Drawing.Point(67, 30);
+            this.txt_InAddr.Name = "txt_InAddr";
+            this.txt_InAddr.Size = new System.Drawing.Size(139, 23);
+            this.txt_InAddr.TabIndex = 8;
             // 
             // btn_WriteBool
             // 
@@ -168,21 +175,25 @@
             this.btn_WriteBool.UseVisualStyleBackColor = true;
             this.btn_WriteBool.Click += new System.EventHandler(this.btn_WriteBool_Click);
             // 
-            // txt_InAddr
+            // label3
             // 
-            this.txt_InAddr.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_InAddr.Location = new System.Drawing.Point(67, 30);
-            this.txt_InAddr.Name = "txt_InAddr";
-            this.txt_InAddr.Size = new System.Drawing.Size(139, 23);
-            this.txt_InAddr.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(10, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "值";
             // 
-            // txt_InValue
+            // label2
             // 
-            this.txt_InValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_InValue.Location = new System.Drawing.Point(67, 72);
-            this.txt_InValue.Name = "txt_InValue";
-            this.txt_InValue.Size = new System.Drawing.Size(139, 23);
-            this.txt_InValue.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(10, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "地址";
             // 
             // groupBox2
             // 
@@ -198,6 +209,49 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "读取";
+            // 
+            // lstBox
+            // 
+            this.lstBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lstBox.FormattingEnabled = true;
+            this.lstBox.HorizontalScrollbar = true;
+            this.lstBox.ItemHeight = 20;
+            this.lstBox.Location = new System.Drawing.Point(70, 75);
+            this.lstBox.Name = "lstBox";
+            this.lstBox.Size = new System.Drawing.Size(393, 164);
+            this.lstBox.TabIndex = 15;
+            // 
+            // btn_ReadBools
+            // 
+            this.btn_ReadBools.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ReadBools.Location = new System.Drawing.Point(327, 26);
+            this.btn_ReadBools.Name = "btn_ReadBools";
+            this.btn_ReadBools.Size = new System.Drawing.Size(109, 29);
+            this.btn_ReadBools.TabIndex = 14;
+            this.btn_ReadBools.Text = "bool数组读取";
+            this.btn_ReadBools.UseVisualStyleBackColor = true;
+            this.btn_ReadBools.Click += new System.EventHandler(this.btn_ReadBools_Click);
+            // 
+            // btn_ReadBool
+            // 
+            this.btn_ReadBool.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ReadBool.Location = new System.Drawing.Point(241, 26);
+            this.btn_ReadBool.Name = "btn_ReadBool";
+            this.btn_ReadBool.Size = new System.Drawing.Size(80, 29);
+            this.btn_ReadBool.TabIndex = 12;
+            this.btn_ReadBool.Text = "bool读取";
+            this.btn_ReadBool.UseVisualStyleBackColor = true;
+            this.btn_ReadBool.Click += new System.EventHandler(this.btn_ReadBool_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(13, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "结果";
             // 
             // txt_OutAddr
             // 
@@ -217,60 +271,7 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "地址";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(13, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 20);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "结果";
-            // 
-            // btn_ReadBool
-            // 
-            this.btn_ReadBool.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ReadBool.Location = new System.Drawing.Point(241, 26);
-            this.btn_ReadBool.Name = "btn_ReadBool";
-            this.btn_ReadBool.Size = new System.Drawing.Size(80, 29);
-            this.btn_ReadBool.TabIndex = 12;
-            this.btn_ReadBool.Text = "bool读取";
-            this.btn_ReadBool.UseVisualStyleBackColor = true;
-            this.btn_ReadBool.Click += new System.EventHandler(this.btn_ReadBool_Click);
-            // 
-            // btn_WriteBools
-            // 
-            this.btn_WriteBools.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_WriteBools.Location = new System.Drawing.Point(67, 169);
-            this.btn_WriteBools.Name = "btn_WriteBools";
-            this.btn_WriteBools.Size = new System.Drawing.Size(109, 29);
-            this.btn_WriteBools.TabIndex = 10;
-            this.btn_WriteBools.Text = "bool数组写入";
-            this.btn_WriteBools.UseVisualStyleBackColor = true;
-            this.btn_WriteBools.Click += new System.EventHandler(this.btn_WriteBools_Click);
-            // 
-            // btn_ReadBools
-            // 
-            this.btn_ReadBools.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ReadBools.Location = new System.Drawing.Point(327, 26);
-            this.btn_ReadBools.Name = "btn_ReadBools";
-            this.btn_ReadBools.Size = new System.Drawing.Size(109, 29);
-            this.btn_ReadBools.TabIndex = 14;
-            this.btn_ReadBools.Text = "bool数组读取";
-            this.btn_ReadBools.UseVisualStyleBackColor = true;
-            this.btn_ReadBools.Click += new System.EventHandler(this.btn_ReadBools_Click);
-            // 
-            // lstBox
-            // 
-            this.lstBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lstBox.FormattingEnabled = true;
-            this.lstBox.ItemHeight = 20;
-            this.lstBox.Location = new System.Drawing.Point(70, 75);
-            this.lstBox.Name = "lstBox";
-            this.lstBox.Size = new System.Drawing.Size(393, 164);
-            this.lstBox.TabIndex = 15;
-            // 
-            // Form1
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,7 +285,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_IP);
             this.Controls.Add(this.lbl_IP);
-            this.Name = "Form1";
+            this.Name = "Form2";
             this.Text = "FinsTcp测试工具";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
