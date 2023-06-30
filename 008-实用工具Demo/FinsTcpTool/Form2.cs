@@ -55,6 +55,8 @@ namespace FinsTcpTool
 
                     _omronFinsNet = new OmronFinsNet(_ip, _port);
 
+                    _omronFinsNet.SetPersistentConnection(); //设置长链接
+
                     var result = _omronFinsNet.ConnectServer();
 
                     if (result.IsSuccess)
