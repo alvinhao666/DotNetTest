@@ -55,15 +55,28 @@ namespace FinsTcpTool
 
                     _omronFinsNet = new OmronFinsNet(_ip, _port);
 
-                    _isConnected = true;
+                    var result = _omronFinsNet.ConnectServer();
 
-                    this.Invoke(new Action(() =>
+                    if (result.IsSuccess)
                     {
-                        this.btn_Connect.Text = "已连接...";
-                        this.btn_Connect.Enabled = false;
-                        this.btn_Close.Enabled = true;
-                    }));
+                        _isConnected = true;
 
+                        this.Invoke(new Action(() =>
+                        {
+                            this.btn_Connect.Text = "已连接...";
+                            this.btn_Connect.Enabled = false;
+                            this.btn_Close.Enabled = true;
+                        }));
+                    }
+                    else
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            this.btn_Connect.Text = "连接";
+                        }));
+
+                        MessageBox.Show($"连接失败! {result.Message}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 });
             }
             catch (Exception ex)
