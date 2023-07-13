@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using Force.DeepCloner;
 using Mapster;
 using Moq.AutoMock;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +21,35 @@ namespace AutoMapper_Vs_Mapster
 
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<PerformanceTest>();
+            //var summary = BenchmarkRunner.Run<PerformanceTest>();
 
 
-            //var dto1 = new Entity { NickName = "2222" };
+            var dto1 = new Entity { NickName = "2222", Dto2 = new EntityDto { NickName = "1111" } };
 
-            //var dto2 = dto1.Adapt<Entity>();
+            var dto2 = dto1.Adapt<Entity>();
 
-            //Console.WriteLine(dto1.NickName.GetHashCode() == dto2.NickName.GetHashCode()); // true 浅克隆
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName,dto2.NickName)); // true 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto2.Dto2)); // false
+
+            var dto3 = dto1.DeepClone();
+
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto3.NickName)); //  true 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto3.Dto2)); // false
+
+
+            var dto4 = JsonConvert.DeserializeObject<Entity>(JsonConvert.SerializeObject(dto1));
+
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto4.NickName)); //  false 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto4.Dto2)); // false
+
+            //dto3.NickName = "3333";
+
+            //Console.WriteLine(dto1.NickName);
+
+            //Console.WriteLine(dto1.NickName.GetHashCode() == dto3.NickName.GetHashCode()); // false 深克隆
 
             Console.ReadKey();
         }
@@ -47,6 +70,8 @@ namespace AutoMapper_Vs_Mapster
         public string NickName { get; set; }
         public bool Created { get; set; }
         public MyEnum State { get; set; }
+
+        public EntityDto Dto2 { get; set; }
     }
 
     public class EntityDto
