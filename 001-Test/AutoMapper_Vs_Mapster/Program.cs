@@ -21,29 +21,36 @@ namespace AutoMapper_Vs_Mapster
 
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<PerformanceTest>();
+            //var summary = BenchmarkRunner.Run<PerformanceTest>();
 
 
-            //var dto1 = new Entity { NickName = "2222", Dto2 = new EntityDto { NickName = "1111" } };
+            var dto1 = new EntityClone { NickName = "2222", Dto2 = new EntityDtoClone { NickName = "1111" } };
 
-            //var dto2 = dto1.Adapt<Entity>();
+            var dto2 = dto1.Adapt<EntityClone>();
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.NickName,dto2.NickName)); // true 
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto2.NickName)); // true 
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto2.Dto2)); // false
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto2.Dto2)); // false
 
-            //var dto3 = dto1.DeepClone();
+            var dto3 = dto1.DeepClone(); //深克隆
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto3.NickName)); //  true 
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto3.NickName)); //  true 
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto3.Dto2)); // false
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto3.Dto2)); // false
 
 
-            //var dto4 = JsonConvert.DeserializeObject<Entity>(JsonConvert.SerializeObject(dto1));
+            var dto4 = JsonConvert.DeserializeObject<EntityClone>(JsonConvert.SerializeObject(dto1));
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto4.NickName)); //  false 
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto4.NickName)); //  false 
 
-            //Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto4.Dto2)); // false
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto4.Dto2)); // false
+
+
+            var dto5 = dto1.ShallowClone(); //浅克隆
+
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto5.NickName)); //  true 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto5.Dto2)); // true
 
 
             Console.ReadKey();
@@ -58,6 +65,27 @@ namespace AutoMapper_Vs_Mapster
         [Description("完成")]
         Done
     }
+    public class EntityClone
+    {
+        public int Id { get; set; }
+        public Guid Oid { get; set; }
+        public string NickName { get; set; }
+        public bool Created { get; set; }
+        public MyEnum State { get; set; }
+
+        public EntityDtoClone Dto2 { get; set; }
+    }
+    public class EntityDtoClone
+    {
+        public int Id { get; set; }
+        public Guid Oid { get; set; }
+        public string NickName { get; set; }
+        public bool Created { get; set; }
+        public MyEnum Enum { get; set; }
+        public string EnumString { get; set; }
+    }
+
+
     public class Entity
     {
         public int Id { get; set; }
