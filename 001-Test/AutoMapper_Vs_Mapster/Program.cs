@@ -26,7 +26,7 @@ namespace AutoMapper_Vs_Mapster
 
             var dto1 = new EntityClone { NickName = "2222", Dto2 = new EntityDtoClone { NickName = "1111" } };
 
-            var dto2 = dto1.Adapt<EntityClone>();
+            var dto2 = dto1.Adapt<EntityClone>(); //Mapster 默认递归映射对象是深拷贝，如果不想使用深拷贝，可以通过调用 ShallowCopyForSameType 方法设置为浅拷贝：https://www.cnblogs.com/staneee/p/14913759.html
 
             Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto2.NickName)); // true 
 
