@@ -21,6 +21,13 @@ namespace AutoMapper_Vs_Mapster
         {
             var summary = BenchmarkRunner.Run<PerformanceTest>();
 
+
+            //var dto1 = new Entity { NickName = "2222" };
+
+            //var dto2 = dto1.Adapt<Entity>();
+
+            //Console.WriteLine(dto1.NickName.GetHashCode() == dto2.NickName.GetHashCode()); // true 浅克隆
+
             Console.ReadKey();
         }
     }
