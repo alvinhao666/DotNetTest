@@ -26,24 +26,20 @@ namespace AutoMapper_Vs_Mapster
 
             var dto1 = new EntityClone { NickName = "2222", Dto2 = new EntityDtoClone { NickName = "1111" } };
 
+            //mapster
             var dto2 = dto1.Adapt<EntityClone>(); //Mapster 默认递归映射对象是深拷贝，如果不想使用深拷贝，可以通过调用 ShallowCopyForSameType 方法设置为浅拷贝：https://www.cnblogs.com/staneee/p/14913759.html
 
             Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto2.NickName)); // true 
 
             Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto2.Dto2)); // false
 
+
+            //deepcloner
             var dto3 = dto1.DeepClone(); //深克隆
 
             Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto3.NickName)); //  true 
 
             Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto3.Dto2)); // false
-
-
-            var dto4 = JsonConvert.DeserializeObject<EntityClone>(JsonConvert.SerializeObject(dto1));
-
-            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto4.NickName)); //  false 
-
-            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto4.Dto2)); // false
 
 
             var dto5 = dto1.ShallowClone(); //浅克隆
@@ -52,6 +48,27 @@ namespace AutoMapper_Vs_Mapster
 
             Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto5.Dto2)); // true
 
+
+            //json序列化
+            var dto4 = JsonConvert.DeserializeObject<EntityClone>(JsonConvert.SerializeObject(dto1));
+
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto4.NickName)); //  false 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto4.Dto2)); // false
+
+            //autoMapper
+
+            var configuration = new MapperConfiguration(cfg =>
+            {
+            });
+
+            var mapper = configuration.CreateMapper();
+
+            var dto6 = mapper.Map<EntityClone>(dto1);  //automapper 对象 浅克隆
+
+            Console.WriteLine(object.ReferenceEquals(dto1.NickName, dto6.NickName)); //  true 
+
+            Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto6.Dto2)); // true
 
             Console.ReadKey();
         }
