@@ -323,6 +323,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "欧姆龙FinsTcp_Test", "00
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinsTcpTool", "008-实用工具Demo\FinsTcpTool\FinsTcpTool.csproj", "{DC184C80-2865-4AD4-974C-C5E58894F489}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{074E2772-7AB9-4269-BD3B-5B4E886A6669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -853,6 +855,10 @@ Global
 		{DC184C80-2865-4AD4-974C-C5E58894F489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC184C80-2865-4AD4-974C-C5E58894F489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC184C80-2865-4AD4-974C-C5E58894F489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
