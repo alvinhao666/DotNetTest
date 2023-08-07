@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Text;
 
 namespace ByteTest
@@ -36,11 +37,60 @@ namespace ByteTest
 
             Console.WriteLine(value);
 
+            var bytesarry = new byte[] { 0, 1, 0, 0, 0, 0, 0, 0, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+            var ST2 = ByteToHex(bytesarry);
+
+
+            var str1 = BitConverter.ToString(bytesarry);
+
+
+            var sss = Encoding.ASCII.GetString(bytesarry);
+
+            var s = "";
+            for(var i = 0; i < 32; i++)
+            {
+                s += "00 ";
+            }
+
+            bytesarry = new byte[] { 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x31 };
+
+            var value2 = Encoding.ASCII.GetString(bytesarry);
+
+            var value2Int = int.Parse(value2);
+
+            var bs = Encoding.ASCII.GetBytes(value2Int.ToString().PadLeft(10,'0'));
+
+
+            bytesarry = new byte[] { 0x01 };
+
+            Console.WriteLine(bytesarry[0] == 1);
+
+
+            var ss = BitConverter.GetBytes((ushort)4);
+
+            var ssss = Ushort2HexBytes(4);
 
             Console.ReadKey();
         }
 
 
+
+        private static byte[] Ushort2HexBytes(ushort value)
+        {
+            return BitConverter.GetBytes(value).Reverse().ToArray();
+        }
+
+        public static string ByteToHex(byte[] Bytes)
+        {
+            string str = string.Empty;
+            foreach (byte Byte in Bytes)
+            {
+                str += String.Format("{0:X2}", Byte) + " ";
+            }
+            return str.Trim();
+        }
 
         public static short BitsToWord(bool[] bits)
         {
