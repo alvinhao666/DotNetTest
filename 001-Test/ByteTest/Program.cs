@@ -54,9 +54,14 @@ namespace ByteTest
                 s += "00 ";
             }
 
-            bytesarry = new byte[] { 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x31 };
+            //WafterId0Bytes is 33 - 00 - FF - 00 - FF - 00 - FF - 00 - 37 - 00 WaferId1Bytes is FF - 00 - FF - 00 - FF - 00 - FF - 00 - 34 - 00
+
+            bytesarry = new byte[] { 49, 48, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x31 };
+
 
             var value2 = Encoding.ASCII.GetString(bytesarry);
+
+            Console.WriteLine($"Value2 {value2}");
 
             var value2Int = int.Parse(value2);
 
