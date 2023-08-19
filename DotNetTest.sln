@@ -325,6 +325,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinsTcpTool", "008-实用�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{074E2772-7AB9-4269-BD3B-5B4E886A6669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteFile", "001-Test\DeleteFile\DeleteFile.csproj", "{7E94FB20-FCF2-4173-84AF-D8AB300C797C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -859,6 +861,10 @@ Global
 		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{074E2772-7AB9-4269-BD3B-5B4E886A6669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E94FB20-FCF2-4173-84AF-D8AB300C797C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E94FB20-FCF2-4173-84AF-D8AB300C797C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E94FB20-FCF2-4173-84AF-D8AB300C797C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E94FB20-FCF2-4173-84AF-D8AB300C797C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1009,6 +1015,7 @@ Global
 		{C8629B7E-D07F-40D1-B6F3-20C5052B02CD} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 		{41D6145E-011F-4EBC-A351-0B0FEF9C9B43} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 		{DC184C80-2865-4AD4-974C-C5E58894F489} = {78E7FCD5-2ABA-4912-8876-E8888E1C7349}
+		{7E94FB20-FCF2-4173-84AF-D8AB300C797C} = {6D9C9930-FBFA-4555-8455-B868B662E572}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CC3D488-4F99-44F1-964B-19ADB12FC3B7}
