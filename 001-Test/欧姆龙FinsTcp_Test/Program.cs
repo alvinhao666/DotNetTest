@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using OmronFinsTCP.Net;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace 欧姆龙FinsTcp_Test
 {
@@ -78,7 +74,7 @@ namespace 欧姆龙FinsTcp_Test
 
             var bytesArray = Convert_BoolArray_To_ByteArray(boolArray);
 
-            Console.WriteLine("bytesArray :" + JsonConvert.SerializeObject(bytesArray.Select(a=>(int)a)));
+            Console.WriteLine("bytesArray :" + JsonConvert.SerializeObject(bytesArray.Select(a => (int)a)));
 
             var shortArray = Convert_ByteArray_ToShort_Array(bytesArray);
 

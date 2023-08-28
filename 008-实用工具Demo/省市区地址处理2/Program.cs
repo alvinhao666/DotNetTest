@@ -1,6 +1,4 @@
 ﻿using OfficeOpenXml;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
-using Sino.MSLS.DomainModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,14 +56,14 @@ namespace 省市区地址处理2
                         p.Shi = result[1];
                         p.Qu = result[2] + result[3];
 
-                        if (p.Qu.Length == 0 && p.Shi.Length>0) p.Qu = p.Shi;
+                        if (p.Qu.Length == 0 && p.Shi.Length > 0) p.Qu = p.Shi;
                     }
                     else
                     {
                         p.Sheng = adrress;
                     }
 
-        
+
                     p.FullName = adrress;
 
                     if (p.Code.Length == 2)
@@ -81,7 +79,7 @@ namespace 省市区地址处理2
                         p.Type = 3;
                     }
 
-                    if (p.Code.StartsWith("4690") ||p.Code.StartsWith ("4290"))
+                    if (p.Code.StartsWith("4690") || p.Code.StartsWith("4290"))
                     {
                         p.Type = 2;
 
@@ -93,18 +91,18 @@ namespace 省市区地址处理2
 
                     areaList.Add(p);
                 }
-            }            
-            
+            }
+
 
             Console.WriteLine($"共有{areaList.Count}条数据");
 
             StringBuilder sb = new StringBuilder("insert into zones (Type,`Code`,`Name`,ParentCode,ParentName,FullName) values ");
 
-            var shengList = areaList.Where(a => a.Type==1).ToList();
+            var shengList = areaList.Where(a => a.Type == 1).ToList();
 
-            var shiList = areaList.Where(a => a.Type==2).ToList();
+            var shiList = areaList.Where(a => a.Type == 2).ToList();
 
-            var quList = areaList.Where(a => a.Type==3).ToList();
+            var quList = areaList.Where(a => a.Type == 3).ToList();
 
             int dataCount = 0;
 
@@ -116,7 +114,7 @@ namespace 省市区地址处理2
 
                 dataCount++;
 
-                var pShiList = shiList.Where(a => a.Code.Substring(0, 2) == p.Code ).ToList();
+                var pShiList = shiList.Where(a => a.Code.Substring(0, 2) == p.Code).ToList();
 
                 foreach (var s in pShiList)
                 {
@@ -127,7 +125,7 @@ namespace 省市区地址处理2
 
                     var pQuList = quList.Where(a => a.Code.Substring(0, 4) == s.Code || (a.Sheng + a.Shi) == s.FullName).ToList();
 
-                    foreach(var q in pQuList)
+                    foreach (var q in pQuList)
                     {
                         sb.Append($"(3,'{q.Code}','{q.Qu}','{s.Code}','{s.Shi}','{q.FullName}'),");
                         sb.Append(Environment.NewLine);
@@ -162,9 +160,9 @@ namespace 省市区地址处理2
 
             string[] res = Regex.Split(address, regex);
 
-            foreach(var item in res)
+            foreach (var item in res)
             {
-                if (!string.IsNullOrWhiteSpace(item) && province=="")
+                if (!string.IsNullOrWhiteSpace(item) && province == "")
                 {
                     province = item;
                 }

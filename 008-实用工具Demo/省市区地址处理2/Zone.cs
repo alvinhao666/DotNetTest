@@ -1,15 +1,12 @@
 ﻿using FreeSql.DataAnnotations;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sino.MSLS.DomainModel
 {
     /// <summary>
     /// 省市区
     /// </summary>
-    [Table(Name ="zones")]
-    public class Zone 
+    [Table(Name = "zones")]
+    public class Zone
     {
         public int Id { get; set; }
 

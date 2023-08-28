@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
 using Force.DeepCloner;
 using Mapster;
 using Moq.AutoMock;

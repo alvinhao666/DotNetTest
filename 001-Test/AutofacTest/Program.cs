@@ -1,9 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
-using Castle.Core.Logging;
 using Castle.DynamicProxy;
 using System;
-using System.IO;
 using System.Linq;
 
 namespace AutofacTest
@@ -38,7 +36,7 @@ namespace AutofacTest
             builder2.Register(c => new CallLogger())
                    .Named<IInterceptor>("log-calls");
 
-       
+
             Console.ReadLine();
         }
     }
@@ -58,7 +56,7 @@ namespace AutofacTest
     }
 
     [Intercept(typeof(CallLogger))]
-    public class First2: BaseFirst
+    public class First2 : BaseFirst
     {
         public override void GetValue()
         {

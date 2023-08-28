@@ -87,7 +87,7 @@ namespace StringTest
             sa2.String();
 
 
-            Student sa1 = new Student { Name="张三",Age =10};
+            Student sa1 = new Student { Name = "张三", Age = 10 };
 
             List<Student> slist1 = new List<Student>() { sa1 };
 

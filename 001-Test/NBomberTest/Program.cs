@@ -1,15 +1,7 @@
-﻿using System;
-using System.Security.Principal;
+﻿using NBomber.Contracts;
+using NBomber.CSharp;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using FSharp.Json;
-using NBomber;
-using NBomber.Contracts;
-using NBomber.CSharp;
-using NBomber.Plugins.Http.CSharp;
-using NBomber.Plugins.Network.Ping;
 
 
 namespace NBomberTest
@@ -23,12 +15,14 @@ namespace NBomberTest
 
             var step = Step.Create("fetch_login", async context =>
             {
-                var jsonData = new {
+                var jsonData = new
+                {
                     Account = "system",
                     Password = "MDHAtW1/S4XoV1QucqvZt/33pT1uK0agu0ZH0BfGNVpo",
                     LoginPlatform = 1,
-                    CaptchaCode = "vyck", 
-                    CaptchaId = "91b222edfba64fe1b3d7683c7bc3afa4" };
+                    CaptchaCode = "vyck",
+                    CaptchaId = "91b222edfba64fe1b3d7683c7bc3afa4"
+                };
 
                 var requestContent = new StringContent(JsonSerializer.Serialize(jsonData), Encoding.UTF8, "application/json");
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
 using System.Text;
 
@@ -31,8 +30,8 @@ namespace ByteTest
 
             //var bytes = BitConverter.GetBytes(short.MaxValue);
 
-            bool[] myBools = new bool[6] { true, false, true, false,true,true };
-           
+            bool[] myBools = new bool[6] { true, false, true, false, true, true };
+
             var value = BitsToWord(myBools);
 
             Console.WriteLine(value);
@@ -49,7 +48,7 @@ namespace ByteTest
             var sss = Encoding.ASCII.GetString(bytesarry);
 
             var s = "";
-            for(var i = 0; i < 32; i++)
+            for (var i = 0; i < 32; i++)
             {
                 s += "00 ";
             }
@@ -65,7 +64,7 @@ namespace ByteTest
 
             var value2Int = int.Parse(value2);
 
-            var bs = Encoding.ASCII.GetBytes(value2Int.ToString().PadLeft(10,'0'));
+            var bs = Encoding.ASCII.GetBytes(value2Int.ToString().PadLeft(10, '0'));
 
 
             bytesarry = new byte[] { 0x01 };

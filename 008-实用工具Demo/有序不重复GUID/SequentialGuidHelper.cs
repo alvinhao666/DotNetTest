@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace Hao
 {
-    public static class SequentialGuidHelper 
+    public static class SequentialGuidHelper
     {
         ///// <summary>
         ///// Gets the singleton <see cref="SequentialGuidGenerator"/> instance.
@@ -118,7 +118,7 @@ namespace Hao
             return new Guid(guidBytes);
         }
 
-        
+
     }
 
     /// <summary>
