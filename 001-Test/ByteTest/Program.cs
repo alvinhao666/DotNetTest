@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -76,6 +77,12 @@ namespace ByteTest
 
             var ssss = Ushort2HexBytes(4);
 
+
+            var bytessss = ConvertHexStringToBytes("BBBB");
+
+
+            var bytessss2 = ConvertHexStringToBytes("AAAA");
+
             Console.ReadKey();
         }
 
@@ -107,5 +114,30 @@ namespace ByteTest
             return result;
         }
 
+        /// <summary>
+        /// 字符串转十六进制Byte数组
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns></returns>
+        /// <summary>
+        /// 16进制原码字符串转字节数组
+        /// </summary>
+        /// <param name="hexString">"AABBCC"或"AA BB CC"格式的字符串</param>
+        /// <returns></returns>
+        public static byte[] ConvertHexStringToBytes(string hexString)
+        {
+            hexString = hexString.Replace(" ", "");
+            if (hexString.Length % 2 != 0)
+            {
+                throw new ArgumentException("参数长度不正确,必须是偶数位");
+            }
+            byte[] returnBytes = new byte[hexString.Length / 2];
+            for (int i = 0; i < returnBytes.Length; i++)
+            {
+                returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            }
+
+            return returnBytes;
+        }
     }
 }
