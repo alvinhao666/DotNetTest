@@ -115,11 +115,6 @@ namespace ByteTest
         }
 
         /// <summary>
-        /// 字符串转十六进制Byte数组
-        /// </summary>
-        /// <param name="hexString"></param>
-        /// <returns></returns>
-        /// <summary>
         /// 16进制原码字符串转字节数组
         /// </summary>
         /// <param name="hexString">"AABBCC"或"AA BB CC"格式的字符串</param>
