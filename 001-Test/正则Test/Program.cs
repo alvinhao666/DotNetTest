@@ -61,7 +61,7 @@ namespace 正则Test
 
             });
 
-            await Task.Run(async() =>
+            await Task.Run(async () =>
             {
                 Params_Str_AsyncLocal.Value = new Dictionary<string, string>();
 

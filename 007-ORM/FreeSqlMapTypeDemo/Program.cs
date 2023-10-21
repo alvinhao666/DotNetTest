@@ -1,7 +1,7 @@
-﻿using FreeSql.Internal;
-using FreeSql;
-using FreeSql.Internal.Model;
+﻿using FreeSql;
 using FreeSql.DataAnnotations;
+using FreeSql.Internal;
+using FreeSql.Internal.Model;
 
 namespace FreeSqlMapTypeDemo
 {
@@ -47,7 +47,7 @@ namespace FreeSqlMapTypeDemo
         }
     }
 
-    public abstract class Entity<TKey> 
+    public abstract class Entity<TKey>
     {
         /// <summary>
         /// 主键id
