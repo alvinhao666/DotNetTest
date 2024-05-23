@@ -12,18 +12,11 @@
 
 //Console.ReadKey();
 
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace TaskTest
 {
     class Program
     {
-       static AsyncLocal<string> test = new AsyncLocal<string>();
+        static AsyncLocal<string> test = new AsyncLocal<string>();
 
         static async Task Main(string[] args)
         {

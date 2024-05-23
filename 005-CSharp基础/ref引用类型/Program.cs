@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace ref引用类型
+﻿namespace ref引用类型
 {
     internal class Program
     {
