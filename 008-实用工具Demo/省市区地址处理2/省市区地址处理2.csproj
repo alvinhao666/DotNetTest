@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="EPPlusFree" Version="4.5.3.8" />
-		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.2.825" />
+		<PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.2.832" />
 	</ItemGroup>
 
 

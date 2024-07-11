@@ -8,8 +8,8 @@
   <ItemGroup>
 	 <FrameworkReference Include="Microsoft.AspNetCore.App" />
 	  <!--AspNetCore相关的都会引用上了-->
-    <PackageReference Include="Alexinea.Autofac.Extensions.DependencyInjection" Version="4.2.0" />
-    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Alexinea.Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Autofac" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
