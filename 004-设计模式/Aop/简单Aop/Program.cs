@@ -13,7 +13,7 @@ namespace AopDemo1
             IServiceCollection services = new ServiceCollection();
 
             services.AddTransient<IMysqlDriver, MysqlDriver>();
-            IServiceProvider serviceProvider = services.BuildAspectInjectorProvider();
+            IServiceProvider serviceProvider = services.BuildDynamicProxyProvider();
 
             var mysql = serviceProvider.GetService<IMysqlDriver>();
 

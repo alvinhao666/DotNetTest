@@ -69,6 +69,7 @@ namespace AutoMapper_Vs_Mapster
 
             Console.WriteLine(object.ReferenceEquals(dto1.Dto2, dto6.Dto2)); // true
 
+
             Console.ReadKey();
         }
     }
