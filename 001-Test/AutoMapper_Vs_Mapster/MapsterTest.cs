@@ -25,8 +25,10 @@ namespace AutoMapper_Vs_Mapster
             config.NewConfig<Order, OrderDto>().Map(a => a.OrderNo, b => b.OrderNo_D)
                                     .Map(a => a.Meter, b => b.Meter_D)
                                     .Map(a => a.CutCount, b => b.CutCount_D);
-//.NameMatchingStrategy(NameMatchingStrategy.ConvertDestinationMemberName(name => name.Replace("_D", "")));
-//.IgnoreMember((member, side) => !member.Type.Name.EndsWith("_D"));
+
+
+
+
             foreach (var item in list)
             {
                 var newItem = item.Adapt<OrderDto>();
