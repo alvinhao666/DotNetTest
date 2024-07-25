@@ -48,8 +48,8 @@ namespace FanoutReceive
                     //接收事件
                     consumer.Received += (model, ea) =>
                     {
-                        byte[] message = ea.Body;//接收到的消息
-                        Console.WriteLine("接收到信息为:" + Encoding.UTF8.GetString(message));
+                        var message = ea.Body;//接收到的消息
+                        Console.WriteLine("接收到信息为:" + Encoding.UTF8.GetString(message.Span));
                         //返回消息确认
                         channel.BasicAck(ea.DeliveryTag, true);
                     };
