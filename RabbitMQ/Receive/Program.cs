@@ -90,8 +90,8 @@ namespace Receive
                     {
                         //Thread.Sleep(3000); //等待3秒, ctrl+c执行宕机
                         Thread.Sleep((new Random().Next(1, 6)) * 1000);//随机等待,实现能者多劳,
-                        byte[] message = ea.Body;//接收到的消息
-                        Console.WriteLine("接收到信息为:" + Encoding.UTF8.GetString(message));
+                        var message = ea.Body;//接收到的消息
+                        Console.WriteLine("接收到信息为:" + Encoding.UTF8.GetString(message.Span));
                         //返回消息确认
                         channel.BasicAck(ea.DeliveryTag, true);
                     };

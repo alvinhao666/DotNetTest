@@ -13,7 +13,7 @@ namespace NBomberTest
         {
             using var httpClient = new HttpClient();
 
-            var step = Step.Create("fetch_login", async context =>
+            var scenario = Scenario.Create("fetch_login", async context =>
             {
                 var jsonData = new
                 {
@@ -32,8 +32,6 @@ namespace NBomberTest
                     ? Response.Ok()
                     : Response.Fail();
             });
-
-            var scenario = ScenarioBuilder.CreateScenario("loginapi", step);
 
             NBomberRunner
                 .RegisterScenarios(scenario)
